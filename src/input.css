@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@source "../index.html";
+@source "../js/**/*.js";
+
+@theme {
+  --color-primary: #44225A;
+  --color-primary-light: #6E3894;
+  --color-secondary: #6E3894;
+  --color-surface: #F7F6FA;
+  --color-surface2: #EFEFEF;
+  --color-borderc: #E9DFF0;
+  --color-borderc2: #C9B6D6;
+  --color-muted: #6B6475;
+
+  --font-display: Poppins, sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-nav: "Plus Jakarta Sans", sans-serif;
+
+  --radius-4xl: 2.5rem;
+}
+
+:root{
+  --primary:#44225A;
+  --secondary:#6E3894;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+
+/* Skip link */
+.skip-link{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:#fff; color:var(--primary); padding:.75rem 1.25rem;
+  border-radius:0 0 .5rem 0; font-weight:600;
+}
+.skip-link:focus{ left:0; }
+
+/* Visible keyboard focus everywhere */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+  outline: 3px solid #6E3894;
+  outline-offset: 3px;
+  border-radius: .25rem;
+}
+
+/* Hero gradient — dark purple field with a diagonal light beam, echoing the source design */
+.hero-bg{
+  position:relative;
+  background:
+    radial-gradient(60% 55% at 50% 32%, rgba(255,255,255,.16) 0%, rgba(167,139,212,0) 60%),
+    linear-gradient(115deg, transparent 38%, rgba(214,180,255,.55) 48%, rgba(232,210,255,.85) 50%, rgba(214,180,255,.55) 52%, transparent 62%),
+    radial-gradient(120% 90% at 50% 0%, #5b2f7a 0%, #3a1a52 38%, #1c0e2b 75%, #120918 100%);
+  overflow:hidden;
+}
+.hero-bg::before{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(closest-side, rgba(255,255,255,.9), transparent 70%);
+  width: 60vmax; height:60vmax;
+  left:50%; top:-8%;
+  transform: translateX(-50%);
+  opacity:.14;
+  filter: blur(40px);
+  pointer-events:none;
+}
+
+.logo-marquee{
+  display:flex; gap:clamp(2rem, 6vw, 5rem);
+  animation: scroll-x 28s linear infinite;
+  width:max-content;
+}
+@media (prefers-reduced-motion: reduce){
+  .logo-marquee{ animation: none; }
+  html{ scroll-behavior:auto; }
+}
+@keyframes scroll-x{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
+
+.product-orb{
+  background:
+    radial-gradient(60% 60% at 50% 30%, rgba(255,255,255,.18) 0%, transparent 60%),
+    radial-gradient(90% 90% at 50% 20%, #6E3894 0%, #3a1a52 55%, #1c0e2b 100%);
+}
+
+.cta-bg{
+  background-image:
+    linear-gradient(94.58deg, rgba(42,18,74,.6) .98%, rgba(55,24,99,.6) 25.74%, rgba(69,30,124,.6) 50.49%, rgba(82,35,149,.6) 75.25%, rgba(95,41,174,.6) 100%),
+    url("../assets/p3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.impact-bg{
+  background: linear-gradient(90deg, #210D4A 0%, #3C236E 50%, #210D4A 100%);
+}
+
+/* Footer — meant to sit over a night-sky photo, stands in as a dark brand
+   gradient until a real photo is dropped in. The flat #00000033 layer is the
+   spec's own overlay tint, kept so it's already correct once the photo lands */
+.footer-bg{
+  background:
+    linear-gradient(0deg, #00000033, #00000033),
+    radial-gradient(130% 110% at 0% 100%, #6E3894 0%, #3a1a52 32%, #1c0e2b 62%, #0f0817 100%);
+}
+
+.fade-enter{ animation: fadeIn .35s ease both; }
+@keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+@media (prefers-reduced-motion: reduce){
+  .fade-enter{ animation:none; }
+}
+
+.tab-icon[aria-selected="true"]{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(68,34,90,.12);
+}
