@@ -52,13 +52,13 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ===================== HEADER ===================== -->
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
-  <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-20">
-    <div class="flex h-23.75 items-center justify-between gap-6">
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
+  <div class="mx-auto w-[90%] ">
+    <div class="flex h-[75px] items-center justify-between gap-6">
 
       <!-- Logo -->
       <a href="#top" class="flex items-center shrink-0" aria-label="Advanced Controls home">
-        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-10 sm:h-12 lg:h-14 w-auto" />
+        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[44.83px] w-auto" />
       </a>
 
       <!-- Desktop nav -->
@@ -66,7 +66,7 @@
         <div class="relative">
           <ul id="navList" class="flex items-center gap-8 font-nav text-xl">
             <li><a href="#top" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Home</a></li>
-            <li><a href="#services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a href="#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a href="#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
             <li><a href="#contact" class="nav-link text-muted hover:text-primary transition-colors">Contact</a></li>
             <li><a href="#about" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
@@ -76,7 +76,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden sm:inline-flex w-38.25 h-12 items-center justify-center rounded-[10px] bg-secondary font-nav font-semibold text-base text-white shadow-[0_6px_12px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
+        <a id="headerCta" href="#contact" class="hidden lg:inline-flex w-[111.56px] h-8.75 items-center justify-center rounded-[7.29px] bg-secondary font-nav font-semibold text-xs text-white shadow-[0_4.375px_8.75px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
           Get Started
         </a>
 
@@ -106,12 +106,12 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg" aria-labelledby="hero-heading">
-    <div class="relative z-10 mx-auto max-w-302.75 px-5 sm:px-8 pt-20 pb-16 sm:pt-28 sm:pb-20 text-center">
-      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(2.2rem,6.2vw,6rem)]">
+  <section id="top" class="hero-bg relative min-h-[calc(100vh-95px)] flex flex-col" aria-labelledby="hero-heading">
+    <div class="relative z-10 mx-auto flex flex-1 flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
+      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(2.2rem,6.2vw,5rem)]">
         We're leaders in<br class="hidden sm:block" /> cybersecurity
       </h1>
-      <p class="mx-auto mt-8 max-w-3xl text-[clamp(1rem,2vw,1.5rem)] font-medium leading-8 text-surface">
+      <p class="mx-auto mt-8 max-w-3xl text-[clamp(1rem,2vw,1rem)] font-medium leading-8 text-surface">
         Advanced GRC and Threat Intelligence platforms (CyberMode, GovernanceMode & IntelMode) designed specifically to meet Saudi regulatory standards (NCA, CST, NDMO, and NORA v2).
       </p>
 
@@ -129,9 +129,9 @@
       </div>
     </div>
 
-    <!-- Client logo marquee -->
-    <div class="relative z-10 border-t border-white/10 py-8" role="region" aria-label="Trusted by">
-      <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
+    <!-- Client logo marquee --> 
+    <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
+    <div class="absolute inset-x-0 bottom-0 z-10  py-8" role="region" aria-label="Trusted by">
       <div class="overflow-hidden" aria-hidden="true">
         <div class="logo-marquee opacity-90">
           <!-- set 1 -->
@@ -206,42 +206,69 @@
 
   <!-- ===================== STRATEGIC SERVICES ===================== -->
   <section id="strategic-services" class="bg-surface2 px-5 sm:px-10 py-16 sm:py-24 lg:py-37.5" aria-labelledby="strategic-services-heading">
-    <div class="mx-auto max-w-382.5 flex flex-col items-center gap-10 sm:gap-14 lg:gap-20">
+    <div class="mx-auto max-w-357.5 flex flex-col items-center gap-10 sm:gap-14 lg:gap-20">
       <div class="flex flex-col items-center gap-6 text-center">
         <h2 id="strategic-services-heading" class="font-display font-bold text-[#1F1728] text-[clamp(1.75rem,4vw,3rem)] leading-none">Strategic Services</h2>
         <p class="w-full text-base sm:text-lg lg:text-xl font-medium leading-8 text-muted">Expert-led advisory and compliance services to strengthen security, governance, and resilience</p>
       </div>
 
-      <!-- Carousel -->
-      <div class="relative w-full overflow-hidden rounded-2xl border border-borderc2 bg-surface shadow-[0_8px_16px_rgba(0,0,0,.15)]">
-        <div id="serviceCard" class="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8 p-6 sm:p-8">
-          <div id="serviceImage" class="fade-enter w-full lg:w-1/2 aspect-4/3 lg:aspect-auto rounded-2xl bg-cover bg-center" aria-hidden="true"></div>
-          <div class="w-full lg:w-1/2 flex flex-col justify-center items-start gap-6">
-            <h3 id="serviceTitle" class="fade-enter font-display font-extrabold text-[#1F1728] text-2xl sm:text-3xl lg:text-4xl leading-tight"></h3>
-            <ul id="serviceList" class="fade-enter flex flex-col gap-3 sm:gap-4 w-full"></ul>
+      <!-- Stacked service cards: card 2 scrolls up and covers card 1, leaving its top peeking above -->
+      <div id="serviceStack" class="relative w-full">
+        <article class="stack-card sticky top-28 z-10 mb-34.75 flex flex-col lg:flex-row items-stretch gap-8 rounded-[17px] border border-borderc2 bg-white p-8 shadow-[0_8px_16px_rgba(0,0,0,.15)] transition-[transform,opacity] duration-150 ease-out will-change-transform">
+          <div class="w-full lg:w-1/2 aspect-4/3 lg:aspect-auto overflow-hidden rounded-[20.9px]">
+            <img src="assets/p1.jpg" alt="" class="h-full w-full object-cover" />
           </div>
-        </div>
+          <div class="w-full lg:w-1/2 flex flex-col justify-center items-start gap-[38.55px] p-[19.28px]">
+            <h3 class="font-body font-extrabold text-[#1F1728] text-[clamp(1.75rem,4vw,48.19px)] leading-16.5">Cybersecurity Professional Services</h3>
+            <ul class="flex flex-col gap-6 w-full">
+              <li class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#6E3894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-muted font-medium text-[24px] leading-6.75">Vulnerability Management (VAPT).</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#6E3894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-muted font-medium text-[24px] leading-6.75">Cybersecurity Strategy &amp; Roadmap.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#6E3894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-muted font-medium text-[24px] leading-6.75">Incident Response Readiness</span>
+              </li>
+            </ul>
+          </div>
+        </article>
 
-        <!-- Pager -->
-        <div class="flex items-center justify-center gap-6 pb-6 sm:pb-8">
-          <button id="servicePrevBtn" type="button" class="text-primary/70 hover:text-primary transition-colors" aria-label="Previous service">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 7 12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div id="serviceDots" class="flex items-center gap-2" role="tablist" aria-label="Select service"></div>
-          <button id="serviceNextBtn" type="button" class="text-primary/70 hover:text-primary transition-colors" aria-label="Next service">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
+        <article class="stack-card sticky top-63 z-20 flex flex-col lg:flex-row-reverse items-stretch gap-8 rounded-[17px] border border-borderc2 bg-white p-8 shadow-[0_20px_40px_rgba(0,0,0,.2)]">
+          <div class="w-full lg:w-1/2 aspect-4/3 lg:aspect-auto overflow-hidden rounded-[20.9px]">
+            <img src="assets/p7.jpg" alt="" class="h-full w-full object-cover" />
+          </div>
+          <div class="w-full lg:w-1/2 flex flex-col justify-center items-start gap-[38.55px] p-[19.28px]">
+            <h3 class="font-body font-extrabold text-[#1F1728] text-[clamp(1.75rem,4vw,48.19px)] leading-16.5">GRC Consultation Services</h3>
+            <ul class="flex flex-col gap-6 w-full">
+              <li class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#A542FF" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#A542FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-muted font-medium text-[24px] leading-6.75">NCA/DGA Compliance Audits.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#A542FF" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#A542FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-muted font-medium text-[24px] leading-6.75">Enterprise Architecture (NORA v2).</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#A542FF" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#A542FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="text-muted font-medium text-[24px] leading-6.75">Data Privacy (PDPL) Consultation.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ===================== CONTACT CTA BANNER ===================== -->
   <section class="cta-bg flex flex-col items-center justify-center text-center gap-12 sm:gap-16 px-6 sm:px-16 lg:px-50 py-16 sm:py-20 lg:py-25" aria-labelledby="cta-banner-heading">
-    <h2 id="cta-banner-heading" class="max-w-[863px] font-body font-extrabold text-white text-[clamp(1.75rem,4vw,3rem)] leading-[1.667] [text-shadow:0_8px_16px_rgba(0,0,0,.15)]">
+    <h2 id="cta-banner-heading" class="max-w-215.75 font-body font-extrabold text-white text-[clamp(1.75rem,4vw,3rem)] leading-[1.667] [text-shadow:0_8px_16px_rgba(0,0,0,.15)]">
       Let's Discuss Your Consultation and Service Needs
     </h2>
-    <a href="#contact" class="inline-flex items-center justify-center gap-[6.9px] rounded-full border border-surface bg-white/20 px-8 py-[18px] font-body font-bold text-[23px] leading-7 capitalize text-surface hover:bg-white/30 transition-colors">
+    <a href="#contact" class="inline-flex items-center justify-center gap-[6.9px] rounded-full border border-surface bg-white/20 px-8 py-4.5 font-body font-bold text-[23px] leading-7 capitalize text-surface hover:bg-white/30 transition-colors">
       Contact Us
     </a>
   </section>
@@ -254,38 +281,38 @@
         <p class="w-full text-base sm:text-lg lg:text-xl font-medium leading-8 text-muted">The principles that shape our approach to cybersecurity, governance, compliance, and digital resilience in an evolving landscape.</p>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-stretch gap-8 w-full">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         <!-- Card 1: Regulatory DNA -->
-        <article class="flex flex-1 flex-col overflow-hidden rounded-[20.33px] border border-borderc2 bg-white shadow-[0_2px_4px_rgba(0,0,0,.1)]">
+        <article class="group flex flex-col overflow-hidden rounded-[20.33px] border border-borderc2 bg-white shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,.18)]">
           <div class="aspect-[455.33/249.01] w-full overflow-hidden" aria-hidden="true">
-            <img src="assets/p5.jpg" alt="" class="h-full w-full object-cover" />
+            <img src="assets/p5.jpg" alt="" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
           </div>
           <div class="flex flex-col items-start p-[30.49px]">
-            <span class="h-[2.54px] w-[40.65px] rounded-full bg-linear-to-r from-[#211045] via-[#391C78] to-[#5228AB]" aria-hidden="true"></span>
+            <span class="h-[2.54px] w-[40.65px] rounded-full bg-linear-to-r from-[#211045] via-[#391C78] to-[#5228AB] transition-[width] duration-500 ease-out group-hover:w-full" aria-hidden="true"></span>
             <h3 class="pt-[25.41px] font-body font-bold text-[25.41px] leading-7.75 capitalize text-[#1F1728]">Regulatory DNA</h3>
             <p class="pt-[10.16px] font-body font-semibold text-[17.79px] leading-5.5 capitalize text-muted">Built-In Compliance Aligned With Saudi Regulations Including NCA, ECC, NDMO, And Related Frameworks, Ensuring Every Byte Of Data Meets National Standards.</p>
           </div>
         </article>
 
         <!-- Card 2: Data Sovereignty -->
-        <article class="flex flex-1 flex-col overflow-hidden rounded-[20.33px] border border-borderc2 bg-white shadow-[0_2px_4px_rgba(0,0,0,.1)]">
+        <article class="group flex flex-col overflow-hidden rounded-[20.33px] border border-borderc2 bg-white shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,.18)]">
           <div class="aspect-[455.33/249.01] w-full overflow-hidden" aria-hidden="true">
-            <img src="assets/p4.jpg" alt="" class="h-full w-full object-cover" />
+            <img src="assets/p4.jpg" alt="" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
           </div>
           <div class="flex flex-col items-start p-[30.49px]">
-            <span class="h-[2.54px] w-[40.65px] rounded-full bg-linear-to-r from-[#211045] via-[#391C78] to-[#5228AB]" aria-hidden="true"></span>
+            <span class="h-[2.54px] w-[40.65px] rounded-full bg-linear-to-r from-[#211045] via-[#391C78] to-[#5228AB] transition-[width] duration-500 ease-out group-hover:w-full" aria-hidden="true"></span>
             <h3 class="pt-[25.41px] font-body font-bold text-[25.41px] leading-7.75 capitalize text-[#1F1728]">Data Sovereignty</h3>
             <p class="pt-[10.16px] font-body font-semibold text-[17.79px] leading-5.5 capitalize text-muted">100% Local Hosting And Secure Handling Of Sensitive Government And Enterprise Data, Guaranteeing Your Information Never Leaves The Safety Of Your Jurisdiction.</p>
           </div>
         </article>
 
         <!-- Card 3: Local Expertise -->
-        <article class="flex flex-1 flex-col overflow-hidden rounded-[20.33px] border border-borderc2 bg-white shadow-[0_2px_4px_rgba(0,0,0,.1)]">
+        <article class="group flex flex-col overflow-hidden rounded-[20.33px] border border-borderc2 bg-white shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,.18)] sm:col-span-2 sm:max-w-[calc(50%-1rem)] sm:justify-self-center lg:col-span-1 lg:max-w-none">
           <div class="aspect-[455.33/249.01] w-full overflow-hidden" aria-hidden="true">
-            <img src="assets/p8.jpg" alt="" class="h-full w-full object-cover" />
+            <img src="assets/p8.jpg" alt="" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
           </div>
           <div class="flex flex-col items-start p-[30.49px]">
-            <span class="h-[2.54px] w-[40.65px] rounded-full bg-linear-to-r from-[#211045] via-[#391C78] to-[#5228AB]" aria-hidden="true"></span>
+            <span class="h-[2.54px] w-[40.65px] rounded-full bg-linear-to-r from-[#211045] via-[#391C78] to-[#5228AB] transition-[width] duration-500 ease-out group-hover:w-full" aria-hidden="true"></span>
             <h3 class="pt-[25.41px] font-body font-bold text-[25.41px] leading-7.75 capitalize text-[#1F1728]">Local Expertise</h3>
             <p class="pt-[10.16px] font-body font-semibold text-[17.79px] leading-5.5 capitalize text-muted">A Highly Experienced Team That Understands Saudi Business Culture, Regional Regulations, And Large-Scale Digital Transformation Initiatives.</p>
           </div>
@@ -298,24 +325,21 @@
   <section class="impact-bg flex flex-col items-center gap-12 px-6 sm:px-10 lg:px-37.5 py-16 sm:py-20 lg:py-25" aria-labelledby="impact-heading">
     <h2 id="impact-heading" class="font-body font-bold text-2xl leading-8 capitalize text-white text-center">Impact In Numbers</h2>
 
-    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-10 sm:flex-nowrap sm:justify-between sm:gap-12 w-full max-w-357.5">
-      <div class="flex flex-1 flex-col items-center gap-6">
-        <span class="font-body font-bold text-white text-[64px] leading-20">10+</span>
+    <div class="stats-row grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 lg:divide-x lg:divide-[rgba(169,111,204,.3)] gap-x-10 gap-y-10 sm:gap-12 w-full max-w-357.5">
+      <div class="stat-block flex flex-col items-center gap-6">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="10" data-suffix="+">0+</span>
         <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">Integrated National Frameworks</span>
       </div>
-      <span class="hidden sm:block h-[99px] w-px bg-[rgba(169,111,204,.3)]" aria-hidden="true"></span>
-      <div class="flex flex-1 flex-col items-center gap-6">
-        <span class="font-body font-bold text-white text-[64px] leading-20">100%</span>
+      <div class="stat-block flex flex-col items-center gap-6">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="100" data-suffix="%">0%</span>
         <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">Saudi-Built &amp; Locally Hosted.</span>
       </div>
-      <span class="hidden sm:block h-[99px] w-px bg-[rgba(169,111,204,.3)]" aria-hidden="true"></span>
-      <div class="flex flex-1 flex-col items-center gap-6">
-        <span class="font-body font-bold text-white text-[64px] leading-20">24/7</span>
+      <div class="stat-block flex flex-col items-center gap-6">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="24" data-suffix="/7">0/7</span>
         <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">In-Kingdom Expert Support.</span>
       </div>
-      <span class="hidden sm:block h-[99px] w-px bg-[rgba(169,111,204,.3)]" aria-hidden="true"></span>
-      <div class="flex flex-1 flex-col items-center gap-6">
-        <span class="font-body font-bold text-white text-[64px] leading-20">40%</span>
+      <div class="stat-block flex flex-col items-center gap-6 sm:col-span-3 sm:max-w-[calc((100%-6rem)/3)] sm:justify-self-center lg:col-span-1 lg:max-w-none">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="40" data-suffix="%">0%</span>
         <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">Improvement In Operational Efficiency.</span>
       </div>
     </div>
@@ -365,7 +389,18 @@
 
       <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-secondary px-10 py-4 font-body font-medium text-base capitalize text-white shadow-[0_2px_4px_rgba(0,0,0,.1)] hover:bg-primary transition-colors">
         Send Message
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11 20 4l-7 16-2.5-6L4 11z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1259_1181)">
+<path d="M14.6673 1.3335L7.33398 8.66683" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.6673 1.3335L10.0007 14.6668L7.33398 8.66683L1.33398 6.00016L14.6673 1.3335Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_1259_1181">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
       </button>
     </form>
   </section>
@@ -377,18 +412,17 @@
     <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
       <!-- Column 1: Brand -->
       <div class="flex flex-col items-start gap-6">
-        <div class="flex items-center gap-3">
+        <div class="">
           <img src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
-          
         </div>
         <p class="text-sm leading-4.25 capitalize text-surface">Leading Cybersecurity Partner Delivering Enterprise-Grade Protection And Compliance Solutions Aligned With Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
           <h4 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
-          <div class="flex flex-nowrap items-center gap-3">
-            <span class="flex w-20 items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
-            <span class="flex w-20 items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
-            <span class="flex w-20 items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
-            <span class="flex w-20 items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 text-xs leading-3.75 font-medium capitalize text-secondary">NORA v2</span>
+          <div class="flex flex-nowrap items-center gap-2">
+            <span class="rounded-lg border-[0.5px] border-borderc2 bg-surface py-1 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
+            <span class="rounded-lg border-[0.5px] border-borderc2 bg-surface py-1 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
+            <span class="rounded-lg border-[0.5px] border-borderc2 bg-surface py-1 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
+            <span class="rounded-lg border-[0.5px] border-borderc2 bg-surface py-1 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NORA v2</span>
           </div>
         </div>
       </div>
@@ -424,25 +458,69 @@
         <ul class="flex w-full flex-col items-start gap-4">
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_705_1671)">
+<path d="M13.3241 6.66207C13.3241 9.98838 9.6341 13.4526 8.39497 14.5225C8.27954 14.6093 8.13902 14.6562 7.99459 14.6562C7.85016 14.6562 7.70964 14.6093 7.59421 14.5225C6.35509 13.4526 2.66504 9.98838 2.66504 6.66207C2.66504 5.24859 3.22654 3.89299 4.22603 2.89351C5.22551 1.89402 6.58111 1.33252 7.99459 1.33252C9.40808 1.33252 10.7637 1.89402 11.7632 2.89351C12.7626 3.89299 13.3241 5.24859 13.3241 6.66207Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.99468 8.66074C9.09846 8.66074 9.99326 7.76594 9.99326 6.66216C9.99326 5.55837 9.09846 4.66357 7.99468 4.66357C6.89089 4.66357 5.99609 5.55837 5.99609 6.66216C5.99609 7.76594 6.89089 8.66074 7.99468 8.66074Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_705_1671">
+<rect width="15.9887" height="15.9887" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
             </span>
             <span class="text-sm leading-4.25 capitalize text-surface">King Fahd Road, Riyadh 12272, Saudi Arabia</span>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_705_1678)">
+<path d="M14.6566 11.2722V13.2708C14.6573 13.4563 14.6193 13.64 14.545 13.81C14.4707 13.98 14.3616 14.1326 14.2249 14.258C14.0882 14.3834 13.9268 14.4789 13.751 14.5384C13.5753 14.5978 13.3891 14.6199 13.2043 14.6032C11.1543 14.3804 9.18512 13.6799 7.45501 12.558C5.84537 11.5351 4.48068 10.1704 3.45785 8.56079C2.33197 6.82283 1.63131 4.84409 1.41263 2.78489C1.39599 2.60066 1.41788 2.41499 1.47692 2.23969C1.53596 2.06439 1.63086 1.90331 1.75557 1.76669C1.88028 1.63008 2.03206 1.52092 2.20127 1.44618C2.37047 1.37145 2.55339 1.33276 2.73836 1.33258H4.73694C5.06025 1.3294 5.37369 1.44389 5.61882 1.65471C5.86396 1.86553 6.02408 2.1583 6.06933 2.47844C6.15369 3.11803 6.31013 3.74602 6.53567 4.35044C6.6253 4.58889 6.6447 4.84803 6.59156 5.09717C6.53843 5.3463 6.41499 5.57498 6.23588 5.75611L5.38981 6.60218C6.33818 8.27003 7.71913 9.65098 9.38698 10.5993L10.233 9.75328C10.4142 9.57416 10.6429 9.45072 10.892 9.39759C11.1411 9.34446 11.4003 9.36386 11.6387 9.45349C12.2431 9.67903 12.8711 9.83547 13.5107 9.91983C13.8343 9.96548 14.1299 10.1285 14.3412 10.3778C14.5524 10.6272 14.6647 10.9455 14.6566 11.2722Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_705_1678">
+<rect width="15.9887" height="15.9887" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
             </span>
             <a href="tel:+966112345678" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">+966 11 234 5678</a>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_705_1684)">
+<path d="M13.3235 2.66455H2.66442C1.92856 2.66455 1.33203 3.26108 1.33203 3.99694V11.9913C1.33203 12.7271 1.92856 13.3237 2.66442 13.3237H13.3235C14.0594 13.3237 14.6559 12.7271 14.6559 11.9913V3.99694C14.6559 3.26108 14.0594 2.66455 13.3235 2.66455Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.6559 4.66357L8.68015 8.46088C8.47448 8.58974 8.23668 8.65808 7.99397 8.65808C7.75127 8.65808 7.51347 8.58974 7.30779 8.46088L1.33203 4.66357" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_705_1684">
+<rect width="15.9887" height="15.9887" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
             </span>
             <a href="mailto:contact@advancedcontrols.sa" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">contact@advancedcontrols.sa</a>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_705_1691)">
+<path d="M10.6593 5.32959C11.7194 5.32959 12.7361 5.75072 13.4857 6.50033C14.2353 7.24995 14.6564 8.26664 14.6564 9.32675V13.9901H11.9917V9.32675C11.9917 8.97338 11.8513 8.63449 11.6014 8.38461C11.3515 8.13474 11.0126 7.99437 10.6593 7.99437C10.3059 7.99437 9.967 8.13474 9.71713 8.38461C9.46726 8.63449 9.32689 8.97338 9.32689 9.32675V13.9901H6.66211V9.32675C6.66211 8.26664 7.08324 7.24995 7.83285 6.50033C8.58247 5.75072 9.59916 5.32959 10.6593 5.32959Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.99681 5.99561H1.33203V13.9899H3.99681V5.99561Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.66442 3.9973C3.40028 3.9973 3.99681 3.40077 3.99681 2.66491C3.99681 1.92905 3.40028 1.33252 2.66442 1.33252C1.92856 1.33252 1.33203 1.92905 1.33203 2.66491C1.33203 3.40077 1.92856 3.9973 2.66442 3.9973Z" stroke="#6E3894" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_705_1691">
+<rect width="15.9887" height="15.9887" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
             </span>
             <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">linkedin.com</a>
           </li>
@@ -455,7 +533,7 @@
       <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
         <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-white transition-colors">Terms</a>
-        <span>Consult · Secure · Succeed</span>
+        <span class="uppercase ">Consult · Secure · Succeed</span>
       </div>
     </div>
   </div>

@@ -89,6 +89,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
     url("../assets/p3.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px), (pointer: coarse){
+  .cta-bg{
+    /* background-attachment:fixed is unreliable/janky on touch scrolling (esp. iOS Safari) */
+    background-attachment: scroll;
+  }
 }
 
 .impact-bg{

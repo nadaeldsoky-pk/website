@@ -146,89 +146,105 @@
   buildTabs();
   render();
 
-  /* ---------------- Strategic Services carousel ---------------- */
-  var serviceCheckIcon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="shrink-0"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="1.6"/><path d="M8.5 12.3l2.2 2.2 4.3-4.6" stroke="#6E3894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  /* ---------------- Strategic Services stacked scroll effect ---------------- */
+  var serviceStack = document.getElementById('serviceStack');
+  if (serviceStack) {
+    var stackCards = serviceStack.querySelectorAll('.stack-card');
+    if (stackCards.length === 2 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var frontCard = stackCards[0];
+      var coverCard = stackCards[1];
+      /* gap between the two cards' sticky top offsets (top-63 - top-28 = 252px - 112px) — keep in sync with index.html */
+      var PEEK_PX = 140;
+      var stackTicking = false;
 
-  var services = [
-    {
-      key: 'cyber',
-      title: 'Cybersecurity Professional Services',
-      image: 'assets/p3.jpg',
-      items: [
-        'Virtual CISO & security leadership on demand.',
-        'Penetration testing & vulnerability assessments.',
-        'Security awareness & training programs.'
-      ],
-      imageSide: 'left'
-    },
-    {
-      key: 'grc',
-      title: 'GRC Consultation Services',
-      image: 'assets/p7.jpg',
-      items: [
-        'NCA/DGA Compliance Audits.',
-        'Enterprise Architecture (NORA v2).',
-        'Data Privacy (PDPL) Consultation.'
-      ],
-      imageSide: 'right'
+      frontCard.style.transformOrigin = 'center top';
+
+      var updateStack = function(){
+        var frontRect = frontCard.getBoundingClientRect();
+        var coverRect = coverCard.getBoundingClientRect();
+        var travel = frontRect.height - PEEK_PX;
+        var progress = travel > 0 ? (frontRect.bottom - coverRect.top) / travel : 0;
+        progress = Math.max(0, Math.min(1, progress));
+
+        frontCard.style.transform = 'scale(' + (1 - progress * 0.14) + ')';
+        frontCard.style.opacity = String(1 - progress * 0.25);
+        stackTicking = false;
+      };
+
+      var onStackScroll = function(){
+        if (!stackTicking) {
+          requestAnimationFrame(updateStack);
+          stackTicking = true;
+        }
+      };
+
+      window.addEventListener('scroll', onStackScroll, { passive: true });
+      window.addEventListener('resize', onStackScroll);
+      updateStack();
     }
-  ];
+  }
 
-  var serviceCard = document.getElementById('serviceCard');
-  if (serviceCard) {
-    var serviceImage = document.getElementById('serviceImage');
-    var serviceTitle = document.getElementById('serviceTitle');
-    var serviceList = document.getElementById('serviceList');
-    var serviceDots = document.getElementById('serviceDots');
-    var serviceCurrent = 0;
+  /* ---------------- Impact stat counters ---------------- */
+  var statsRow = document.querySelector('.stats-row');
+  if (statsRow) {
+    var statBlocks = statsRow.querySelectorAll('.stat-block');
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function buildServiceDots(){
-      services.forEach(function(s, i){
-        var dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'rounded-full transition-all';
-        dot.setAttribute('aria-label', 'Go to ' + s.title);
-        dot.addEventListener('click', function(){ goToService(i); });
-        serviceDots.appendChild(dot);
+    var animateCount = function(el){
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1900;
+      var start = null;
+
+      function step(timestamp){
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        /* ease-out-expo: fast start, long gentle settle — reads as more deliberate/premium */
+        var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target + suffix;
+          el.style.transform = 'scale(1.12)';
+          setTimeout(function(){ el.style.transform = 'scale(1)'; }, 30);
+        }
+      }
+      requestAnimationFrame(step);
+    };
+
+    var revealStats = function(){
+      statBlocks.forEach(function(block, i){
+        setTimeout(function(){
+          block.style.opacity = '1';
+          block.style.transform = 'translateY(0)';
+          var numberEl = block.querySelector('.stat-number');
+          if (numberEl) animateCount(numberEl);
+        }, i * 180);
       });
+    };
+
+    if (prefersReducedMotion) {
+      statBlocks.forEach(function(block){
+        var numberEl = block.querySelector('.stat-number');
+        if (numberEl) numberEl.textContent = numberEl.getAttribute('data-target') + (numberEl.getAttribute('data-suffix') || '');
+      });
+    } else {
+      statBlocks.forEach(function(block){
+        block.style.opacity = '0';
+        block.style.transform = 'translateY(14px)';
+        block.style.transition = 'opacity 700ms ease-out, transform 700ms ease-out';
+      });
+
+      var statObserver = new IntersectionObserver(function(entries, observer){
+        entries.forEach(function(entry){
+          if (!entry.isIntersecting) return;
+          revealStats();
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.3 });
+
+      statObserver.observe(statsRow);
     }
-
-    function renderService(){
-      var s = services[serviceCurrent];
-      serviceImage.style.backgroundImage = 'url(' + s.image + ')';
-      serviceTitle.textContent = s.title;
-
-      serviceList.innerHTML = '';
-      s.items.forEach(function(text){
-        var li = document.createElement('li');
-        li.className = 'flex items-center gap-3';
-        li.innerHTML = serviceCheckIcon + '<span class="text-muted font-medium text-base sm:text-lg">' + text + '</span>';
-        serviceList.appendChild(li);
-      });
-
-      serviceCard.classList.toggle('lg:flex-row-reverse', s.imageSide === 'right');
-
-      Array.prototype.forEach.call(serviceDots.children, function(dot, i){
-        var active = i === serviceCurrent;
-        dot.className = 'rounded-full transition-all h-[10px] ' + (active ? 'w-[28px] bg-primary' : 'w-[10px] bg-primary/25 hover:bg-primary/50');
-      });
-
-      [serviceImage, serviceTitle, serviceList].forEach(function(el){
-        el.classList.remove('fade-enter');
-        void el.offsetWidth; /* restart animation */
-        el.classList.add('fade-enter');
-      });
-    }
-
-    function goToService(i){
-      serviceCurrent = (i + services.length) % services.length;
-      renderService();
-    }
-
-    document.getElementById('servicePrevBtn').addEventListener('click', function(){ goToService(serviceCurrent - 1); });
-    document.getElementById('serviceNextBtn').addEventListener('click', function(){ goToService(serviceCurrent + 1); });
-
-    buildServiceDots();
-    renderService();
   }
 })();
