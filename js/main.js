@@ -1,3 +1,70 @@
+/* ===================== PAGE LOADER ===================== */
+(function(){
+  var loader     = document.getElementById('pageLoader');
+  var loaderMark = document.getElementById('loaderMark');
+  var loaderRing = document.getElementById('loaderRing');
+  var headerLogo = document.querySelector('#siteHeader .shrink-0 img');
+
+  if (!loader || !loaderMark || !headerLogo) return;
+
+  /* Hide the real logo until the loader icon lands on it */
+  headerLogo.style.opacity = '0';
+  headerLogo.style.transition = 'none';
+
+  /* Add second inner ring and start breath animation */
+  var ring2 = document.createElement('div');
+  ring2.id = 'loaderRing2';
+  document.getElementById('loaderInner').insertBefore(ring2, loaderMark);
+  loaderMark.classList.add('ldr-breath');
+
+  /* Intro: scale icon in */
+  loaderMark.style.animation = 'ldrIntro .6s cubic-bezier(.34,1.56,.64,1) both, ldrBreath 2s ease-in-out .6s infinite';
+
+  function flyToLogo() {
+    /* Stop breathing & rings */
+    loaderMark.style.animation = 'none';
+    loaderRing.style.opacity = '0';
+    ring2.style.opacity = '0';
+
+    /* FLIP positions */
+    var from = loaderMark.getBoundingClientRect();
+    var to   = headerLogo.getBoundingClientRect();
+
+    /* Land SVG icon center at the icon portion of the logo (left ~20% of img) */
+    var targetX = to.left + to.width * 0.09;
+    var targetY = to.top  + to.height * 0.5;
+    var fromCX  = from.left + from.width  * 0.5;
+    var fromCY  = from.top  + from.height * 0.5;
+
+    var dx    = targetX - fromCX;
+    var dy    = targetY - fromCY;
+    var scale = (to.height / from.height) * 0.92;
+
+    /* Fly with one spin and spring overshoot */
+    loaderMark.style.transition = 'transform .75s cubic-bezier(.34,1.3,.64,1), opacity .25s ease .55s';
+    loaderMark.style.transform  = 'translate(' + dx + 'px,' + dy + 'px) rotate(360deg) scale(' + scale + ')';
+    loaderMark.style.opacity    = '0';
+
+    setTimeout(function() {
+      /* Reveal the real logo */
+      headerLogo.style.transition = 'opacity .35s ease';
+      headerLogo.style.opacity    = '1';
+
+      /* Fade out the whole overlay */
+      loader.style.opacity    = '0';
+      loader.style.transition = 'opacity .45s ease';
+
+      setTimeout(function() {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 480);
+    }, 680);
+  }
+
+  /* Show loader for 1.5s then fly */
+  setTimeout(flyToLogo, 1500);
+})();
+
+/* ===================================================== */
 (function(){
   "use strict";
 
@@ -182,6 +249,94 @@
       window.addEventListener('resize', onStackScroll);
       updateStack();
     }
+  }
+
+  /* ---------------- Header hide / show on scroll ---------------- */
+  var siteHeader = document.getElementById('siteHeader');
+  var heroSection = document.getElementById('top');
+
+  if (siteHeader && heroSection) {
+    siteHeader.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s cubic-bezier(0.4,0,0.2,1)';
+
+    var lastScrollY = window.scrollY;
+    var headerVisible = true;
+    var headerTicking = false;
+
+    var updateHeader = function(){
+      var currentY   = window.scrollY;
+      var heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      var scrollingDown = currentY > lastScrollY;
+
+      if (currentY <= heroBottom) {
+        /* still inside / above hero — always show */
+        if (!headerVisible) {
+          siteHeader.style.transform = 'translateY(0)';
+          siteHeader.style.opacity  = '1';
+          siteHeader.style.pointerEvents = '';
+          headerVisible = true;
+        }
+      } else {
+        if (scrollingDown && headerVisible) {
+          /* past hero, scrolling down → hide */
+          siteHeader.style.transform = 'translateY(-100%)';
+          siteHeader.style.opacity  = '0';
+          siteHeader.style.pointerEvents = 'none';
+          headerVisible = false;
+        } else if (!scrollingDown && !headerVisible) {
+          /* past hero, scrolling up → show */
+          siteHeader.style.transform = 'translateY(0)';
+          siteHeader.style.opacity  = '1';
+          siteHeader.style.pointerEvents = '';
+          headerVisible = true;
+        }
+      }
+
+      lastScrollY = currentY;
+      headerTicking = false;
+    };
+
+    window.addEventListener('scroll', function(){
+      if (!headerTicking) {
+        requestAnimationFrame(updateHeader);
+        headerTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ---------------- Scroll to top button ---------------- */
+  var scrollTopBtn = document.getElementById('scrollTopBtn');
+  var heroForBtn   = document.getElementById('top');
+
+  if (scrollTopBtn && heroForBtn) {
+    var btnTicking = false;
+
+    var updateScrollBtn = function(){
+      var threshold = heroForBtn.offsetTop + heroForBtn.offsetHeight;
+      var shouldShow = window.scrollY > threshold;
+      var isVisible  = scrollTopBtn.classList.contains('is-visible');
+
+      if (shouldShow && !isVisible) {
+        scrollTopBtn.classList.remove('is-hiding');
+        void scrollTopBtn.offsetWidth; /* reset animation */
+        scrollTopBtn.classList.add('is-visible');
+      } else if (!shouldShow && isVisible) {
+        scrollTopBtn.classList.remove('is-visible');
+        scrollTopBtn.classList.add('is-hiding');
+        setTimeout(function(){ scrollTopBtn.classList.remove('is-hiding'); }, 400);
+      }
+      btnTicking = false;
+    };
+
+    window.addEventListener('scroll', function(){
+      if (!btnTicking) {
+        requestAnimationFrame(updateScrollBtn);
+        btnTicking = true;
+      }
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   /* ---------------- Impact stat counters ---------------- */
