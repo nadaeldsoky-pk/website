@@ -303,6 +303,22 @@
     }, { passive: true });
   }
 
+  /* ---------------- Scroll reveal ---------------- */
+  if ('IntersectionObserver' in window) {
+    var revealEls = document.querySelectorAll('[data-reveal]');
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el    = entry.target;
+        var delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(function() { el.classList.add('revealed'); }, delay);
+        revealObs.unobserve(el);
+      });
+    }, { threshold: 0.13, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function(el) { revealObs.observe(el); });
+  }
+
   /* ---------------- Scroll to top button ---------------- */
   var scrollTopBtn = document.getElementById('scrollTopBtn');
   var heroForBtn   = document.getElementById('top');
