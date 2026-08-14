@@ -122,3 +122,101 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(68,34,90,.12);
 }
+
+/* ===== Scroll-to-top button ===== */
+#scrollTopBtn{
+  position:fixed; bottom:2rem; right:2rem; z-index:998;
+  display:flex; align-items:center; justify-content:center;
+  width:56px; height:56px; border-radius:50%;
+  background:#fff; border:1.5px solid #e9dff0;
+  box-shadow:0 8px 24px rgba(68,34,90,.18),0 2px 8px rgba(0,0,0,.08);
+  cursor:pointer; opacity:0; pointer-events:none;
+}
+#scrollTopBtn.is-visible{ opacity:1; pointer-events:auto; animation:scrollBtnSmokeIn .8s cubic-bezier(.2,.8,.3,1) both; }
+#scrollTopBtn.is-hiding{ animation:scrollBtnSmokeOut .38s ease-in forwards; pointer-events:none; }
+@keyframes scrollBtnSmokeIn{
+  0%  { opacity:0; transform:translateY(32px) scale(.7); filter:blur(14px); }
+  30% { opacity:.55; transform:translateY(10px) scale(.93); filter:blur(6px); }
+  62% { opacity:.9; transform:translateY(-7px) scale(1.05); filter:blur(1px); }
+  80% { transform:translateY(-2px) scale(1.01); }
+  100%{ opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
+}
+@keyframes scrollBtnSmokeOut{
+  0%  { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
+  100%{ opacity:0; transform:translateY(14px) scale(.82); filter:blur(6px); }
+}
+#scrollTopBtn::before,#scrollTopBtn::after{
+  content:''; position:absolute; bottom:calc(100% + 4px); left:50%;
+  width:10px; height:10px; border-radius:50%;
+  background:rgba(110,56,148,.18); pointer-events:none; opacity:0;
+}
+#scrollTopBtn.is-visible::before{ animation:smokeWispL .95s ease-out .04s forwards; }
+#scrollTopBtn.is-visible::after { animation:smokeWispR .95s ease-out .18s forwards; }
+@keyframes smokeWispL{
+  0%  { opacity:.55; transform:translateX(-50%) translateY(0) scale(1); filter:blur(1px); }
+  100%{ opacity:0; transform:translateX(-130%) translateY(-30px) scale(3.2); filter:blur(6px); }
+}
+@keyframes smokeWispR{
+  0%  { opacity:.45; transform:translateX(-50%) translateY(0) scale(1); filter:blur(1px); }
+  100%{ opacity:0; transform:translateX(30%) translateY(-24px) scale(2.8); filter:blur(6px); }
+}
+@media(hover:hover){
+  #scrollTopBtn:hover{
+    background:#f7f6fa;
+    box-shadow:0 12px 32px rgba(68,34,90,.26),0 4px 12px rgba(0,0,0,.1);
+    transform:translateY(-3px) scale(1.07);
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+  }
+}
+#scrollTopBtn:active{ transform:scale(.94) !important; }
+
+/* ===== Page Loader ===== */
+#pageLoader{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(120% 90% at 50% 0%,#5b2f7a 0%,#3a1a52 38%,#1c0e2b 75%,#120918 100%);
+  transition:opacity .5s ease;
+}
+#loaderInner{ position:relative; display:flex; align-items:center; justify-content:center; width:130px; height:130px; }
+#loaderRing{
+  position:absolute; inset:-4px; border-radius:50%;
+  border:2px solid rgba(255,255,255,.07);
+  border-top-color:rgba(200,175,230,.9);
+  border-right-color:rgba(110,56,148,.55);
+  animation:ldrSpin 1s linear infinite; transition:opacity .3s ease;
+}
+#loaderRing2{
+  position:absolute; inset:10px; border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.04);
+  border-bottom-color:rgba(180,150,220,.5);
+  border-left-color:rgba(68,34,90,.4);
+  animation:ldrSpin 1.7s linear infinite reverse;
+}
+#loaderMark{ position:relative; z-index:1; will-change:transform; }
+#loaderMark.ldr-breath{ animation:ldrBreath 2s ease-in-out infinite; }
+#loaderMark svg{ display:block; filter:drop-shadow(0 0 18px rgba(180,150,220,.6)); }
+@keyframes ldrSpin{ to{ transform:rotate(360deg); } }
+@keyframes ldrBreath{
+  0%,100%{ transform:scale(1); filter:drop-shadow(0 0 18px rgba(180,150,220,.6)); }
+  50%    { transform:scale(1.1); filter:drop-shadow(0 0 28px rgba(200,160,240,.85)); }
+}
+@keyframes ldrIntro{
+  from{ opacity:0; transform:scale(.5) translateY(20px); }
+  to  { opacity:1; transform:scale(1) translateY(0); }
+}
+
+/* ===== Scroll Reveal ===== */
+[data-reveal]{
+  will-change:transform,opacity;
+  transition:opacity .72s cubic-bezier(.4,0,.2,1),transform .72s cubic-bezier(.4,0,.2,1);
+}
+[data-reveal="up"]   { opacity:0; transform:translateY(48px); }
+[data-reveal="up-sm"]{ opacity:0; transform:translateY(22px); }
+[data-reveal="zoom"] { opacity:0; transform:scale(.91) translateY(28px); }
+[data-reveal="left"] { opacity:0; transform:translateX(-48px); }
+[data-reveal="right"]{ opacity:0; transform:translateX(48px); }
+[data-reveal="fade"] { opacity:0; transform:none; }
+[data-reveal].revealed{ opacity:1; transform:none !important; }
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{ opacity:1 !important; transform:none !important; transition:none !important; }
+}

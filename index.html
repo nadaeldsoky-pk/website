@@ -71,17 +71,17 @@
 <!-- ===================== HEADER ===================== -->
 <header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
   <div class="mx-auto w-[90%] ">
-    <div class="flex h-[75px] items-center justify-between gap-6">
+    <div class="flex h-[60px] items-center justify-between gap-6">
 
       <!-- Logo -->
       <a href="#top" class="flex items-center shrink-0" aria-label="Advanced Controls home">
-        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[44.83px] w-auto" />
+        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[33.83px] my-2 w-auto" />
       </a>
 
       <!-- Desktop nav -->
       <nav aria-label="Primary" class="hidden lg:flex">
         <div class="relative">
-          <ul id="navList" class="flex items-center gap-8 font-nav text-xl">
+          <ul id="navList" class="flex items-center gap-8 font-nav text-sm">
             <li><a href="#top" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Home</a></li>
             <li><a href="#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a href="#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
@@ -123,21 +123,21 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg relative min-h-[calc(100vh-95px)] flex flex-col" aria-labelledby="hero-heading">
+  <section id="top" class="hero-bg relative min-h-screen flex flex-col" aria-labelledby="hero-heading">
     <div class="relative z-10 mx-auto flex flex-1 flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
-      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(2.2rem,6.2vw,5rem)]">
+      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.5rem,4vw,3rem)]">
         We're leaders in<br class="hidden sm:block" /> cybersecurity
       </h1>
       <p class="mx-auto mt-8 max-w-3xl text-[clamp(1rem,2vw,1rem)] font-medium leading-8 text-surface">
         Advanced GRC and Threat Intelligence platforms (CyberMode, GovernanceMode & IntelMode) designed specifically to meet Saudi regulatory standards (NCA, CST, NDMO, and NORA v2).
       </p>
 
-      <div class="mt-16 flex flex-wrap items-center justify-center gap-[28.24px]">
-        <a href="#contact" class="inline-flex items-center justify-center gap-[7.06px] rounded-[18.82px] bg-white px-[28.24px] py-[18.82px] font-body font-medium text-[18.82px] leading-5.75 capitalize text-primary hover:bg-surface transition-colors">
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-[14px] bg-white px-5 py-3 font-body font-medium text-sm capitalize text-primary hover:bg-surface transition-colors">
           Book A Demo
         </a>
-        <a href="#video" class="inline-flex items-center gap-[7.06px] rounded-[18.82px] border border-white bg-white/20 px-[28.24px] py-[18.82px] font-body font-medium text-[18.82px] leading-5.75 capitalize text-white hover:bg-white/30 transition-colors">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <a href="#video" class="inline-flex items-center gap-2 rounded-[14px] border border-white bg-white/20 px-5 py-3 font-body font-medium text-sm capitalize text-white hover:bg-white/30 transition-colors">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="12" r="9.5" stroke="white" stroke-width="1.4"/>
             <path d="M10 8.5v7l6-3.5-6-3.5z" fill="white"/>
           </svg>
@@ -148,7 +148,7 @@
 
     <!-- Client logo marquee --> 
     <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
-    <div class="absolute inset-x-0 bottom-0 z-10  py-8" role="region" aria-label="Trusted by">
+    <div class="absolute inset-x-0 bottom-20 sm:bottom-28 z-10 py-4" role="region" aria-label="Trusted by">
       <div class="overflow-hidden" aria-hidden="true">
         <div class="logo-marquee opacity-90">
           <!-- set 1 -->
@@ -175,11 +175,13 @@
   </section>
 
   <!-- ===================== PRODUCT SUITE ===================== -->
-  <section id="products" class="relative bg-surface2 rounded-t-[3rem] sm:rounded-t-[5rem] px-5 sm:px-10 pt-16 sm:pt-24 pb-0 -mt-1" aria-labelledby="products-heading">
+  <section id="products" class="relative z-10 bg-surface2 rounded-t-[3rem] sm:rounded-t-[5rem] px-5 sm:px-10 pt-16 sm:pt-24 pb-0 -mt-20 sm:-mt-28" aria-labelledby="products-heading">
     <div class="mx-auto max-w-5xl text-center">
       <h2 id="products-heading" class="font-display font-bold text-primary text-[clamp(1.75rem,4vw,3rem)]" data-reveal="up">Product Suite</h2>
     </div>
 
+
+    
     <!-- Tabs -->
     <div class="mt-8 sm:mt-10" role="tablist" aria-label="Product suite modes" data-reveal="up" data-delay="130">
       <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
