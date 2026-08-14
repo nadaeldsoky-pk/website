@@ -264,13 +264,13 @@
 
   /* ---------------- Product Suite carousel ---------------- */
   var icons = {
-    cyber: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5.25 3.5 9.5 8 11 4.5-1.5 8-5.75 8-11V5l-8-3z" stroke="#44225A" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#44225A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    governance: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10h16M6 10v8h12v-8M9 18v-4M15 18v-4" stroke="#093BAA" stroke-width="1.6" stroke-linecap="round"/><path d="M12 3 3 8h18l-9-5z" stroke="#093BAA" stroke-width="1.6" stroke-linejoin="round"/></svg>',
-    intel: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="#186166" stroke-width="1.6"/><path d="M20 20l-4.35-4.35" stroke="#186166" stroke-width="1.6" stroke-linecap="round"/></svg>',
-    risk: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20V13" stroke="#153D56" stroke-width="1.6" stroke-linecap="round"/></svg>',
-    audit: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke="#1CA2A5" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1CA2A5" stroke-width="1.6" stroke-linecap="round"/></svg>',
-    vendor: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9l2-5h14l2 5" stroke="#6E3894" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 9h16v10H4z" stroke="#6E3894" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13h6" stroke="#6E3894" stroke-width="1.6" stroke-linecap="round"/></svg>',
-    incident: '<svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 2 21h20L12 3z" stroke="#44225A" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v4" stroke="#44225A" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="#44225A"/></svg>'
+    cyber:      '<img src="assets/icons/cyber.svg"      width="70" height="70" alt="CyberMode"      style="display:block" />',
+    governance: '<img src="assets/icons/governance.svg" width="70" height="70" alt="GovernanceMode" style="display:block" />',
+    intel:      '<img src="assets/icons/intel.svg"      width="70" height="70" alt="IntelMode"      style="display:block" />',
+    risk:       '<img src="assets/icons/risk.svg"       width="70" height="70" alt="RiskMode"       style="display:block" />',
+    audit:      '<img src="assets/icons/audit.svg"      width="70" height="70" alt="AuditMode"      style="display:block" />',
+    vendor:     '<img src="assets/icons/vendor.svg"     width="70" height="70" alt="VendorMode"     style="display:block" />',
+    incident:   '<img src="assets/icons/incident.svg"   width="70" height="70" alt="IncidentMode"   style="display:block" />'
   };
 
   var products = [

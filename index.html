@@ -175,42 +175,39 @@
   </section>
 
   <!-- ===================== PRODUCT SUITE ===================== -->
-  <section id="products" class="relative z-10 bg-surface2 rounded-t-[3rem] sm:rounded-t-[5rem] px-5 sm:px-10 pt-16 sm:pt-24 pb-0 -mt-20 sm:-mt-28" aria-labelledby="products-heading">
-    <div class="mx-auto max-w-5xl text-center">
-      <h2 id="products-heading" class="font-display font-bold text-primary text-[clamp(1.75rem,4vw,3rem)]" data-reveal="up">Product Suite</h2>
+  <section id="products" class="relative z-10 bg-surface2 rounded-t-[3rem] sm:rounded-t-[5rem] -mt-28 pt-8 pb-0 min-h-screen flex flex-col" aria-labelledby="products-heading">
+    <div class="mx-auto w-full max-w-5xl text-center">
+      <h2 id="products-heading" class="font-display font-bold text-primary text-[clamp(1.4rem,3vw,2rem)]" data-reveal="up">Product Suite</h2>
     </div>
 
-
-    
     <!-- Tabs -->
-    <div class="mt-8 sm:mt-10" role="tablist" aria-label="Product suite modes" data-reveal="up" data-delay="130">
+    <div class="mt-4" role="tablist" aria-label="Product suite modes" data-reveal="up" data-delay="130">
       <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
-        <!-- JS will populate buttons here -->
         <div id="tabList" class="flex flex-wrap items-center justify-center gap-3 sm:gap-5"></div>
       </div>
     </div>
 
     <!-- Panel -->
-    <div class="relative mt-12 overflow-hidden" data-reveal="zoom" data-delay="200">
-      <div class="product-orb relative mx-auto flex max-w-3xl flex-col items-center rounded-t-[999px] px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 text-center">
+    <div class="relative mt-4 flex-1 min-h-0 flex items-end overflow-hidden" data-reveal="zoom" data-delay="200">
+      <div class="product-orb w-full aspect-2/1 rounded-t-[999px] flex flex-col items-center justify-center text-center px-6 pb-6 gap-3">
 
-        <div id="panelIcon" class="fade-enter flex h-28 w-28 items-center justify-center rounded-2xl border border-borderc2 bg-white shadow-[0_8px_16px_rgba(0,0,0,.15)]" aria-hidden="true"></div>
+        <div id="panelIcon" class="fade-enter flex h-20 w-20 items-center justify-center rounded-2xl border border-borderc2 bg-white shadow-[0_8px_16px_rgba(0,0,0,.15)]" aria-hidden="true"></div>
 
-        <h3 id="panelTitle" class="fade-enter mt-8 font-display font-bold uppercase text-white text-[clamp(1.6rem,4vw,3rem)]"></h3>
-        <p id="panelDesc" class="fade-enter mt-3 max-w-xl text-[clamp(1rem,1.6vw,1.5rem)] font-medium text-[#F7F6FA]"></p>
+        <h3 id="panelTitle" class="fade-enter font-display font-bold uppercase text-white text-[clamp(1.2rem,2.5vw,1.8rem)]"></h3>
+        <p id="panelDesc" class="fade-enter max-w-xl text-sm font-medium text-surface"></p>
 
-        <a id="panelLink" href="#contact" class="fade-enter mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-nav text-sm font-medium text-primary hover:bg-surface transition-colors">
+        <a id="panelLink" href="#contact" class="fade-enter inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 font-nav text-sm font-medium text-primary hover:bg-surface transition-colors">
           Learn more
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#44225A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
 
         <!-- Pager -->
-        <div class="mt-10 flex items-center gap-8 sm:gap-10">
+        <div class="flex items-center gap-8 sm:gap-10">
           <button id="prevBtn" type="button" class="text-white/90 hover:text-white transition-colors" aria-label="Previous product">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4 7 12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 4 12 12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg>
           </button>
 
-          <div class="flex flex-col items-center gap-3">
+          <div class="flex flex-col items-center gap-2">
             <span id="pagerLabel" class="font-nav font-semibold text-white text-lg" aria-live="polite"></span>
             <div id="dots" class="flex items-center gap-2" role="tablist" aria-label="Select product"></div>
           </div>
