@@ -264,13 +264,13 @@
 
   /* ---------------- Product Suite carousel ---------------- */
   var icons = {
-    cyber:      '<img src="assets/icons/cyber.svg"      width="70" height="70" alt="CyberMode"      style="display:block" />',
-    governance: '<img src="assets/icons/governance.svg" width="70" height="70" alt="GovernanceMode" style="display:block" />',
-    intel:      '<img src="assets/icons/intel.svg"      width="70" height="70" alt="IntelMode"      style="display:block" />',
-    risk:       '<img src="assets/icons/risk.svg"       width="70" height="70" alt="RiskMode"       style="display:block" />',
-    audit:      '<img src="assets/icons/audit.svg"      width="70" height="70" alt="AuditMode"      style="display:block" />',
-    vendor:     '<img src="assets/icons/vendor.svg"     width="70" height="70" alt="VendorMode"     style="display:block" />',
-    incident:   '<img src="assets/icons/incident.svg"   width="70" height="70" alt="IncidentMode"   style="display:block" />'
+    cyber:      '<img src="assets/Container.png"        width="70" height="70" alt="CyberMode"      style="display:block;object-fit:contain;" />',
+    governance: '<img src="assets/Vector.png"           width="70" height="70" alt="GovernanceMode" style="display:block;object-fit:contain;" />',
+    intel:      '<img src="assets/intelmode.png"      width="70" height="70" alt="IntelMode"      style="display:block" />',
+    risk:       '<img src="assets/datamode.png"       width="70" height="70" alt="RiskMode"       style="display:block" />',
+    audit:      '<img src="assets/itmode.png"      width="70" height="70" alt="AuditMode"      style="display:block" />',
+    vendor:     '<img src="assets/gavermode.png"     width="70" height="70" alt="VendorMode"     style="display:block" />',
+    incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="IncidentMode"   style="display:block" />'
   };
 
   var products = [
@@ -298,7 +298,7 @@
     products.forEach(function(p, i){
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'tab-icon flex h-[70px] w-[70px] sm:h-[90px] sm:w-[90px] items-center justify-center rounded-2xl border border-borderc2 bg-white shadow-[0_0_20px_rgba(62,33,118,0.15)] transition-shadow';
+      btn.className = 'tab-icon flex h-[52px] w-[52px] sm:h-[68px] sm:w-[68px] items-center justify-center rounded-2xl border border-borderc2 bg-white shadow-[0_0_20px_rgba(62,33,118,0.15)] transition-shadow [&>img]:h-[28px] [&>img]:w-[28px] sm:[&>img]:h-[38px] sm:[&>img]:w-[38px]';
       btn.setAttribute('role', 'tab');
       btn.setAttribute('aria-selected', i === current ? 'true' : 'false');
       btn.setAttribute('aria-label', p.name);
