@@ -189,11 +189,13 @@
 
     <!-- Panel -->
     <div class="relative mt-4 flex-1 min-h-0 flex items-end justify-center overflow-hidden" data-reveal="zoom" data-delay="200">
-      <div class="product-orb mx-auto w-3/4 h-105 sm:h-125 lg:h-145 rounded-full translate-y-10 sm:translate-y-14 lg:translate-y-16 flex flex-col items-center justify-center text-center px-6 pb-6 gap-4">
+      <div class="product-orb relative mx-auto w-full h-105 sm:h-125 lg:h-145 translate-y-10 sm:translate-y-14 lg:translate-y-16 flex flex-col items-center justify-center text-center px-6 pb-6 gap-4">
 
-        <div id="panelIcon" class="fade-enter flex h-[110px] w-[110px] sm:h-[150px] sm:w-[150px] items-center justify-center rounded-[28px] border border-borderc2 bg-white shadow-[0_8px_16px_rgba(0,0,0,.15)] -mt-16 sm:-mt-20 [&>img]:h-[64px] [&>img]:w-[64px] sm:[&>img]:h-[86px] sm:[&>img]:w-[86px]" aria-hidden="true"></div>
+        <img src="assets/background-product.png" alt="" aria-hidden="true" class="absolute inset-0 -z-10 h-full w-full object-fill" />
 
-        <h3 id="panelTitle" class="fade-enter font-display font-bold uppercase text-white text-[clamp(1.75rem,4vw,2.75rem)] tracking-wide"></h3>
+        <div id="panelIcon" class="fade-enter absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-10 flex h-17.5 w-17.5 sm:h-22.5 sm:w-22.5 items-center justify-center rounded-[20px] border border-borderc2 bg-white shadow-[0_8px_16px_rgba(0,0,0,.15)] [&>img]:h-10 [&>img]:w-10 sm:[&>img]:h-13 sm:[&>img]:w-13" aria-hidden="true"></div>
+
+        <h3 id="panelTitle" class="fade-enter mt-6 sm:mt-8 font-display font-bold uppercase text-white text-[clamp(1.75rem,4vw,2.75rem)] tracking-wide"></h3>
         <p id="panelDesc" class="fade-enter max-w-xl text-sm sm:text-base font-medium text-surface"></p>
 
         <a id="panelLink" href="#contact" class="fade-enter inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 font-nav text-sm font-medium text-primary hover:bg-surface transition-colors">
