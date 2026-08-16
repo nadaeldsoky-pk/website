@@ -489,8 +489,8 @@
   <section class="modules-section" data-reveal="up">
     <div class="modules-wrap">
       <div class="modules-header">
-        <h2 id="modulesTitle"    class="modules-title"></h2>
-        <p  id="modulesSubtitle" class="modules-subtitle"></p>
+        <h2 id="modulesTitle"    class="modules-title" data-reveal="left"></h2>
+        <p  id="modulesSubtitle" class="modules-subtitle" data-reveal="right" data-delay="90"></p>
       </div>
       <div id="modulesList" class="modules-list"></div>
     </div>
@@ -1079,10 +1079,11 @@ var ICONS = {
     mData.modules.forEach(function(m, i){
       var row = document.createElement('div');
       row.className = 'module-row';
+      var delay = String(180 + i * 90);
       var num = String(i + 1).length < 2 ? '0' + (i + 1) : '' + (i + 1);
       var tagsHtml = m.tags.map(function(t){ return '<span class="module-tag">' + t + '</span>'; }).join('');
       row.innerHTML =
-        '<div class="module-left">' +
+        '<div class="module-left" data-reveal="left" data-delay="' + delay + '">' +
           '<span class="module-num">' + num + '</span>' +
           '<div class="module-icon-wrap">' + (MICONS[m.icon] || '') + '</div>' +
           '<div class="module-text">' +
@@ -1090,7 +1091,7 @@ var ICONS = {
             '<p class="module-desc">'  + m.desc + '</p>' +
           '</div>' +
         '</div>' +
-        '<div class="module-tags">' + tagsHtml + '</div>';
+        '<div class="module-tags" data-reveal="right" data-delay="' + delay + '">' + tagsHtml + '</div>';
       list.appendChild(row);
     });
   }
