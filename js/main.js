@@ -291,6 +291,7 @@
   var panelDesc  = document.getElementById('panelDesc');
   var panelLink  = document.getElementById('panelLink');
   var pagerLabel = document.getElementById('pagerLabel');
+  var panelWatermarkText = document.getElementById('panelWatermarkText');
 
   function pad(n){ return n < 10 ? '0' + n : '' + n; }
 
@@ -302,6 +303,8 @@
       btn.setAttribute('role', 'tab');
       btn.setAttribute('aria-selected', i === current ? 'true' : 'false');
       btn.setAttribute('aria-label', p.name);
+      btn.setAttribute('data-reveal', 'up-sm');
+      btn.setAttribute('data-delay', 130 + i * 60);
       btn.innerHTML = icons[p.key];
       btn.addEventListener('click', function(){ goTo(i); });
       tabList.appendChild(btn);
@@ -321,6 +324,12 @@
     panelTitle.textContent = p.name;
     panelDesc.textContent  = p.desc;
     pagerLabel.textContent = pad(current + 1) + ' / ' + pad(products.length);
+    if (panelWatermarkText) {
+      panelWatermarkText.textContent = p.name;
+      panelWatermarkText.style.animation = 'none';
+      void panelWatermarkText.offsetWidth; /* restart shine + pop animation */
+      panelWatermarkText.style.animation = '';
+    }
     if (panelLink) panelLink.href = 'product.html?id=' + p.key;
 
     Array.prototype.forEach.call(tabList.children, function(btn, i){

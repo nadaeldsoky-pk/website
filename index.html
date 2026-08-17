@@ -46,7 +46,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/styles.css?v=2" />
 </head>
 <body class="bg-white text-primary">
 
@@ -177,7 +177,7 @@
   <!-- ===================== PRODUCT SUITE ===================== -->
   <section id="products" class="relative z-10 bg-surface2 rounded-t-[3rem] sm:rounded-t-[5rem] -mt-28 pt-8 pb-0 min-h-screen flex flex-col" aria-labelledby="products-heading">
     <div class="mx-auto w-full max-w-5xl text-center">
-      <h2 id="products-heading" class="font-display font-bold text-primary text-[clamp(1.4rem,3vw,2rem)]" data-reveal="up">Product Suite</h2>
+      <h2 id="products-heading" class="font-display font-bold text-primary text-[clamp(1.5rem,4vw,3rem)]" data-reveal="up">Product Suite</h2>
     </div>
 
     <!-- Tabs -->
@@ -191,11 +191,13 @@
     <div class="relative mt-4 flex-1 min-h-0 flex items-end justify-center overflow-hidden" data-reveal="zoom" data-delay="200">
       <div class="product-orb relative mx-auto w-full h-105 sm:h-125 lg:h-145 translate-y-10 sm:translate-y-14 lg:translate-y-16 flex flex-col items-center justify-center text-center px-6 pb-6 gap-4">
 
+        <div id="panelWatermark" class="product-watermark" aria-hidden="true"><span id="panelWatermarkText"></span></div>
+
         <img src="assets/background-product.png" alt="" aria-hidden="true" class="absolute inset-0 -z-10 h-full w-full object-fill" />
 
         <div id="panelIcon" class="fade-enter absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 z-10 flex h-17.5 w-17.5 sm:h-22.5 sm:w-22.5 items-center justify-center rounded-[20px] border border-borderc2 bg-white shadow-[0_8px_16px_rgba(0,0,0,.15)] [&>img]:h-10 [&>img]:w-10 sm:[&>img]:h-13 sm:[&>img]:w-13" aria-hidden="true"></div>
 
-        <h3 id="panelTitle" class="fade-enter mt-6 sm:mt-8 font-display font-bold uppercase text-white text-[clamp(1.75rem,4vw,2.75rem)] tracking-wide"></h3>
+        <h3 id="panelTitle" class="fade-enter -mt-6 sm:-mt-4 font-display font-bold uppercase text-white text-[clamp(1.75rem,4vw,2.75rem)] tracking-wide"></h3>
         <p id="panelDesc" class="fade-enter max-w-xl text-sm sm:text-base font-medium text-surface"></p>
 
         <a id="panelLink" href="#contact" class="fade-enter inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 font-nav text-sm font-medium text-primary hover:bg-surface transition-colors">
@@ -210,7 +212,7 @@
           </button>
 
           <div class="flex flex-col items-center gap-2">
-            <span id="pagerLabel" class="font-nav font-semibold text-white text-lg" aria-live="polite"></span>
+            <span id="pagerLabel" class="font-nav font-semibold text-white text-[clamp(1rem,1.8vw,1.375rem)]" aria-live="polite"></span>
             <div id="dots" class="flex items-center gap-2" role="tablist" aria-label="Select product"></div>
           </div>
 
