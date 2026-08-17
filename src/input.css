@@ -24,7 +24,7 @@
   --primary:#44225A;
   --secondary:#6E3894;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: 'Inter', sans-serif; }
 
 /* Skip link */
