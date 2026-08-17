@@ -111,7 +111,7 @@
     <nav aria-label="Mobile primary">
       <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
         <li><a href="#top" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface">Home</a></li>
-        <li><a href="#services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a href="#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
         <li><a href="#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
         <li><a href="#contact" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact</a></li>
         <li><a href="#about" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
@@ -123,9 +123,9 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg relative min-h-[120vh] flex flex-col" aria-labelledby="hero-heading">
-    <div class="relative z-10 mx-auto flex flex-1 flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
-      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.5rem,4vw,3rem)]">
+  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+    <div class="relative z-10 mx-auto flex h-screen w-full flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
+      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.75rem,5vw,3.75rem)]">
         We're leaders in<br class="hidden sm:block" /> cybersecurity
       </h1>
       <p class="mx-auto mt-8 max-w-3xl text-[clamp(1rem,2vw,1rem)] font-medium leading-8 text-surface">
@@ -144,11 +144,10 @@
           Watch Video
         </a>
       </div>
-    </div>
 
-    <!-- Client logo marquee --> 
-    <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
-    <div class="absolute inset-x-0 bottom-[28vh] z-10 py-4" role="region" aria-label="Trusted by">
+      <!-- Client logo marquee -->
+      <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
+      <div class="absolute left-1/2 w-screen -translate-x-1/2 bottom-10 sm:bottom-14 z-10 py-4" role="region" aria-label="Trusted by">
       <div class="overflow-hidden" aria-hidden="true">
         <div class="logo-marquee opacity-90">
           <!-- set 1 -->
@@ -172,6 +171,7 @@
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- ===================== PRODUCT SUITE ===================== -->
