@@ -46,7 +46,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/styles.css?v=2" />
+<link rel="stylesheet" href="css/styles.css?v=3" />
 </head>
 <body class="bg-white text-primary">
 
@@ -118,6 +118,11 @@
 <main id="main">
   <!-- ===================== HERO ===================== -->
   <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+    <video class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 -z-10 bg-black/45" aria-hidden="true"></div>
+
     <div class="relative z-10 mx-auto flex h-screen w-full flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
       <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.75rem,5vw,3.75rem)]">
         We're leaders in<br class="hidden sm:block" /> cybersecurity
@@ -521,6 +526,6 @@
   </svg>
 </button>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>
