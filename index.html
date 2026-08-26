@@ -28,10 +28,11 @@
 <meta name="theme-color" content="#44225A" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
 
-<!-- Fonts -->
+<!-- Fonts (loaded non-blocking so a slow/unreachable connection can't stall page rendering or script execution) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -59,6 +60,13 @@
     </div>
   </div>
 </div>
+<script>
+  /* Failsafe: force-remove the loader even if main.js is delayed or fails to run for any reason */
+  setTimeout(function () {
+    var l = document.getElementById('pageLoader');
+    if (l && l.parentNode) l.parentNode.removeChild(l);
+  }, 4000);
+</script>
 
 <a href="#main" class="skip-link">Skip to main content</a>
 

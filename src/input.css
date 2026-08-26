@@ -45,11 +45,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 /* Hero gradient — dark purple field with a diagonal light beam, echoing the source design */
 .hero-bg{
   position:relative;
-  background:
+  /* background:
     radial-gradient(60% 55% at 50% 32%, rgba(255,255,255,.16) 0%, rgba(167,139,212,0) 60%),
     linear-gradient(115deg, transparent 38%, rgba(214,180,255,.55) 48%, rgba(232,210,255,.85) 50%, rgba(214,180,255,.55) 52%, transparent 62%),
     radial-gradient(120% 90% at 50% 0%, #5b2f7a 0%, #3a1a52 38%, #1c0e2b 75%, #120918 100%);
-  overflow:hidden;
+   */
+   overflow:hidden;
 }
 .hero-bg::before{
   content:"";
