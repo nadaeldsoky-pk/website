@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>About Us | Advanced Controls IT Co.</title>
+<meta name="description" content="Advanced Controls IT Co. is a Saudi-led cybersecurity and IT company delivering national-grade products, consulting, and compliance since 2022." />
+<meta name="author" content="Advanced Controls" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#44225A" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
+
+<link rel="stylesheet" href="css/styles.css?v=5" />
+</head>
+<body class="bg-white text-primary">
+
+<!-- ===================== PAGE LOADER ===================== -->
+<div id="pageLoader" aria-hidden="true">
+  <div id="loaderInner">
+    <div id="loaderRing"></div>
+    <div id="loaderMark">
+      <img src="assets/loder.gif" alt="" />
+    </div>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var l = document.getElementById('pageLoader');
+    if (l && l.parentNode) l.parentNode.removeChild(l);
+  }, 4000);
+</script>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
+  <div class="mx-auto w-[90%] ">
+    <div class="flex h-[60px] items-center justify-between gap-6">
+
+      <a href="index.html" class="flex items-center shrink-0" aria-label="Advanced Controls home">
+        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[33.83px] my-2 w-auto" />
+      </a>
+
+      <nav aria-label="Primary" class="hidden lg:flex">
+        <div class="relative">
+          <ul id="navList" class="flex items-center gap-[25px] font-nav">
+            <li><a href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
+            <li><a href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a href="index.html#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
+            <li><a href="#contact" class="nav-link text-muted hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="about.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">About us</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a id="headerCta" href="#contact" class="hidden lg:inline-flex w-[111.56px] h-8.75 items-center justify-center rounded-[7.29px] bg-secondary font-nav font-semibold text-xs text-white shadow-[0_4.375px_8.75px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
+          Get Started
+        </a>
+
+        <button id="menuBtn" type="button" class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 text-primary" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg id="iconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg id="iconClose" width="26" height="26" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-borderc bg-white">
+    <nav aria-label="Mobile primary">
+      <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
+        <li><a href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
+        <li><a href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a href="index.html#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
+        <li><a href="#contact" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact</a></li>
+        <li><a href="about.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface">About us</a></li>
+        <li class="pt-2"><a href="#contact" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ===================== HERO ===================== -->
+  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+    <video class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 -z-10 bg-black/45" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto flex h-screen w-full flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
+      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.75rem,5vw,3.75rem)]">
+        We're leaders in<br class="hidden sm:block" /> cybersecurity
+      </h1>
+      <p class="mx-auto mt-8 max-w-3xl text-[clamp(1rem,2vw,1.5rem)] font-medium leading-8 text-surface">
+        Advanced Controls IT Co. — a Saudi-led cybersecurity and IT company delivering national-grade products, consulting, and compliance since 2022.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-[14px] bg-white px-5 py-3 font-body font-medium text-sm capitalize text-primary hover:bg-surface transition-colors">
+          Book A Demo
+        </a>
+        <a href="index.html#top" class="inline-flex items-center gap-2 rounded-[14px] border border-white bg-white/20 px-5 py-3 font-body font-medium text-sm capitalize text-white hover:bg-white/30 transition-colors">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5" stroke="white" stroke-width="1.4"/>
+            <path d="M10 8.5v7l6-3.5-6-3.5z" fill="white"/>
+          </svg>
+          Watch Video
+        </a>
+      </div>
+
+      <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
+      <div class="absolute left-1/2 w-screen -translate-x-1/2 bottom-10 sm:bottom-14 z-10 py-4" role="region" aria-label="Trusted by">
+      <div class="overflow-hidden" aria-hidden="true">
+        <div class="logo-marquee opacity-90">
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-black text-2xl italic">SAP</span>
+          <span class="text-white font-serif text-2xl italic">P&amp;G</span>
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-black text-2xl italic">SAP</span>
+          <span class="text-white font-serif text-2xl italic">P&amp;G</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- ===================== COMPANY OVERVIEW ===================== -->
+  <section id="overview" class="relative z-10 bg-surface2 rounded-t-[3rem] sm:rounded-t-[5rem] -mt-28 px-6 sm:px-10 lg:px-37.5 pt-20 sm:pt-25 pb-16 sm:pb-20 lg:pb-25" aria-labelledby="overview-heading">
+    <div class="mx-auto max-w-357.5 flex flex-col items-center gap-12">
+      <div class="flex flex-col items-center gap-5 text-center">
+        <h2 id="overview-heading" class="font-display font-semibold text-[#1F1728] text-[clamp(1.75rem,4vw,3rem)] leading-none" data-reveal="up">Company Overview</h2>
+        <p class="w-full max-w-4xl text-base sm:text-lg lg:text-xl font-medium leading-6 text-muted capitalize" data-reveal="up" data-delay="130">
+          Advanced Controls IT Co., established in 2022, is a Saudi Cybersecurity and IT company distinguished by its innovative vision and national expertise. We deliver enterprise-grade services engineered to protect the Kingdom's critical infrastructure.
+        </p>
+      </div>
+
+      <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="flex flex-col items-start gap-4 rounded-2xl border border-borderc2 bg-white p-8 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up">
+          <div class="flex w-full items-start justify-between">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">01</span>
+            <span class="flex h-15 w-15 items-center justify-center rounded-[12.86px] bg-[#EEEAF4]" aria-hidden="true">
+              <svg width="26" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6.5v5.2c0 4.4 3.1 8.1 7 9.3 3.9-1.2 7-4.9 7-9.3V6.5L12 3z" stroke="#6E3894" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-xl leading-6 capitalize text-[#1F1728]">Developing advanced national cybersecurity and technology products and solutions.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-2xl border border-borderc2 bg-white p-8 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up" data-delay="80">
+          <div class="flex w-full items-start justify-between">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">02</span>
+            <span class="flex h-15 w-15 items-center justify-center rounded-[12.86px] bg-[#EEEAF4]" aria-hidden="true">
+              <svg width="26" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 14v1a4 4 0 0 0 4 4h1M20 14v1a4 4 0 0 1-4 4h-1" stroke="#6E3894" stroke-width="2" stroke-linecap="round"/><path d="M8 14a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4H8z" stroke="#6E3894" stroke-width="2"/><circle cx="9" cy="10" r="1" fill="#6E3894"/><circle cx="15" cy="10" r="1" fill="#6E3894"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-xl leading-6 capitalize text-[#1F1728]">Delivering high-level consulting services in cybersecurity and IT.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-2xl border border-borderc2 bg-white p-8 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up" data-delay="40">
+          <div class="flex w-full items-start justify-between">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">03</span>
+            <span class="flex h-15 w-15 items-center justify-center rounded-[12.86px] bg-[#EEEAF4]" aria-hidden="true">
+              <svg width="26" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 4h8v3H8V4z" stroke="#6E3894" stroke-width="2"/><path d="M7 7h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" stroke="#6E3894" stroke-width="2"/><path d="M8.5 14.2 10.7 16.4 15.2 11.5" stroke="#6E3894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-xl leading-6 capitalize text-[#1F1728]">Providing compliance and certification services aligned with national and international standards.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-2xl border border-borderc2 bg-white p-8 transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up" data-delay="120">
+          <div class="flex w-full items-start justify-between">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">04</span>
+            <span class="flex h-15 w-15 items-center justify-center rounded-[12.86px] bg-[#EEEAF4]" aria-hidden="true">
+              <svg width="26" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="6" rx="1.5" stroke="#6E3894" stroke-width="2"/><rect x="3" y="14" width="18" height="6" rx="1.5" stroke="#6E3894" stroke-width="2"/><path d="M7 7h.01M7 17h.01" stroke="#6E3894" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-xl leading-6 capitalize text-[#1F1728]">Supplying and integrating cutting-edge infrastructure, network, and security solutions, including penetration testing and configuration reviews.</p>
+        </article>
+      </div>
+
+      <div class="impact-bg flex w-full flex-col items-center gap-5 rounded-[20px] px-6 py-12 sm:px-12" data-reveal="up">
+        <h3 class="font-body font-bold text-2xl leading-8 capitalize text-white">Our Impact</h3>
+        <p class="max-w-[1100px] text-center font-body text-base sm:text-xl leading-6 capitalize text-white">
+          “Guided by a highly skilled Saudi-led team with diverse global experience, we empower organizations to strengthen their digital resilience, achieve regulatory compliance, and drive secure digital transformation in alignment with Saudi Vision 2030.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VISION & MISSION ===================== -->
+  <section class="bg-white px-6 sm:px-10 lg:px-37.5 py-16 sm:py-20 lg:py-25" aria-labelledby="vision-heading">
+    <div class="mx-auto max-w-357.5 flex flex-col items-center gap-12 lg:gap-20">
+      <div class="flex flex-col items-center gap-5 text-center">
+        <h2 id="vision-heading" class="font-display font-semibold text-[#1F1728] text-[clamp(1.75rem,4vw,3rem)] leading-none" data-reveal="up">Our Vision &amp; Mission</h2>
+        <p class="max-w-4xl text-base sm:text-lg lg:text-xl font-medium leading-6 text-muted capitalize" data-reveal="up" data-delay="130">
+          Redefining regional digital security through automation, artificial intelligence, and future-ready cybersecurity solutions designed to empower and protect.
+        </p>
+      </div>
+
+      <div class="grid w-full grid-cols-1 lg:grid-cols-2 gap-8">
+        <article class="flex flex-col items-start gap-7 rounded-[24px] bg-[#210D4A] p-8 sm:p-12 shadow-[0_8px_16px_rgba(0,0,0,.15)]" data-reveal="left">
+          <div class="flex w-full items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-borderc2" aria-hidden="true"></span>
+              <span class="font-body font-bold text-xs leading-3.75 tracking-[1.5px] uppercase text-borderc2">Our Vision</span>
+            </div>
+            <span class="font-['Lora',serif] text-[64px] leading-6 font-bold text-secondary/60 select-none" aria-hidden="true">“</span>
+          </div>
+          <p class="flex-1 font-body text-lg sm:text-xl leading-8 text-white">
+            To be the Kingdom’s leading cybersecurity partner — building national-grade platforms and capabilities that protect critical infrastructure, enable digital sovereignty, and set the regional standard for secure transformation. We see a future where Saudi organizations operate with confidence, powered by homegrown technology, local expertise, and solutions designed for Vision 2030.
+          </p>
+          <p class="w-full border-t border-[#4A2675] pt-3 font-body text-xs leading-3.75 tracking-[0.5px] text-borderc2">Strategic Direction · Vision 2030</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-7 rounded-[24px] border border-borderc bg-white p-8 sm:p-12 shadow-[0_6px_12px_rgba(0,0,0,.15)]" data-reveal="right">
+          <div class="flex w-full items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-secondary" aria-hidden="true"></span>
+              <span class="font-body font-bold text-xs leading-3.75 tracking-[1.5px] uppercase text-secondary">Our Mission</span>
+            </div>
+            <span class="flex h-6 w-6 items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="#6E3894" stroke-width="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="#6E3894" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <p class="flex-1 font-body text-lg sm:text-xl leading-8 text-[#1F1728]">
+            We design, deliver, and operate cybersecurity products, consulting, and compliance services that help organizations meet Saudi regulatory standards, reduce operational risk, and move forward with confidence. From NCA, CST, NDMO and NORA v2 alignment to infrastructure, penetration testing, and in-Kingdom support — we protect what matters, every hour of every day.
+          </p>
+          <p class="w-full border-t border-borderc pt-3 font-body text-xs leading-3.75 tracking-[0.5px] text-muted">How we serve our clients</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR VALUES ===================== -->
+  <section class="bg-surface2 px-6 sm:px-10 lg:px-37.5 py-16 sm:py-20 lg:py-25" aria-labelledby="values-heading">
+    <div class="mx-auto max-w-357.5 flex flex-col items-center gap-12">
+      <div class="flex flex-col items-center gap-5 text-center">
+        <h2 id="values-heading" class="font-display font-semibold text-[#1F1728] text-[clamp(1.75rem,4vw,3rem)] leading-none" data-reveal="up">Our Values</h2>
+        <p class="w-full max-w-4xl text-base sm:text-lg lg:text-xl font-medium leading-6 text-muted capitalize" data-reveal="up" data-delay="130">
+          At Advanced Controls IT Co., our values are the foundation of everything we build and deliver. They guide our innovation, shape our culture, and define how we create impact for our clients and partners:
+        </p>
+      </div>
+
+      <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="flex flex-col items-start gap-4 rounded-[20px] border border-borderc bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up">
+          <div class="flex w-full items-start justify-between gap-4">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">01</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F3E8FF]" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.2 4.2L17 8.5l-3.8 1.3L12 14l-1.2-4.2L7 8.5l3.8-1.3L12 3zM19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14zM5 15l.6 1.8L7.5 17.5 5.6 18.1 5 20l-.6-1.9L2.5 17.5l1.9-.7L5 15z" stroke="#6E3894" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <h3 class="font-body font-bold text-xl leading-6 text-[#1F1728]">Innovation &amp; Creativity</h3>
+          <p class="font-body text-base leading-[19px] capitalize text-muted">We constantly challenge the status quo, developing advanced solutions that integrate automation, AI, and future technologies to stay ahead of evolving threats.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-[20px] border border-borderc bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up" data-delay="80">
+          <div class="flex w-full items-start justify-between gap-4">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">02</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F3E8FF]" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#6E3894" stroke-width="1.8"/><path d="M8 21l1.2-4.5A5 5 0 0 1 12 15a5 5 0 0 1 2.8 1.5L16 21" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 10.5 6 13M15.5 10.5 18 13" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <h3 class="font-body font-bold text-xl leading-6 text-[#1F1728]">Excellence &amp; Quality</h3>
+          <p class="font-body text-base leading-[19px] capitalize text-muted">We commit to delivering world-class products and services that meet the highest standards of security, performance, and reliability.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-[20px] border border-borderc bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up">
+          <div class="flex w-full items-start justify-between gap-4">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">03</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F3E8FF]" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6.5v5.2c0 4.4 3.1 8.1 7 9.3 3.9-1.2 7-4.9 7-9.3V6.5L12 3z" stroke="#6E3894" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12.2 10.7 14.4 15.2 9.5" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <h3 class="font-body font-bold text-xl leading-6 text-[#1F1728]">National Leadership</h3>
+          <p class="font-body text-base leading-[19px] capitalize text-muted">With a Saudi-led team, we take pride in driving local innovation and contributing to the Kingdom’s digital sovereignty and Vision 2030 goals.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-[20px] border border-borderc bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up" data-delay="80">
+          <div class="flex w-full items-start justify-between gap-4">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">04</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F3E8FF]" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#6E3894" stroke-width="1.8"/><circle cx="16" cy="9" r="2.5" stroke="#6E3894" stroke-width="1.8"/><path d="M3.5 19c.4-3 2.8-5 5.5-5s5.1 2 5.5 5M13 14.2c1.8-.3 3.8.8 4.8 3.3" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <h3 class="font-body font-bold text-xl leading-6 text-[#1F1728]">Integrity &amp; Trust</h3>
+          <p class="font-body text-base leading-[19px] capitalize text-muted">We build lasting relationships with clients based on transparency, accountability, and unwavering commitment to their success.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-[20px] border border-borderc bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up">
+          <div class="flex w-full items-start justify-between gap-4">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">05</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F3E8FF]" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 13.5 5.5 11a2 2 0 0 1 2.8-2.8L10 10M16 13.5 18.5 11a2 2 0 1 0-2.8-2.8L16 10" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 13.5c1.5 3 6.5 3 8 0" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round"/><path d="M9 8.5 12 4l3 4.5" stroke="#6E3894" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <h3 class="font-body font-bold text-xl leading-6 text-[#1F1728]">Customer-Centric Approach</h3>
+          <p class="font-body text-base leading-[19px] capitalize text-muted">Every solution we create is designed around real organizational needs — enhancing protection, optimizing operations, and enabling growth.</p>
+        </article>
+
+        <article class="flex flex-col items-start gap-4 rounded-[20px] border border-borderc bg-white p-8 shadow-[0_2px_4px_rgba(0,0,0,.1)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(68,34,90,.12)]" data-reveal="up" data-delay="80">
+          <div class="flex w-full items-start justify-between gap-4">
+            <span class="font-body font-bold text-[32px] leading-9.75 text-secondary/45">06</span>
+            <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F3E8FF]" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 3 5 14h7l-1 7 8-11h-7l1-7z" stroke="#6E3894" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <h3 class="font-body font-bold text-xl leading-6 text-[#1F1728]">Collaboration &amp; Partnership</h3>
+          <p class="font-body text-base leading-[19px] capitalize text-muted">We believe in the power of collaboration, working hand-in-hand with clients, partners, and regulators to create impactful and sustainable cybersecurity ecosystems.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMPACT IN NUMBERS ===================== -->
+  <section class="impact-bg flex flex-col items-center gap-12 px-6 sm:px-10 lg:px-37.5 py-16 sm:py-20 lg:py-25" aria-labelledby="impact-heading">
+    <h2 id="impact-heading" class="font-body font-bold text-2xl leading-8 capitalize text-white text-center" data-reveal="up">Impact In Numbers</h2>
+
+    <div class="stats-row grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 lg:divide-x lg:divide-[rgba(169,111,204,.3)] gap-x-10 gap-y-10 sm:gap-12 w-full max-w-357.5">
+      <div class="stat-block flex flex-col items-center gap-6">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="10" data-suffix="+">0+</span>
+        <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">Integrated National Frameworks</span>
+      </div>
+      <div class="stat-block flex flex-col items-center gap-6">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="100" data-suffix="%">0%</span>
+        <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">Saudi-Built &amp; Locally Hosted.</span>
+      </div>
+      <div class="stat-block flex flex-col items-center gap-6">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="24" data-suffix="/7">0/7</span>
+        <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">In-Kingdom Expert Support.</span>
+      </div>
+      <div class="stat-block flex flex-col items-center gap-6 sm:col-span-3 sm:max-w-[calc((100%-6rem)/3)] sm:justify-self-center lg:col-span-1 lg:max-w-none">
+        <span class="stat-number inline-block tabular-nums font-body font-bold text-white text-[64px] leading-20 transition-transform duration-300 ease-out" data-target="40" data-suffix="%">0%</span>
+        <span class="font-body font-semibold text-sm leading-4.25 capitalize text-[#E6E6E6] text-center">Improvement In Operational Efficiency.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / CTA ===================== -->
+  <section id="contact" class="flex flex-col items-center gap-20 px-6 sm:px-10 lg:px-75 py-16 sm:py-20 lg:py-37.5" aria-labelledby="contact-heading">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <h2 id="contact-heading" class="font-display font-bold text-[#1F1728] text-[clamp(1.75rem,4vw,3rem)] leading-none" data-reveal="up">Contact Us</h2>
+      <p class="font-body font-medium text-base leading-4.75 capitalize text-[#9A94A6]" data-reveal="up" data-delay="110">Our Team Will Respond Within 24 Hours.</p>
+    </div>
+
+    <form class="flex w-full max-w-282.5 flex-col items-center gap-12" action="#" method="post" data-reveal="up" data-delay="190">
+      <div class="flex w-full flex-col items-start gap-8">
+        <div class="flex w-full flex-col items-center gap-8 sm:flex-row">
+          <div class="w-full">
+            <label for="firstName" class="sr-only">First Name</label>
+            <input id="firstName" name="firstName" type="text" required placeholder="First Name"
+              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+          </div>
+          <div class="w-full">
+            <label for="lastName" class="sr-only">Last Name</label>
+            <input id="lastName" name="lastName" type="text" required placeholder="Last Name"
+              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+          </div>
+        </div>
+
+        <div class="flex w-full flex-col items-center gap-8 sm:flex-row">
+          <div class="w-full">
+            <label for="workEmail" class="sr-only">Corporate Email Address</label>
+            <input id="workEmail" name="workEmail" type="email" required placeholder="Corporate Email Address"
+              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+          </div>
+          <div class="w-full">
+            <label for="companyName" class="sr-only">Company Name</label>
+            <input id="companyName" name="companyName" type="text" required placeholder="Company Name"
+              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+          </div>
+        </div>
+
+        <div class="w-full">
+          <label for="challenge" class="sr-only">Primary Operational Challenge</label>
+          <input id="challenge" name="challenge" type="text" placeholder="Primary Operational Challenge"
+            class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+      </div>
+
+      <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-secondary px-10 py-4 font-body font-medium text-base capitalize text-white shadow-[0_2px_4px_rgba(0,0,0,.1)] hover:bg-primary transition-colors">
+        Send Message
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M14.6673 1.3335L7.33398 8.66683" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.6673 1.3335L10.0007 14.6668L7.33398 8.66683L1.33398 6.00016L14.6673 1.3335Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
+  <div class="mx-auto flex max-w-357.5 flex-col gap-16">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+      <div class="flex flex-col items-start gap-6" data-reveal="up">
+        <div class="flex items-center gap-3">
+          <img src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
+        </div>
+        <p class="text-sm leading-4.25 capitalize text-surface">Leading Cybersecurity Partner Delivering Enterprise-Grade Protection And Compliance Solutions Aligned With Vision 2030.</p>
+        <div class="flex flex-col items-start gap-3">
+          <h4 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
+          <div class="flex flex-nowrap items-center gap-1">
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NORA v2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h4>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="index.html#products" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="index.html#strategic-services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
+          <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
+          <li><a href="product.html?id=intel" class="hover:text-white transition-colors">IntelMode</a></li>
+          <li><a href="product.html?id=risk" class="hover:text-white transition-colors">RiskMode</a></li>
+          <li><a href="product.html?id=audit" class="hover:text-white transition-colors">AuditMode</a></li>
+          <li><a href="product.html?id=vendor" class="hover:text-white transition-colors">VendorMode</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h4>
+        <ul class="flex w-full flex-col items-start gap-4">
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
+            </span>
+            <span class="text-sm leading-4.25 capitalize text-surface">King Fahd Road, Riyadh 12272, Saudi Arabia</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </span>
+            <a href="tel:+966112345678" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">+966 11 234 5678</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <a href="mailto:contact@advancedcontrols.sa" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">contact@advancedcontrols.sa</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">linkedin.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 border-t border-borderc2 pt-6.25 sm:flex-row sm:items-start sm:justify-between">
+      <p class="text-sm leading-4.25 capitalize text-surface">&copy; <span id="year"></span> Advanced Controls IT Co. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms</a>
+        <span>Consult · Secure · Succeed</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg width="28" height="38" viewBox="0 0 33 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M14.9604 22.4368H19.0893V0L0.015625 15.6474V29.1158L19.113 44.8342V34.6974L4.03404 22.3737L14.9683 13.4132V22.4368H14.9604Z" fill="#44225A"/>
+    <path d="M14.9605 22.4368V13.4132L4.02632 22.3737L19.1132 34.6895V44.8342L0 29.1158L0.0157808 15.6474L19.0895 0V22.4368H14.9605Z" fill="#44225A"/>
+    <path d="M21.5605 35.6134V30.095L29.7711 23.3845L21.5605 16.666V11.2266L21.8606 11.4239L32.029 19.7923L32.0448 26.8818L32.0053 27.0397L21.5605 35.6134Z" fill="#9A94A6"/>
+    <path d="M31.8645 11.1471C31.8645 12.2129 30.9961 13.0813 29.9303 13.0813C28.8645 13.0813 27.9961 12.2129 27.9961 11.1471C27.9961 10.0813 28.8645 9.21289 29.9303 9.21289C30.9961 9.21289 31.8645 10.0813 31.8645 11.1471ZM31.4224 11.1471C31.4224 10.3261 30.7514 9.65499 29.9303 9.65499C29.1093 9.65499 28.4382 10.3261 28.4382 11.1471C28.4382 11.9682 29.1093 12.6392 29.9303 12.6392C30.7514 12.6392 31.4224 11.9682 31.4224 11.1471Z" fill="#9A94A6"/>
+    <path d="M30.9072 12.1341H30.3546C30.3072 12.0394 29.9914 11.4946 29.9519 11.4709C29.8888 11.4315 29.6914 11.4788 29.6045 11.463V12.0709C29.6045 12.1657 29.2177 12.1183 29.1309 12.1262V10.042H30.173C30.4019 10.042 30.7177 10.2472 30.7967 10.4762C30.9546 10.8946 30.773 11.1709 30.4256 11.3999L30.8914 12.1262L30.9072 12.1341ZM30.1809 10.4841C30.023 10.4525 29.7782 10.5078 29.6125 10.4841V11.0762C29.8572 11.0762 30.3466 11.1551 30.3861 10.8157C30.4019 10.6972 30.2993 10.5157 30.1809 10.492V10.4841Z" fill="#9A94A6"/>
+  </svg>
+</button>
+
+<script src="js/main.js?v=3"></script>
+</body>
+</html>

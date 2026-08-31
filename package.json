@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
-    "watch:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch=always"
+    "watch:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch=always",
+    "start": "npx --yes serve . -p 3000",
+    "dev": "npx --yes concurrently -k \"npm run watch:css\" \"npx --yes serve . -p 3000\""
   },
   "keywords": [],
   "author": "",

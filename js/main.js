@@ -74,7 +74,7 @@
   var iconOpen = document.getElementById('iconOpen');
   var iconClose = document.getElementById('iconClose');
 
-  menuBtn.addEventListener('click', function(){
+  if (menuBtn && mobileMenu) menuBtn.addEventListener('click', function(){
     var isOpen = mobileMenu.classList.contains('hidden') === false;
     mobileMenu.classList.toggle('hidden');
     iconOpen.classList.toggle('hidden');
@@ -84,19 +84,14 @@
   });
 
   /* Footer year */
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------------- Desktop nav sliding underline ---------------- */
+  /* ---------------- Desktop nav active state ---------------- */
   var navList = document.getElementById('navList');
-  var navUnderline = document.getElementById('navUnderline');
 
-  if (navList && navUnderline) {
+  if (navList) {
     var navLinks = Array.prototype.slice.call(navList.querySelectorAll('.nav-link'));
-
-    var moveUnderline = function(link){
-      navUnderline.style.left = link.offsetLeft + 'px';
-      navUnderline.style.width = link.offsetWidth + 'px';
-    };
 
     var setActiveLink = function(link){
       navLinks.forEach(function(a){
@@ -110,22 +105,13 @@
           a.removeAttribute('aria-current');
         }
       });
-      moveUnderline(link);
     };
 
     navLinks.forEach(function(link){
-      link.addEventListener('click', function(){ setActiveLink(link); });
+      if (link.getAttribute('href') && link.getAttribute('href').indexOf('#') === 0) {
+        link.addEventListener('click', function(){ setActiveLink(link); });
+      }
     });
-
-    window.addEventListener('resize', function(){
-      var current = navList.querySelector('.nav-link[aria-current="page"]') || navLinks[0];
-      moveUnderline(current);
-    });
-
-    /* Position instantly on load, without animating in from the left */
-    navUnderline.style.transition = 'none';
-    moveUnderline(navLinks[0]);
-    requestAnimationFrame(function(){ navUnderline.style.transition = ''; });
   }
 
   /* ---------------- Modules data & icons ---------------- */
@@ -352,11 +338,15 @@
     render();
   }
 
-  document.getElementById('prevBtn').addEventListener('click', function(){ goTo(current - 1); });
-  document.getElementById('nextBtn').addEventListener('click', function(){ goTo(current + 1); });
+  if (tabList && dots && panelIcon && panelTitle && panelDesc && pagerLabel) {
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(current + 1); });
 
-  buildTabs();
-  render();
+    buildTabs();
+    render();
+  }
 
   /* ---------------- Strategic Services stacked scroll effect ---------------- */
   var serviceStack = document.getElementById('serviceStack');
