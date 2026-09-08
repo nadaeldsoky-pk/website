@@ -76,7 +76,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .hero-bg::before{
   content:"";
   position:absolute; inset:0;
-  background: radial-gradient(closest-side, rgba(255,255,255,.9), transparent 70%);
+  background: radial-gradient(closest-side, rgba(255,255,255,.6), transparent 70%);
   width: 60vmax; height:60vmax;
   left:50%; top:-8%;
   transform: translateX(-50%);
