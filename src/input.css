@@ -312,3 +312,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 @media(prefers-reduced-motion:reduce){
   [data-reveal]{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
+
+/* Native <select> elements are their own compositing layer and can be left
+   showing a stale (blank) paint by some Chromium builds when an ancestor's
+   opacity/transform (our [data-reveal] system) finishes animating — the
+   select only repaints correctly once something else forces a reflow (e.g.
+   focusing a sibling field). Isolating the select onto its own layer up
+   front avoids relying on that ancestor repaint. */
+select{ transform:translateZ(0); backface-visibility:hidden; }

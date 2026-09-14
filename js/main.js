@@ -554,3 +554,33 @@
     }
   }
 })();
+
+/* ---------------- Contact form success state ---------------- */
+(function(){
+  var form        = document.getElementById('contactForm');
+  var success     = document.getElementById('contactSuccess');
+  var successMsg  = document.getElementById('contactSuccessMsg');
+  var resetBtn    = document.getElementById('contactResetBtn');
+  var emailField  = document.getElementById('workEmail');
+
+  if (!form || !success) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = emailField && emailField.value ? emailField.value.trim() : '';
+    successMsg.textContent = email
+      ? 'We have your enquiry and will reply to ' + email + '.'
+      : 'We have your enquiry and will reply to you.';
+
+    form.style.display = 'none';
+    success.style.display = 'flex';
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function(){
+      form.reset();
+      success.style.display = 'none';
+      form.style.display = 'flex';
+    });
+  }
+})();
