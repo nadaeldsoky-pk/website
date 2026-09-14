@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Contact Us | Advanced Controls IT Co.</title>
+<meta name="description" content="Get in touch with Advanced Controls IT Co. Tell us the type of request and a little about what you need — our team will get back to you." />
+<meta name="author" content="Advanced Controls" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#44225A" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+<link rel="stylesheet" href="css/styles.css?v=5" />
+</head>
+<body class="bg-white text-primary">
+
+<!-- ===================== PAGE LOADER ===================== -->
+<div id="pageLoader" aria-hidden="true">
+  <div id="loaderInner">
+    <div id="loaderRing"></div>
+    <div id="loaderMark">
+      <img src="assets/loder.gif" alt="" />
+    </div>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var l = document.getElementById('pageLoader');
+    if (l && l.parentNode) l.parentNode.removeChild(l);
+  }, 4000);
+</script>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
+  <div class="mx-auto w-[90%] ">
+    <div class="flex h-[60px] items-center justify-between gap-6">
+
+      <a href="index.html" class="flex items-center shrink-0" aria-label="Advanced Controls home">
+        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[33.83px] my-2 w-auto" />
+      </a>
+
+      <nav aria-label="Primary" class="hidden lg:flex">
+        <div class="relative">
+          <ul id="navList" class="flex items-center gap-[25px] font-nav">
+            <li><a href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
+            <li><a href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a href="index.html#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
+            <li><a href="contact.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Contact</a></li>
+            <li><a href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a id="headerCta" href="contact.html" class="hidden lg:inline-flex w-[111.56px] h-8.75 items-center justify-center rounded-[7.29px] bg-secondary font-nav font-semibold text-xs text-white shadow-[0_4.375px_8.75px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
+          Get Started
+        </a>
+
+        <button id="menuBtn" type="button" class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 text-primary" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg id="iconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg id="iconClose" width="26" height="26" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-borderc bg-white">
+    <nav aria-label="Mobile primary">
+      <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
+        <li><a href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
+        <li><a href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a href="index.html#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
+        <li><a href="contact.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface">Contact</a></li>
+        <li><a href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
+        <li class="pt-2"><a href="contact.html" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ===================== CONTACT FORM ===================== -->
+  <section class="flex flex-col items-center gap-10 sm:gap-12 lg:gap-16 bg-[#F7F6FA] px-6 sm:px-12 lg:px-[150px] py-16 sm:py-24 lg:py-[150px]" aria-labelledby="contact-heading">
+
+    <div class="flex w-full max-w-[765px] flex-col items-center gap-4">
+      <h1 id="contact-heading" class="font-display font-bold text-[#2E1B4E] text-[clamp(1.75rem,5vw,48px)] leading-[1.05] lg:leading-[48px] text-center" data-reveal="up">How can we help you?</h1>
+      <p class="font-body font-normal text-[#6B5B7A] text-base sm:text-lg lg:text-[18px] leading-[1.5] lg:leading-[28px] text-center" data-reveal="up" data-delay="110">Tell us the type of request and a little about what you need. Our team will get back to you.</p>
+    </div>
+
+    <form class="flex w-full max-w-[1430px] flex-col gap-6" action="#" method="post" data-reveal="up" data-delay="180">
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="fullName" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Full Name <span class="text-red-600">*</span></label>
+          <input id="fullName" name="fullName" type="text" required placeholder="Sara Al-Otaibi"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="companyName" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Company / Organization<span class="text-red-600">*</span></label>
+          <input id="companyName" name="companyName" type="text" required placeholder="Company or entity name"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="businessEmail" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Business Email <span class="text-red-600">*</span></label>
+          <input id="businessEmail" name="businessEmail" type="email" required placeholder="user@company.com"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="phoneNumber" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Phone Number (Optional)</label>
+          <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="+966 5X XXX XXXX"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="requestType" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] capitalize text-[#111827]">Request Type <span class="text-red-600">*</span></label>
+          <div class="relative w-full">
+            <select id="requestType" name="requestType" required
+              class="h-12 w-full appearance-none rounded-lg border-[0.5px] border-[#D1D5DB] bg-white pl-4 pr-11 font-body text-base leading-6 text-[#2E1B4E] focus:outline-none focus:ring-4 focus:ring-primary/15">
+              <option value="Platform Demo">Platform Demo</option>
+              <option value="Sales Inquiry">Sales Inquiry</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Media Inquiry">Media Inquiry</option>
+              <option value="Careers">Careers</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="platform" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Select Platform <span class="text-red-600">*</span></label>
+          <div class="relative w-full">
+            <select id="platform" name="platform" required
+              class="h-12 w-full appearance-none rounded-lg border-[0.5px] border-[#D1D5DB] bg-white pl-4 pr-11 font-body text-base leading-6 text-[#2E1B4E] focus:outline-none focus:ring-4 focus:ring-primary/15">
+              <option value="CyberMode">CyberMode</option>
+              <option value="GovernanceMode">GovernanceMode</option>
+              <option value="IntelMode">IntelMode</option>
+              <option value="RiskMode">RiskMode</option>
+              <option value="AuditMode">AuditMode</option>
+              <option value="VendorMode">VendorMode</option>
+              <option value="IncidentMode">IncidentMode</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col items-start gap-2">
+        <label for="requirement" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Message / Brief Requirement<span class="text-red-600">*</span></label>
+        <textarea id="requirement" name="requirement" required rows="5" placeholder="Tell us briefly what you need."
+          class="h-[150px] w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 font-body text-[13px] leading-4 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15"></textarea>
+      </div>
+
+      <hr class="h-px w-full border-0 bg-[#3D2B55]" />
+
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <button type="submit" class="inline-flex items-center justify-center gap-[7px] rounded-2xl bg-[#44235C] px-6 py-4 font-body font-semibold text-sm leading-[17px] text-[#FFFDFE] hover:bg-secondary transition-colors">
+          Send Request
+        </button>
+        <p class="font-body font-normal text-sm leading-5 text-[#6B5B7A]">We reply to the email address you provide.</p>
+      </div>
+    </form>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
+  <div class="mx-auto flex max-w-357.5 flex-col gap-16">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+      <div class="flex flex-col items-start gap-6" data-reveal="up">
+        <div class="flex items-center gap-3">
+          <img src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
+        </div>
+        <p class="text-sm leading-4.25 capitalize text-surface">Leading Cybersecurity Partner Delivering Enterprise-Grade Protection And Compliance Solutions Aligned With Vision 2030.</p>
+        <div class="flex flex-col items-start gap-3">
+          <h4 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
+          <div class="flex flex-nowrap items-center gap-1">
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NORA v2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h4>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="index.html#products" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="index.html#strategic-services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
+          <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
+          <li><a href="product.html?id=intel" class="hover:text-white transition-colors">IntelMode</a></li>
+          <li><a href="product.html?id=risk" class="hover:text-white transition-colors">RiskMode</a></li>
+          <li><a href="product.html?id=audit" class="hover:text-white transition-colors">AuditMode</a></li>
+          <li><a href="product.html?id=vendor" class="hover:text-white transition-colors">VendorMode</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h4>
+        <ul class="flex w-full flex-col items-start gap-4">
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
+            </span>
+            <span class="text-sm leading-4.25 capitalize text-surface">King Fahd Road, Riyadh 12272, Saudi Arabia</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </span>
+            <a href="tel:+966112345678" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">+966 11 234 5678</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <a href="mailto:contact@advancedcontrols.sa" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">contact@advancedcontrols.sa</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">linkedin.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 border-t border-borderc2 pt-6.25 sm:flex-row sm:items-start sm:justify-between">
+      <p class="text-sm leading-4.25 capitalize text-surface">&copy; <span id="year"></span> Advanced Controls IT Co. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms</a>
+        <span>Consult · Secure · Succeed</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg width="28" height="38" viewBox="0 0 33 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M14.9604 22.4368H19.0893V0L0.015625 15.6474V29.1158L19.113 44.8342V34.6974L4.03404 22.3737L14.9683 13.4132V22.4368H14.9604Z" fill="#44225A"/>
+    <path d="M14.9605 22.4368V13.4132L4.02632 22.3737L19.1132 34.6895V44.8342L0 29.1158L0.0157808 15.6474L19.0895 0V22.4368H14.9605Z" fill="#44225A"/>
+    <path d="M21.5605 35.6134V30.095L29.7711 23.3845L21.5605 16.666V11.2266L21.8606 11.4239L32.029 19.7923L32.0448 26.8818L32.0053 27.0397L21.5605 35.6134Z" fill="#9A94A6"/>
+    <path d="M31.8645 11.1471C31.8645 12.2129 30.9961 13.0813 29.9303 13.0813C28.8645 13.0813 27.9961 12.2129 27.9961 11.1471C27.9961 10.0813 28.8645 9.21289 29.9303 9.21289C30.9961 9.21289 31.8645 10.0813 31.8645 11.1471ZM31.4224 11.1471C31.4224 10.3261 30.7514 9.65499 29.9303 9.65499C29.1093 9.65499 28.4382 10.3261 28.4382 11.1471C28.4382 11.9682 29.1093 12.6392 29.9303 12.6392C30.7514 12.6392 31.4224 11.9682 31.4224 11.1471Z" fill="#9A94A6"/>
+    <path d="M30.9072 12.1341H30.3546C30.3072 12.0394 29.9914 11.4946 29.9519 11.4709C29.8888 11.4315 29.6914 11.4788 29.6045 11.463V12.0709C29.6045 12.1657 29.2177 12.1183 29.1309 12.1262V10.042H30.173C30.4019 10.042 30.7177 10.2472 30.7967 10.4762C30.9546 10.8946 30.773 11.1709 30.4256 11.3999L30.8914 12.1262L30.9072 12.1341ZM30.1809 10.4841C30.023 10.4525 29.7782 10.5078 29.6125 10.4841V11.0762C29.8572 11.0762 30.3466 11.1551 30.3861 10.8157C30.4019 10.6972 30.2993 10.5157 30.1809 10.492V10.4841Z" fill="#9A94A6"/>
+  </svg>
+</button>
+
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
