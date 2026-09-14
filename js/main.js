@@ -311,10 +311,14 @@
     panelDesc.textContent  = p.desc;
     pagerLabel.textContent = pad(current + 1) + ' / ' + pad(products.length);
     if (panelWatermarkText) {
-      panelWatermarkText.textContent = p.name;
-      panelWatermarkText.style.animation = 'none';
-      void panelWatermarkText.offsetWidth; /* restart shine + pop animation */
-      panelWatermarkText.style.animation = '';
+      panelWatermarkText.innerHTML = '';
+      var nameStr = p.name;
+      for (var j = 0; j < nameStr.length; j++) {
+        var span = document.createElement('span');
+        span.textContent = nameStr[j] === ' ' ? '\u00A0' : nameStr[j];
+        span.style.animationDelay = '0s, ' + (j * 0.05) + 's';
+        panelWatermarkText.appendChild(span);
+      }
     }
     if (panelLink) panelLink.href = 'product.html?id=' + p.key;
 
@@ -583,4 +587,29 @@
       form.style.display = 'flex';
     });
   }
+})();
+
+/* ---------------- Conditional "Select Platform" field ----------------
+   "Select Platform" only makes sense for a platform demo request, so it's
+   hidden unless Request Type is "Platform Demo". Shared markup/ids across
+   index.html and contact.html, so this one block covers both. */
+(function(){
+  var requestTypeEl  = document.getElementById('requestType');
+  var platformField   = document.getElementById('platformField');
+  var platformSelect  = document.getElementById('platform');
+
+  if (!requestTypeEl || !platformField || !platformSelect) return;
+
+  function syncPlatformField(){
+    var show = requestTypeEl.value === 'Platform Demo';
+    platformField.style.display = show ? 'flex' : 'none';
+    if (show) {
+      platformSelect.setAttribute('required', 'required');
+    } else {
+      platformSelect.removeAttribute('required');
+    }
+  }
+
+  requestTypeEl.addEventListener('change', syncPlatformField);
+  syncPlatformField();
 })();

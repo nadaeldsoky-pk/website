@@ -201,7 +201,7 @@
     <div class="relative mt-4 flex-1 min-h-0 flex items-end justify-center overflow-hidden" data-reveal="zoom" data-delay="200">
       <div class="product-orb relative mx-auto w-full h-105 sm:h-125 lg:h-145 translate-y-10 sm:translate-y-14 lg:translate-y-16 flex flex-col items-center justify-center text-center px-6 pb-6 gap-4">
 
-        <div id="panelWatermark" class="product-watermark" aria-hidden="true"><span id="panelWatermarkText"></span></div>
+        <div id="panelWatermark" class="product-watermark" aria-hidden="true"><div id="panelWatermarkText"></div></div>
 
         <img src="assets/background-product.png" alt="" aria-hidden="true" class="absolute inset-0 -z-10 h-full w-full object-fill" />
 
@@ -427,7 +427,7 @@
             <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </div>
-        <div class="flex flex-1 flex-col items-start gap-2">
+        <div id="platformField" class="flex flex-1 flex-col items-start gap-2">
           <label for="platform" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Select Platform <span class="text-red-600">*</span></label>
           <div class="relative w-full">
             <select id="platform" name="platform" required
@@ -574,6 +574,6 @@
   </svg>
 </button>
 
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
