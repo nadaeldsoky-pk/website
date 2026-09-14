@@ -8,7 +8,9 @@
     "build:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
     "watch:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch=always",
     "start": "npx --yes serve . -p 3000",
-    "dev": "npx --yes concurrently -k \"npm run watch:css\" \"npx --yes serve . -p 3000\""
+    "dev": "npm run build:nav && npx --yes concurrently -k \"npm run watch:css\" \"npx --yes serve . -p 3000\"",
+    "build:nav": "node scripts/build-nav.mjs",
+    "build": "npm run build:nav && npm run build:css"
   },
   "keywords": [],
   "author": "",

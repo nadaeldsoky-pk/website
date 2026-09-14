@@ -71,6 +71,7 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ===================== HEADER ===================== -->
+<!-- NAV:START — generated from src/partials/nav.html by `npm run build:nav`. Edit the partial, not this. -->
 <header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
   <div class="mx-auto w-[90%] ">
     <div class="flex h-[60px] items-center justify-between gap-6">
@@ -84,11 +85,11 @@
       <nav aria-label="Primary" class="hidden lg:flex">
         <div class="relative">
           <ul id="navList" class="flex items-center gap-[25px] font-nav">
-            <li><a href="#top" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Home</a></li>
-            <li><a href="#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
-            <li><a href="#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
-            <li><a href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact</a></li>
-            <li><a href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
+            <li><a data-nav="home" href="#top" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Home</a></li>
+            <li><a data-nav="services" href="#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a data-nav="products" href="#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
+            <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact</a></li>
+            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
           </ul>
         </div>
       </nav>
@@ -111,16 +112,17 @@
   <div id="mobileMenu" class="hidden lg:hidden border-t border-borderc bg-white">
     <nav aria-label="Mobile primary">
       <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
-        <li><a href="#top" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface">Home</a></li>
-        <li><a href="#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
-        <li><a href="#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
-        <li><a href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact</a></li>
-        <li><a href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
+        <li><a data-nav-m="home" href="#top" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Home</a></li>
+        <li><a data-nav-m="services" href="#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a data-nav-m="products" href="#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
+        <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact</a></li>
+        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
         <li class="pt-2"><a href="#contact" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
       </ul>
     </nav>
   </div>
 </header>
+<!-- NAV:END -->
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
@@ -134,7 +136,7 @@
       <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.75rem,5vw,3.75rem)]">
         We're leaders in<br class="hidden sm:block" /> cybersecurity
       </h1>
-      <p class="mx-auto mt-8 max-w-3xl text-[clamp(1rem,2vw,1rem)] font-medium leading-8 text-surface">
+      <p class="mx-auto mt-8 max-w-4xl text-[clamp(1rem,2vw,1rem)] font-medium leading-8 text-surface">
         Advanced GRC and Threat Intelligence platforms (CyberMode, GovernanceMode & IntelMode) designed specifically to meet Saudi regulatory standards (NCA, CST, NDMO, and NORA v2).
       </p>
 

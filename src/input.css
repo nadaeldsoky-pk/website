@@ -125,9 +125,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
    gradient until a real photo is dropped in. The flat #00000033 layer is the
    spec's own overlay tint, kept so it's already correct once the photo lands */
 .footer-bg{
-  background:
-    linear-gradient(0deg, #00000033, #00000033),
-    radial-gradient(130% 110% at 0% 100%, #6E3894 0%, #3a1a52 32%, #1c0e2b 62%, #0f0817 100%);
+  background:#210D4A
 }
 
 .product-watermark{

@@ -38,31 +38,35 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- ===================== HEADER ===================== -->
+<!-- NAV:START — generated from src/partials/nav.html by `npm run build:nav`. Edit the partial, not this. -->
 <header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
   <div class="mx-auto w-[90%] ">
     <div class="flex h-[60px] items-center justify-between gap-6">
 
+      <!-- Logo -->
       <a href="index.html" class="flex items-center shrink-0" aria-label="Advanced Controls home">
         <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[33.83px] my-2 w-auto" />
       </a>
 
+      <!-- Desktop nav -->
       <nav aria-label="Primary" class="hidden lg:flex">
         <div class="relative">
           <ul id="navList" class="flex items-center gap-[25px] font-nav">
-            <li><a href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
-            <li><a href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
-            <li><a href="index.html#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
-            <li><a href="contact.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Contact</a></li>
-            <li><a href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
+            <li><a data-nav="home" href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
+            <li><a data-nav="services" href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a data-nav="products" href="index.html#products" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
+            <li><a data-nav="contact" href="contact.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Contact</a></li>
+            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
           </ul>
         </div>
       </nav>
 
       <div class="flex items-center gap-3">
-        <a id="headerCta" href="contact.html" class="hidden lg:inline-flex w-[111.56px] h-8.75 items-center justify-center rounded-[7.29px] bg-secondary font-nav font-semibold text-xs text-white shadow-[0_4.375px_8.75px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
+        <a id="headerCta" href="#contact-heading" class="hidden lg:inline-flex w-[111.56px] h-8.75 items-center justify-center rounded-[7.29px] bg-secondary font-nav font-semibold text-xs text-white shadow-[0_4.375px_8.75px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
           Get Started
         </a>
 
+        <!-- Mobile menu button -->
         <button id="menuBtn" type="button" class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 text-primary" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
           <svg id="iconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
           <svg id="iconClose" width="26" height="26" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
@@ -71,19 +75,21 @@
     </div>
   </div>
 
+  <!-- Mobile menu -->
   <div id="mobileMenu" class="hidden lg:hidden border-t border-borderc bg-white">
     <nav aria-label="Mobile primary">
       <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
-        <li><a href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
-        <li><a href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
-        <li><a href="index.html#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
-        <li><a href="contact.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface">Contact</a></li>
-        <li><a href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
-        <li class="pt-2"><a href="contact.html" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
+        <li><a data-nav-m="home" href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
+        <li><a data-nav-m="services" href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a data-nav-m="products" href="index.html#products" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
+        <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Contact</a></li>
+        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
+        <li class="pt-2"><a href="#contact-heading" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
       </ul>
     </nav>
   </div>
 </header>
+<!-- NAV:END -->
 
 <main id="main">
   <!-- ===================== CONTACT FORM ===================== -->
