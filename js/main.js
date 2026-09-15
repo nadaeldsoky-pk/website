@@ -260,13 +260,78 @@
   };
 
   var products = [
-    { key:'cyber', name:'CyberMode', desc:'Automate compliance, strategy, and committee management.' },
-    { key:'governance', name:'GovernanceMode', desc:'Centralize policies, audits, and regulatory mapping in one place.' },
-    { key:'intel', name:'IntelMode', desc:'Real-time threat intelligence and risk scoring for your organization.' },
-    { key:'risk', name:'RiskMode', desc:'Quantify, prioritize, and track enterprise risk exposure over time.' },
-    { key:'audit', name:'AuditMode', desc:'Streamline internal and external audit cycles from planning to sign-off.' },
-    { key:'vendor', name:'VendorMode', desc:'Manage third-party and vendor risk assessments end to end.' },
-    { key:'incident', name:'IncidentMode', desc:'Coordinate incident response, escalation, and regulatory reporting.' }
+    { key:'cyber', name:'CyberMode', desc:'Automate compliance, strategy, and committee management.',
+      challengeCategory:'Cybersecurity Management',
+      sixChallenges:[
+        { title:'Fragmented Cybersecurity Management', desc:'Disparate tools and disconnected processes create inefficiency, inconsistency, and lack of unified control.', solvedTitle:'Unified Cybersecurity Platform', solvedDesc:'A single integrated system that centralizes governance, risk, compliance, and operations into one unified environment.' },
+        { title:'Lack of Executive Visibility', desc:'Organizations struggle to gain real-time insights into cybersecurity posture, risks, and compliance status.', solvedTitle:'Real-Time Executive Dashboards', solvedDesc:'Comprehensive dashboards and KPIs provide instant visibility into cybersecurity posture, risks, and compliance status.' },
+        { title:'Reactive Risk Management', desc:'Risks are identified only after incidents occur, with no structured lifecycle for proactive assessment and mitigation.', solvedTitle:'Proactive Risk Management Framework', solvedDesc:'End-to-end risk lifecycle management enables continuous identification, assessment, treatment, and monitoring of risks.' },
+        { title:'Complex Compliance Management', desc:'Managing multiple regulatory frameworks manually leads to inefficiencies, gaps, and audit challenges.', solvedTitle:'Integrated Compliance Management System', solvedDesc:'Automated multi-framework compliance tracking with centralized evidence management and real-time scoring.' },
+        { title:'Execution and Accountability Gaps', desc:'Security policies and initiatives lack proper tracking, ownership, and enforcement across the organization.', solvedTitle:'Automated Execution and Workflow Management', solvedDesc:'Structured task management and workflow automation ensure accountability, tracking, and effective implementation.' },
+        { title:'Human Factor Vulnerabilities', desc:'Low cybersecurity awareness and lack of structured training increase exposure to phishing and social engineering attacks.', solvedTitle:'Security Awareness and Training Platform', solvedDesc:'Integrated LMS with phishing simulation and assessments to enhance employee awareness and reduce human risk.' }
+      ] },
+    { key:'governance', name:'GovernanceMode', desc:'Governance, risk, compliance, continuity and performance on one bilingual platform — instead of disconnected spreadsheets and point tools.',
+      challengeCategory:'Governance, Risk &amp; Compliance',
+      sixChallenges:[
+        { title:'Fragmented Governance Information', desc:'Governance information is scattered across multiple systems, with no shared taxonomy, identity, or source of truth.', solvedTitle:'Centralized Governance Repository', solvedDesc:'Hierarchy, strategic objectives, document center, regulators, frameworks and exception management in one structural model that every other module references.' },
+        { title:'Risks Managed Independently', desc:'Risk registers are maintained separately, leaving enterprise risk exposure without a consolidated view.', solvedTitle:'Enterprise Risk Management Framework', solvedDesc:'Taxonomy-driven enterprise, national and third-party risk with configurable matrices, KRIs, automated triggers and proactive monitoring.' },
+        { title:'Compliance Tracking Difficulties', desc:'Compliance levels are difficult to measure across multiple regulatory and international frameworks.', solvedTitle:'Automated Compliance Monitoring', solvedDesc:'Pre-mapped control catalogues continuously monitored across NCA-ECC, ISO 27001, ISO 31000, ISO 22301 and COSO.' },
+        { title:'Time-Consuming Audits', desc:'Audit preparation and evidence collection are manual, turning audit prep into a second job for every team.', solvedTitle:'Integrated Audit &amp; Evidence Management', solvedDesc:'Scheduled audit plans, active and past audits, gap identification and structured remediation, with evidence held against every control.' },
+        { title:'Weak Committee Governance', desc:'Committee governance and decision tracking are weak, with agendas, minutes and votes spread across email.', solvedTitle:'Committee Lifecycle Management', solvedDesc:'Member selection, structured agendas, recorded minutes, voting and actionable post-meeting recommendations.' },
+        { title:'Lack of KPI Visibility', desc:'Strategic KPIs lack visibility, so progress against objectives and initiatives cannot be measured.', solvedTitle:'Strategic Planning &amp; KPI Management', solvedDesc:'Objectives aligned to initiatives and projects, with a dynamic roadmap matrix tracking programmes across Q1 to Q4.' },
+        { title:'Manual Approvals', desc:'Approvals depend on email chains and chase-up calls, stretching cycle times and blurring accountability.', solvedTitle:'Workflow Automation Engine', solvedDesc:'A drag-and-drop visual builder for multi-step approvals with conditional logic, SLAs and module integration.' },
+        { title:'Limited Executive Reporting', desc:'Executive reporting capability is limited, so leadership questions take weeks rather than minutes.', solvedTitle:'Executive Dashboards &amp; Analytics', solvedDesc:'Real-time, customisable cross-module dashboards and reports with role-based visibility and export to XLSX, CSV and PDF.' }
+      ] },
+    { key:'intel', name:'IntelMode', desc:'Real-time threat intelligence and risk scoring for your organization.',
+      challengeCategory:'Threat Intelligence',
+      sixChallenges:[
+        { title:'Alert Fatigue', desc:'Thousands of daily alerts with no prioritization, forcing analysts to manually filter noise from real threats.', solvedTitle:'Indicator Management', solvedDesc:'Deduplicate and score threat indicators automatically so analysts focus only on what matters.' },
+        { title:'Threat Context Gap', desc:'Raw indicators with no context, attribution, or attack-chain analysis to guide meaningful response decisions.', solvedTitle:'Threat Actor Profiling', solvedDesc:'Enrich every indicator with TTPs, attribution, and targeting patterns mapped to MITRE ATT&amp;CK.' },
+        { title:'Slow Investigation Cycles', desc:'Hours or days spent correlating data across disconnected tools instead of responding to active threats.', solvedTitle:'Alert Correlation', solvedDesc:'Cross-correlate SIEM and endpoint alerts with intelligence context automatically, in real time.' },
+        { title:'No Proactive Hunting', desc:'Teams spending 100% of time reacting to alerts, leaving zero capacity for proactive threat hunting operations.', solvedTitle:'Threat Hunting Workflows', solvedDesc:'Structure and track proactive hunting campaigns with guided, repeatable playbooks.' },
+        { title:'Unprioritized Vulnerabilities', desc:'CVEs are triaged by severity alone, missing which ones are actively being exploited against your assets.', solvedTitle:'Vulnerability Intelligence', solvedDesc:'Prioritize CVEs based on active exploitation and real asset criticality, not generic severity scores.' },
+        { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
+      ] },
+    { key:'risk', name:'RiskMode', desc:'Quantify, prioritize, and track enterprise risk exposure over time.',
+      challengeCategory:'Enterprise Risk',
+      sixChallenges:[
+        { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
+        { title:'No Risk Prioritization', desc:'All risks treated equally without business-impact scoring, wasting remediation resources on low-priority items.', solvedTitle:'Risk Heatmaps', solvedDesc:'Visualize and filter risk exposure by domain and severity so resources go where they matter most.' },
+        { title:'Stale Risk Registers', desc:'Risk assessments done once a year instead of continuously updated as the threat landscape changes daily.', solvedTitle:'Continuous Risk Identification', solvedDesc:'Systematically identify and categorize risk across every business unit and domain, continuously.' },
+        { title:'Disconnected Remediation', desc:'Risk findings tracked separately from remediation tasks, with no accountability or progress visibility.', solvedTitle:'Risk Treatment Plans', solvedDesc:'Define, assign, and track remediation and mitigation plans with clear owners and due dates.' },
+        { title:'No Early Warning System', desc:'Emerging risk trends go unnoticed until they have already become active incidents.', solvedTitle:'KRI Monitoring', solvedDesc:'Threshold alerts and trend dashboards flag key risk indicators before they escalate.' },
+        { title:'Unclear Risk Tolerance', desc:'Teams lack a documented reference for how much risk the organization is willing to accept in each domain.', solvedTitle:'Risk Appetite Framework', solvedDesc:'Define and monitor risk appetite statements and tolerance thresholds by domain.' }
+      ] },
+    { key:'audit', name:'AuditMode', desc:'Streamline internal and external audit cycles from planning to sign-off.',
+      challengeCategory:'Audit Management',
+      sixChallenges:[
+        { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
+        { title:'Delayed Findings', desc:'Audit findings reported weeks after fieldwork ends, making timely remediation and management action impossible.', solvedTitle:'Findings Management', solvedDesc:'Track findings from identification through remediation to full closure, in real time.' },
+        { title:'No Audit Trail', desc:'Changes to workpapers and findings undocumented, creating risk of regulatory disputes and compliance failures.', solvedTitle:'Continuous Auditing', solvedDesc:'Automated data analytics and control testing deliver continuous, fully documented assurance.' },
+        { title:'Repeat Audit Findings', desc:'The same control weaknesses appearing cycle after cycle because remediation is never tracked to closure.', solvedTitle:'Remediation Tracking', solvedDesc:'Corrective action plans with owner assignment, due dates, and escalation rules prevent recurrence.' },
+        { title:'Unplanned Audit Coverage', desc:'Audit plans built from memory rather than a structured, risk-ranked view of the full audit universe.', solvedTitle:'Audit Planning', solvedDesc:'Risk-based prioritization, resource allocation, and calendar management across the audit universe.' },
+        { title:'Manual Report Drafting', desc:'Days spent formatting findings summaries and ratings into a presentable report for stakeholders.', solvedTitle:'Audit Reporting', solvedDesc:'Auto-populated findings summaries and ratings generate draft audit reports in minutes.' }
+      ] },
+    { key:'vendor', name:'VendorMode', desc:'Manage third-party and vendor risk assessments end to end.',
+      challengeCategory:'Vendor Risk',
+      sixChallenges:[
+        { title:'No Vendor Visibility', desc:'Critical suppliers with access to sensitive systems never formally assessed or continuously monitored for risk.', solvedTitle:'Vendor Onboarding', solvedDesc:'Streamlined registration and due diligence bring every vendor into full view from day one.' },
+        { title:'Manual Questionnaires', desc:'Vendor assessments done via email attachments with no version control, tracking, or automated scoring.', solvedTitle:'Risk Assessment Questionnaires', solvedDesc:'Automated, tiered questionnaires with weighting and evidence requests replace email attachments.' },
+        { title:'Concentration Risk Ignored', desc:'Over-reliance on single vendors for critical services goes undetected until a disruption causes major impact.', solvedTitle:'Vendor Risk Scoring', solvedDesc:'Aggregate scores across security, financial, and operational dimensions surface hidden dependencies.' },
+        { title:'No Continuous Monitoring', desc:'Point-in-time assessments creating a false sense of security between annual vendor review cycles.', solvedTitle:'Continuous Monitoring', solvedDesc:'Real-time tracking of vendor news, breach disclosures, and security rating changes.' },
+        { title:'Hidden Sub-Processor Risk', desc:'Vendors quietly rely on their own sub-processors, extending your exposure beyond direct contracts.', solvedTitle:'Fourth-Party Management', solvedDesc:'Map and assess sub-processors and sub-contractors for complete supply chain risk visibility.' },
+        { title:'Untracked Contract Renewals', desc:'SLAs and renewal dates tracked in spreadsheets quietly lapse without anyone noticing in time.', solvedTitle:'Contract Management', solvedDesc:'Track vendor contracts, SLAs, and renewal dates with automated alerts before anything lapses.' }
+      ] },
+    { key:'incident', name:'IncidentMode', desc:'Coordinate incident response, escalation, and regulatory reporting.',
+      challengeCategory:'Incident Response',
+      sixChallenges:[
+        { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },
+        { title:'Communication Breakdown', desc:'Incident data scattered across Slack, email, and tickets with no single view for leadership or regulators.', solvedTitle:'Communication Management', solvedDesc:'Centralized stakeholder notifications and crisis communication templates with a full audit trail.' },
+        { title:'Incomplete Audit Trail', desc:'Response actions undocumented, making post-incident analysis, lessons learned, and regulatory reporting impossible.', solvedTitle:'Evidence Preservation', solvedDesc:'Chain-of-custody digital evidence collection secures data for legal and regulatory needs.' },
+        { title:'Missed Reporting Deadlines', desc:'NCA and SAMA regulatory notification windows missed due to manual tracking and unclear escalation ownership.', solvedTitle:'Regulatory Notification', solvedDesc:'Auto-generated NCA and SAMA breach notifications within mandated reporting deadlines.' },
+        { title:'Unclear Task Ownership', desc:'Response tasks assigned verbally or over chat, with no SLA tracking or automatic escalation when work stalls.', solvedTitle:'Task Assignment &amp; Escalation', solvedDesc:'SLA-bound task assignment with automated escalation rules and team notifications.' },
+        { title:'No Continuous Improvement', desc:'Incidents close without a structured review, so the same root causes resurface in future incidents.', solvedTitle:'Post-Incident Review', solvedDesc:'Structured lessons-learned and root-cause analysis workflows drive continuous improvement.' }
+      ] }
   ];
 
   var current = 0;
@@ -304,6 +369,78 @@
     });
   }
 
+  var homeChallengesTitle    = document.getElementById('homeChallengesTitle');
+  var homeChallengesSubtitle = document.getElementById('homeChallengesSubtitle');
+  var homeChallengesGrid     = document.getElementById('homeChallengesGrid');
+  var homeChallengesLink     = document.getElementById('homeChallengesLink');
+  var homeChallengesLinkName = document.getElementById('homeChallengesLinkName');
+  var homeChallengesRevealed = false;
+
+  var CH_NUM_WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
+
+  function renderHomeChallenges(p){
+    if (!homeChallengesGrid || !p.sixChallenges) return;
+    var chCountWord = CH_NUM_WORDS[p.sixChallenges.length] || (p.sixChallenges.length + '');
+
+    if (homeChallengesTitle) homeChallengesTitle.textContent = chCountWord + ' Challenges. One Platform.';
+    if (homeChallengesSubtitle) {
+      homeChallengesSubtitle.textContent = chCountWord + ' critical challenges organizations face without a unified ' +
+        p.challengeCategory.replace(/&amp;/g, '&') + ' platform \u2014 and how ' + p.name + ' addresses each one.';
+    }
+    if (homeChallengesLink) homeChallengesLink.href = 'product.html?id=' + p.key + '#challengesTitle';
+    if (homeChallengesLinkName) homeChallengesLinkName.textContent = p.name;
+
+    homeChallengesGrid.innerHTML = '';
+    p.sixChallenges.forEach(function(c, i){
+      var num = (i + 1) < 10 ? '0' + (i + 1) : '' + (i + 1);
+      var card = document.createElement('article');
+      card.className = 'home-challenge-card';
+      card.style.setProperty('--i', i);
+      card.innerHTML =
+        '<div class="hc-bar" aria-hidden="true"></div>' +
+        '<div class="hc-content">' +
+          '<div class="hc-heading">' +
+            '<div class="hc-badge" aria-hidden="true">' + num + '</div>' +
+            '<h4 class="hc-title">' + c.title + '</h4>' +
+          '</div>' +
+          '<div class="hc-body">' +
+            '<p class="hc-desc">' + c.desc + '</p>' +
+            '<hr class="hc-divider" />' +
+            '<div class="hc-solved-row">' +
+              '<span class="hc-solved-dot" aria-hidden="true"><svg width="7" height="7" viewBox="0 0 12 12" fill="none"><path d="M2 6.2l2.6 2.6L10 3" stroke="#FFFDFE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+              '<span class="hc-solved-label">Solved By</span>' +
+            '</div>' +
+            '<h5 class="hc-solved-title">' + c.solvedTitle + '</h5>' +
+            '<p class="hc-solved-desc">' + c.solvedDesc + '</p>' +
+          '</div>' +
+        '</div>';
+      homeChallengesGrid.appendChild(card);
+    });
+
+    /* Replay the reveal every time the selected product changes; the first
+       time it's still gated behind actually scrolling it into view. */
+    if (homeChallengesRevealed) {
+      homeChallengesGrid.classList.remove('revealed');
+      void homeChallengesGrid.offsetWidth;
+      homeChallengesGrid.classList.add('revealed');
+    }
+  }
+
+  if (homeChallengesGrid && 'IntersectionObserver' in window) {
+    var homeChallengesObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        homeChallengesRevealed = true;
+        homeChallengesGrid.classList.add('revealed');
+        homeChallengesObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    homeChallengesObs.observe(homeChallengesGrid);
+  } else if (homeChallengesGrid) {
+    homeChallengesRevealed = true;
+    homeChallengesGrid.classList.add('revealed');
+  }
+
   function render(){
     var p = products[current];
     panelIcon.innerHTML = icons[p.key];
@@ -335,6 +472,8 @@
       void el.offsetWidth; /* restart animation */
       el.classList.add('fade-enter');
     });
+
+    renderHomeChallenges(p);
   }
 
   function goTo(i){

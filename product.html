@@ -119,10 +119,11 @@
 .challenges-header{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;max-width:1430px}
 .challenges-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.75rem,4vw,48px);line-height:1.05;color:#2E1B4E;margin:0}
 .challenges-subtitle{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.4vw,20px);line-height:1.2;color:#6B5B7A;text-transform:capitalize;max-width:1379px;margin:0}
-.challenges-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;width:100%}
+.challenges-grid{display:flex;flex-wrap:wrap;gap:24px;width:100%}
 
 .challenge-card{
   position:relative;
+  flex:1 1 320px;
   display:flex; flex-direction:column;
   background:#FFFDFE; border:0.5px solid #C9B7D8; border-radius:20px;
   overflow:hidden;
@@ -520,7 +521,14 @@
 #frameworksStats.revealed .frameworks-stat-card:nth-child(3){ animation-delay:.25s; }
 #frameworksStats.revealed .frameworks-stat-card:nth-child(4){ animation-delay:.35s; }
 
-.frameworks-banner{ display:flex; flex-direction:column; gap:8px; padding:24px; background:#210D4A; border-radius:20px; }
+.frameworks-cap{ display:flex; flex-direction:column; gap:16px; width:100%; }
+.frameworks-cap-title{ font-family:'Inter',sans-serif; font-weight:700; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:#44235C; margin:0; }
+.frameworks-cap-list{ display:flex; flex-direction:column; gap:12px; width:100%; list-style:none; margin:0; padding:0; }
+.frameworks-cap-list li{ position:relative; padding-left:22px; font-family:'Inter',sans-serif; font-weight:500; font-size:16px; line-height:24px; color:#3D2B55; }
+.frameworks-cap-list li::before{ content:''; position:absolute; left:4px; top:9px; width:7px; height:7px; border-radius:50%; background:#6E3894; }
+
+.frameworks-banners{ display:flex; flex-wrap:wrap; gap:20px; width:100%; }
+.frameworks-banner{ flex:1 1 280px; display:flex; flex-direction:column; gap:8px; padding:24px; background:#210D4A; border-radius:20px; }
 .frameworks-banner-title{ font-family:'Inter',sans-serif; font-weight:600; font-size:20px; line-height:28px; color:#F3ECF8; margin:0; }
 .frameworks-banner-value{ font-family:'Inter',sans-serif; font-weight:400; font-size:17px; line-height:26px; color:#B8A7C5; margin:0; }
 
@@ -843,99 +851,6 @@
   .why-benefit-row{ opacity:1; transform:none; animation:none !important; }
 }
 
-/* ===== OS Section ===== */
-.os-section {
-  padding: clamp(40px,5vw,80px) clamp(24px,5vw,80px);
-  background: #ffffff;
-}
-.os-card {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(90deg, #210D4A 0%, #3C236E 50%, #210D4A 100%);
-  background-size: 220% 100%;
-  border-radius: 40px;
-  padding: clamp(60px,6vw,100px) clamp(24px,8vw,150px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  text-align: center;
-  max-width: 1612px;
-  margin: 0 auto;
-  animation: osGradientShift 9s ease-in-out infinite;
-}
-/* Ambient sweeping glow, echoing the hero section's diagonal light beam */
-.os-card::before {
-  content: "";
-  position: absolute;
-  inset: -60%;
-  z-index: 0;
-  pointer-events: none;
-  background: conic-gradient(from 0deg, transparent 0deg, rgba(195,94,213,.22) 35deg, transparent 95deg, transparent 360deg);
-  animation: osBeamSpin 16s linear infinite;
-}
-.os-card > * { position: relative; z-index: 1; }
-@keyframes osGradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-@keyframes osBeamSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-.os-label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  color: #F7F6FA;
-  margin: 0;
-}
-.os-heading-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  perspective: 800px;
-}
-.os-heading {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: clamp(1.5rem, 4.6vw, 60px);
-  line-height: 1.05;
-  color: #ffffff;
-  margin: 0;
-}
-.os-term {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.5rem, 4.6vw, 60px);
-  line-height: 1.05;
-  color: #C35ED5;
-  margin: 0;
-  min-height: 1.2em;
-  display: inline-block;
-  text-shadow: 0 0 24px rgba(195,94,213,.55), 0 0 48px rgba(195,94,213,.25);
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-.os-term.flip-out { animation: osTermFlipOut .32s cubic-bezier(.4,0,.6,1) forwards; }
-.os-term.flip-in  { animation: osTermFlipIn  .5s cubic-bezier(.2,.8,.3,1.15) both; }
-@keyframes osTermFlipOut { from { transform: rotateX(0deg); opacity: 1; } to { transform: rotateX(-90deg); opacity: 0; } }
-@keyframes osTermFlipIn  { from { transform: rotateX(90deg); opacity: 0; } to { transform: rotateX(0deg); opacity: 1; } }
-
-.os-desc {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: clamp(0.85rem, 1.1vw, 16px);
-  line-height: 1.7;
-  color: #E9DFF0;
-  max-width: 760px;
-  margin: 8px 0 0;
-  text-transform: capitalize;
-}
-@media(prefers-reduced-motion: reduce) {
-  .os-card { animation: none; background-position: 0% 50%; }
-  .os-card::before { animation: none; opacity: .35; }
-  .os-term.flip-out, .os-term.flip-in { animation: none; }
-}
-
 
 /* ===== Full Walkthrough ===== */
 .walkthrough-section {
@@ -1111,7 +1026,7 @@
     <div class="capabilities-wrap">
       <div class="capabilities-header" data-reveal="up">
         <h2 id="capabilitiesTitle" class="capabilities-title">Built Into Every Module.</h2>
-        <p class="capabilities-subtitle">Built-in capabilities that power every module of the platform.</p>
+        <p id="capabilitiesSubtitle" class="capabilities-subtitle">Built-in capabilities that power every module of the platform.</p>
       </div>
       <div id="capabilitiesGrid" class="capabilities-grid" data-reveal="up" data-delay="120"></div>
     </div>
@@ -1140,22 +1055,21 @@
       <div id="frameworksBadgesMobile" class="frameworks-badges-mobile" aria-hidden="true"></div>
 
       <div id="frameworksStats" class="frameworks-stats" data-reveal="up" data-delay="100"></div>
+      <div id="frameworksCap" class="frameworks-cap" data-reveal="up" data-delay="100" hidden>
+        <h4 id="frameworksCapTitle" class="frameworks-cap-title"></h4>
+        <ul id="frameworksCapList" class="frameworks-cap-list"></ul>
+      </div>
 
-      <div class="frameworks-banner" data-reveal="up" data-delay="180">
-        <h3 class="frameworks-banner-title">Multi-framework compliance mapping</h3>
-        <p class="frameworks-banner-value">NCA ECC · ISO 27001:2022 · SAMA CSF · PCI DSS v4.0 · PDPL</p>
+      <div class="frameworks-banners">
+        <div class="frameworks-banner" data-reveal="up" data-delay="180">
+          <h3 id="frameworksBannerTitle1" class="frameworks-banner-title"></h3>
+          <p id="frameworksBannerValue1" class="frameworks-banner-value"></p>
+        </div>
+        <div id="frameworksBanner2" class="frameworks-banner" data-reveal="up" data-delay="220" hidden>
+          <h3 id="frameworksBannerTitle2" class="frameworks-banner-title"></h3>
+          <p id="frameworksBannerValue2" class="frameworks-banner-value"></p>
+        </div>
       </div>
-    </div>
-  </section>
-    <!-- ===================== OS SECTION ===================== -->
-  <section class="os-section" data-reveal="up">
-    <div class="os-card">
-      <p id="osLabel" class="os-label"></p>
-      <div class="os-heading-wrap">
-        <h2 id="osHeading" class="os-heading"></h2>
-        <span id="osTerm" class="os-term"></span>
-      </div>
-      <p id="osDesc" class="os-desc"></p>
     </div>
   </section>
     <!-- ===================== A COMPREHENSIVE CAPABILITY BENCHMARK ===================== -->
@@ -1171,7 +1085,7 @@
           <div class="bench-head" role="row">
             <span role="columnheader" style="--c:0">Capability</span>
             <span id="benchOwnHead" class="bench-col-own" role="columnheader" style="--c:1"></span>
-            <span role="columnheader" style="--c:2">Other Solutions</span>
+            <span id="benchOtherHead" role="columnheader" style="--c:2">Other Solutions</span>
           </div>
           <div id="benchRows"></div>
         </div>
@@ -1193,7 +1107,7 @@
     <div class="why-wrap">
       <div class="why-header" data-reveal="up">
         <h2 id="whyTitle" class="why-title"></h2>
-        <p class="why-subtitle">A modern, integrated platform built for Saudi organizations, consolidating multiple cybersecurity domains into a single connected system.</p>
+        <p id="whySubtitle" class="why-subtitle">A modern, integrated platform built for Saudi organizations, consolidating multiple cybersecurity domains into a single connected system.</p>
       </div>
       <div id="whyPillars" class="why-pillars" data-reveal="up" data-delay="120"></div>
       <div id="whyBenefits" class="why-benefits" data-reveal="up" data-delay="160"></div>
@@ -1390,10 +1304,6 @@
   var data = {
     cyber: {
       name:'CyberMode',
-      osLabel:'The Operating System',
-      osHeading:'CyberMode is the Operating System for',
-      osTerms:['Cybersecurity GRC','Compliance Management','Risk Assessment','Audit Readiness'],
-      osDesc:'Create a digital twin of your security operations. CyberMode unifies intake, compliance mapping, financial tracking, and engineering resilience into a single, automated workflow.',
       challengeCategory:'Cybersecurity Management',
       sixChallenges:[
         { title:'Fragmented Cybersecurity Management', desc:'Disparate tools and disconnected processes create inefficiency, inconsistency, and lack of unified control.', solvedTitle:'Unified Cybersecurity Platform', solvedDesc:'A single integrated system that centralizes governance, risk, compliance, and operations into one unified environment.' },
@@ -1406,26 +1316,104 @@
     },
     governance: {
       name:'GovernanceMode',
-      osLabel:'The Operating System',
-      osHeading:'GovernanceMode is the Operating System for',
-      osTerms:['Policy Management','GRC Compliance','Regulatory Mapping','Risk Governance'],
-      osDesc:'Centralize every governance activity into one live platform. GovernanceMode connects policies, controls, risk registers, and regulatory frameworks into a single source of truth.',
       challengeCategory:'Governance, Risk &amp; Compliance',
       sixChallenges:[
-        { title:'Scattered Policy Management', desc:'Policies spread across emails, folders, and spreadsheets with no version control or enforcement tracking.', solvedTitle:'Centralized Policy Management', solvedDesc:'Version-controlled policies with automated, multi-level approval workflows across their full lifecycle.' },
-        { title:'Compliance Blind Spots', desc:'Regulatory changes go unnoticed until the last minute, leaving teams scrambling to close gaps under pressure.', solvedTitle:'Real-Time Regulatory Tracking', solvedDesc:'Automatic alerts flag regulatory changes and map them to affected policies and controls instantly.' },
-        { title:'Manual Reporting Burden', desc:'Hours wasted building compliance reports from scratch each cycle instead of real-time automated dashboards.', solvedTitle:'Automated Compliance Dashboard', solvedDesc:'Real-time compliance posture across every active framework in one view, with zero manual report building.' },
-        { title:'Disconnected Risk Register', desc:'Risk data living in isolated spreadsheets with no link to controls, assets, or regulatory obligations.', solvedTitle:'Integrated Risk Register', solvedDesc:'A live risk register with scoring and treatment plans, linked directly to controls and regulatory obligations.' },
-        { title:'Fragmented Committee Oversight', desc:'Governance committees run on scattered notes and email threads with no consistent record of decisions.', solvedTitle:'Committee Management', solvedDesc:'Run governance committees with automated agendas, minutes, and action tracking that keeps everyone accountable.' },
-        { title:'Audit Findings Left Unresolved', desc:'Findings are logged but rarely tracked through to closure, leaving the same gaps to resurface each cycle.', solvedTitle:'Audit Management', solvedDesc:'Plan, execute, and track audit findings through to full remediation closure in a single workflow.' }
+        { title:'Fragmented Governance Information', desc:'Governance information is scattered across multiple systems, with no shared taxonomy, identity, or source of truth.', solvedTitle:'Centralized Governance Repository', solvedDesc:'Hierarchy, strategic objectives, document center, regulators, frameworks and exception management in one structural model that every other module references.' },
+        { title:'Risks Managed Independently', desc:'Risk registers are maintained separately, leaving enterprise risk exposure without a consolidated view.', solvedTitle:'Enterprise Risk Management Framework', solvedDesc:'Taxonomy-driven enterprise, national and third-party risk with configurable matrices, KRIs, automated triggers and proactive monitoring.' },
+        { title:'Compliance Tracking Difficulties', desc:'Compliance levels are difficult to measure across multiple regulatory and international frameworks.', solvedTitle:'Automated Compliance Monitoring', solvedDesc:'Pre-mapped control catalogues continuously monitored across NCA-ECC, ISO 27001, ISO 31000, ISO 22301 and COSO.' },
+        { title:'Time-Consuming Audits', desc:'Audit preparation and evidence collection are manual, turning audit prep into a second job for every team.', solvedTitle:'Integrated Audit &amp; Evidence Management', solvedDesc:'Scheduled audit plans, active and past audits, gap identification and structured remediation, with evidence held against every control.' },
+        { title:'Weak Committee Governance', desc:'Committee governance and decision tracking are weak, with agendas, minutes and votes spread across email.', solvedTitle:'Committee Lifecycle Management', solvedDesc:'Member selection, structured agendas, recorded minutes, voting and actionable post-meeting recommendations.' },
+        { title:'Lack of KPI Visibility', desc:'Strategic KPIs lack visibility, so progress against objectives and initiatives cannot be measured.', solvedTitle:'Strategic Planning &amp; KPI Management', solvedDesc:'Objectives aligned to initiatives and projects, with a dynamic roadmap matrix tracking programmes across Q1 to Q4.' },
+        { title:'Manual Approvals', desc:'Approvals depend on email chains and chase-up calls, stretching cycle times and blurring accountability.', solvedTitle:'Workflow Automation Engine', solvedDesc:'A drag-and-drop visual builder for multi-step approvals with conditional logic, SLAs and module integration.' },
+        { title:'Limited Executive Reporting', desc:'Executive reporting capability is limited, so leadership questions take weeks rather than minutes.', solvedTitle:'Executive Dashboards &amp; Analytics', solvedDesc:'Real-time, customisable cross-module dashboards and reports with role-based visibility and export to XLSX, CSV and PDF.' }
+      ],
+      coreModulesTitleLeft:'12 Modules', coreModulesTitleRight:'9 Core EGRC Processes',
+      coreModules:[
+        { name:'Governance &amp; Organizational Mgmt', desc:'Hierarchy · objectives · document center.' },
+        { name:'Enterprise Risk Management',       desc:'Taxonomy · KRIs · 3×3 &amp; 5×5 matrices.' },
+        { name:'National Risk Management',         desc:'Saudi NRF alignment · cross-entity.' },
+        { name:'Compliance &amp; Framework',           desc:'NCA-ECC · ISO 27001 · COSO mapping.' },
+        { name:'Internal Audit',                   desc:'Plans · findings · evidence · remediation.' },
+        { name:'Business Continuity Mgmt',         desc:'BIA · BCP · DRP · ERP · crisis ops.' },
+        { name:'Strategy &amp; Performance Mgmt',      desc:'Objectives · KPIs · roadmap dashboards.' },
+        { name:'Initiatives &amp; Projects',           desc:'Initiatives → projects · milestone tracking.' },
+        { name:'Policy &amp; Document Management',     desc:'Repository · version control · approvals.' },
+        { name:'Committees Management',            desc:'Agenda · MoM · voting · post-meeting actions.' },
+        { name:'Workflow Automation',               desc:'Visual builder · conditional logic · SLAs.' },
+        { name:'Internal Communication Hub',        desc:'LMS · awareness · messaging center' }
+      ],
+      capabilitiesSubtitle:'Twelve Cross-Cutting Platform Capabilities Enabled Across Every Module.',
+      capabilities:[
+        { title:'User-Friendly Interface', desc:'Intuitive web-based design for all user roles.' },
+        { title:'Customisable Platform', desc:'Configurable workflows, forms and fields.' },
+        { title:'Bilingual Support — AR/EN', desc:'Arabic and English UI with full localisation and right-to-left support.' },
+        { title:'Secure Authentication', desc:'Active Directory integration for centralised authentication.' },
+        { title:'Database Security', desc:'Encrypted data fields for confidentiality.' },
+        { title:'API Integration — RESTful', desc:'RESTful APIs for third-party system connectivity.' },
+        { title:'Special Integrations', desc:'LDAP and Microsoft Graph connectivity.' },
+        { title:'Vulnerability Management Tools', desc:'Tenable and Qualys scanner ingestion.' },
+        { title:'Data Import / Export', desc:'CSV and Excel compatibility at scale.' },
+        { title:'Notification System', desc:'Automated email and SMS notifications.' },
+        { title:'Multi-Unit Management', desc:'Multiple business units with team-based access.' },
+        { title:'Deployment Flexibility', desc:'Cloud, on-premise and hybrid deployment.' }
+      ],
+      frameworksDesc1:'GovernanceMode is designed to support both local Saudi regulatory requirements and internationally recognized governance, risk, compliance and resilience frameworks — pre-mapped, audit-ready, and continuously monitored.',
+      frameworksDesc2:'GovernanceMode supports four anchor international standards, alongside the Saudi National Risk Framework and pre-mapped NCA requirements.',
+      frameworks:['ISO 31000','Saudi National Risk Framework (NRF)','ISO 22301','NCA-ECC','SAMA CSF','ISO 27001','COSO ERM'],
+      complianceCapabilities:{
+        title:'Compliance Capabilities',
+        items:[
+          'Accelerated compliance assessments against pre-mapped regulatory controls',
+          'Reduced audit preparation effort with evidence held against every requirement',
+          'Improved regulatory readiness across Saudi and international frameworks',
+          'Continuous compliance monitoring rather than point-in-time assessment',
+          'Standardized governance practices across every department'
+        ]
+      },
+      frameworksBanners:[
+        { title:'Saudi Regulatory Alignment', value:'NCA-ECC · Saudi National Risk Framework (NRF) · SAMA CSF' },
+        { title:'International Standards', value:'ISO 27001 · ISO 31000 · ISO 22301 · COSO ERM' }
+      ],
+      benchmarkSubtitle:'GovernanceMode is a Saudi-built, NCA-aligned, NRF-mapped platform engineered for the Kingdom from day one — consolidating governance, risk, compliance, continuity, strategy and audit into one system rather than a federation of point tools.',
+      benchmarkOtherLabel:'Traditional Platforms',
+      benchmark:[
+        ['Arabic Language Support', 'Native', 'Partial'],
+        ['Saudi Regulatory Alignment', 'Built-in', 'Requires customization'],
+        ['National Risk Framework Support', 'Fully supported', 'Limited'],
+        ['NCA Alignment', 'Pre-mapped', 'Requires additional work'],
+        ['Local Support Team', 'Local Saudi team', 'Regional / global'],
+        ['Customisation Flexibility', 'High', 'Moderate'],
+        ['Time to Value', 'Accelerated', 'Long'],
+        ['Deployment Options', 'Cloud · On-Premise · Hybrid', 'Limited'],
+        ['Localization', 'Saudi-focused', 'Generic'],
+        ['Total Cost of Ownership', 'Optimized', 'High']
+      ],
+      whySubtitle:'An enterprise-grade EGRC platform built for Saudi organizations, consolidating governance, risk, compliance, continuity, strategy and audit into a single connected system.',
+      whyPillars:[
+        { title:'Enhanced Governance', desc:'Centralises risk, compliance and strategic planning to improve oversight and accountability.' },
+        { title:'Operational Efficiency', desc:'Automates workflows and reduces manual effort, improving productivity end-to-end.' },
+        { title:'Full Traceability', desc:'Complete audit trails and real-time visibility into all operations.' },
+        { title:'Open Integration', desc:'Service-oriented architecture with REST APIs, SSO, SAML, LDAP and Microsoft Graph.' }
+      ],
+      whyBenefits:[
+        { key:'Decision Support', value:'A single line of sight from board to control.' },
+        { key:'100% Saudi-Built Platform', value:'Built in the Kingdom, for the Kingdom.' },
+        { key:'Full NCA Alignment', value:'Out-of-the-box mapping to NCA-ECC controls.' },
+        { key:'Multi-Module &middot; One Place', value:'Governance in one place - not a federation of point tools.' },
+        { key:'High Customisation', value:'Workflows, matrices and forms all tailored to you.' },
+        { key:'Local Support Team', value:'A team in your time zone, in your language.' },
+        { key:'Unified Dashboards', value:'Cross-module visibility, live, in one view.' },
+        { key:'Lower TCO', value:'Optimized total cost of ownership.' }
+      ],
+      whyStats:[
+        { target:12, decimals:0, suffix:'+', label:'Integrated Modules' },
+        { target:9,  decimals:0, suffix:'',  label:'Core EGRC Processes' },
+        { target:4,  decimals:0, suffix:'',  label:'Anchor Standards' },
+        { isText:true, text:'AR / EN', label:'Bilingual' }
       ]
     },
     intel: {
       name:'IntelMode',
-      osLabel:'The Intelligence Engine',
-      osHeading:'IntelMode is the Operating System for',
-      osTerms:['Threat Intelligence','Security Analytics','Adversary Profiling','Proactive Defense'],
-      osDesc:'Transform raw threat data into actionable intelligence. IntelMode correlates feeds, maps attack patterns, and delivers prioritized risk scores in real time.',
       challengeCategory:'Threat Intelligence',
       sixChallenges:[
         { title:'Alert Fatigue', desc:'Thousands of daily alerts with no prioritization, forcing analysts to manually filter noise from real threats.', solvedTitle:'Indicator Management', solvedDesc:'Deduplicate and score threat indicators automatically so analysts focus only on what matters.' },
@@ -1438,10 +1426,6 @@
     },
     risk: {
       name:'RiskMode',
-      osLabel:'The Risk Engine',
-      osHeading:'RiskMode is the Operating System for',
-      osTerms:['Enterprise Risk','Risk Quantification','Control Assurance','Remediation Tracking'],
-      osDesc:'Replace subjective risk ratings with data-driven quantification. RiskMode links threats to assets, controls, and business impact for board-ready reporting.',
       challengeCategory:'Enterprise Risk',
       sixChallenges:[
         { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
@@ -1454,10 +1438,6 @@
     },
     audit: {
       name:'AuditMode',
-      osLabel:'The Audit Engine',
-      osHeading:'AuditMode is the Operating System for',
-      osTerms:['Internal Audits','Compliance Cycles','Evidence Management','Regulatory Reporting'],
-      osDesc:'Automate every stage of the audit lifecycle. AuditMode connects planning, fieldwork, evidence collection, and findings management in one continuous workflow.',
       challengeCategory:'Audit Management',
       sixChallenges:[
         { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
@@ -1470,10 +1450,6 @@
     },
     vendor: {
       name:'VendorMode',
-      osLabel:'The Vendor Engine',
-      osHeading:'VendorMode is the Operating System for',
-      osTerms:['Third-Party Risk','Vendor Assessments','Supply Chain Security','Contract Compliance'],
-      osDesc:'Build a complete picture of your vendor ecosystem. VendorMode automates onboarding, risk scoring, continuous monitoring, and remediation tracking in one platform.',
       challengeCategory:'Vendor Risk',
       sixChallenges:[
         { title:'No Vendor Visibility', desc:'Critical suppliers with access to sensitive systems never formally assessed or continuously monitored for risk.', solvedTitle:'Vendor Onboarding', solvedDesc:'Streamlined registration and due diligence bring every vendor into full view from day one.' },
@@ -1486,10 +1462,6 @@
     },
     incident: {
       name:'IncidentMode',
-      osLabel:'The Response Engine',
-      osHeading:'IncidentMode is the Operating System for',
-      osTerms:['Incident Response','Breach Management','Regulatory Reporting','Crisis Coordination'],
-      osDesc:'Command every incident from detection to closure. IncidentMode structures response playbooks, automates escalations, and generates NCA-compliant reports automatically.',
       challengeCategory:'Incident Response',
       sixChallenges:[
         { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },
@@ -1514,7 +1486,8 @@
   var heroOverviewLabel = document.getElementById('heroOverviewLabel');
   if (heroOverviewLabel) heroOverviewLabel.textContent = p.name + ' Platform Overview';
 
-  /* 16 Core Modules — shared across every product, not product-specific */
+  /* 16 Core Modules — shared across every product by default; a product can
+     override both the title and the list (e.g. GovernanceMode's own EGRC set) */
   var CORE_MODULES = [
     { name:'Organizational Structure',  desc:'Hierarchy and role mapping.' },
     { name:'Strategic Planning',        desc:'KPIs and initiatives tracking.' },
@@ -1533,9 +1506,13 @@
     { name:'Assessments',               desc:'Maturity and gap analysis.' },
     { name:'Workflow Management',       desc:'Automation and orchestration.' }
   ];
+  if (p.coreModulesTitleLeft) {
+    document.querySelector('.core-modules-title-left').textContent = p.coreModulesTitleLeft;
+    document.querySelector('.core-modules-title-right').textContent = p.coreModulesTitleRight;
+  }
   var cmList = document.getElementById('coreModulesList');
   if (cmList) {
-    CORE_MODULES.forEach(function(m, i){
+    (p.coreModules || CORE_MODULES).forEach(function(m, i){
       var num = (i + 1) < 10 ? '0' + (i + 1) : '' + (i + 1);
       var row = document.createElement('div');
       row.className = 'core-module-row';
@@ -1550,7 +1527,8 @@
     });
   }
 
-  /* Built Into Every Module — shared across every product, not product-specific */
+  /* Built Into Every Module — shared across every product by default; a
+     product can override both the subtitle and the list (e.g. GovernanceMode) */
   var CAPABILITIES = [
     { title:'Multi-Language Support — AR/EN', desc:'Full Arabic and English localization with native RTL/LTR switching for all interface elements.' },
     { title:'API Integration — RESTful', desc:'RESTful API to connect with SIEM, ticketing, and external tools for seamless data exchange.' },
@@ -1562,10 +1540,13 @@
     { title:'Responsive Design', desc:'Optimized experience on desktop and tablet devices with responsive layout.' },
     { title:'Deployment', desc:'On-Premise · Cloud — flexible hosting to match your environment.' }
   ];
+  if (p.capabilitiesSubtitle) {
+    document.getElementById('capabilitiesSubtitle').textContent = p.capabilitiesSubtitle;
+  }
   var capGrid = document.getElementById('capabilitiesGrid');
   if (capGrid) {
     var CAP_COLS = 3;
-    CAPABILITIES.forEach(function(c, i){
+    (p.capabilities || CAPABILITIES).forEach(function(c, i){
       var card = document.createElement('article');
       card.className = 'capability-card';
       card.style.setProperty('--row', Math.floor(i / CAP_COLS));
@@ -1658,16 +1639,19 @@
   ];
   var benchRows = document.getElementById('benchRows');
   if (benchRows) {
-    var benchSub  = document.getElementById('benchSubtitle');
-    var benchHead = document.getElementById('benchOwnHead');
+    var benchSub   = document.getElementById('benchSubtitle');
+    var benchHead  = document.getElementById('benchOwnHead');
+    var benchOtherHead  = document.getElementById('benchOtherHead');
+    var benchOtherLabel = p.benchmarkOtherLabel || 'Other Solutions';
     if (benchHead) benchHead.textContent = p.name + ' Platform';
+    if (benchOtherHead) benchOtherHead.textContent = benchOtherLabel;
     if (benchSub) {
-      benchSub.textContent = p.name + ' consolidates multiple cybersecurity domains into a single ' +
+      benchSub.textContent = p.benchmarkSubtitle || (p.name + ' consolidates multiple cybersecurity domains into a single ' +
         'Saudi-built system — reducing complexity, improving visibility, and accelerating compliance ' +
-        'compared with siloed solutions.';
+        'compared with siloed solutions.');
     }
 
-    BENCHMARK.forEach(function(r, i){
+    (p.benchmark || BENCHMARK).forEach(function(r, i){
       var row = document.createElement('div');
       row.className = 'bench-row';
       row.setAttribute('role', 'row');
@@ -1682,7 +1666,7 @@
           '<span class="bench-own">' + r[1] + '</span>' +
         '</div>' +
         '<div role="cell">' +
-          '<span class="bench-cell-label">Other Solutions</span>' +
+          '<span class="bench-cell-label">' + benchOtherLabel + '</span>' +
           '<span class="bench-other">' + r[2] + '</span>' +
         '</div>';
       benchRows.appendChild(row);
@@ -1706,20 +1690,23 @@
     }
   }
 
-  /* Multiple Frameworks. One Environment. — orbit is shared/universal, intro text is per-product */
+  /* Multiple Frameworks. One Environment. — shared/universal by default; a
+     product can override the orbit list, intro text, stats-vs-capabilities
+     block, and the banner(s) (e.g. GovernanceMode's own regulatory set). */
   var FRAMEWORKS = ['NCA ECC','Aramco TPCS','NCA CSCC','NDMO-PDPL','ISO 27001','NCA OTCC','DGA','ISO 31000','ISO 22301','NCA CCC','CMA','PCI DSS','NCA TCC','SAMA CSF','NCA OSMAC','NCA DCC'];
   var PRODUCT_ICONS = {
     cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/intelmode.png',
     risk:'assets/datamode.png', audit:'assets/itmode.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
   };
+  var fwList = p.frameworks || FRAMEWORKS;
 
   var fwTrack = document.getElementById('frameworksOrbitTrack');
   if (fwTrack) {
-    /* Split into two alternating rings (8 badges each, 45deg apart per ring) — 16 on one
-       ring at 22.5deg would overlap since most labels are wider than the arc between them */
-    var perRing = Math.ceil(FRAMEWORKS.length / 2);
+    /* Split into two alternating rings (45deg apart per ring) — labels on one
+       ring at a tight angle would overlap since most are wider than the arc between them */
+    var perRing = Math.ceil(fwList.length / 2);
     var stepDeg = 360 / perRing;
-    FRAMEWORKS.forEach(function(name, i){
+    fwList.forEach(function(name, i){
       var ring = i % 2;
       var ringIndex = Math.floor(i / 2);
       var angle = stepDeg * ringIndex + (ring === 1 ? stepDeg / 2 : 0);
@@ -1736,7 +1723,7 @@
 
   var fwMobile = document.getElementById('frameworksBadgesMobile');
   if (fwMobile) {
-    FRAMEWORKS.forEach(function(name){
+    fwList.forEach(function(name){
       var chip = document.createElement('span');
       chip.className = 'framework-chip';
       chip.innerHTML = '<span class="framework-dot" aria-hidden="true"></span>' + name;
@@ -1749,8 +1736,10 @@
 
   var fwDesc1 = document.getElementById('frameworksDesc1');
   var fwDesc2 = document.getElementById('frameworksDesc2');
-  if (fwDesc1) fwDesc1.textContent = p.name + ' is designed and built from the ground up to meet Saudi national cybersecurity regulatory requirements — ensuring organizations achieve and maintain compliance with confidence.';
-  if (fwDesc2) fwDesc2.textContent = 'By consolidating compliance requirements into one platform, ' + p.name + ' eliminates fragmentation, enhances governance, and empowers organizations to efficiently meet complex regulatory obligations with confidence.';
+  if (fwDesc1) fwDesc1.textContent = p.frameworksDesc1 ||
+    (p.name + ' is designed and built from the ground up to meet Saudi national cybersecurity regulatory requirements — ensuring organizations achieve and maintain compliance with confidence.');
+  if (fwDesc2) fwDesc2.textContent = p.frameworksDesc2 ||
+    ('By consolidating compliance requirements into one platform, ' + p.name + ' eliminates fragmentation, enhances governance, and empowers organizations to efficiently meet complex regulatory obligations with confidence.');
 
   var FW_STATS = [
     { title:'Real-time scores', desc:'live compliance metrics' },
@@ -1759,7 +1748,20 @@
     { title:'Trend tracking',   desc:'historical analysis' }
   ];
   var fwStats = document.getElementById('frameworksStats');
-  if (fwStats) {
+  var fwCap   = document.getElementById('frameworksCap');
+  if (p.complianceCapabilities) {
+    if (fwStats) fwStats.hidden = true;
+    if (fwCap) {
+      fwCap.hidden = false;
+      document.getElementById('frameworksCapTitle').textContent = p.complianceCapabilities.title;
+      var capList = document.getElementById('frameworksCapList');
+      p.complianceCapabilities.items.forEach(function(item){
+        var li = document.createElement('li');
+        li.textContent = item;
+        capList.appendChild(li);
+      });
+    }
+  } else if (fwStats) {
     FW_STATS.forEach(function(s){
       var card = document.createElement('div');
       card.className = 'frameworks-stat-card';
@@ -1768,9 +1770,27 @@
     });
   }
 
-  /* Why {Product}? — platform-wide facts, only the heading is per-product */
+  var fwBanners = p.frameworksBanners || [
+    { title:'Multi-framework compliance mapping', value:'NCA ECC · ISO 27001:2022 · SAMA CSF · PCI DSS v4.0 · PDPL' }
+  ];
+  document.getElementById('frameworksBannerTitle1').textContent = fwBanners[0].title;
+  document.getElementById('frameworksBannerValue1').textContent = fwBanners[0].value;
+  var fwBanner2 = document.getElementById('frameworksBanner2');
+  if (fwBanners[1]) {
+    fwBanner2.hidden = false;
+    document.getElementById('frameworksBannerTitle2').textContent = fwBanners[1].title;
+    document.getElementById('frameworksBannerValue2').textContent = fwBanners[1].value;
+  } else {
+    fwBanner2.hidden = true;
+  }
+
+  /* Why {Product}? — platform-wide facts by default; a product can override
+     the subtitle, pillars, benefit rows, and stats (e.g. GovernanceMode) */
   var whyTitleEl = document.getElementById('whyTitle');
   if (whyTitleEl) whyTitleEl.textContent = 'Why ' + p.name + '?';
+  var whySubtitleEl = document.getElementById('whySubtitle');
+  if (whySubtitleEl) whySubtitleEl.textContent = p.whySubtitle ||
+    'A modern, integrated platform built for Saudi organizations, consolidating multiple cybersecurity domains into a single connected system.';
 
   var walkthroughTitleEl = document.getElementById('walkthrough-heading');
   if (walkthroughTitleEl) walkthroughTitleEl.textContent = p.name + ' Platform Overview';
@@ -1786,7 +1806,7 @@
   ];
   var whyPillarsEl = document.getElementById('whyPillars');
   if (whyPillarsEl) {
-    WHY_PILLARS.forEach(function(pl, i){
+    (p.whyPillars || WHY_PILLARS).forEach(function(pl, i){
       var card = document.createElement('div');
       card.className = 'why-pillar';
       card.style.setProperty('--i', i);
@@ -1804,7 +1824,7 @@
   ];
   var whyBenefitsEl = document.getElementById('whyBenefits');
   if (whyBenefitsEl) {
-    WHY_BENEFITS.forEach(function(b, i){
+    (p.whyBenefits || WHY_BENEFITS).forEach(function(b, i){
       var row = document.createElement('div');
       row.className = 'why-benefit-row';
       row.style.setProperty('--i', i);
@@ -1819,15 +1839,16 @@
     { target:99.9, decimals:1, suffix:'%', label:'Uptime' },
     { target:24,   decimals:0, suffix:'/7', label:'Support' }
   ];
+  var whyStatsList = p.whyStats || WHY_STATS;
   var whyStatsEl = document.getElementById('whyStats');
   if (whyStatsEl) {
     var whyReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var whyNumberEls = WHY_STATS.map(function(s){
+    var whyNumberEls = whyStatsList.map(function(s){
       var card = document.createElement('div');
       card.className = 'why-stat-card';
       var numberEl = document.createElement('div');
       numberEl.className = 'why-stat-number';
-      numberEl.textContent = whyReducedMotion ? (s.target.toFixed(s.decimals) + s.suffix) : ('0' + s.suffix);
+      numberEl.textContent = s.isText ? s.text : (whyReducedMotion ? (s.target.toFixed(s.decimals) + s.suffix) : ('0' + s.suffix));
       var labelEl = document.createElement('div');
       labelEl.className = 'why-stat-label';
       labelEl.textContent = s.label;
@@ -1843,7 +1864,8 @@
         entries.forEach(function(entry){
           if (!entry.isIntersecting || whyStatsAnimated) return;
           whyStatsAnimated = true;
-          WHY_STATS.forEach(function(s, i){
+          whyStatsList.forEach(function(s, i){
+            if (s.isText) return;
             var el = whyNumberEls[i];
             var duration = 1600;
             var start = null;
@@ -1864,38 +1886,13 @@
     }
   }
 
-  /* OS section */
-  document.getElementById('osLabel').textContent   = p.osLabel;
-  document.getElementById('osHeading').textContent = p.osHeading;
-  document.getElementById('osDesc').textContent    = p.osDesc;
-
-  var termEl   = document.getElementById('osTerm');
-  var terms    = p.osTerms;
-  var termIdx  = 0;
-  var osReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  termEl.textContent = terms[0];
-
-  setInterval(function(){
-    if (osReducedMotion) {
-      termIdx = (termIdx + 1) % terms.length;
-      termEl.textContent = terms[termIdx];
-      return;
-    }
-    termEl.classList.remove('flip-in');
-    termEl.classList.add('flip-out');
-    setTimeout(function(){
-      termIdx = (termIdx + 1) % terms.length;
-      termEl.textContent = terms[termIdx];
-      termEl.classList.remove('flip-out');
-      termEl.classList.add('flip-in');
-    }, 320);
-  }, 2800);
-
-  /* Six Challenges. One Platform. */
+  /* Six Challenges. One Platform. (count adapts per product — some have more than six) */
   if (p.sixChallenges) {
-    document.getElementById('challengesTitle').textContent = 'Six Challenges. One Platform.';
+    var CH_NUM_WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
+    var chCountWord = CH_NUM_WORDS[p.sixChallenges.length] || (p.sixChallenges.length + '');
+    document.getElementById('challengesTitle').textContent = chCountWord + ' Challenges. One Platform.';
     document.getElementById('challengesSubtitle').textContent =
-      'Six critical challenges organizations face without a unified ' + p.challengeCategory.replace(/&amp;/g, '&') + ' platform — and how ' + p.name + ' addresses each one.';
+      chCountWord + ' critical challenges organizations face without a unified ' + p.challengeCategory.replace(/&amp;/g, '&') + ' platform — and how ' + p.name + ' addresses each one.';
 
     var chGrid = document.getElementById('challengesGrid');
     p.sixChallenges.forEach(function(c, i){
