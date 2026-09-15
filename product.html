@@ -120,23 +120,47 @@
 .challenges-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;width:100%}
 
 .challenge-card{
+  position:relative;
   display:flex; flex-direction:column;
   background:#FFFDFE; border:0.5px solid #C9B7D8; border-radius:20px;
-  overflow:hidden; opacity:0;
+  overflow:hidden;
   transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  /* Which side of the grid this card sits on (set by JS from its real layout
+     position) decides which way its lines fly in from: --dir -1/1 drives the
+     X-axis for a left/right card, --dir-up switches a centered card to
+     entering from below instead. */
+  --dir:-1; --dir-up:0; --divider-origin:left;
 }
+.challenge-card[data-side="right"]{ --dir:1; --dir-up:0; --divider-origin:right; }
+.challenge-card[data-side="up"]{ --dir:0; --dir-up:1; --divider-origin:center; }
 .challenge-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px rgba(68,34,90,.14); border-color:#B79ACB; }
+.challenge-card::before{
+  content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.65) 50%, transparent 58%);
+  transform:translateX(-160%);
+}
 .challenge-card .card-bar{ height:4px; flex-shrink:0; background:#6E3894; transform-origin:left; transform:scaleX(0); }
 .challenge-card .card-content{ display:flex; flex-direction:column; align-items:flex-start; gap:14px; padding:28px; }
+.card-heading{
+  display:flex; flex-direction:column; align-items:flex-start; gap:14px; opacity:0;
+  transform:translate(calc(var(--dir,-1) * 70px), calc(var(--dir-up,0) * 26px)) scale(.96);
+  filter:blur(4px);
+}
+.card-body{ display:flex; flex-direction:column; align-items:flex-start; gap:14px; width:100%; }
 .challenge-badge{
   display:flex; align-items:center; justify-content:center; flex-shrink:0;
   width:44px; height:44px; background:#F3ECF8; border-radius:12px;
   font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#44235C;
+  opacity:0; transform:scale(.4) rotate(-16deg);
 }
 .challenge-card-title{ font-family:'Inter',sans-serif; font-weight:600; font-size:20px; line-height:28px; color:#2E1B4E; margin:0; }
-.challenge-card-desc{ font-family:'Inter',sans-serif; font-weight:400; font-size:16px; line-height:24px; color:#6B5B7A; margin:0; }
-.challenge-divider{ width:100%; height:1px; background:#D8CDE8; border:0; margin:0; }
-.solved-row{ display:flex; align-items:center; gap:8px; }
+.challenge-card-desc{
+  font-family:'Inter',sans-serif; font-weight:400; font-size:16px; line-height:24px; color:#6B5B7A; margin:0; opacity:0;
+  transform:translate(calc(var(--dir,-1) * 70px), calc(var(--dir-up,0) * 22px)) scale(.97);
+  filter:blur(3px);
+}
+.challenge-divider{ width:100%; height:1px; background:#D8CDE8; border:0; margin:0; transform-origin:var(--divider-origin,left); transform:scaleX(0); }
+.solved-row{ display:flex; align-items:center; gap:8px; opacity:0; transform:translate(calc(var(--dir,-1) * 32px), calc(var(--dir-up,0) * 18px)); }
 .solved-dot{ position:relative; display:flex; align-items:center; justify-content:center; flex-shrink:0; width:18px; height:18px; border-radius:50%; background:#6E3894; }
 .solved-dot::after{
   content:''; position:absolute; inset:-4px; border-radius:50%;
@@ -144,36 +168,133 @@
 }
 @keyframes solvedDotPulse{ 0%{transform:scale(.85); opacity:.8;} 100%{transform:scale(1.7); opacity:0;} }
 .solved-label{ font-family:'Inter',sans-serif; font-weight:600; font-size:11px; letter-spacing:.14em; color:#6E3894; text-transform:uppercase; }
-.solved-title{ font-family:'Inter',sans-serif; font-weight:600; font-size:16px; line-height:22px; color:#44235C; margin:0; }
-.solved-desc{ font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:20px; color:#6B5B7A; margin:0; }
+.solved-title{ font-family:'Inter',sans-serif; font-weight:600; font-size:16px; line-height:22px; color:#44235C; margin:0; opacity:0; transform:translate(calc(var(--dir,-1) * 32px), calc(var(--dir-up,0) * 16px)); }
+.solved-desc{ font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:20px; color:#6B5B7A; margin:0; opacity:0; transform:translate(calc(var(--dir,-1) * 32px), calc(var(--dir-up,0) * 16px)); }
 
-/* Cascading pop-in, triggered once the grid enters the viewport (site-wide scroll-reveal adds .revealed) */
-@keyframes challengeCardPop{
-  0%  { opacity:0; transform:translateY(28px) scale(.94); }
-  60% { opacity:1; transform:translateY(-4px) scale(1.015); }
-  100%{ opacity:1; transform:translateY(0) scale(1); }
+/* Reveal, line by line, side-aware. Each row — heading, description, divider,
+   "solved by" row, solved title, solved description — is its own independent
+   trigger, so each one waits for its turn instead of the whole card firing as
+   a block. Every line in a card also flies in from whichever side that card
+   actually sits on in the grid (JS sets [data-side] from real layout): a
+   left-column card's lines enter from the left, a right-column card's from
+   the right, a centered one rises from below — via the --dir/--dir-up
+   variables on .challenge-card, so one keyframe per line covers all sides.
+   On browsers that support scroll-driven animations (animation-timeline:view),
+   every line is tied directly to its own scroll position: it plays out live as
+   you scroll it into view — genuinely "one more line per scroll", not a timer.
+   Older browsers fall back to a fast staged cascade triggered once the card
+   itself scrolls into view (still per-card, still staggered, just not scroll-scrubbed). */
+@keyframes challengeBarGrow{
+  0%{ transform:scaleX(0); box-shadow:0 0 0 rgba(110,56,148,0); }
+  55%{ box-shadow:0 0 16px 2px rgba(110,56,148,.6); }
+  100%{ transform:scaleX(1); box-shadow:0 0 0 rgba(110,56,148,0); }
 }
-@keyframes challengeBarGrow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
-#challengesGrid.revealed .challenge-card{ animation:challengeCardPop .65s cubic-bezier(.22,.9,.3,1) both; }
-#challengesGrid.revealed .challenge-card .card-bar{ animation:challengeBarGrow .7s cubic-bezier(.4,0,.2,1) both; }
-#challengesGrid.revealed .challenge-card:nth-child(1){ animation-delay:.05s; }
-#challengesGrid.revealed .challenge-card:nth-child(1) .card-bar{ animation-delay:.3s; }
-#challengesGrid.revealed .challenge-card:nth-child(2){ animation-delay:.15s; }
-#challengesGrid.revealed .challenge-card:nth-child(2) .card-bar{ animation-delay:.4s; }
-#challengesGrid.revealed .challenge-card:nth-child(3){ animation-delay:.25s; }
-#challengesGrid.revealed .challenge-card:nth-child(3) .card-bar{ animation-delay:.5s; }
-#challengesGrid.revealed .challenge-card:nth-child(4){ animation-delay:.35s; }
-#challengesGrid.revealed .challenge-card:nth-child(4) .card-bar{ animation-delay:.6s; }
-#challengesGrid.revealed .challenge-card:nth-child(5){ animation-delay:.45s; }
-#challengesGrid.revealed .challenge-card:nth-child(5) .card-bar{ animation-delay:.7s; }
-#challengesGrid.revealed .challenge-card:nth-child(6){ animation-delay:.55s; }
-#challengesGrid.revealed .challenge-card:nth-child(6) .card-bar{ animation-delay:.8s; }
+@keyframes challengeBadgePop{
+  0%{ opacity:0; transform:scale(.4) rotate(-16deg); }
+  55%{ opacity:1; transform:scale(1.15) rotate(6deg); }
+  100%{ opacity:1; transform:scale(1) rotate(0); }
+}
+@keyframes challengeHeadingIn{
+  from{ opacity:0; transform:translate(calc(var(--dir,-1) * 70px), calc(var(--dir-up,0) * 26px)) scale(.96); filter:blur(4px); }
+  to{ opacity:1; transform:translate(0,0) scale(1); filter:blur(0); }
+}
+@keyframes challengeDescIn{
+  from{ opacity:0; transform:translate(calc(var(--dir,-1) * 70px), calc(var(--dir-up,0) * 22px)) scale(.97); filter:blur(3px); }
+  to{ opacity:1; transform:translate(0,0) scale(1); filter:blur(0); }
+}
+@keyframes challengeDividerGrow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+@keyframes challengeSolvedRowIn{
+  from{ opacity:0; transform:translate(calc(var(--dir,-1) * 32px), calc(var(--dir-up,0) * 18px)); }
+  to{ opacity:1; transform:translate(0,0); }
+}
+@keyframes challengeSolvedTitleIn{
+  from{ opacity:0; transform:translate(calc(var(--dir,-1) * 32px), calc(var(--dir-up,0) * 16px)); }
+  to{ opacity:1; transform:translate(0,0); }
+}
+@keyframes challengeSolvedDescIn{
+  from{ opacity:0; transform:translate(calc(var(--dir,-1) * 32px), calc(var(--dir-up,0) * 16px)); }
+  to{ opacity:1; transform:translate(0,0); }
+}
+@keyframes challengeShine{
+  0%{ transform:translateX(-160%) skewX(-12deg); opacity:0; }
+  12%{ opacity:1; }
+  45%{ opacity:1; }
+  100%{ transform:translateX(160%) skewX(-12deg); opacity:0; }
+}
+
+/* Card-level bookends (accent bar, badge pop, final shine sweep) always run once
+   the card itself scrolls into view — these aren't "lines" of content. */
+.challenge-card.revealed .card-bar{
+  animation:challengeBarGrow .55s cubic-bezier(.4,0,.2,1) both;
+  animation-delay:calc(var(--i, 0) * 90ms);
+}
+.challenge-card.revealed .challenge-badge{
+  animation:challengeBadgePop .6s cubic-bezier(.34,1.56,.64,1) both;
+  animation-delay:calc(var(--i, 0) * 90ms + 220ms);
+}
+.challenge-card.revealed::before{
+  animation:challengeShine 1s cubic-bezier(.4,0,.2,1) both;
+  animation-delay:calc(var(--i, 0) * 90ms + 1080ms);
+}
+
+/* Fallback: no scroll-driven animation support — a fast timed cascade per card. */
+@supports not (animation-timeline: view()) {
+  .challenge-card.revealed .card-heading{
+    animation:challengeHeadingIn .55s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 90ms + 160ms);
+  }
+  .challenge-card.revealed .challenge-card-desc{
+    animation:challengeDescIn .55s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 90ms + 400ms);
+  }
+  .challenge-card.revealed .challenge-divider{
+    animation:challengeDividerGrow .5s cubic-bezier(.4,0,.2,1) both;
+    animation-delay:calc(var(--i, 0) * 90ms + 580ms);
+  }
+  .challenge-card.revealed .solved-row{
+    animation:challengeSolvedRowIn .45s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 90ms + 720ms);
+  }
+  .challenge-card.revealed .solved-title{
+    animation:challengeSolvedTitleIn .4s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 90ms + 820ms);
+  }
+  .challenge-card.revealed .solved-desc{
+    animation:challengeSolvedDescIn .4s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 90ms + 920ms);
+  }
+}
+
+/* Enhanced: each line scrubs in as it individually crosses into view — no
+   class, no JS trigger, purely driven by the user's own scroll position. */
+@supports (animation-timeline: view()) {
+  .card-heading{ animation:challengeHeadingIn .6s linear both; animation-timeline:view(); animation-range:entry 0% entry 60%; }
+  .challenge-card-desc{ animation:challengeDescIn .6s linear both; animation-timeline:view(); animation-range:entry 0% entry 60%; }
+  .challenge-divider{ animation:challengeDividerGrow .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+  .solved-row{ animation:challengeSolvedRowIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+  .solved-title{ animation:challengeSolvedTitleIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+  .solved-desc{ animation:challengeSolvedDescIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+}
+
 @media(prefers-reduced-motion:reduce){
-  .challenge-card{ opacity:1; transition:none; }
   .challenge-card .card-bar{ transform:scaleX(1); }
+  .challenge-badge{ opacity:1; transform:none; }
+  .card-heading, .challenge-card-desc, .solved-row, .solved-title, .solved-desc{ opacity:1; transform:none; filter:none; }
+  .challenge-divider{ transform:scaleX(1); }
+  .challenge-card::before{ display:none; }
   .solved-dot::after{ animation:none; display:none; }
-  #challengesGrid.revealed .challenge-card,
-  #challengesGrid.revealed .challenge-card .card-bar{ animation:none; }
+  .card-heading, .challenge-card-desc, .challenge-divider, .solved-row, .solved-title, .solved-desc,
+  .challenge-card.revealed .card-bar,
+  .challenge-card.revealed .challenge-badge,
+  .challenge-card.revealed::before,
+  .challenge-card.revealed .card-heading,
+  .challenge-card.revealed .challenge-card-desc,
+  .challenge-card.revealed .challenge-divider,
+  .challenge-card.revealed .solved-row,
+  .challenge-card.revealed .solved-title,
+  .challenge-card.revealed .solved-desc{
+    animation:none;
+  }
 }
 
 /* ===== 16 Core Modules · 100+ Integrated Features ===== */
@@ -185,6 +306,7 @@
 .core-modules-list{display:flex;flex-direction:column;gap:24px;width:100%}
 
 .core-module-row{
+  position:relative; overflow:hidden;
   display:flex; align-items:center; flex-wrap:wrap; gap:16px;
   padding:20px 24px; min-height:72px; box-sizing:border-box;
   background:#F7F6FA; border:0.5px solid #C9B7D8; border-radius:16px;
@@ -192,31 +314,76 @@
   transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 .core-module-row:hover{ border-color:#9B6FB8; box-shadow:0 8px 20px rgba(68,34,90,.12); transform:translateY(-2px); }
+.core-module-row::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  background:#6E3894; transform-origin:top; transform:scaleY(0);
+}
 .core-module-row .row-left{ display:flex; align-items:center; gap:16px; flex:1 1 260px; min-width:0; }
-.core-module-num{ font-family:'Inter',sans-serif; font-weight:600; font-size:18px; line-height:24px; color:#8B7B9F; flex-shrink:0; width:24px; }
+.core-module-num{
+  font-family:'Inter',sans-serif; font-weight:600; font-size:18px; line-height:24px; color:#8B7B9F; flex-shrink:0; width:24px;
+  opacity:0; transform:scale(.4) rotate(-12deg);
+}
 .core-module-name{ font-family:'Inter',sans-serif; font-weight:600; font-size:18px; line-height:24px; color:#2E1B4E; }
 .core-module-row .row-desc{ font-family:'Inter',sans-serif; font-weight:500; font-size:14px; line-height:20px; color:#6B5B7A; flex-shrink:0; margin-left:auto; text-align:right; }
 
-/* Enter from both sides: title from the left, description from the right, staggered per row */
-@keyframes coreRowLeftIn{ from{ opacity:0; transform:translateX(-40px); } to{ opacity:1; transform:translateX(0); } }
-@keyframes coreRowRightIn{ from{ opacity:0; transform:translateX(40px); } to{ opacity:1; transform:translateX(0); } }
-.core-module-row .row-left{ opacity:0; }
-.core-module-row .row-desc{ opacity:0; }
-#coreModulesList.revealed .core-module-row .row-left{
-  animation:coreRowLeftIn .6s cubic-bezier(.22,.9,.3,1) both;
-  animation-delay:calc(var(--i, 0) * 45ms);
+/* Each row lights up on its own: a left accent bar draws in with a brief glow,
+   the module number pops, and the title/description slide in from opposite
+   sides with a soft blur-focus. On browsers that support scroll-driven
+   animations, every row is tied to its own scroll position — one more row
+   plays out with each bit of scroll through the list, not a single burst.
+   Older browsers fall back to a fast cascade once the whole list scrolls into view. */
+@keyframes coreBarGrow{
+  0%{ transform:scaleY(0); box-shadow:0 0 0 rgba(110,56,148,0); }
+  55%{ box-shadow:0 0 14px 1px rgba(110,56,148,.55); }
+  100%{ transform:scaleY(1); box-shadow:0 0 0 rgba(110,56,148,0); }
 }
-#coreModulesList.revealed .core-module-row .row-desc{
-  animation:coreRowRightIn .6s cubic-bezier(.22,.9,.3,1) both;
-  animation-delay:calc(var(--i, 0) * 45ms + 80ms);
+@keyframes coreNumPop{
+  0%{ opacity:0; transform:scale(.4) rotate(-12deg); }
+  60%{ opacity:1; transform:scale(1.15) rotate(4deg); }
+  100%{ opacity:1; transform:scale(1) rotate(0); }
 }
+@keyframes coreRowLeftIn{ from{ opacity:0; transform:translateX(-40px) scale(.97); filter:blur(3px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
+@keyframes coreRowRightIn{ from{ opacity:0; transform:translateX(40px) scale(.97); filter:blur(3px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
+.core-module-row .row-left{ opacity:0; transform:translateX(-40px) scale(.97); filter:blur(3px); }
+.core-module-row .row-desc{ opacity:0; transform:translateX(40px) scale(.97); filter:blur(3px); }
+
+/* Fallback: no scroll-driven animation support — a fast cascade once the list appears. */
+@supports not (animation-timeline: view()) {
+  #coreModulesList.revealed .core-module-row::before{
+    animation:coreBarGrow .5s cubic-bezier(.4,0,.2,1) both;
+    animation-delay:calc(var(--i, 0) * 60ms);
+  }
+  #coreModulesList.revealed .core-module-row .core-module-num{
+    animation:coreNumPop .5s cubic-bezier(.34,1.56,.64,1) both;
+    animation-delay:calc(var(--i, 0) * 60ms + 90ms);
+  }
+  #coreModulesList.revealed .core-module-row .row-left{
+    animation:coreRowLeftIn .55s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 60ms + 60ms);
+  }
+  #coreModulesList.revealed .core-module-row .row-desc{
+    animation:coreRowRightIn .55s cubic-bezier(.22,.9,.3,1) both;
+    animation-delay:calc(var(--i, 0) * 60ms + 160ms);
+  }
+}
+
+/* Enhanced: each row scrubs in as it individually crosses into view. */
+@supports (animation-timeline: view()) {
+  .core-module-row::before{ animation:coreBarGrow .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 45%; }
+  .core-module-row .core-module-num{ animation:coreNumPop .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 50%; }
+  .core-module-row .row-left{ animation:coreRowLeftIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+  .core-module-row .row-desc{ animation:coreRowRightIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+}
+
 @media(max-width:640px){
   .core-module-row{ flex-direction:column; align-items:flex-start; }
   .core-module-row .row-left{ flex:none; width:100%; }
   .core-module-row .row-desc{ margin-left:0; text-align:left; }
 }
 @media(prefers-reduced-motion:reduce){
-  .core-module-row .row-left, .core-module-row .row-desc{ opacity:1; animation:none !important; transform:none; }
+  .core-module-row::before{ transform:scaleY(1); animation:none !important; }
+  .core-module-num{ opacity:1; transform:none; animation:none !important; }
+  .core-module-row .row-left, .core-module-row .row-desc{ opacity:1; animation:none !important; transform:none; filter:none; }
   .core-module-row{ transition:none; }
 }
 
@@ -274,12 +441,23 @@
 .frameworks-center::after{ animation-delay:1.6s; }
 .frameworks-center img{ width:52px; height:52px; object-fit:contain; }
 
-.frameworks-orbit-track{ position:absolute; inset:0; z-index:2; --fw-radius:clamp(140px,16vw,250px); }
+/* The badge ring orbits the center continuously — the track itself spins,
+   and each badge's own label counter-rotates at the same speed so the text
+   stays upright while the badge travels around the circle. */
+.frameworks-orbit-track{ position:absolute; inset:0; z-index:2; --fw-radius:clamp(140px,16vw,250px); animation:fwSpinRev 60s linear infinite; }
 .framework-badge{
   position:absolute; top:50%; left:50%; z-index:2; opacity:0;
   transform:translate(-50%,-50%) rotate(var(--angle)) translate(var(--fw-radius)) rotate(calc(var(--angle) * -1));
 }
-.framework-badge-inner{ display:inline-flex; align-items:center; gap:5px; padding:6px 11px; background:#FFFDFE; border:0.5px solid #C9B7D8; border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.06); font-family:'Inter',sans-serif; font-weight:600; font-size:11px; color:#2F4FA2; white-space:nowrap; }
+.framework-badge-inner{
+  display:inline-flex; align-items:center; gap:5px; padding:6px 11px;
+  background:#FFFDFE; border:0.5px solid #C9B7D8; border-radius:8px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.06);
+  font-family:'Inter',sans-serif; font-weight:600; font-size:11px; color:#2F4FA2; white-space:nowrap;
+  transition:box-shadow .25s ease, border-color .25s ease;
+  animation:fwSpin 60s linear infinite;
+}
+.framework-badge-inner:hover{ border-color:#9B6FB8; box-shadow:0 8px 18px rgba(68,34,90,.2); }
 .framework-dot{ width:6px; height:6px; border-radius:50%; background:#2F4FA2; flex-shrink:0; }
 
 .frameworks-badges-mobile{ display:none; flex-wrap:wrap; gap:8px; width:100%; }
@@ -292,6 +470,7 @@
 @keyframes fwSpin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
 @keyframes fwSpinRev{ from{ transform:rotate(0deg); } to{ transform:rotate(-360deg); } }
 @keyframes fwPulseRing{ 0%{ transform:scale(.9); opacity:.9; } 100%{ transform:scale(1.5); opacity:0; } }
+
 /* Strong entrance: badges pop outward from the center with overshoot, staggered around the ring */
 @keyframes fwBadgeIn{
   0%  { opacity:0; transform:translate(-50%,-50%) rotate(var(--angle)) translate(0px) rotate(calc(var(--angle) * -1)) scale(.4); }
@@ -326,7 +505,8 @@
 .frameworks-banner-value{ font-family:'Inter',sans-serif; font-weight:400; font-size:17px; line-height:26px; color:#B8A7C5; margin:0; }
 
 @media(prefers-reduced-motion:reduce){
-  .frameworks-ring-outer, .frameworks-ring-inner, .frameworks-center::before, .frameworks-center::after{ animation:none; }
+  .frameworks-ring-outer, .frameworks-ring-inner, .frameworks-orbit-track, .framework-badge-inner{ animation:none; }
+  .frameworks-center::before, .frameworks-center::after{ animation:none; }
   .framework-badge{ opacity:1; animation:none !important; }
   .frameworks-stat-card{ opacity:1; transform:none; animation:none !important; transition:none; }
 }
@@ -1702,21 +1882,72 @@
       var num = (i + 1) < 10 ? '0' + (i + 1) : '' + (i + 1);
       var card = document.createElement('article');
       card.className = 'challenge-card';
+      card.style.setProperty('--i', i);
       card.innerHTML =
         '<div class="card-bar" aria-hidden="true"></div>' +
         '<div class="card-content">' +
-          '<div class="challenge-badge" aria-hidden="true">' + num + '</div>' +
-          '<h3 class="challenge-card-title">' + c.title + '</h3>' +
-          '<p class="challenge-card-desc">' + c.desc + '</p>' +
-          '<hr class="challenge-divider" />' +
-          '<div class="solved-row">' +
-            '<span class="solved-dot" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2 6.2l2.6 2.6L10 3" stroke="#FFFDFE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
-            '<span class="solved-label">Solved By</span>' +
+          '<div class="card-heading">' +
+            '<div class="challenge-badge" aria-hidden="true">' + num + '</div>' +
+            '<h3 class="challenge-card-title">' + c.title + '</h3>' +
           '</div>' +
-          '<h4 class="solved-title">' + c.solvedTitle + '</h4>' +
-          '<p class="solved-desc">' + c.solvedDesc + '</p>' +
+          '<div class="card-body">' +
+            '<p class="challenge-card-desc">' + c.desc + '</p>' +
+            '<hr class="challenge-divider" />' +
+            '<div class="solved-row">' +
+              '<span class="solved-dot" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2 6.2l2.6 2.6L10 3" stroke="#FFFDFE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+              '<span class="solved-label">Solved By</span>' +
+            '</div>' +
+            '<h4 class="solved-title">' + c.solvedTitle + '</h4>' +
+            '<p class="solved-desc">' + c.solvedDesc + '</p>' +
+          '</div>' +
         '</div>';
       chGrid.appendChild(card);
+    });
+
+    /* Each card reveals on its own as it individually scrolls into view,
+       so the six don't all fire together the moment the grid appears. */
+    if ('IntersectionObserver' in window) {
+      var chCardObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('revealed');
+          chCardObs.unobserve(entry.target);
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+      chGrid.querySelectorAll('.challenge-card').forEach(function(card){
+        chCardObs.observe(card);
+      });
+    } else {
+      chGrid.querySelectorAll('.challenge-card').forEach(function(card){
+        card.classList.add('revealed');
+      });
+    }
+
+    /* Tag each card with which side of the grid it actually sits on (from its
+       real rendered position, so it stays correct across the responsive
+       auto-fit column count) — CSS reads [data-side] to decide whether that
+       card's lines fly in from the left, the right, or rise up from below. */
+    function updateChallengeCardSides(){
+      var cards = chGrid.querySelectorAll('.challenge-card');
+      if (!cards.length) return;
+      var gridRect = chGrid.getBoundingClientRect();
+      if (!gridRect.width) return;
+      var singleCol = true;
+      cards.forEach(function(c){
+        if (c.getBoundingClientRect().width < gridRect.width * 0.92) singleCol = false;
+      });
+      var centerX = gridRect.left + gridRect.width / 2;
+      cards.forEach(function(card){
+        if (singleCol) { card.setAttribute('data-side', 'up'); return; }
+        var mid = card.getBoundingClientRect().left + card.getBoundingClientRect().width / 2;
+        card.setAttribute('data-side', mid < centerX - 2 ? 'left' : (mid > centerX + 2 ? 'right' : 'up'));
+      });
+    }
+    updateChallengeCardSides();
+    var chSideResizeTimer;
+    window.addEventListener('resize', function(){
+      clearTimeout(chSideResizeTimer);
+      chSideResizeTimer = setTimeout(updateChallengeCardSides, 150);
     });
   }
 

@@ -12,8 +12,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
 
 <link rel="stylesheet" href="css/styles.css?v=6" />
 </head>
@@ -358,54 +358,90 @@
   </section>
 
   <!-- ===================== CONTACT / CTA ===================== -->
-  <section id="contact" class="flex flex-col items-center gap-20 px-6 sm:px-10 lg:px-75 py-16 sm:py-20 lg:py-37.5" aria-labelledby="contact-heading">
-    <div class="flex flex-col items-center gap-4 text-center">
-      <h2 id="contact-heading" class="font-display font-bold text-[#1F1728] text-[clamp(1.75rem,4vw,3rem)] leading-none" data-reveal="up">Contact Us</h2>
-      <p class="font-body font-medium text-base leading-4.75 capitalize text-[#9A94A6]" data-reveal="up" data-delay="110">Our Team Will Respond Within 24 Hours.</p>
+  <section id="contact" class="flex flex-col items-center gap-10 sm:gap-12 lg:gap-16 bg-[#F7F6FA] px-6 sm:px-12 lg:px-[150px] py-16 sm:py-24 lg:py-[150px]" aria-labelledby="contact-heading">
+
+    <div class="flex w-full max-w-[765px] flex-col items-center gap-4">
+      <h2 id="contact-heading" class="font-display font-bold text-[#2E1B4E] text-[clamp(1.75rem,5vw,48px)] leading-[1.05] lg:leading-[48px] text-center" data-reveal="up">How can we help you?</h2>
+      <p class="font-body font-normal text-[#6B5B7A] text-base sm:text-lg lg:text-[18px] leading-[1.5] lg:leading-[28px] text-center" data-reveal="up" data-delay="110">Tell us the type of request and a little about what you need. Our team will get back to you.</p>
     </div>
 
-    <form class="flex w-full max-w-282.5 flex-col items-center gap-12" action="#" method="post" data-reveal="up" data-delay="190">
-      <div class="flex w-full flex-col items-start gap-8">
-        <div class="flex w-full flex-col items-center gap-8 sm:flex-row">
-          <div class="w-full">
-            <label for="firstName" class="sr-only">First Name</label>
-            <input id="firstName" name="firstName" type="text" required placeholder="First Name"
-              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
-          </div>
-          <div class="w-full">
-            <label for="lastName" class="sr-only">Last Name</label>
-            <input id="lastName" name="lastName" type="text" required placeholder="Last Name"
-              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
-          </div>
+    <form class="flex w-full max-w-[1430px] flex-col gap-6" action="#" method="post" data-reveal="up" data-delay="180">
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="fullName" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Full Name <span class="text-red-600">*</span></label>
+          <input id="fullName" name="fullName" type="text" required placeholder="Sara Al-Otaibi"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
         </div>
-
-        <div class="flex w-full flex-col items-center gap-8 sm:flex-row">
-          <div class="w-full">
-            <label for="workEmail" class="sr-only">Corporate Email Address</label>
-            <input id="workEmail" name="workEmail" type="email" required placeholder="Corporate Email Address"
-              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
-          </div>
-          <div class="w-full">
-            <label for="companyName" class="sr-only">Company Name</label>
-            <input id="companyName" name="companyName" type="text" required placeholder="Company Name"
-              class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
-          </div>
-        </div>
-
-        <div class="w-full">
-          <label for="challenge" class="sr-only">Primary Operational Challenge</label>
-          <input id="challenge" name="challenge" type="text" placeholder="Primary Operational Challenge"
-            class="h-15 w-full rounded-[10px] border-[0.5px] border-borderc bg-white px-4 font-body text-base text-[#1F1728] placeholder:text-[#9A94A6] shadow-[0_2px_4px_rgba(0,0,0,.1)] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="companyName" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Company / Organization<span class="text-red-600">*</span></label>
+          <input id="companyName" name="companyName" type="text" required placeholder="Company or entity name"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
         </div>
       </div>
 
-      <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-secondary px-10 py-4 font-body font-medium text-base capitalize text-white shadow-[0_2px_4px_rgba(0,0,0,.1)] hover:bg-primary transition-colors">
-        Send Message
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M14.6673 1.3335L7.33398 8.66683" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M14.6673 1.3335L10.0007 14.6668L7.33398 8.66683L1.33398 6.00016L14.6673 1.3335Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="businessEmail" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Business Email <span class="text-red-600">*</span></label>
+          <input id="businessEmail" name="businessEmail" type="email" required placeholder="user@company.com"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="phoneNumber" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Phone Number (Optional)</label>
+          <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="+966 5X XXX XXXX"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="requestType" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] capitalize text-[#111827]">Request Type <span class="text-red-600">*</span></label>
+          <div class="relative w-full">
+            <select id="requestType" name="requestType" required
+              class="h-12 w-full appearance-none rounded-lg border-[0.5px] border-[#D1D5DB] bg-white pl-4 pr-11 font-body text-base leading-6 text-[#2E1B4E] focus:outline-none focus:ring-4 focus:ring-primary/15">
+              <option value="Platform Demo">Platform Demo</option>
+              <option value="Sales Inquiry">Sales Inquiry</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Media Inquiry">Media Inquiry</option>
+              <option value="Careers">Careers</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div id="platformField" class="flex flex-1 flex-col items-start gap-2">
+          <label for="platform" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Select Platform <span class="text-red-600">*</span></label>
+          <div class="relative w-full">
+            <select id="platform" name="platform" required
+              class="h-12 w-full appearance-none rounded-lg border-[0.5px] border-[#D1D5DB] bg-white pl-4 pr-11 font-body text-base leading-6 text-[#2E1B4E] focus:outline-none focus:ring-4 focus:ring-primary/15">
+              <option value="CyberMode">CyberMode</option>
+              <option value="GovernanceMode">GovernanceMode</option>
+              <option value="IntelMode">IntelMode</option>
+              <option value="RiskMode">RiskMode</option>
+              <option value="AuditMode">AuditMode</option>
+              <option value="VendorMode">VendorMode</option>
+              <option value="IncidentMode">IncidentMode</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col items-start gap-2">
+        <label for="requirement" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Message / Brief Requirement<span class="text-red-600">*</span></label>
+        <textarea id="requirement" name="requirement" required rows="5" placeholder="Tell us briefly what you need."
+          class="h-[150px] w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 font-body text-[13px] leading-4 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15"></textarea>
+      </div>
+
+      <hr class="h-px w-full border-0 bg-[#3D2B55]" />
+
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <button type="submit" class="inline-flex items-center justify-center gap-[7px] rounded-2xl bg-[#44235C] px-6 py-4 font-body font-semibold text-sm leading-[17px] text-[#FFFDFE] hover:bg-secondary transition-colors">
+          Send Request
+        </button>
+        <p class="font-body font-normal text-sm leading-5 text-[#6B5B7A]">We reply to the email address you provide.</p>
+      </div>
     </form>
   </section>
 </main>
