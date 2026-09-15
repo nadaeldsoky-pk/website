@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Advanced Controls</title>
 <meta name="robots" content="index, follow" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
 <meta name="theme-color" content="#44225A" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -301,8 +303,27 @@
 .core-modules-section{background:#fff;padding:clamp(60px,6vw,100px) clamp(24px,8vw,150px)}
 .core-modules-wrap{max-width:1430px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(40px,5vw,80px)}
 .core-modules-header{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;max-width:1513px}
-.core-modules-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.5vw,48px);line-height:1.05;letter-spacing:-1.1px;color:#2E1B4E;margin:0}
-.core-modules-subtitle{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.4vw,20px);line-height:1.6;color:#6B5B7A;max-width:1340px;margin:0}
+.core-modules-title{
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.5vw,48px);line-height:1.05;letter-spacing:-1.1px;color:#2E1B4E;margin:0;
+}
+.core-modules-title-left, .core-modules-title-right{
+  display:inline-block; opacity:0; filter:blur(4px);
+}
+.core-modules-title-left{ transform:translateX(-80px) scale(.94); }
+.core-modules-title-right{ transform:translateX(80px) scale(.94); }
+.core-modules-title-sep{ display:inline-block; opacity:0; }
+.core-modules-subtitle{
+  font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.4vw,20px);line-height:1.6;color:#6B5B7A;max-width:1340px;margin:0;
+  opacity:0; transform:translateY(16px);
+}
+@keyframes coreTitleLeftIn{ from{ opacity:0; transform:translateX(-80px) scale(.94); filter:blur(4px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
+@keyframes coreTitleRightIn{ from{ opacity:0; transform:translateX(80px) scale(.94); filter:blur(4px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
+@keyframes coreTitleSepIn{ from{ opacity:0; } to{ opacity:1; } }
+@keyframes coreSubtitleIn{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
+.core-modules-header.revealed .core-modules-title-left{ animation:coreTitleLeftIn .65s cubic-bezier(.22,.9,.3,1) both; }
+.core-modules-header.revealed .core-modules-title-right{ animation:coreTitleRightIn .65s cubic-bezier(.22,.9,.3,1) .08s both; }
+.core-modules-header.revealed .core-modules-title-sep{ animation:coreTitleSepIn .4s ease-out .5s both; }
+.core-modules-header.revealed .core-modules-subtitle{ animation:coreSubtitleIn .6s cubic-bezier(.22,.9,.3,1) .3s both; }
 .core-modules-list{display:flex;flex-direction:column;gap:24px;width:100%}
 
 .core-module-row{
@@ -315,8 +336,13 @@
 }
 .core-module-row:hover{ border-color:#9B6FB8; box-shadow:0 8px 20px rgba(68,34,90,.12); transform:translateY(-2px); }
 .core-module-row::before{
-  content:''; position:absolute; left:0; top:0; bottom:0; width:4px;
+  content:''; position:absolute; left:0; top:0; bottom:0; width:4px; z-index:1;
   background:#6E3894; transform-origin:top; transform:scaleY(0);
+}
+.core-module-row::after{
+  content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.7) 50%, transparent 58%);
+  transform:translateX(-160%);
 }
 .core-module-row .row-left{ display:flex; align-items:center; gap:16px; flex:1 1 260px; min-width:0; }
 .core-module-num{
@@ -326,12 +352,13 @@
 .core-module-name{ font-family:'Inter',sans-serif; font-weight:600; font-size:18px; line-height:24px; color:#2E1B4E; }
 .core-module-row .row-desc{ font-family:'Inter',sans-serif; font-weight:500; font-size:14px; line-height:20px; color:#6B5B7A; flex-shrink:0; margin-left:auto; text-align:right; }
 
-/* Each row lights up on its own: a left accent bar draws in with a brief glow,
-   the module number pops, and the title/description slide in from opposite
-   sides with a soft blur-focus. On browsers that support scroll-driven
-   animations, every row is tied to its own scroll position — one more row
-   plays out with each bit of scroll through the list, not a single burst.
-   Older browsers fall back to a fast cascade once the whole list scrolls into view. */
+/* Each row lights up the same way the header title does: a left accent bar
+   draws in with a brief glow, the module number pops, and the title/description
+   slide in from opposite sides — the left half from the left, the right half
+   from the right — with a soft blur-focus, then a shine sweeps across last.
+   Triggered once, reliably, the moment the whole list scrolls into view
+   (same site-wide observer that drives the title), staggered row by row so
+   it reads as a clear top-to-bottom cascade rather than a single flat fade. */
 @keyframes coreBarGrow{
   0%{ transform:scaleY(0); box-shadow:0 0 0 rgba(110,56,148,0); }
   55%{ box-shadow:0 0 14px 1px rgba(110,56,148,.55); }
@@ -342,49 +369,42 @@
   60%{ opacity:1; transform:scale(1.15) rotate(4deg); }
   100%{ opacity:1; transform:scale(1) rotate(0); }
 }
-@keyframes coreRowLeftIn{ from{ opacity:0; transform:translateX(-40px) scale(.97); filter:blur(3px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
-@keyframes coreRowRightIn{ from{ opacity:0; transform:translateX(40px) scale(.97); filter:blur(3px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
-.core-module-row .row-left{ opacity:0; transform:translateX(-40px) scale(.97); filter:blur(3px); }
-.core-module-row .row-desc{ opacity:0; transform:translateX(40px) scale(.97); filter:blur(3px); }
-
-/* Fallback: no scroll-driven animation support — a fast cascade once the list appears. */
-@supports not (animation-timeline: view()) {
-  #coreModulesList.revealed .core-module-row::before{
-    animation:coreBarGrow .5s cubic-bezier(.4,0,.2,1) both;
-    animation-delay:calc(var(--i, 0) * 60ms);
-  }
-  #coreModulesList.revealed .core-module-row .core-module-num{
-    animation:coreNumPop .5s cubic-bezier(.34,1.56,.64,1) both;
-    animation-delay:calc(var(--i, 0) * 60ms + 90ms);
-  }
-  #coreModulesList.revealed .core-module-row .row-left{
-    animation:coreRowLeftIn .55s cubic-bezier(.22,.9,.3,1) both;
-    animation-delay:calc(var(--i, 0) * 60ms + 60ms);
-  }
-  #coreModulesList.revealed .core-module-row .row-desc{
-    animation:coreRowRightIn .55s cubic-bezier(.22,.9,.3,1) both;
-    animation-delay:calc(var(--i, 0) * 60ms + 160ms);
-  }
+@keyframes coreRowLeftIn{ from{ opacity:0; transform:translateX(-70px) scale(.95); filter:blur(4px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
+@keyframes coreRowRightIn{ from{ opacity:0; transform:translateX(70px) scale(.95); filter:blur(4px); } to{ opacity:1; transform:translateX(0) scale(1); filter:blur(0); } }
+@keyframes coreRowShine{
+  0%{ transform:translateX(-160%); opacity:0; }
+  12%{ opacity:1; }
+  45%{ opacity:1; }
+  100%{ transform:translateX(160%); opacity:0; }
 }
+.core-module-row .row-left{ opacity:0; transform:translateX(-70px) scale(.95); filter:blur(4px); }
+.core-module-row .row-desc{ opacity:0; transform:translateX(70px) scale(.95); filter:blur(4px); }
 
-/* Enhanced: each row scrubs in as it individually crosses into view. */
-@supports (animation-timeline: view()) {
-  .core-module-row::before{ animation:coreBarGrow .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 45%; }
-  .core-module-row .core-module-num{ animation:coreNumPop .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 50%; }
-  .core-module-row .row-left{ animation:coreRowLeftIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
-  .core-module-row .row-desc{ animation:coreRowRightIn .5s linear both; animation-timeline:view(); animation-range:entry 0% entry 55%; }
+#coreModulesList.revealed .core-module-row::before{
+  animation:coreBarGrow .55s cubic-bezier(.4,0,.2,1) both;
+  animation-delay:calc(var(--i, 0) * 140ms);
+}
+#coreModulesList.revealed .core-module-row .core-module-num{
+  animation:coreNumPop .55s cubic-bezier(.34,1.56,.64,1) both;
+  animation-delay:calc(var(--i, 0) * 140ms + 130ms);
+}
+#coreModulesList.revealed .core-module-row .row-left{
+  animation:coreRowLeftIn .65s cubic-bezier(.22,.9,.3,1) both;
+  animation-delay:calc(var(--i, 0) * 140ms + 90ms);
+}
+#coreModulesList.revealed .core-module-row .row-desc{
+  animation:coreRowRightIn .65s cubic-bezier(.22,.9,.3,1) both;
+  animation-delay:calc(var(--i, 0) * 140ms + 220ms);
+}
+#coreModulesList.revealed .core-module-row::after{
+  animation:coreRowShine 1s cubic-bezier(.4,0,.2,1) both;
+  animation-delay:calc(var(--i, 0) * 140ms + 480ms);
 }
 
 @media(max-width:640px){
   .core-module-row{ flex-direction:column; align-items:flex-start; }
   .core-module-row .row-left{ flex:none; width:100%; }
   .core-module-row .row-desc{ margin-left:0; text-align:left; }
-}
-@media(prefers-reduced-motion:reduce){
-  .core-module-row::before{ transform:scaleY(1); animation:none !important; }
-  .core-module-num{ opacity:1; transform:none; animation:none !important; }
-  .core-module-row .row-left, .core-module-row .row-desc{ opacity:1; animation:none !important; transform:none; filter:none; }
-  .core-module-row{ transition:none; }
 }
 
 /* ===== Built Into Every Module ===== */
@@ -1080,7 +1100,7 @@
   <section class="core-modules-section" aria-labelledby="coreModulesTitle">
     <div class="core-modules-wrap">
       <div class="core-modules-header" data-reveal="up">
-        <h2 id="coreModulesTitle" class="core-modules-title">16 Core Modules · 100+ Integrated Features</h2>
+        <h2 id="coreModulesTitle" class="core-modules-title"><span class="core-modules-title-left">16 Core Modules</span> <span class="core-modules-title-sep">·</span> <span class="core-modules-title-right">100+ Integrated Features</span></h2>
         <p class="core-modules-subtitle">Every capability your team needs, engineered as one connected system — not a patchwork of disconnected add-ons.</p>
       </div>
       <div id="coreModulesList" class="core-modules-list" data-reveal="up" data-delay="120"></div>
