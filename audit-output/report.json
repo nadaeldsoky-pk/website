@@ -1,0 +1,51 @@
+[
+ {
+  "vw": 375,
+  "docScroll": 375,
+  "bodyScroll": 375,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 375,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1440,
+  "docScroll": 1440,
+  "bodyScroll": 1440,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 1440,
+  "errors": [],
+  "overflow": false
+ }
+]

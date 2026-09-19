@@ -87,18 +87,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 
 .logo-marquee{
-  display:flex; gap:clamp(2rem, 6vw, 5rem);
-  animation: scroll-x 28s linear infinite;
+  display:flex;
+  animation: scroll-x var(--marquee-dur, 28s) linear infinite;
   width:max-content;
 }
+.logo-marquee > *{ flex:none; margin-right:clamp(2rem, 6vw, 5rem); }
 @media (prefers-reduced-motion: reduce){
-  .logo-marquee{ animation: none; }
   html{ scroll-behavior:auto; }
   #panelIcon img{ animation: none; }
 }
 @keyframes scroll-x{
   from{ transform: translateX(0); }
-  to{ transform: translateX(-50%); }
+  to{ transform: translateX(calc(-1 * var(--marquee-unit, 50%))); }
 }
 
 .cta-bg{

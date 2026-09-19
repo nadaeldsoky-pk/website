@@ -752,3 +752,33 @@
   requestTypeEl.addEventListener('change', syncPlatformField);
   syncPlatformField();
 })();
+
+/* ---------------- Logo marquee: endless, gap-free loop at any screen width ---------------- */
+(function(){
+  var track = document.querySelector('.logo-marquee');
+  if (!track) return;
+  var kids = Array.prototype.slice.call(track.children);
+  var unitCount = kids.length / 2;
+  if (!unitCount || unitCount % 1) return;
+  var unitItems = kids.slice(0, unitCount);
+  var timer;
+
+  function build(){
+    while (track.children.length > unitCount) track.removeChild(track.lastChild);
+    var unit = 0;
+    unitItems.forEach(function(el){
+      var cs = getComputedStyle(el);
+      unit += el.getBoundingClientRect().width + parseFloat(cs.marginRight);
+    });
+    if (!unit) return;
+    var copies = Math.ceil(window.innerWidth / unit) + 1;
+    for (var c = 1; c < copies; c++) {
+      unitItems.forEach(function(el){ track.appendChild(el.cloneNode(true)); });
+    }
+    track.style.setProperty('--marquee-unit', unit + 'px');
+    track.style.setProperty('--marquee-dur', (unit / 60) + 's');
+  }
+
+  build();
+  window.addEventListener('resize', function(){ clearTimeout(timer); timer = setTimeout(build, 200); });
+})();
