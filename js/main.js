@@ -253,10 +253,10 @@
     cyber:      '<img src="assets/Container.png"        width="70" height="70" alt="CyberMode"      style="display:block;object-fit:contain;" />',
     governance: '<img src="assets/Vector.png"           width="70" height="70" alt="GovernanceMode" style="display:block;object-fit:contain;" />',
     intel:      '<img src="assets/intelmode.png"      width="70" height="70" alt="IntelMode"      style="display:block" />',
-    risk:       '<img src="assets/datamode.png"       width="70" height="70" alt="RiskMode"       style="display:block" />',
-    audit:      '<img src="assets/itmode.png"      width="70" height="70" alt="AuditMode"      style="display:block" />',
-    vendor:     '<img src="assets/gavermode.png"     width="70" height="70" alt="VendorMode"     style="display:block" />',
-    incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="IncidentMode"   style="display:block" />'
+    risk:       '<img src="assets/datamode.png"       width="70" height="70" alt="DataMode"       style="display:block" />',
+    audit:      '<img src="assets/itmode.png"      width="70" height="70" alt="ITMode"      style="display:block" />',
+    vendor:     '<img src="assets/gavermode.png"     width="70" height="70" alt="GateMode"     style="display:block" />',
+    incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="TransferMode"   style="display:block" />'
   };
 
   var products = [
@@ -292,7 +292,7 @@
         { title:'Unprioritized Vulnerabilities', desc:'CVEs are triaged by severity alone, missing which ones are actively being exploited against your assets.', solvedTitle:'Vulnerability Intelligence', solvedDesc:'Prioritize CVEs based on active exploitation and real asset criticality, not generic severity scores.' },
         { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
       ] },
-    { key:'risk', name:'RiskMode', desc:'Quantify, prioritize, and track enterprise risk exposure over time.',
+    { key:'risk', name:'DataMode', desc:'Quantify, prioritize, and track enterprise risk exposure over time.',
       challengeCategory:'Enterprise Risk',
       sixChallenges:[
         { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
@@ -302,7 +302,7 @@
         { title:'No Early Warning System', desc:'Emerging risk trends go unnoticed until they have already become active incidents.', solvedTitle:'KRI Monitoring', solvedDesc:'Threshold alerts and trend dashboards flag key risk indicators before they escalate.' },
         { title:'Unclear Risk Tolerance', desc:'Teams lack a documented reference for how much risk the organization is willing to accept in each domain.', solvedTitle:'Risk Appetite Framework', solvedDesc:'Define and monitor risk appetite statements and tolerance thresholds by domain.' }
       ] },
-    { key:'audit', name:'AuditMode', desc:'Streamline internal and external audit cycles from planning to sign-off.',
+    { key:'audit', name:'ITMode', desc:'Streamline internal and external audit cycles from planning to sign-off.',
       challengeCategory:'Audit Management',
       sixChallenges:[
         { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
@@ -312,7 +312,7 @@
         { title:'Unplanned Audit Coverage', desc:'Audit plans built from memory rather than a structured, risk-ranked view of the full audit universe.', solvedTitle:'Audit Planning', solvedDesc:'Risk-based prioritization, resource allocation, and calendar management across the audit universe.' },
         { title:'Manual Report Drafting', desc:'Days spent formatting findings summaries and ratings into a presentable report for stakeholders.', solvedTitle:'Audit Reporting', solvedDesc:'Auto-populated findings summaries and ratings generate draft audit reports in minutes.' }
       ] },
-    { key:'vendor', name:'VendorMode', desc:'Manage third-party and vendor risk assessments end to end.',
+    { key:'vendor', name:'GateMode', desc:'Manage third-party and vendor risk assessments end to end.',
       challengeCategory:'Vendor Risk',
       sixChallenges:[
         { title:'No Vendor Visibility', desc:'Critical suppliers with access to sensitive systems never formally assessed or continuously monitored for risk.', solvedTitle:'Vendor Onboarding', solvedDesc:'Streamlined registration and due diligence bring every vendor into full view from day one.' },
@@ -322,7 +322,7 @@
         { title:'Hidden Sub-Processor Risk', desc:'Vendors quietly rely on their own sub-processors, extending your exposure beyond direct contracts.', solvedTitle:'Fourth-Party Management', solvedDesc:'Map and assess sub-processors and sub-contractors for complete supply chain risk visibility.' },
         { title:'Untracked Contract Renewals', desc:'SLAs and renewal dates tracked in spreadsheets quietly lapse without anyone noticing in time.', solvedTitle:'Contract Management', solvedDesc:'Track vendor contracts, SLAs, and renewal dates with automated alerts before anything lapses.' }
       ] },
-    { key:'incident', name:'IncidentMode', desc:'Coordinate incident response, escalation, and regulatory reporting.',
+    { key:'incident', name:'TransferMode', desc:'Coordinate incident response, escalation, and regulatory reporting.',
       challengeCategory:'Incident Response',
       sixChallenges:[
         { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },

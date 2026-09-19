@@ -326,10 +326,12 @@
 .core-modules-header.revealed .core-modules-title-sep{ animation:coreTitleSepIn .4s ease-out .5s both; }
 .core-modules-header.revealed .core-modules-subtitle{ animation:coreSubtitleIn .6s cubic-bezier(.22,.9,.3,1) .3s both; }
 .core-modules-list{display:flex;flex-direction:column;gap:24px;width:100%}
+.core-modules-list.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.core-modules-footnote{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(.9rem,1.1vw,16px);line-height:1.6;color:#6B5B7A;text-align:center;max-width:900px;margin:8px auto 0}
 
 .core-module-row{
   position:relative; overflow:hidden;
-  display:flex; align-items:center; flex-wrap:wrap; gap:16px;
+  display:flex; flex-direction:column; align-items:flex-start; flex-wrap:wrap; gap:16px;
   padding:20px 24px; min-height:72px; box-sizing:border-box;
   background:#F7F6FA; border:0.5px solid #C9B7D8; border-radius:16px;
   box-shadow:0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.06);
@@ -345,13 +347,13 @@
   background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.7) 50%, transparent 58%);
   transform:translateX(-160%);
 }
-.core-module-row .row-left{ display:flex; align-items:center; gap:16px; flex:1 1 260px; min-width:0; }
+.core-module-row .row-left{ display:flex; align-items:center; gap:16px; flex:none; width:100%; min-width:0; }
 .core-module-num{
   font-family:'Inter',sans-serif; font-weight:600; font-size:18px; line-height:24px; color:#8B7B9F; flex-shrink:0; width:24px;
   opacity:0; transform:scale(.4) rotate(-12deg);
 }
 .core-module-name{ font-family:'Inter',sans-serif; font-weight:600; font-size:18px; line-height:24px; color:#2E1B4E; }
-.core-module-row .row-desc{ font-family:'Inter',sans-serif; font-weight:500; font-size:14px; line-height:20px; color:#6B5B7A; flex-shrink:0; margin-left:auto; text-align:right; }
+.core-module-row .row-desc{ font-family:'Inter',sans-serif; font-weight:500; font-size:14px; line-height:20px; color:#6B5B7A; flex-shrink:0; margin-left:0; text-align:left; }
 
 /* Each row lights up the same way the header title does: a left accent bar
    draws in with a brief glow, the module number pops, and the title/description
@@ -402,10 +404,8 @@
   animation-delay:calc(var(--i, 0) * 140ms + 480ms);
 }
 
-@media(max-width:640px){
-  .core-module-row{ flex-direction:column; align-items:flex-start; }
-  .core-module-row .row-left{ flex:none; width:100%; }
-  .core-module-row .row-desc{ margin-left:0; text-align:left; }
+@media(max-width:900px){
+  .core-modules-list.two-col{ grid-template-columns:1fr; }
 }
 
 /* ===== Built Into Every Module ===== */
@@ -415,6 +415,9 @@
 .capabilities-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.5vw,48px);line-height:1.05;color:#2E1B4E;margin:0}
 .capabilities-subtitle{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.4vw,20px);line-height:1.2;color:#6B5B7A;text-transform:capitalize;max-width:800px;margin:0}
 .capabilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;width:100%}
+.capabilities-note{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.capabilities-note-label{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#6E3894;margin:0}
+.capabilities-note-value{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.2vw,18px);color:#6B5B7A;margin:0}
 
 .capability-card{
   box-sizing:border-box; display:flex; flex-direction:column; align-items:flex-start; gap:12px;
@@ -523,12 +526,15 @@
 
 .frameworks-cap{ display:flex; flex-direction:column; gap:16px; width:100%; }
 .frameworks-cap-title{ font-family:'Inter',sans-serif; font-weight:700; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:#44235C; margin:0; }
-.frameworks-cap-list{ display:flex; flex-direction:column; gap:12px; width:100%; list-style:none; margin:0; padding:0; }
+.frameworks-cap-list{ column-count:2; column-gap:40px; width:100%; list-style:none; margin:0; padding:0; }
+.frameworks-cap-list li{ break-inside:avoid; margin-bottom:12px; }
+@media(max-width:760px){ .frameworks-cap-list{ column-count:1; } }
 .frameworks-cap-list li{ position:relative; padding-left:22px; font-family:'Inter',sans-serif; font-weight:500; font-size:16px; line-height:24px; color:#3D2B55; }
 .frameworks-cap-list li::before{ content:''; position:absolute; left:4px; top:9px; width:7px; height:7px; border-radius:50%; background:#6E3894; }
 
 .frameworks-banners{ display:flex; flex-wrap:wrap; gap:20px; width:100%; }
 .frameworks-banner{ flex:1 1 280px; display:flex; flex-direction:column; gap:8px; padding:24px; background:#210D4A; border-radius:20px; }
+.frameworks-banners.is-caps .frameworks-banner-title{ text-transform:uppercase; letter-spacing:.16em; font-size:16px; }
 .frameworks-banner-title{ font-family:'Inter',sans-serif; font-weight:600; font-size:20px; line-height:28px; color:#F3ECF8; margin:0; }
 .frameworks-banner-value{ font-family:'Inter',sans-serif; font-weight:400; font-size:17px; line-height:26px; color:#B8A7C5; margin:0; }
 
@@ -692,6 +698,7 @@
 }
 .screen-card{ grid-column:span 2; }
 .screen-card--wide{ grid-column:span 3; }
+.screen-card--full{ grid-column:1 / -1; }
 
 .screen-card{
   display:flex; flex-direction:column; gap:18px; margin:0; min-width:0;
@@ -706,6 +713,8 @@
   transition:transform .45s cubic-bezier(.22,.9,.3,1), box-shadow .45s ease, border-color .45s ease;
 }
 .screen-shot img{ display:block; width:100%; height:auto; transition:transform .7s cubic-bezier(.22,.9,.3,1); }
+/* Placeholder for screens without a captured shot yet */
+.screen-shot-placeholder{ display:block; width:100%; background:#CCCCCC; }
 
 /* Glare that sweeps across the shot on hover */
 .screen-shot::after{
@@ -778,10 +787,11 @@
   .screens-grid{ grid-template-columns:repeat(4,1fr); }
   .screen-card{ grid-column:span 2; }
   .screen-card--wide{ grid-column:span 4; }
+  .screen-card--full{ grid-column:1 / -1; }
 }
 @media(max-width:640px){
   .screens-grid{ grid-template-columns:1fr; gap:32px; }
-  .screen-card, .screen-card--wide{ grid-column:1 / -1; }
+  .screen-card, .screen-card--wide, .screen-card--full{ grid-column:1 / -1; }
   .screen-card{ gap:14px; }
   .screen-card.revealed{ animation-delay:calc(var(--i,0) * 45ms); }
 }
@@ -879,6 +889,13 @@
 .walkthrough-play { width:96px; height:96px; border-radius:50%; background:#6E3894; border:none; box-shadow:0 25px 50px -12px rgba(0,0,0,.25); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:transform .2s, background .2s; }
 .walkthrough-play:hover { background:#5c2e79; transform:scale(1.06); }
 
+/* Footer brand mark for products without the logo image (sizes from design spec) */
+.footer-brand-mark{ display:flex; flex-direction:row; align-items:center; gap:12px; height:55px; }
+.footer-brand-mark[hidden]{ display:none; }
+.footer-brand-letter{ display:flex; flex-direction:column; justify-content:center; align-items:center; flex:none; width:40px; height:40px; background:#F7F6FA; border-radius:12px; font-family:'Poppins',sans-serif; font-style:normal; font-weight:700; font-size:20px; line-height:30px; color:#44235C; }
+.footer-brand-text{ display:flex; flex-direction:column; align-items:flex-start; gap:2px; }
+.footer-brand-name{ font-family:'Poppins',sans-serif; font-weight:700; font-size:24px; line-height:36px; color:#FFFFFF; }
+.footer-brand-sub{ font-family:'Inter',sans-serif; font-weight:500; font-size:14px; line-height:17px; color:#F3ECF8; }
 /* ===== Request a Demo ===== */
 .demo-section{ background:#F7F6FA; padding:clamp(60px,6vw,150px) clamp(24px,8vw,150px); }
 .demo-wrap{ max-width:1430px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:clamp(40px,5vw,64px); }
@@ -941,9 +958,9 @@
         <div class="relative">
           <ul id="navList" class="flex items-center gap-[25px] font-nav">
             <li><a data-nav="home" href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
-            <li><a data-nav="blackhat" href="#" class="nav-link text-muted hover:text-primary transition-colors">Black Hat</a></li>
+            <li><a data-nav="products" href="products.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Products</a></li>
             <li><a data-nav="services" href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
-            <li><a data-nav="products" href="index.html#products" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Products</a></li>
+            <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
             <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
@@ -969,9 +986,9 @@
     <nav aria-label="Mobile primary">
       <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
         <li><a data-nav-m="home" href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
-        <li><a data-nav-m="blackhat" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Black Hat</a></li>
+        <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Products</a></li>
         <li><a data-nav-m="services" href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
-        <li><a data-nav-m="products" href="index.html#products" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Products</a></li>
+        <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
         <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
         <li class="pt-2"><a href="index.html#contact" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
@@ -1016,9 +1033,10 @@
     <div class="core-modules-wrap">
       <div class="core-modules-header" data-reveal="up">
         <h2 id="coreModulesTitle" class="core-modules-title"><span class="core-modules-title-left">16 Core Modules</span> <span class="core-modules-title-sep">·</span> <span class="core-modules-title-right">100+ Integrated Features</span></h2>
-        <p class="core-modules-subtitle">Every capability your team needs, engineered as one connected system — not a patchwork of disconnected add-ons.</p>
+        <p id="coreModulesSubtitle" class="core-modules-subtitle">Every capability your team needs, engineered as one connected system — not a patchwork of disconnected add-ons.</p>
       </div>
       <div id="coreModulesList" class="core-modules-list" data-reveal="up" data-delay="120"></div>
+      <p id="coreModulesFootnote" class="core-modules-footnote" data-reveal="up" hidden></p>
     </div>
   </section>
     <!-- ===================== BUILT INTO EVERY MODULE ===================== -->
@@ -1029,6 +1047,10 @@
         <p id="capabilitiesSubtitle" class="capabilities-subtitle">Built-in capabilities that power every module of the platform.</p>
       </div>
       <div id="capabilitiesGrid" class="capabilities-grid" data-reveal="up" data-delay="120"></div>
+      <div id="capabilitiesNote" class="capabilities-note" data-reveal="up" hidden>
+        <p id="capabilitiesNoteLabel" class="capabilities-note-label"></p>
+        <p id="capabilitiesNoteValue" class="capabilities-note-value"></p>
+      </div>
     </div>
   </section>
     <!-- ===================== MULTIPLE FRAMEWORKS. ONE ENVIRONMENT. ===================== -->
@@ -1150,10 +1172,11 @@
             <option value="CyberMode">CyberMode</option>
             <option value="GovernanceMode">GovernanceMode</option>
             <option value="IntelMode">IntelMode</option>
-            <option value="RiskMode">RiskMode</option>
-            <option value="AuditMode">AuditMode</option>
-            <option value="VendorMode">VendorMode</option>
-            <option value="IncidentMode">IncidentMode</option>
+            <option value="InspectMode">InspectMode</option>
+            <option value="DataMode">DataMode</option>
+            <option value="ITMode">ITMode</option>
+            <option value="GateMode">GateMode</option>
+            <option value="TransferMode">TransferMode</option>
           </select>
           <svg class="demo-select-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
@@ -1189,7 +1212,7 @@
       <hr class="demo-divider" />
 
       <div class="demo-submit-row">
-        <button type="submit" class="demo-submit-btn">Request a Demo</button>
+        <button type="submit" id="demoSubmitBtn" class="demo-submit-btn">Request a Demo</button>
         <p class="demo-submit-note">We will contact you to arrange the demo.</p>
       </div>
     </form>
@@ -1205,12 +1228,16 @@
       <!-- Column 1: Brand -->
       <div class="flex flex-col items-start gap-6" data-reveal="up">
         <div class="flex items-center gap-3">
-          <img src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
+          <img id="footerLogo" src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
+          <div id="footerBrandMark" class="footer-brand-mark" hidden>
+            <span id="footerBrandLetter" class="footer-brand-letter" aria-hidden="true"></span>
+            <span class="footer-brand-text"><span id="footerBrandName" class="footer-brand-name"></span><span id="footerBrandSub" class="footer-brand-sub">Advanced Controls</span></span>
+          </div>
         </div>
-        <p class="text-sm leading-4.25 capitalize text-surface">Leading Cybersecurity Partner Delivering Enterprise-Grade Protection And Compliance Solutions Aligned With Vision 2030.</p>
+        <p id="footerTagline" class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
-          <h4 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
-          <div class="flex flex-nowrap items-center gap-1">
+          <h4 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
+          <div id="footerBadges" class="flex flex-wrap items-center gap-2">
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
@@ -1222,9 +1249,9 @@
       <!-- Column 2: Useful Links -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
         <h4 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h4>
-        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+        <ul id="footerLinks" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="index.html"                    class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="index.html#products"           class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="index.html#products"           class="hover:text-white transition-colors">Product</a></li>
           <li><a href="index.html#strategic-services" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="contact.html"                  class="hover:text-white transition-colors">Contact</a></li>
           <li><a href="about.html"                    class="hover:text-white transition-colors">About</a></li>
@@ -1233,15 +1260,14 @@
 
       <!-- Column 3: Products -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
-        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
-        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
-          <li><a href="product.html?id=cyber"      class="hover:text-white transition-colors">CyberMode</a></li>
+        <h4 id="footerProductsTitle" class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
+        <ul id="footerProducts" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
           <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
-          <li><a href="product.html?id=intel"      class="hover:text-white transition-colors">IntelMode</a></li>
-          <li><a href="product.html?id=risk"       class="hover:text-white transition-colors">RiskMode</a></li>
-          <li><a href="product.html?id=audit"      class="hover:text-white transition-colors">AuditMode</a></li>
-          <li><a href="product.html?id=vendor"     class="hover:text-white transition-colors">VendorMode</a></li>
-          <li><a href="product.html?id=incident"   class="hover:text-white transition-colors">IncidentMode</a></li>
+          <li><a href="product.html?id=intel" class="hover:text-white transition-colors">IntelMode</a></li>
+          <li><a href="product.html?id=risk" class="hover:text-white transition-colors">DataMode</a></li>
+          <li><a href="product.html?id=incident" class="hover:text-white transition-colors">TransferMode</a></li>
+          <li><a href="product.html?id=vendor" class="hover:text-white transition-colors">GateMode</a></li>
         </ul>
       </div>
 
@@ -1253,25 +1279,25 @@
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
             </span>
-            <span class="text-sm leading-4.25 capitalize text-surface">King Fahd Road, Riyadh 12272, Saudi Arabia</span>
+            <span id="footerAddress" class="text-sm leading-4.25 text-surface">Kingdom of Saudi Arabia — Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248</span>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </span>
-            <a href="tel:+966112345678" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">+966 11 234 5678</a>
+            <a id="footerPhone" href="tel:920066215" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">920066215</a>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <a href="mailto:contact@advancedcontrols.sa" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">contact@advancedcontrols.sa</a>
+            <a id="footerEmail" href="mailto:info@advancedcontrols.sa" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">info@advancedcontrols.sa</a>
           </li>
           <li class="flex items-center gap-3">
-            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+            <span id="footerWebIcon" class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
             </span>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 capitalize text-surface hover:text-white transition-colors">linkedin.com</a>
+            <a id="footerWeb" href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">linkedin.com</a>
           </li>
         </ul>
       </div>
@@ -1282,7 +1308,7 @@
       <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
         <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-white transition-colors">Terms</a>
-        <span>Consult · Secure · Succeed</span>
+        <span id="footerSlogan">Consult · Secure · Succeed</span>
       </div>
     </div>
   </div>
@@ -1305,6 +1331,8 @@
     cyber: {
       name:'CyberMode',
       challengeCategory:'Cybersecurity Management',
+      coreModulesTwoCol:true,
+      coreModulesSubtitle:'A complete ecosystem covering the entire cybersecurity and GRC lifecycle — from governance to awareness — in one unified system.',
       sixChallenges:[
         { title:'Fragmented Cybersecurity Management', desc:'Disparate tools and disconnected processes create inefficiency, inconsistency, and lack of unified control.', solvedTitle:'Unified Cybersecurity Platform', solvedDesc:'A single integrated system that centralizes governance, risk, compliance, and operations into one unified environment.' },
         { title:'Lack of Executive Visibility', desc:'Organizations struggle to gain real-time insights into cybersecurity posture, risks, and compliance status.', solvedTitle:'Real-Time Executive Dashboards', solvedDesc:'Comprehensive dashboards and KPIs provide instant visibility into cybersecurity posture, risks, and compliance status.' },
@@ -1316,7 +1344,10 @@
     },
     governance: {
       name:'GovernanceMode',
+      heroHeadline:'One Platform for Enterprise Governance, Risk & Compliance',
+      heroDesc:'Governance, risk, compliance, continuity and performance on one bilingual platform — instead of disconnected spreadsheets and point tools.',
       challengeCategory:'Governance, Risk &amp; Compliance',
+      challengesSubtitle:'Eight Critical Challenges Organizations Face Without A Unified Governance Platform — And How GovernanceMode Addresses Each One.',
       sixChallenges:[
         { title:'Fragmented Governance Information', desc:'Governance information is scattered across multiple systems, with no shared taxonomy, identity, or source of truth.', solvedTitle:'Centralized Governance Repository', solvedDesc:'Hierarchy, strategic objectives, document center, regulators, frameworks and exception management in one structural model that every other module references.' },
         { title:'Risks Managed Independently', desc:'Risk registers are maintained separately, leaving enterprise risk exposure without a consolidated view.', solvedTitle:'Enterprise Risk Management Framework', solvedDesc:'Taxonomy-driven enterprise, national and third-party risk with configurable matrices, KRIs, automated triggers and proactive monitoring.' },
@@ -1328,6 +1359,7 @@
         { title:'Limited Executive Reporting', desc:'Executive reporting capability is limited, so leadership questions take weeks rather than minutes.', solvedTitle:'Executive Dashboards &amp; Analytics', solvedDesc:'Real-time, customisable cross-module dashboards and reports with role-based visibility and export to XLSX, CSV and PDF.' }
       ],
       coreModulesTitleLeft:'12 Modules', coreModulesTitleRight:'9 Core EGRC Processes',
+      coreModulesTwoCol:true,
       coreModules:[
         { name:'Governance &amp; Organizational Mgmt', desc:'Hierarchy · objectives · document center.' },
         { name:'Enterprise Risk Management',       desc:'Taxonomy · KRIs · 3×3 &amp; 5×5 matrices.' },
@@ -1424,20 +1456,226 @@
         { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
       ]
     },
-    risk: {
-      name:'RiskMode',
-      challengeCategory:'Enterprise Risk',
+    inspect: {
+      name:'InspectMode',
+      heroHeadline:'AI-Augmented Security Assessment Platform',
+      footer:{
+        brandSub:'AI-Augmented Security Assessment Platform',
+        tagline:'An agent-based, AI-augmented security assessment platform built for deployment across corporate and industrial networks, delivering automated compromise assessment, forensics, vulnerability scanning, compliance auditing and threat detection from a single deployable tool.',
+        badges:['NCA ECC','NCA OT-CC','ISO 27001','IEC 62443'],
+        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
+        productsTitle:'Modules',
+        products:['Compromise Assessment','Forensics Collection','Vulnerability Assessment','Compliance Auditing','OT/ICS Assessment','AI Analysis Engine'],
+        address:'Riyadh, Kingdom of Saudi Arabia',
+        phone:'+966 505 970 841',
+        email:'info@advancedcontrols.sa',
+        website:'www.advancedcontrols.sa',
+        slogan:'ONE AGENT · EIGHT MISSIONS · ONE REPORT'
+      },
+      heroDesc:'One AI-augmented agent unifies IT and OT security assessment, forensics, vulnerability scanning, compliance, and threat detection. Built for Saudi NCA and ISO 27001 needs, it works in portable, managed, and offline modes with evidence-grade output.',
+      challengeCategory:'Threat Intelligence',
+      challengesTitle:'Six Challenges. One Assessment Platform.',
+      challengesSubtitle:'Six Challenges Organizations Across Saudi Arabia And The Wider Region Face In Security Assessment - And How InspectMode Addresses Each One.',
       sixChallenges:[
-        { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
-        { title:'No Risk Prioritization', desc:'All risks treated equally without business-impact scoring, wasting remediation resources on low-priority items.', solvedTitle:'Risk Heatmaps', solvedDesc:'Visualize and filter risk exposure by domain and severity so resources go where they matter most.' },
-        { title:'Stale Risk Registers', desc:'Risk assessments done once a year instead of continuously updated as the threat landscape changes daily.', solvedTitle:'Continuous Risk Identification', solvedDesc:'Systematically identify and categorize risk across every business unit and domain, continuously.' },
-        { title:'Disconnected Remediation', desc:'Risk findings tracked separately from remediation tasks, with no accountability or progress visibility.', solvedTitle:'Risk Treatment Plans', solvedDesc:'Define, assign, and track remediation and mitigation plans with clear owners and due dates.' },
-        { title:'No Early Warning System', desc:'Emerging risk trends go unnoticed until they have already become active incidents.', solvedTitle:'KRI Monitoring', solvedDesc:'Threshold alerts and trend dashboards flag key risk indicators before they escalate.' },
-        { title:'Unclear Risk Tolerance', desc:'Teams lack a documented reference for how much risk the organization is willing to accept in each domain.', solvedTitle:'Risk Appetite Framework', solvedDesc:'Define and monitor risk appetite statements and tolerance thresholds by domain.' }
+        { title:'Fragmented Tooling', desc:'Separate compromise assessment, vulnerability scanning, forensics and compliance tools create fragmented visibility and slow response.', solvedTitle:'A Single Unified Agent', solvedDesc:'One agent handles all assessment types through configurable scan profiles, reducing tool sprawl and operational overhead.' },
+        { title:'NCA Compliance Burden', desc:'ECC, OT-CC, CSCC, DCC and CCC evidence must be auditable, timestamped and integrity-verified for every assessment.', solvedTitle:'NCA-Native Compliance Engine', solvedDesc:'Automated checks, evidence collection, gap analysis, remediation guidance and audit-ready reporting are built directly into the platform.' },
+        { title:'OT/ICS Blind Spots', desc:'IT-focused tools can disrupt PLCs, safety systems or production workflows when used in operational environments.', solvedTitle:'OT-Safe by Design', solvedDesc:'Passive and read-only by default, with explicit confirmation for active scanning, rate limiting, Purdue-zone awareness and SIS exclusion.' },
+        { title:'Analyst Shortage', desc:'Triage, correlation and reporting consume scarce analyst time across recurring assessments and investigations.', solvedTitle:'AI That Augments the Analyst', solvedDesc:'AI correlates findings, prioritizes exploitability and criticality, deobfuscates scripts and drafts executive reports, backed by deterministic YARA, Sigma and compliance rules.' },
+        { title:'Air-Gapped and Restricted Networks', desc:'Cloud-dependent tools are impractical in restricted environments, isolated facilities and networks with limited connectivity.', solvedTitle:'Offline-First Architecture', solvedDesc:'Every capability works without server connectivity, with local AI analysis available for air-gapped and restricted deployments.' },
+        { title:'Evidence Integrity', desc:'Artifacts without chain of custody are inadmissible, making audit preparation and investigation follow-up difficult.', solvedTitle:'Evidence-Grade Output', solvedDesc:'Every artifact is SHA-256 hashed, timestamped and packaged with chain-of-custody metadata for defensible reporting.' }
+      ],
+      coreModulesTitleLeft:'8 Core Modules', coreModulesTitleRight:'',
+      coreModulesSubtitle:'Each module addresses a distinct security function. All modules share the same agent binary and can be activated individually or in combination through scan profiles.',
+      coreModulesTwoCol:true,
+      coreModulesFootnote:'One agent binary, multiple missions, and audit-ready output across IT and OT environments.',
+      coreModules:[
+        { name:'Compromise Assessment', desc:'YARA file and memory scanning, IOC matching, Sigma event-log evaluation, persistence, webshell and rootkit checks, AI anomaly scoring.' },
+        { name:'Forensics Collection', desc:'Windows, Linux, memory and network-state artifacts, SHA-256 hashing and evidence packages with metadata manifests.' },
+        { name:'Vulnerability Assessment', desc:'CVE matching, service fingerprinting, web scanning, weak credentials, SSL/TLS, software inventory and EOL detection.' },
+        { name:'Compliance Auditing', desc:'Automated NCA and ISO assessment, evidence collection, gap analysis, remediation and audit-ready PDF/HTML reports.' },
+        { name:'OT/ICS Assessment', desc:'Passive analysis of Modbus, DNP3, S7comm, OPC-UA, BACnet and EtherNet/IP, asset discovery, Purdue validation and firmware identification; read-only and rate-limited.' },
+        { name:'Threat Intelligence', desc:'STIX/TAXII, MISP, MITRE ATT&amp;CK and ICS ATT&amp;CK mapping, IOC lifecycle and regional context.' },
+        { name:'Configuration Baseline', desc:'CIS checks, password policy, firewall analysis, service hardening, encryption and privilege review.' },
+        { name:'AI Analysis Engine', desc:'Anomaly detection, risk scoring, alert correlation and deduplication, script deobfuscation, explanations and executive reports.' }
+      ],
+      capabilitiesTitle:'Built Into Every Assessment.',
+      capabilitiesSubtitle:'Platform Capabilities That Support Every Module Across Every Deployment Mode.',
+      capabilities:[
+        { title:'Portable OS', desc:'Bootable USB deployment for portable assessment and field investigations.' },
+        { title:'Managed Agent', desc:'Always-on managed agent deployment for continuous assessment and monitoring.' },
+        { title:'Offline Collector', desc:'Offline collector and network sensor operation for restricted and air-gapped environments.' },
+        { title:'Central Server', desc:'On-premises or private cloud orchestration, evidence storage and reporting.' },
+        { title:'Cross-Platform Coverage', desc:'Coverage across modern and legacy OS, OT/SCADA, ICS, cloud and containers.' },
+        { title:'Secure Communication', desc:'TLS/mTLS communication, REST API and web dashboard access for secure operations.' },
+        { title:'Scan Profiles', desc:'Configurable scan profiles for IT, OT, compliance and incident-response workflows.' },
+        { title:'Open-Source Stack', desc:'Integrated YARA, Sigma, osquery, Nuclei, Nmap, Trivy, Zeek, MISP, OpenSCAP, KAPE and UAC.' },
+        { title:'AI Deployment', desc:'AI deployment through cloud API, local LLM or lightweight agent scoring.' },
+        { title:'Bilingual Reporting', desc:'Bilingual Arabic and English reporting for regional audit and executive delivery.' },
+        { title:'Evidence Integrity', desc:'SHA-256 integrity verification and timestamped evidence packages with metadata.' },
+        { title:'Multi-Tenant Operation', desc:'Rule and content updates, multi-tenant operation and centralized management.' }
+      ],
+      capabilitiesNote:{ label:'Deployment Models', value:'Managed Agent · Portable Agent · Offline Collector · Network Sensor · Central Server' },
+      frameworksTitle:'Built NCA-Native. Globally Aligned.',
+      frameworksDesc1:'The compliance engine maps automated checks to specific control requirements, and each check produces evidence artifacts that satisfy audit requirements. Findings are mapped simultaneously to NCA, ISO 27001, IEC 62443 and CIS controls, so one assessment can satisfy multiple audit requirements.',
+      frameworks:['ISO 27001:2022 / ISO 27002:2022','IEC 62443','NCA ECC','NCA CSCC','NCA OT-CC','NCA DCC','NCA CCC'],
+      frameworksStats:[
+        { title:'NCA ECC', desc:'114 controls across 5 domains, with automated checks and evidence mapped directly to each requirement.' },
+        { title:'NCA OT-CC', desc:'OT asset inventory, segmentation, vulnerability and incident controls via passive checks and Purdue validation.' },
+        { title:'NCA CSCC', desc:'Enhanced critical-infrastructure controls with assessment depth tailored for high-impact environments.' },
+        { title:'NCA DCC', desc:'Data classification, protection, retention and disposal evidence collection across managed assets.' }
+      ],
+      frameworksBanners:[
+        { title:'Frameworks', value:'NCA ECC · NCA OT-CC · NCA CSCC · NCA DCC · NCA CCC · ISO 27001:2022 / ISO 27002:2022 · IEC 62443' }
+      ],
+      benchmarkTitle:'What Makes InspectMode Different',
+      benchmarkSubtitle:'A capability-based comparison against the tooling organizations typically assemble to cover the same ground.',
+      benchmarkOwnLabel:'InspectMode',
+      benchmarkOthers:['Conventional Tooling','IT-Focused Suites','Cloud-Dependent Platforms'],
+      benchmark:[
+        ['Unified Platform', 'One agent, eight missions', 'Multiple disconnected tools', 'Limited OT coverage', 'Cloud-hosted dependencies'],
+        ['NCA-Native Compliance', 'Built-in and automated', 'Manual mapping', 'Partial support', 'Add-on only'],
+        ['OT-Safe by Design', 'Read-only, rate-limited, Purdue-aware', 'Often disruptive', 'Limited or absent', 'Not designed for OT'],
+        ['AI That Adds Real Value', 'Augments analyst workflow', 'Manual triage', 'Rule-heavy only', 'Cloud AI dependent'],
+        ['Air-Gapped Capable', 'Full offline operation', 'Partial offline support', 'Connectivity required', 'Not practical offline'],
+        ['Evidence-Grade Forensics', 'SHA-256 hashed and timestamped', 'Export-heavy workflow', 'Limited forensics', 'Cloud-centric storage'],
+        ['Cross-Framework Mapping', 'NCA, ISO, IEC 62443, CIS', 'Separate reports', 'Limited mapping', 'Framework add-ons'],
+        ['Regional Intelligence Focus', 'Middle East / Gulf context', 'Generic intelligence', 'Minimal regional focus', 'Global-only context']
+      ],
+      whySubtitle:'A practical, deployable assessment platform - built on proven engines, governed by custom orchestration, and designed for the regulatory and operational reality of Saudi and regional infrastructure.',
+      whyPillars:[
+        { title:'Unified Platform', desc:'One agent replaces five to seven separate tools across assessment, forensics, compliance and reporting.' },
+        { title:'NCA-Native Compliance', desc:'Built-in NCA and ISO controls with evidence collection, gap analysis and audit-ready output.' },
+        { title:'OT-Safe by Design', desc:'Passive, read-only and rate-limited by default, with Purdue-zone awareness and SIS exclusion.' },
+        { title:'Regional Intelligence Focus', desc:'Middle East and Gulf threat context with bilingual reporting and regional intelligence alignment.' }
+      ],
+      whyBenefits:[
+        { key:'Unified Platform', value:'One agent replaces five to seven separate tools across assessment, forensics, compliance and reporting.' },
+        { key:'NCA-Native Compliance', value:'Built-in NCA and ISO controls with evidence collection, gap analysis and audit-ready output.' },
+        { key:'OT-Safe by Design', value:'Passive, read-only and rate-limited by default, with Purdue-zone awareness and SIS exclusion.' },
+        { key:'AI That Augments the Analyst', value:'AI-generated reports save four to eight analyst hours per assessment, with deterministic rules still governing evidence.' },
+        { key:'Air-Gapped Capable', value:'Full offline function across portable, managed, collector and sensor deployments.' },
+        { key:'Evidence-Grade Forensics', value:'Integrity-verified automated evidence supports defensible audits and investigations.' },
+        { key:'Cross-Framework Mapping', value:'Cross-framework mapping eliminates redundant assessments across NCA, ISO, IEC 62443 and CIS.' },
+        { key:'Regional Intelligence Focus', value:'Middle East and Gulf threat focus with bilingual reporting for regional audit and executive delivery.' }
+      ],
+      whyStats:[
+        { target:8, decimals:0, suffix:'', label:'Core Modules' },
+        { isText:true, text:'5–7', label:'Tools Replaced' },
+        { isText:true, text:'8,000+', label:'Nuclei Templates' },
+        { target:114, decimals:0, suffix:'', label:'NCA ECC Controls' }
+      ],
+      screensSubtitle:'InspectMode is operated from a central web dashboard backed by a REST API, with orchestration, task scheduling, evidence store and reporting in one console. Assessments run from a scan profile, results are aggregated centrally, and the reporting engine produces audit-ready PDF and HTML output mapped control by control to the selected framework. In the field, the same platform runs as a bootable forensic OS from USB, an always-on managed agent, and a passive network sensor or offline collector - each producing the same integrity-verified evidence package.'
+    },
+    risk: {
+      name:'DataMode',
+      heroHeadline:'One Platform for the Data Management Office',
+      footer:{
+        tagline:'A comprehensive Data Management Office platform for governance, catalog, metadata, quality, classification, privacy, and compliance - built in alignment with the Saudi NDMO framework, the National Data Index, and the PDPL.',
+        badges:['NDMO','NDI','PDPL','SDAIA'],
+        products:['DataMode','Governance','Catalog','Quality','Privacy','Compliance'],
+        address:'Riyadh, Kingdom of Saudi Arabia',
+        phone:'+966 505 970 841',
+        email:'info@advancedcontrols.sa',
+        website:'www.advancedcontrols.sa',
+        slogan:'GOVERN · MANAGE · PROTECT · COMPLY'
+      },
+      heroDesc:'Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.',
+      challengeCategory:'Enterprise Risk',
+      challengesSubtitle:'Four Critical Challenges Organizations Face Without A Unified Data Management Platform - And How DataMode Addresses Each One.',
+      sixChallenges:[
+        { title:'No Centralized DMO Structure', desc:'Governance roles, policies, and accountability are scattered. No single ownership model or decision framework.', solvedTitle:'Full DMO Structure - Out of the Box', solvedDesc:'Business units, committees, data owners, stewards, KPIs, and the strategic roadmap - all in one platform.' },
+        { title:'Manual Compliance (NDMO &middot; PDPL &middot; NDI)', desc:'Assessments done in spreadsheets - error-prone, slow, and never audit-ready.', solvedTitle:'Fully Automated Compliance Engine', solvedDesc:'NDI maturity across 15 domains and 6 levels - gap analysis, evidence gating, and audit plans automated.' },
+        { title:'No Data Catalog - Unknown Assets', desc:'Teams don&#39;t know what data exists, where it lives, who owns it, or how sensitive it is.', solvedTitle:'Auto-Synced Data Catalog', solvedDesc:'Metadata ingested from all sources. Every table, column, owner, and classification in one place - always live.' },
+        { title:'Poor Data Quality - Undiscovered', desc:'Nulls, duplicates, and inconsistencies go undetected until they cause business or regulatory damage.', solvedTitle:'Continuous Quality Engine', solvedDesc:'Six-dimension automated profiling. Every failure becomes an open issue, assigned to the Data Owner and tracked to closure.' }
+      ],
+      coreModulesTitleLeft:'12 Integrated Modules', coreModulesTitleRight:'',
+      coreModulesSubtitle:'A unified platform covering the complete data management lifecycle - from governance and privacy to catalog, quality, classification, and retention - in one connected system.',
+      coreModulesTwoCol:true,
+      coreModules:[
+        { name:'Data Governance Framework',          desc:'Policies, councils &amp; operating model aligned with NDMO.' },
+        { name:'Data Privacy &amp; PDPL Compliance',      desc:'PDPL controls, consent &amp; data-subject rights workflows.' },
+        { name:'Data Inventory &amp; Catalog',            desc:'Enterprise-wide asset register with business glossary.' },
+        { name:'Data Quality Management',            desc:'Profiling, rules &amp; remediation across the data lifecycle.' },
+        { name:'Data Ownership &amp; Stewardship',        desc:'Accountable owners, stewards &amp; RACI by domain.' },
+        { name:'Data Assessment',                    desc:'Maturity benchmarking against NDMO &amp; PDPL controls.' },
+        { name:'Compliance &amp; NDMO Alignment',         desc:'Mapped controls, evidence &amp; audit-ready reporting.' },
+        { name:'Risk &amp; Compliance Scoring',           desc:'Quantified data risk with executive scoring dashboards.' },
+        { name:'Data Transfer Monitoring &amp; Approval', desc:'Cross-border &amp; third-party transfer controls and approvals.' },
+        { name:'Document Scanning &amp; Classification',  desc:'Automated discovery &amp; labelling of sensitive content.' },
+        { name:'Data Retention &amp; Lifecycle',          desc:'Policy-driven retention, archival &amp; defensible disposal.' },
+        { name:'Data Mapping',                       desc:'End-to-end lineage from source systems to consumption.' }
+      ],
+      capabilitiesSubtitle:'Enterprise-Grade Capabilities Enabled Across Every Module Of The Platform.',
+      capabilities:[
+        { title:'Bilingual Interface - AR/EN', desc:'Full Arabic and English interface support with native RTL/LTR switching across the platform.' },
+        { title:'Secure Authentication', desc:'Active Directory, LDAP, SSO, and role-based access control for secure enterprise access.' },
+        { title:'API Integration - RESTful', desc:'RESTful API for connected workflows, integrations, and data exchange across the ecosystem.' },
+        { title:'Data Import / Export', desc:'CSV and Excel import/export capabilities for evidence, assessments, and operational data.' },
+        { title:'Notification Engine', desc:'Email, SMS, and in-app notifications keep teams aligned across workflows and deadlines.' },
+        { title:'Reporting Engine', desc:'Custom and scheduled reporting across governance, catalog, quality, privacy, and compliance.' },
+        { title:'Metadata Ingestion', desc:'Relational, NoSQL, flat-file, and cloud sources connected into one live metadata layer.' },
+        { title:'Database Security', desc:'Encrypted data at rest, TLS communications, and audit logs for enterprise-grade protection.' },
+        { title:'Deployment', desc:'On-Premise &middot; Cloud - flexible deployment options aligned with enterprise operating models.' }
+      ],
+      frameworksTitle:'Saudi Data Regulation. One Environment.',
+      frameworksDesc1:'DataMode is built in full alignment with the Saudi NDMO framework, the National Data Index, and the PDPL - enabling organizations to measure, evidence, and maintain compliance with national data regulation.',
+      frameworksDesc2:'By consolidating regulators, frameworks, controls, evidence, and audit plans into one platform, DataMode replaces spreadsheet-based assessments with a continuous, audit-ready compliance operation.',
+      frameworks:['NDMO','NDI','ISO 22301','SDAIA','DCMM','ISO 27001','PDPL'],
+      frameworksStats:[
+        { title:'Gap analysis', desc:'continuous control assessment' },
+        { title:'NDI maturity', desc:'15 domains across 6 levels' },
+        { title:'Evidence management', desc:'mandatory and traceable evidence' },
+        { title:'Audit plans', desc:'scheduled and custom reporting' }
+      ],
+      frameworksBanners:[
+        { title:'Regulatory alignment', value:'SDAIA · NDMO · NDI · PDPL · DCMM · ISO 27001 · ISO 22301' }
+      ],
+      benchmarkSubtitle:'DataMode consolidates the full Data Management Office - governance, catalog, metadata, quality, classification, privacy, and compliance - into a single Saudi-built platform, reducing tool fragmentation and accelerating NDMO, NDI, and PDPL alignment.',
+      benchmark:[
+        ['Saudi-Built Platform', 'Yes - built for NDMO, NDI, PDPL &amp; SDAIA', 'Limited / generic'],
+        ['Arabic Language Support (Native)', 'Yes - full AR/EN with RTL', 'Partial / translation only'],
+        ['Governance &amp; Policy Management', 'Yes - complete DMO governance structure', 'Fragmented / manual'],
+        ['Risk Management (Full Lifecycle)', 'Yes - strategy &amp; KPI management', 'Separate systems required'],
+        ['Compliance (NDMO, ISO, PDPL, etc.)', 'Yes - NDMO gap analysis + evidence', 'Spreadsheet-based'],
+        ['Document &amp; Policy Management', 'Yes - document policy lifecycle', 'External systems needed'],
+        ['Committee Management', 'Yes - governance committees built-in', 'Not available'],
+        ['Strategy &amp; KPI Management', 'Yes - strategic roadmap &amp; KPI tracking', 'Separate systems required'],
+        ['Incident Management', 'Yes - integrated tasks &amp; notifications', 'Often disconnected'],
+        ['Asset Management', 'Yes - auto-ingested data catalog &amp; metadata', 'Manual / incomplete'],
+        ['Vulnerability Management', 'Yes - six-dimension data quality', 'Limited / disconnected'],
+        ['Third-Party Risk Management', 'Yes - bulk &amp; column-level classification', 'Manual / partial'],
+        ['Security Awareness LMS', 'Yes - DIA / PIA privacy controls', 'Separate platform'],
+        ['Phishing Simulation', 'Yes - Microsoft 365 document protection', 'External tools'],
+        ['Task &amp; Workflow Management', 'Yes - integrated tasks &amp; notifications', 'External tools / manual'],
+        ['Cross-Module Linking', 'Yes - broad data-source integration', 'Disconnected modules'],
+        ['Executive Dashboards', 'Yes - drag-and-drop dashboards', 'Limited / manual reporting']
+      ],
+      whySubtitle:'A Saudi-built Data Management Office platform that consolidates governance, catalog, metadata, quality, classification, privacy, and compliance into a single connected system.',
+      whyPillars:[
+        { title:'Govern', desc:'Establish governance structures, policies, committees, KPIs, and strategic objectives aligned with NDMO.' },
+        { title:'Manage', desc:'Profile data quality, manage metadata, build the data catalog, and assign ownership across the enterprise.' },
+        { title:'Protect', desc:'Classify sensitive data, run DIA and PIA assessments, enforce PDPL controls, and prevent data leakage.' },
+        { title:'Comply', desc:'Monitor SDAIA, NDMO, PDPL, and NDI alignment with automated gap analysis and audit-ready evidence.' }
+      ],
+      whyBenefits:[
+        { key:'Saudi-Built &amp; Aligned', value:'Built for NDMO, NDI, PDPL, and SDAIA requirements from day one.' },
+        { key:'All-in-One DMO Platform', value:'12 integrated modules unified and connected in a single platform.' },
+        { key:'Bilingual Native Support', value:'Full AR/EN support with native RTL/LTR switching.' },
+        { key:'Automated Metadata Ingestion', value:'Relational, NoSQL, flat-file, and cloud sources connected automatically.' },
+        { key:'Continuous Data Quality', value:'Six-dimension profiling with issue assignment and remediation tracking.' },
+        { key:'Audit-Ready Evidence', value:'Mandatory evidence management, scheduled audits, and traceable remediation.' },
+        { key:'Enterprise-Grade Security', value:'Encrypted data at rest, TLS communications, audit logs, and role-based access.' },
+        { key:'Flexible Deployment', value:'On-Premise &middot; Cloud.' }
+      ],
+      whyStats:[
+        { target:12, decimals:0, suffix:'', label:'Integrated Modules' },
+        { target:15, decimals:0, suffix:'', label:'NDMO Data Domains' },
+        { target:6,  decimals:0, suffix:'', label:'NDI Maturity Levels' },
+        { isText:true, text:'AR/EN', label:'Bilingual' }
       ]
     },
     audit: {
-      name:'AuditMode',
+      name:'ITMode',
       challengeCategory:'Audit Management',
       sixChallenges:[
         { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
@@ -1449,19 +1687,129 @@
       ]
     },
     vendor: {
-      name:'VendorMode',
+      name:'GateMode',
+      heroHeadline:'Secure Data Transfer, Inspection & Controlled Exchange',
+      footer:{
+        brandSub:'Hardware-Enforced Air-Gapped Transfer',
+        tagline:'A hardware-enforced, bidirectional air-gapped transfer platform that ensures cryptographic proof of integrity and automated media sanitization across classified and unclassified domains.',
+        badges:['NCA ECC','SAMA CSF','ISO 27001','IEC 62443'],
+        products:['GateMode','Secure Transfer','Integrity Pipeline','Audit Journal','Compliance','Deployment Models'],
+        address:'Riyadh, Kingdom of Saudi Arabia',
+        phone:'+966 505 970 841',
+        email:'info@advancedcontrols.sa',
+        website:'www.advancedcontrols.sa',
+        slogan:'ZERO TRUST · ZERO NETWORK · TOTAL CONTROL'
+      },
+      heroDesc:'A zero-trust, on-premise gateway that inspects, disarms, and approves every file crossing USB, removable media, and cross-domain transfers — fully audited with a complete chain of custody.',
       challengeCategory:'Vendor Risk',
+      challengesTitle:'Five Challenges. One Appliance.',
+      challengesSubtitle:'Five Critical Challenges Organizations Face When Moving Data Across An Air Gap - And How GateMode Addresses Each One.',
       sixChallenges:[
-        { title:'No Vendor Visibility', desc:'Critical suppliers with access to sensitive systems never formally assessed or continuously monitored for risk.', solvedTitle:'Vendor Onboarding', solvedDesc:'Streamlined registration and due diligence bring every vendor into full view from day one.' },
-        { title:'Manual Questionnaires', desc:'Vendor assessments done via email attachments with no version control, tracking, or automated scoring.', solvedTitle:'Risk Assessment Questionnaires', solvedDesc:'Automated, tiered questionnaires with weighting and evidence requests replace email attachments.' },
-        { title:'Concentration Risk Ignored', desc:'Over-reliance on single vendors for critical services goes undetected until a disruption causes major impact.', solvedTitle:'Vendor Risk Scoring', solvedDesc:'Aggregate scores across security, financial, and operational dimensions surface hidden dependencies.' },
-        { title:'No Continuous Monitoring', desc:'Point-in-time assessments creating a false sense of security between annual vendor review cycles.', solvedTitle:'Continuous Monitoring', solvedDesc:'Real-time tracking of vendor news, breach disclosures, and security rating changes.' },
-        { title:'Hidden Sub-Processor Risk', desc:'Vendors quietly rely on their own sub-processors, extending your exposure beyond direct contracts.', solvedTitle:'Fourth-Party Management', solvedDesc:'Map and assess sub-processors and sub-contractors for complete supply chain risk visibility.' },
-        { title:'Untracked Contract Renewals', desc:'SLAs and renewal dates tracked in spreadsheets quietly lapse without anyone noticing in time.', solvedTitle:'Contract Management', solvedDesc:'Track vendor contracts, SLAs, and renewal dates with automated alerts before anything lapses.' }
+        { title:'The Air-Gap Dilemma', desc:'Absolute isolation delivers maximum security but slow data transfer. Full connectivity delivers real-time data flow but attack-surface exposure.', solvedTitle:'Hardware Isolation', solvedDesc:'Physical separation of networks via dedicated USB switching hardware, eliminating direct IP connectivity - a dedicated electrical switch no software path can override.' },
+        { title:'Manual &quot;Sneakernet&quot; Transfer', desc:'The gap is often bridged by unsecured USB drives, bypassing all security controls and creating high-friction, error-prone handling.', solvedTitle:'Bidirectional Controlled Transfer', solvedDesc:'Inbound file ingestion and outbound data extraction through one governed appliance, with Domain A and Domain B hardware-mutually-exclusive - never live simultaneously.' },
+        { title:'Attack Surface and Lateral Movement Exposure', desc:'Connecting isolated domains to move data introduces attack-surface exposure and lateral movement risk across the boundary.', solvedTitle:'Zero TCP/IP Path', solvedDesc:'No routable network exists between domains - only authorized, signed file payloads cross the gate, with zero TCP/IP packets crossing the boundary.' },
+        { title:'Data Leakage Between Transfers', desc:'Shared media reused across transfers can carry residual data from one domain into another.', solvedTitle:'Secure SSD Shuttle &amp; Wipe', solvedDesc:'The shared storage medium is cryptographically erased and reformatted after every transaction - a three-pass wipe between transfers, zero residue.' },
+        { title:'Manual Logs and Audit Failures', desc:'Manual transfer processes are recorded in manual logs, leaving compliance evidence incomplete at audit time.', solvedTitle:'Full Audit &amp; Journaling', solvedDesc:'Tamper-evident logs of every approval, transfer and verification, searchable by user, hash or ID and exportable as CSV and PDF.' }
+      ],
+      coreModulesTitleLeft:'12 Core Modules', coreModulesTitleRight:'',
+      coreModulesSubtitle:'A complete hardware-enforced ecosystem - 12 integrated modules covering the full secure transfer lifecycle, from approval to verified delivery.',
+      coreModulesTwoCol:true,
+      coreModulesFootnote:'Zero IP exchanged and zero bypass. On-premise with no cloud and no external dependency. Built and sealed in KSA, with a full per-transfer journal.',
+      coreModules:[
+        { name:'Hardware-Enforced Air-Gap Crossing', desc:'GPIO electrical switching; zero TCP/IP and zero routable path between domains.' },
+        { name:'Bidirectional Controlled Transfer',  desc:'Domain A &harr; Domain B, both directions, hardware-mutually-exclusive.' },
+        { name:'6-Stage Security Pipeline',          desc:'Approval &rarr; Sign &rarr; Write &rarr; Switch &rarr; Verify &rarr; Wipe.' },
+        { name:'Cryptographic Verification',         desc:'Ed25519 signatures + SHA-256 per-file hashing on every payload.' },
+        { name:'Multi-Level Approval Workflow',      desc:'Web portal with manager and security team approval gates.' },
+        { name:'Antivirus &amp; Sandbox Inspection',     desc:'Every file scanned and policy-checked before crossing the gate.' },
+        { name:'Tamper-Resistant Appliance',         desc:'Sealed enclosure, IP54 protection, intrusion detection.' },
+        { name:'Secure SSD Shuttle &amp; Wipe',          desc:'Samsung T7 with 3-pass wipe between transfers, zero residue.' },
+        { name:'Full Audit &amp; Journaling',            desc:'Tamper-evident logs of every approval, transfer and verification.' },
+        { name:'Multi-Domain Support',               desc:'Connects N isolated networks: IT, OT, classified and unclassified.' },
+        { name:'Two Deployment Form Factors',        desc:'Electrical panel cabinet for field use or 2U rack server for data center.' },
+        { name:'Compliance Frameworks',              desc:'NCA ECC &middot; ISO 27001 &middot; IEC 62443 &middot; SAMA CSF &middot; NIST CSF.' }
+      ],
+      capabilitiesTitle:'Built Into Every Transfer.',
+      capabilitiesSubtitle:'Platform Capabilities That Support Every Transfer Across The Appliance.',
+      capabilities:[
+        { title:'Secure Web Portal', desc:'Web portal with manager and security team approval gates.' },
+        { title:'File Management', desc:'Managed file handling across the full secure transfer workflow.' },
+        { title:'Multi-Level Approval Workflow', desc:'Manager and security team approval gates before crossing the gate.' },
+        { title:'RBAC &amp; User Management', desc:'Role-based access control and centralized user management.' },
+        { title:'LDAP / Active Directory Integration', desc:'Enterprise identity integration for secure authentication and access.' },
+        { title:'Audit Dashboard &amp; Log Visualization', desc:'Transfer logs with time, user, direction, SHA-256 hash and verification status.' },
+        { title:'Audit Exports - CSV / PDF', desc:'Exportable evidence for every approval, transfer and verification.' },
+        { title:'HTTPS / REST API', desc:'API access for integrations and operational workflows.' },
+        { title:'Multi-Domain Support', desc:'Connects N isolated networks: IT, OT, classified and unclassified.' },
+        { title:'Cryptographic Verification', desc:'Ed25519, SHA-256 and AES-256 encrypted physical carrier.' },
+        { title:'Secure Media Sanitization', desc:'Cryptographic erase and reformat after every transaction.' },
+        { title:'High-Capacity Transfer', desc:'Up to 2TB per session using USB 3.2 Gen1.' }
+      ],
+      capabilitiesNote:{ label:'Deployment', value:'Electrical Panel Cabinet (IP54) · 2U Rack Server' },
+      frameworksTitle:'Aligned With Saudi and International Frameworks.',
+      frameworksDesc1:'GateMode is aligned with Saudi national cybersecurity regulation and with international information security and industrial control system standards - demonstrated through hardware air-gap enforcement, mandatory access control, complete audit trail logging and cryptographic integrity verification. Each framework is mapped to the specific GateMode controls that support it, with a full per-transfer journal available as audit evidence.',
+      frameworks:['IEC 62443','NCA ECC','SAMA CSF','NIST CSF','ISO 27001'],
+      frameworksStats:[
+        { title:'NCA ECC', desc:'Strict hardware air-gap enforcement, mandatory access control and cryptographic integrity verification.' },
+        { title:'SAMA CSF', desc:'Secure data transfer, complete audit trail logging and data leakage prevention.' },
+        { title:'ISO 27001', desc:'A.13.2 Information Transfer, A.12.4 Logging and Monitoring, A.10 Cryptography Controls.' },
+        { title:'NIST CSF', desc:'Protect PR.DS Data Security, Detect DE.CM Continuous Monitoring, separation of duties.' }
+      ],
+      frameworksBanners:[
+        { title:'Frameworks', value:'NCA ECC · SAMA CSF · ISO 27001 · NIST CSF · IEC 62443' }
+      ],
+      benchmarkSubtitle:'GateMode benchmarked against the alternatives organizations use to move data across an air gap - software data diodes, the legacy USB process, and cloud or network gateways.',
+      screensSubtitle:'Actual GateMode product screens, architecture diagrams and appliance visuals. Figures shown inside the interface are demonstration data.',
+      demoTitle:'Book a Technical Demo',
+      whySubtitle:'A hardware-enforced air-gap platform built and sealed in the Kingdom, with cryptographic proof and a full journal behind every transfer.',
+      whyPillars:[
+        { title:'Only True Hardware Air-Gap', desc:'Electrical isolation enforced by physical relays, not software logic, with zero network connectivity between domains.' },
+        { title:'Cryptographic Proof', desc:'Every transfer signed with Ed25519 and hashed with SHA-256.' },
+        { title:'Saudi-Built &amp; Compliant', desc:'Aligned with NCA ECC and SAMA CSF, with local support and development.' },
+        { title:'Industrial Reliability', desc:'Robust Siemens industrial hardware, bidirectional by design, automatic SSD wipe after every transaction, and a full audit trail.' }
+      ],
+      whyBenefits:[
+        { key:'Only True Hardware Air-Gap', value:'Electrical isolation enforced by physical relays, not software logic, with zero network connectivity between domains.' },
+        { key:'Cryptographic Proof', value:'Every transfer signed with Ed25519 and hashed with SHA-256.' },
+        { key:'Saudi-Built &amp; Compliant', value:'Aligned with NCA ECC and SAMA CSF, with local support and development.' },
+        { key:'Industrial Reliability', value:'Robust Siemens industrial hardware.' },
+        { key:'Bidirectional by Design', value:'Inbound file ingestion and outbound data extraction through one governed appliance.' },
+        { key:'Automatic SSD Wipe', value:'Cryptographic erase and reformat after every transaction.' },
+        { key:'Full Audit Trail', value:'Tamper-evident logs of every approval, transfer and verification.' },
+        { key:'On-Premise by Design', value:'No cloud or external dependency.' },
+        { key:'Two Deployment Form Factors', value:'IP54 electrical panel cabinet and 2U rack server.' }
+      ],
+      whyStats:[
+        { target:12,  decimals:0, suffix:'',  label:'Core Modules' },
+        { target:6,   decimals:0, suffix:'',  label:'Stage Security Pipeline' },
+        { target:0,   decimals:0, suffix:'',  label:'TCP/IP Packets Crossing' },
+        { target:100, decimals:0, suffix:'%', label:'Electrical Isolation' }
+      ],
+      benchmarkOwnLabel:'GateMode',
+      benchmarkOthers:['Software Data Diodes','Legacy USB Process','Cloud / Network Gateway'],
+      benchmark:[
+        ['True Hardware Air-Gap', 'Yes', 'No', 'No', 'No'],
+        ['Cryptographic Integrity (Ed25519)', 'Yes', 'Partial', 'No', 'Partial'],
+        ['Full Immutable Audit Trail', 'Yes', 'Partial', 'No', 'Partial'],
+        ['Bidirectional Transfer Support', 'Yes', 'No', 'Manual', 'Yes'],
+        ['High Throughput (USB 3.2)', 'Yes', 'Limited', 'Limited', 'Network-bound'],
+        ['Ease of Use (Self-Service Portal)', 'Yes', 'Limited', 'No', 'Partial'],
+        ['Compliance (NCA / IEC 62443)', 'Yes', 'Partial', 'No', 'Partial']
       ]
     },
     incident: {
-      name:'IncidentMode',
+      name:'TransferMode',
+      footer:{
+        brandSub:'Hardware-Enforced Air-Gapped Transfer',
+        tagline:'A hardware-enforced, bidirectional air-gapped transfer platform that ensures cryptographic proof of integrity and automated media sanitization across classified and unclassified domains.',
+        badges:['NCA ECC','SAMA CSF','ISO 27001','IEC 62443'],
+        products:['TransferMode','Secure Transfer','Integrity Pipeline','Audit Journal','Compliance','Deployment Models'],
+        address:'Riyadh, Kingdom of Saudi Arabia',
+        phone:'+966 505 970 841',
+        email:'info@advancedcontrols.sa',
+        website:'www.advancedcontrols.sa',
+        slogan:'ZERO TRUST · ZERO NETWORK · TOTAL CONTROL'
+      },
       challengeCategory:'Incident Response',
       sixChallenges:[
         { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },
@@ -1479,12 +1827,13 @@
   if (!p) { window.location.href = 'index.html'; return; }
 
   document.title = p.name + ' | Advanced Controls';
-  document.getElementById('productHeadline').textContent = 'One Platform for ' + p.challengeCategory.replace(/&amp;/g, '&');
-  /* Hero subtitle — shared across every product, not product-specific */
-  document.getElementById('productDesc').textContent = 'One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into posture, risk and compliance for leadership.';
+  document.getElementById('productHeadline').textContent = p.heroHeadline || ('One Platform for ' + p.challengeCategory.replace(/&amp;/g, '&'));
+  /* Hero subtitle — shared across every product by default; a product can override it */
+  document.getElementById('productDesc').textContent = p.heroDesc ||
+    'One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into posture, risk and compliance for leadership.';
 
   var heroOverviewLabel = document.getElementById('heroOverviewLabel');
-  if (heroOverviewLabel) heroOverviewLabel.textContent = p.name + ' Platform Overview';
+  if (heroOverviewLabel) heroOverviewLabel.textContent = 'Platform Overview';
 
   /* 16 Core Modules — shared across every product by default; a product can
      override both the title and the list (e.g. GovernanceMode's own EGRC set) */
@@ -1508,10 +1857,28 @@
   ];
   if (p.coreModulesTitleLeft) {
     document.querySelector('.core-modules-title-left').textContent = p.coreModulesTitleLeft;
-    document.querySelector('.core-modules-title-right').textContent = p.coreModulesTitleRight;
+    var cmSep = document.querySelector('.core-modules-title-sep');
+    var cmRight = document.querySelector('.core-modules-title-right');
+    if (p.coreModulesTitleRight) {
+      cmRight.textContent = p.coreModulesTitleRight;
+      cmSep.hidden = false; cmRight.hidden = false;
+    } else {
+      /* Single-phrase title (no natural split) — the left half still plays its
+         entrance animation, the separator and unused right half are hidden */
+      cmSep.hidden = true; cmRight.hidden = true;
+    }
+  }
+  if (p.coreModulesSubtitle) {
+    document.getElementById('coreModulesSubtitle').textContent = p.coreModulesSubtitle;
+  }
+  var cmFootnote = document.getElementById('coreModulesFootnote');
+  if (p.coreModulesFootnote) {
+    cmFootnote.hidden = false;
+    cmFootnote.textContent = p.coreModulesFootnote;
   }
   var cmList = document.getElementById('coreModulesList');
   if (cmList) {
+    cmList.classList.toggle('two-col', !!p.coreModulesTwoCol);
     (p.coreModules || CORE_MODULES).forEach(function(m, i){
       var num = (i + 1) < 10 ? '0' + (i + 1) : '' + (i + 1);
       var row = document.createElement('div');
@@ -1540,8 +1907,17 @@
     { title:'Responsive Design', desc:'Optimized experience on desktop and tablet devices with responsive layout.' },
     { title:'Deployment', desc:'On-Premise · Cloud — flexible hosting to match your environment.' }
   ];
+  if (p.capabilitiesTitle) {
+    document.getElementById('capabilitiesTitle').textContent = p.capabilitiesTitle;
+  }
   if (p.capabilitiesSubtitle) {
     document.getElementById('capabilitiesSubtitle').textContent = p.capabilitiesSubtitle;
+  }
+  if (p.capabilitiesNote) {
+    var capNote = document.getElementById('capabilitiesNote');
+    capNote.hidden = false;
+    document.getElementById('capabilitiesNoteLabel').textContent = p.capabilitiesNote.label;
+    document.getElementById('capabilitiesNoteValue').textContent = p.capabilitiesNote.value;
   }
   var capGrid = document.getElementById('capabilitiesGrid');
   if (capGrid) {
@@ -1575,6 +1951,50 @@
       { img:'workflow-management',      w:461, h:322, title:'Workflow Management',                          desc:'Visual workflow builder with conditional routing and multi-step approvals.' },
       { img:'reports',                  w:695, h:486, title:'Reports',                                      desc:'Real-time analytics export-ready reporting.',  wide:true },
       { img:'dashboards',               w:695, h:485, title:'Dashboards',                                   desc:'Real-time analytics and dynamic dashboards',   wide:true }
+    ],
+    governance: [
+      { img:null, w:461, h:322, title:'Governance &amp; Organizational Management', desc:'Organization hierarchy, strategic objectives, document center, regulators, frameworks and exception management — the structural model every other module references.' },
+      { img:null, w:461, h:322, title:'Risk Management', desc:'Taxonomy-driven enterprise, national and third-party risk with configurable matrices, KRIs and inherent, residual and target scoring.' },
+      { img:null, w:461, h:322, title:'Strategic Planning, KPI &amp; Initiative Management', desc:'Objectives aligned to measurable initiatives and projects, with a dynamic roadmap matrix tracking programmes across quarterly periods.' },
+      { img:null, w:461, h:322, title:'Committee Lifecycle Management', desc:'Member selection, structured agendas, recorded minutes, voting and actionable post-meeting recommendations.' },
+      { img:null, w:461, h:322, title:'Business Continuity Management', desc:'BIA, BCP, DRP, ERP and crisis management — from impact analysis to live crisis response and plan testing.' },
+      { img:null, w:461, h:322, title:'Audit &amp; Compliance Management', desc:'Scheduled audit plans, active and past audits, gap identification and structured remediation across regulatory frameworks.' },
+      { img:null, w:461, h:322, title:'Automation &amp; Workflow Engine', desc:'A drag-and-drop visual workflow builder for complex multi-step approvals with full conditional logic and module integration.' },
+      { img:null, w:461, h:322, title:'Reports', desc:'Real-time analytics export-ready reporting.' },
+      { img:null, w:461, h:322, title:'Dashboards', desc:'Real-time analytics and dynamic dashboards' }
+    ],
+    risk: [
+      { img:null, w:461, h:322, title:'Organization Hierarchy &amp; Department Mapping', desc:'Auto-generated corporate structure from defined departments - with employee counts, sub-departments, and ownership.' },
+      { img:null, w:461, h:322, title:'Strategic Roadmap &amp; Initiative Matrix',       desc:'Dynamic quarterly roadmap auto-built from objectives, projects, and budgets - tracked from strategy to execution.' },
+      { img:null, w:461, h:322, title:'Centralized Policy Management',               desc:'Workflow-driven document control from Draft to Review to Approval, aligned with NDMO documentation requirements.' },
+      { img:null, w:461, h:322, title:'Governance Committees',                       desc:'Create committees, define members and discussion topics, capture minutes, and track decisions - fully auditable.' },
+      { img:null, w:461, h:322, title:'NDI Active Audit Plans',                      desc:'Scheduled and custom audits for NDMO and SDAIA frameworks - assigned, owned, and tracked across all 15 domains.' },
+      { img:null, w:461, h:322, title:'Live Data Catalog',                          desc:'Every database, table, and asset auto-mapped to its owner, domain, and classification - always live.' },
+      { img:null, w:461, h:322, title:'Quality Rules &amp; Test Cases',                 desc:'Custom validation rules at table and column level - every failure becomes a tracked Data Issue.' },
+      { img:null, w:461, h:322, title:'Classification Management',                  desc:'A complete classification framework with bulk tagging across databases and documents in a single operation.' },
+      { img:null, w:461, h:322, title:'Automated Classification',                   desc:'Auto-Scan - pattern rules drive column-level auto-classification across every connected source.' },
+      { img:null, w:461, h:322, title:'DIA &amp; PIA - Risk to Remediation',            desc:'A high DIA risk score opens the PIA deep form and generates a step-by-step, PDPL-aligned remediation plan.' },
+      { img:null, w:461, h:322, title:'Classified Content in Microsoft 365',        desc:'The DataMode AI Agent requires documents to be classified before saving, then syncs the result back to the platform.' },
+      { img:null, w:461, h:322, title:'Tasks Management',                           desc:'Create, assign, and track data-related tasks with categories, priorities, due dates, and status.' },
+      { img:null, w:695, h:486, title:'Reports',                                    desc:'Real-time analytics and export-ready reporting.', wide:true },
+      { img:null, w:695, h:486, title:'Dynamic Dashboards &amp; Reporting',             desc:'Unlimited customizable dashboards built with a drag-and-drop designer for real-time, cross-module reporting.', wide:true }
+    ],
+    inspect: [
+      { img:null, w:461, h:322, title:'Web Dashboard',          desc:'Web dashboard with orchestration, task queue and scheduler.' },
+      { img:null, w:461, h:322, title:'Evidence Store',         desc:'Evidence store with SHA-256-hashed timestamped packages.' },
+      { img:null, w:461, h:322, title:'Compliance Reports',     desc:'Audit-ready PDF and HTML compliance reports.' },
+      { img:null, w:461, h:322, title:'Executive Summaries',    desc:'Executive summaries with risk ratings and remediation priorities.' },
+      { img:null, w:461, h:322, title:'Cross-Framework Matrix', desc:'Cross-framework matrix across NCA, ISO 27001, IEC 62443 and CIS.' },
+      { img:null, w:461, h:322, title:'Field Deployments',      desc:'Bootable forensic OS, managed agent, passive sensor and offline collector deployments.' }
+    ],
+    vendor: [
+      { img:null, w:461, h:322, title:'Audit Trail Dashboard',        desc:'Transfer logs with time, user, direction, SHA-256 file hash and verification status, with CSV and PDF export.' },
+      { img:null, w:461, h:322, title:'6-Step Secure Transfer',       desc:'Upload and manifest, approval gate, write and unmount, hardware switch, signature verification and secure wipe.' },
+      { img:null, w:461, h:322, title:'Transfer Integrity Pipeline',  desc:'Approval gate, manifest signing, SSD write and unmount, switch coordination, signature verification and secure wipe.' },
+      { img:null, w:461, h:322, title:'Cryptographic Integrity',      desc:'Manifest generation and Ed25519 signing on source side, signature verification and SHA-256 re-computation on destination side.' },
+      { img:null, w:461, h:322, title:'Hardware Security Model',      desc:'Data, storage, control, switching and physical layers with physical air gap at the base and electrically isolated switching hardware bridging it.' },
+      { img:null, w:461, h:322, title:'System Architecture',          desc:'Presentation, controller logic and hardware layers connected over GPIO, RS-485 and USB.' },
+      { img:null, w:1430, h:322, title:'Deployment Models',           desc:'Model 1 electrical panel cabinet for industrial environments and Model 2 2U rack server for data centers.', full:true }
     ]
   };
   var screensGrid = document.getElementById('screensGrid');
@@ -1583,18 +2003,19 @@
   if (screensGrid && screenList && screenList.length) {
     screensSection.hidden = false;
     document.getElementById('screensTitle').textContent = p.name + ' in Use.';
-    document.getElementById('screensSubtitle').textContent =
-      'Actual ' + p.name + ' product screens across the platform. Figures shown inside the interface are demonstration data.';
+    document.getElementById('screensSubtitle').textContent = p.screensSubtitle ||
+      ('Actual ' + p.name + ' product screens across the platform. Figures shown inside the interface are demonstration data.');
 
     screenList.forEach(function(s, i){
       var fig = document.createElement('figure');
-      fig.className = 'screen-card' + (s.wide ? ' screen-card--wide' : '');
+      fig.className = 'screen-card' + (s.wide ? ' screen-card--wide' : '') + (s.full ? ' screen-card--full' : '');
       fig.style.setProperty('--i', i % 3);
+      var shotHtml = s.img
+        ? '<img src="assets/screens/' + s.img + '.png" width="' + s.w + '" height="' + s.h + '"' +
+          ' loading="lazy" decoding="async" alt="' + s.title.replace(/&amp;/g, '&') + ' screen in ' + p.name + '" />'
+        : '<div class="screen-shot-placeholder" style="aspect-ratio:' + s.w + '/' + s.h + '" role="img" aria-label="' + s.title.replace(/&amp;/g, '&') + ' screen in ' + p.name + '"></div>';
       fig.innerHTML =
-        '<div class="screen-shot">' +
-          '<img src="assets/screens/' + s.img + '.png" width="' + s.w + '" height="' + s.h + '"' +
-          ' loading="lazy" decoding="async" alt="' + s.title.replace(/&amp;/g, '&') + ' screen in ' + p.name + '" />' +
-        '</div>' +
+        '<div class="screen-shot">' + shotHtml + '</div>' +
         '<figcaption class="screen-body">' +
           '<h3 class="screen-title">' + s.title + '</h3>' +
           '<p class="screen-desc">' + s.desc + '</p>' +
@@ -1639,11 +2060,12 @@
   ];
   var benchRows = document.getElementById('benchRows');
   if (benchRows) {
+    if (p.benchmarkTitle) document.getElementById('benchTitle').textContent = p.benchmarkTitle;
     var benchSub   = document.getElementById('benchSubtitle');
     var benchHead  = document.getElementById('benchOwnHead');
     var benchOtherHead  = document.getElementById('benchOtherHead');
     var benchOtherLabel = p.benchmarkOtherLabel || 'Other Solutions';
-    if (benchHead) benchHead.textContent = p.name + ' Platform';
+    if (benchHead) benchHead.textContent = p.benchmarkOwnLabel || (p.name + ' Platform');
     if (benchOtherHead) benchOtherHead.textContent = benchOtherLabel;
     if (benchSub) {
       benchSub.textContent = p.benchmarkSubtitle || (p.name + ' consolidates multiple cybersecurity domains into a single ' +
@@ -1651,12 +2073,28 @@
         'compared with siloed solutions.');
     }
 
+    /* A product can compare against several alternatives: benchmarkOthers lists the
+       column labels and each row carries one verdict per label after the first two cells */
+    var benchOthers = p.benchmarkOthers || [benchOtherLabel];
+    if (p.benchmarkOthers) {
+      benchOtherHead.textContent = benchOthers[0];
+      var benchHeadRow = benchOtherHead.parentNode;
+      benchOthers.slice(1).forEach(function(label, k){
+        var th = document.createElement('span');
+        th.setAttribute('role', 'columnheader');
+        th.style.setProperty('--c', k + 3);
+        th.textContent = label;
+        benchHeadRow.appendChild(th);
+      });
+      benchRows.parentNode.style.setProperty('--bench-cols', '1.2fr repeat(' + (benchOthers.length + 1) + ', 1fr)');
+    }
+
     (p.benchmark || BENCHMARK).forEach(function(r, i){
       var row = document.createElement('div');
       row.className = 'bench-row';
       row.setAttribute('role', 'row');
       row.style.setProperty('--i', i);
-      row.innerHTML =
+      var html =
         '<div class="bench-cap-cell" role="cell">' +
           '<span class="bench-cell-label">Capability</span>' +
           '<span class="bench-cap">' + r[0] + '</span>' +
@@ -1664,11 +2102,15 @@
         '<div role="cell">' +
           '<span class="bench-cell-label">' + p.name + '</span>' +
           '<span class="bench-own">' + r[1] + '</span>' +
-        '</div>' +
-        '<div role="cell">' +
-          '<span class="bench-cell-label">' + benchOtherLabel + '</span>' +
-          '<span class="bench-other">' + r[2] + '</span>' +
         '</div>';
+      benchOthers.forEach(function(label, k){
+        html +=
+          '<div role="cell">' +
+            '<span class="bench-cell-label">' + label + '</span>' +
+            '<span class="bench-other">' + r[2 + k] + '</span>' +
+          '</div>';
+      });
+      row.innerHTML = html;
       benchRows.appendChild(row);
     });
 
@@ -1695,7 +2137,7 @@
      block, and the banner(s) (e.g. GovernanceMode's own regulatory set). */
   var FRAMEWORKS = ['NCA ECC','Aramco TPCS','NCA CSCC','NDMO-PDPL','ISO 27001','NCA OTCC','DGA','ISO 31000','ISO 22301','NCA CCC','CMA','PCI DSS','NCA TCC','SAMA CSF','NCA OSMAC','NCA DCC'];
   var PRODUCT_ICONS = {
-    cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/intelmode.png',
+    cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/intelmode.png', inspect:'assets/intelmode.png',
     risk:'assets/datamode.png', audit:'assets/itmode.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
   };
   var fwList = p.frameworks || FRAMEWORKS;
@@ -1734,12 +2176,23 @@
   var fwIcon = document.getElementById('frameworksCenterIcon');
   if (fwIcon) { fwIcon.src = PRODUCT_ICONS[id] || PRODUCT_ICONS.cyber; fwIcon.alt = p.name; }
 
+  var fwTitleEl = document.getElementById('frameworksTitle');
+  if (fwTitleEl && p.frameworksTitle) fwTitleEl.textContent = p.frameworksTitle;
+
   var fwDesc1 = document.getElementById('frameworksDesc1');
   var fwDesc2 = document.getElementById('frameworksDesc2');
   if (fwDesc1) fwDesc1.textContent = p.frameworksDesc1 ||
     (p.name + ' is designed and built from the ground up to meet Saudi national cybersecurity regulatory requirements — ensuring organizations achieve and maintain compliance with confidence.');
-  if (fwDesc2) fwDesc2.textContent = p.frameworksDesc2 ||
-    ('By consolidating compliance requirements into one platform, ' + p.name + ' eliminates fragmentation, enhances governance, and empowers organizations to efficiently meet complex regulatory obligations with confidence.');
+  if (fwDesc2) {
+    if (p.frameworksDesc1 && !p.frameworksDesc2) {
+      /* Single-paragraph override — no default second paragraph to fall back to */
+      fwDesc2.hidden = true;
+    } else {
+      fwDesc2.hidden = false;
+      fwDesc2.textContent = p.frameworksDesc2 ||
+        ('By consolidating compliance requirements into one platform, ' + p.name + ' eliminates fragmentation, enhances governance, and empowers organizations to efficiently meet complex regulatory obligations with confidence.');
+    }
+  }
 
   var FW_STATS = [
     { title:'Real-time scores', desc:'live compliance metrics' },
@@ -1762,7 +2215,7 @@
       });
     }
   } else if (fwStats) {
-    FW_STATS.forEach(function(s){
+    (p.frameworksStats || FW_STATS).forEach(function(s){
       var card = document.createElement('div');
       card.className = 'frameworks-stat-card';
       card.innerHTML = '<h4 class="frameworks-stat-title">' + s.title + '</h4><p class="frameworks-stat-desc">' + s.desc + '</p>';
@@ -1776,6 +2229,7 @@
   document.getElementById('frameworksBannerTitle1').textContent = fwBanners[0].title;
   document.getElementById('frameworksBannerValue1').textContent = fwBanners[0].value;
   var fwBanner2 = document.getElementById('frameworksBanner2');
+  document.querySelector('.frameworks-banners').classList.toggle('is-caps', fwBanners.length > 1);
   if (fwBanners[1]) {
     fwBanner2.hidden = false;
     document.getElementById('frameworksBannerTitle2').textContent = fwBanners[1].title;
@@ -1797,6 +2251,60 @@
 
   var demoPlatformEl = document.getElementById('demoPlatform');
   if (demoPlatformEl) demoPlatformEl.value = p.name;
+  if (p.footer) {
+    var ft = p.footer;
+    var setText = function(id, t){ var el = document.getElementById(id); if (el && t != null) el.textContent = t; };
+    document.getElementById('footerLogo').hidden = true;
+    document.getElementById('footerBrandMark').hidden = false;
+    setText('footerBrandLetter', p.name.charAt(0));
+    setText('footerBrandName', p.name);
+    if (ft.brandSub) setText('footerBrandSub', ft.brandSub);
+    setText('footerTagline', ft.tagline);
+    document.getElementById('footerCertTitle').hidden = true;
+    var fBadges = document.getElementById('footerBadges');
+    fBadges.innerHTML = '';
+    ft.badges.forEach(function(b){
+      var sp = document.createElement('span');
+      sp.className = 'flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium text-secondary';
+      sp.textContent = b;
+      fBadges.appendChild(sp);
+    });
+    if (ft.productsTitle) setText('footerProductsTitle', ft.productsTitle);
+    if (ft.usefulLinks) {
+      var fLinks = document.getElementById('footerLinks');
+      fLinks.innerHTML = '';
+      ft.usefulLinks.forEach(function(l){
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = l[1];
+        a.className = 'hover:text-white transition-colors';
+        a.textContent = l[0];
+        li.appendChild(a);
+        fLinks.appendChild(li);
+      });
+    }
+    var fProd = document.getElementById('footerProducts');
+    fProd.innerHTML = '';
+    ft.products.forEach(function(name){
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = 'product.html?id=' + id;
+      a.className = 'hover:text-white transition-colors';
+      a.textContent = name;
+      li.appendChild(a);
+      fProd.appendChild(li);
+    });
+    setText('footerAddress', ft.address);
+    var fPhone = document.getElementById('footerPhone'); fPhone.textContent = ft.phone; fPhone.href = 'tel:' + ft.phone.replace(/[^+\d]/g, '');
+    var fEmail = document.getElementById('footerEmail'); fEmail.textContent = ft.email; fEmail.href = 'mailto:' + ft.email;
+    var fWeb = document.getElementById('footerWeb'); fWeb.textContent = ft.website; fWeb.href = 'https://' + ft.website;
+    document.getElementById('footerWebIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z" stroke="#6E3894" stroke-width="1.5"/></svg>';
+    setText('footerSlogan', ft.slogan);
+  }
+  if (p.demoTitle) {
+    document.getElementById('demo-heading').textContent = p.demoTitle;
+    document.getElementById('demoSubmitBtn').textContent = p.demoTitle;
+  }
 
   var WHY_PILLARS = [
     { title:'Easy', desc:'Straightforward to adopt across the organization.' },
@@ -1890,9 +2398,9 @@
   if (p.sixChallenges) {
     var CH_NUM_WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
     var chCountWord = CH_NUM_WORDS[p.sixChallenges.length] || (p.sixChallenges.length + '');
-    document.getElementById('challengesTitle').textContent = chCountWord + ' Challenges. One Platform.';
-    document.getElementById('challengesSubtitle').textContent =
-      chCountWord + ' critical challenges organizations face without a unified ' + p.challengeCategory.replace(/&amp;/g, '&') + ' platform — and how ' + p.name + ' addresses each one.';
+    document.getElementById('challengesTitle').textContent = p.challengesTitle || (chCountWord + ' Challenges. One Platform.');
+    document.getElementById('challengesSubtitle').textContent = p.challengesSubtitle ||
+      (chCountWord + ' critical challenges organizations face without a unified ' + p.challengeCategory.replace(/&amp;/g, '&') + ' platform — and how ' + p.name + ' addresses each one.');
 
     var chGrid = document.getElementById('challengesGrid');
     p.sixChallenges.forEach(function(c, i){

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Products | Advanced Controls IT Co.</title>
+<meta name="description" content="Advanced Controls IT Co. develops national cybersecurity and technology products and solutions, with consulting, compliance and certification services." />
+<meta name="author" content="Advanced Controls" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#44225A" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
+
+<link rel="stylesheet" href="css/styles.css?v=6" />
+<style>
+/* ===== Our Products ===== */
+.prods-section{ position:relative; z-index:10; margin-top:-7rem; background:#F7F6FA; border-radius:48px 48px 0 0; padding:clamp(56px,7vw,110px) clamp(16px,6vw,110px) clamp(64px,8vw,120px); overflow:hidden; }
+.prods-section::before, .prods-section::after{ content:''; position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; pointer-events:none; animation:prodsOrb 14s ease-in-out infinite; }
+.prods-section::before{ width:420px; height:420px; left:-140px; top:12%; background:radial-gradient(circle,#D9C3EE,transparent 70%); }
+.prods-section::after{ width:480px; height:480px; right:-160px; bottom:6%; background:radial-gradient(circle,#C9D5F5,transparent 70%); animation-delay:-7s; }
+@keyframes prodsOrb{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(50px,-40px) scale(1.15); } }
+.prods-head{ position:relative; text-align:center; max-width:820px; margin:0 auto clamp(36px,5vw,64px); }
+.prods-title{ font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(2rem,4.6vw,56px); line-height:1.1; color:#1F1728; margin:0; }
+.prods-title span{ display:inline-block; opacity:0; transform:translateY(60px) rotateX(-70deg) scale(.7); filter:blur(8px); }
+.prods-title.revealed span{ animation:prodsChar .8s cubic-bezier(.22,1.2,.36,1) both; animation-delay:calc(var(--k) * 45ms); }
+@keyframes prodsChar{ to{ opacity:1; transform:none; filter:blur(0); } }
+.prods-sub{ font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(.95rem,1.3vw,17px); color:#8A7C99; margin:14px 0 0; opacity:0; transform:translateY(18px); }
+.prods-title.revealed ~ .prods-sub{ animation:prodsUp .7s ease .55s both; }
+.prods-bar{ display:block; height:3px; width:0; margin:18px auto 0; border-radius:3px; background:linear-gradient(90deg,#6E3894,#A542FF,#6E3894); background-size:200% 100%; }
+.prods-title.revealed ~ .prods-bar{ animation:prodsBar .9s cubic-bezier(.22,.9,.3,1) .7s both, prodsFlow 3s linear 1.6s infinite; }
+@keyframes prodsBar{ to{ width:96px; } }
+@keyframes prodsFlow{ to{ background-position:200% 0; } }
+@keyframes prodsUp{ to{ opacity:1; transform:none; } }
+
+.prods-grid{ position:relative; display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:#DCCFEA; border:1px solid #DCCFEA; border-radius:26px; overflow:hidden; box-shadow:0 30px 70px rgba(68,34,90,.10); max-width:1350px; margin:0 auto; }
+.prod-cell{ position:relative; display:flex; flex-direction:column; gap:14px; padding:clamp(22px,2.4vw,32px); background:#FDFBFE; text-decoration:none; color:inherit; overflow:hidden; opacity:0; filter:blur(6px); transition:background .35s ease, box-shadow .35s ease; }
+.prod-cell:nth-child(odd){ transform:translateX(-90px) scale(.94); }
+.prod-cell:nth-child(even){ transform:translateX(90px) scale(.94); }
+.prod-cell.revealed{ animation:prodCellIn .9s cubic-bezier(.22,1,.3,1) both; animation-delay:calc(var(--r) * 90ms); }
+@keyframes prodCellIn{ to{ opacity:1; transform:none; filter:blur(0); } }
+.prod-cell::before{ content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(110deg,transparent 35%,rgba(165,66,255,.16) 50%,transparent 65%); transform:translateX(-120%); }
+.prod-cell.revealed::before{ animation:prodSweep 1.3s ease both; animation-delay:calc(var(--r) * 90ms + 550ms); }
+@keyframes prodSweep{ to{ transform:translateX(120%); } }
+.prod-cell::after{ content:''; position:absolute; left:0; top:0; height:3px; width:0; background:linear-gradient(90deg,#6E3894,#A542FF); transition:width .55s cubic-bezier(.22,.9,.3,1); z-index:2; }
+.prod-cell:hover::after{ width:100%; }
+.prod-cell:hover{ background:#FFFFFF; box-shadow:inset 0 0 0 1px #C9B7D8, 0 20px 44px rgba(68,34,90,.14); z-index:3; }
+.prod-cell > *{ position:relative; z-index:1; }
+
+.prod-cat{ font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8A7C99; opacity:0; transform:translateY(10px); }
+.prod-icon{ width:60px; height:60px; border-radius:14px; background:#F3F0F8; border:1px solid #E4DAEF; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(46,27,78,.06); transform:scale(0) rotate(-200deg); }
+.prod-icon img{ width:34px; height:34px; object-fit:contain; display:block; }
+.prod-icon b{ font-family:'Poppins',sans-serif; font-size:24px; color:#6E3894; }
+.prod-name{ font-family:'Poppins',sans-serif; font-weight:600; font-size:clamp(1.5rem,2.2vw,30px); line-height:1.15; color:#2E1B4E; margin:0; opacity:0; transform:translateY(24px); }
+.prod-desc{ font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.55; color:#5A4B6B; margin:0; opacity:0; transform:translateY(16px); }
+.prod-bullets{ list-style:none; margin:2px 0 0; padding:0; display:flex; flex-direction:column; gap:7px; }
+.prod-bullets li{ display:flex; align-items:center; gap:9px; font-family:'Inter',sans-serif; font-weight:500; font-size:12.5px; color:#6E3894; opacity:0; transform:translateX(-26px); }
+.prod-bullets li::before{ content:''; width:6px; height:6px; border-radius:50%; background:#6E3894; flex:none; transition:transform .3s ease, box-shadow .3s ease; }
+.prod-more{ margin-top:auto; align-self:flex-end; display:inline-flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:#6E3894; opacity:0; transform:translateX(36px); }
+.prod-more svg{ transition:transform .35s cubic-bezier(.22,1.4,.4,1); }
+.prod-cell:hover .prod-more svg{ transform:translateX(7px); }
+
+.prod-cell.revealed .prod-cat{ animation:prodFade .6s ease both; animation-delay:calc(var(--r) * 90ms + 150ms); }
+.prod-cell.revealed .prod-icon{ animation:prodIcon .9s cubic-bezier(.34,1.56,.64,1) both, prodFloat 5s ease-in-out infinite; animation-delay:calc(var(--r) * 90ms + 250ms), calc(var(--r) * 90ms + 1300ms); }
+.prod-cell.revealed .prod-name{ animation:prodRise .7s cubic-bezier(.22,1,.3,1) both; animation-delay:calc(var(--r) * 90ms + 420ms); }
+.prod-cell.revealed .prod-desc{ animation:prodRise .7s ease both; animation-delay:calc(var(--r) * 90ms + 560ms); }
+.prod-cell.revealed .prod-bullets li{ animation:prodRise .55s cubic-bezier(.22,1,.3,1) both; animation-delay:calc(var(--r) * 90ms + 720ms + var(--b) * 110ms); }
+.prod-cell.revealed .prod-more{ animation:prodRise .7s cubic-bezier(.22,1,.3,1) both; animation-delay:calc(var(--r) * 90ms + 1050ms); }
+@keyframes prodFade{ to{ opacity:1; transform:none; } }
+@keyframes prodIcon{ to{ transform:scale(1) rotate(0); } }
+@keyframes prodFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
+@keyframes prodRise{ to{ opacity:1; transform:none; } }
+.prod-cell:hover .prod-icon{ background:#EFE6FA; border-color:#C9B7D8; }
+.prod-cell:hover .prod-icon img{ animation:prodTilt .8s ease; }
+@keyframes prodTilt{ 0%{ transform:scale(1) rotate(0); } 40%{ transform:scale(1.25) rotate(-10deg); } 100%{ transform:scale(1) rotate(0); } }
+.prod-cell:hover .prod-bullets li::before{ transform:scale(1.5); box-shadow:0 0 0 4px rgba(110,56,148,.16); }
+
+@media(max-width:820px){
+  .prods-grid{ grid-template-columns:1fr; }
+  .prod-cell:nth-child(n){ transform:translateY(50px) scale(.96); }
+  .prods-section{ border-radius:32px 32px 0 0; }
+}
+</style>
+</head>
+<body class="bg-white text-primary">
+
+<!-- ===================== PAGE LOADER ===================== -->
+<div id="pageLoader" aria-hidden="true">
+  <div id="loaderInner">
+    <div id="loaderRing"></div>
+    <div id="loaderMark">
+      <img src="assets/loder.gif" alt="" />
+    </div>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var l = document.getElementById('pageLoader');
+    if (l && l.parentNode) l.parentNode.removeChild(l);
+  }, 4000);
+</script>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ===================== HEADER ===================== -->
+<!-- NAV:START — generated from src/partials/nav.html by `npm run build:nav`. Edit the partial, not this. -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-borderc">
+  <div class="mx-auto w-[90%] ">
+    <div class="flex h-[60px] items-center justify-between gap-6">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center shrink-0" aria-label="Advanced Controls home">
+        <img src="assets/logo.png" alt="Advanced Controls — Consult . Secure . Succeed" width="238" height="57" class="h-[33.83px] my-2 w-auto" />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Primary" class="hidden lg:flex">
+        <div class="relative">
+          <ul id="navList" class="flex items-center gap-[25px] font-nav">
+            <li><a data-nav="home" href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
+            <li><a data-nav="products" href="products.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Products</a></li>
+            <li><a data-nav="services" href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
+            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
+            <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a id="headerCta" href="contact.html" class="hidden lg:inline-flex w-[111.56px] h-8.75 items-center justify-center rounded-[7.29px] bg-secondary font-nav font-semibold text-xs text-white shadow-[0_4.375px_8.75px_rgba(0,0,0,.15)] hover:bg-primary transition-colors">
+          Get Started
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" type="button" class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 text-primary" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg id="iconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg id="iconClose" width="26" height="26" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#44225A" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-borderc bg-white">
+    <nav aria-label="Mobile primary">
+      <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
+        <li><a data-nav-m="home" href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
+        <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Products</a></li>
+        <li><a data-nav-m="services" href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
+        <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
+        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
+        <li class="pt-2"><a href="contact.html" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- NAV:END -->
+
+<main id="main">
+  <!-- ===================== HERO ===================== -->
+  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+    <video class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 -z-10 bg-black/45" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto flex h-screen w-full flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
+      <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.75rem,5vw,3.75rem)]">
+        We're leaders in<br class="hidden sm:block" /> cybersecurity
+      </h1>
+      <p class="mx-auto mt-8 max-w-4xl text-[clamp(1rem,2vw,1.5rem)] font-medium leading-8 text-surface">
+        Advanced Controls IT Co., established in 2022, is a Saudi Cybersecurity and IT company distinguished by its innovative vision and national expertise. We specialize in developing advanced national cybersecurity and technology products and solutions, delivering high-level consulting services in cybersecurity and IT, and providing compliance and certification services.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="contact.html" class="inline-flex items-center justify-center gap-2 rounded-[14px] bg-white px-5 py-3 font-body font-medium text-sm capitalize text-primary hover:bg-surface transition-colors">
+          Send Request
+        </a>
+        <a href="index.html#top" class="inline-flex items-center gap-2 rounded-[14px] border border-white bg-white/20 px-5 py-3 font-body font-medium text-sm capitalize text-white hover:bg-white/30 transition-colors">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5" stroke="white" stroke-width="1.4"/>
+            <path d="M10 8.5v7l6-3.5-6-3.5z" fill="white"/>
+          </svg>
+          Watch Video
+        </a>
+      </div>
+
+      <p class="sr-only">Trusted by 3M, KPMG, Mercedes-Benz, SAP and P&G</p>
+      <div class="absolute left-1/2 w-screen -translate-x-1/2 bottom-10 sm:bottom-14 z-10 py-4" role="region" aria-label="Trusted by">
+      <div class="overflow-hidden" aria-hidden="true">
+        <div class="logo-marquee opacity-90">
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-black text-2xl italic">SAP</span>
+          <span class="text-white font-serif text-2xl italic">P&amp;G</span>
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-extrabold text-3xl tracking-tight">3M</span>
+          <span class="text-white font-serif text-2xl">Mercedes-Benz</span>
+          <span class="text-white font-bold text-2xl tracking-wide">KPMG</span>
+          <span class="text-white font-black text-2xl italic">SAP</span>
+          <span class="text-white font-serif text-2xl italic">P&amp;G</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- ===================== OUR PRODUCTS ===================== -->
+  <section id="products" class="prods-section" aria-labelledby="prodsTitle">
+    <div class="prods-head">
+      <h2 id="prodsTitle" class="prods-title" aria-label="Our Products">Our Products</h2>
+      <p class="prods-sub">Enterprise-grade security products designed for the modern threat landscape</p>
+      <span class="prods-bar" aria-hidden="true"></span>
+    </div>
+    <div id="prodsGrid" class="prods-grid"></div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
+  <div class="mx-auto flex max-w-357.5 flex-col gap-16">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+      <div class="flex flex-col items-start gap-6" data-reveal="up">
+        <div class="flex items-center gap-3">
+          <img src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
+        </div>
+        <p class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
+        <div class="flex flex-col items-start gap-3">
+          <h4 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
+          <div class="flex flex-nowrap items-center gap-1">
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NORA v2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h4>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="index.html#products" class="hover:text-white transition-colors">Product</a></li>
+          <li><a href="index.html#strategic-services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
+          <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
+          <li><a href="product.html?id=intel" class="hover:text-white transition-colors">IntelMode</a></li>
+          <li><a href="product.html?id=risk" class="hover:text-white transition-colors">DataMode</a></li>
+          <li><a href="product.html?id=incident" class="hover:text-white transition-colors">TransferMode</a></li>
+          <li><a href="product.html?id=vendor" class="hover:text-white transition-colors">GateMode</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
+        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h4>
+        <ul class="flex w-full flex-col items-start gap-4">
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
+            </span>
+            <span class="text-sm leading-4.25 text-surface">Kingdom of Saudi Arabia — Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </span>
+            <a href="tel:920066215" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">920066215</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <a href="mailto:info@advancedcontrols.sa" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">info@advancedcontrols.sa</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">linkedin.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 border-t border-borderc2 pt-6.25 sm:flex-row sm:items-start sm:justify-between">
+      <p class="text-sm leading-4.25 capitalize text-surface">&copy; <span id="year"></span> Advanced Controls IT Co. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms</a>
+        <span>Consult · Secure · Succeed</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg width="28" height="38" viewBox="0 0 33 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M14.9604 22.4368H19.0893V0L0.015625 15.6474V29.1158L19.113 44.8342V34.6974L4.03404 22.3737L14.9683 13.4132V22.4368H14.9604Z" fill="#44225A"/>
+    <path d="M14.9605 22.4368V13.4132L4.02632 22.3737L19.1132 34.6895V44.8342L0 29.1158L0.0157808 15.6474L19.0895 0V22.4368H14.9605Z" fill="#44225A"/>
+    <path d="M21.5605 35.6134V30.095L29.7711 23.3845L21.5605 16.666V11.2266L21.8606 11.4239L32.029 19.7923L32.0448 26.8818L32.0053 27.0397L21.5605 35.6134Z" fill="#9A94A6"/>
+    <path d="M31.8645 11.1471C31.8645 12.2129 30.9961 13.0813 29.9303 13.0813C28.8645 13.0813 27.9961 12.2129 27.9961 11.1471C27.9961 10.0813 28.8645 9.21289 29.9303 9.21289C30.9961 9.21289 31.8645 10.0813 31.8645 11.1471ZM31.4224 11.1471C31.4224 10.3261 30.7514 9.65499 29.9303 9.65499C29.1093 9.65499 28.4382 10.3261 28.4382 11.1471C28.4382 11.9682 29.1093 12.6392 29.9303 12.6392C30.7514 12.6392 31.4224 11.9682 31.4224 11.1471Z" fill="#9A94A6"/>
+    <path d="M30.9072 12.1341H30.3546C30.3072 12.0394 29.9914 11.4946 29.9519 11.4709C29.8888 11.4315 29.6914 11.4788 29.6045 11.463V12.0709C29.6045 12.1657 29.2177 12.1183 29.1309 12.1262V10.042H30.173C30.4019 10.042 30.7177 10.2472 30.7967 10.4762C30.9546 10.8946 30.773 11.1709 30.4256 11.3999L30.8914 12.1262L30.9072 12.1341ZM30.1809 10.4841C30.023 10.4525 29.7782 10.5078 29.6125 10.4841V11.0762C29.8572 11.0762 30.3466 11.1551 30.3861 10.8157C30.4019 10.6972 30.2993 10.5157 30.1809 10.492V10.4841Z" fill="#9A94A6"/>
+  </svg>
+</button>
+
+<script src="js/main.js?v=6"></script>
+<script>
+(function(){
+  var PRODUCTS = [
+    { cat:'Security', name:'CyberMode', id:'cyber', icon:'assets/Container.png',
+      desc:'CyberMode is a comprehensive GRC and cybersecurity management platform that enables organizations to centrally manage governance, risk, compliance, awareness, assessments, exceptions, committees, initiatives, and projects through a single unified system, eliminating the need for multiple fragmented tools.',
+      bullets:['Governance and compliance','Risk and assessments','Awareness and initiatives'] },
+    { cat:'Governance', name:'GovernanceMode', id:'governance', icon:'assets/Vector.png',
+      desc:'GovernanceMode is an enterprise-grade EGRC platform that consolidates governance, risk, compliance, business continuity, strategic performance, committees and internal audit into a single, service-oriented operating system, engineered for the scale, regulatory pace and bilingual reality of modern Saudi and regional enterprises.',
+      bullets:['Enterprise EGRC platform','Bilingual enterprise support','Committees and internal audit'] },
+    { cat:'Intelligence', name:'IntelMode', id:'intel', icon:'assets/intelmode.png',
+      desc:"IntelMode is a Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform. It integrates automated threat intelligence collection, AI-powered analytics, IOC correlation, dark web monitoring, and deception-based detection to identify adversary behaviour, lateral movement, and digital exposure across the organization's attack surface.",
+      bullets:['Threat intelligence collection','AI-powered analytics','Dark web and IOC correlation'] },
+    { cat:'Data', name:'DataMode', id:'risk', icon:'assets/datamode.png',
+      desc:'DataMode is a comprehensive Data Management Office platform that enables organizations to govern, manage, protect, and continuously improve the quality of their data assets through a single unified system, covering governance and strategic oversight, metadata management and data catalog, data quality profiling and remediation, classification and privacy protection, regulatory compliance, and audit-ready reporting.',
+      bullets:['Data catalog and metadata','Quality profiling and remediation','Privacy protection and reporting'] },
+    { cat:'Transfer', name:'TransferMode', id:'incident', icon:'assets/transmode.png',
+      desc:'A zero-trust gateway that secures every file entering or leaving your organization across USB, removable media, and cross-domain transfers, with multi-engine malware scanning, content disarm and reconstruction, and enforced approval workflows.',
+      bullets:['Zero-trust file gateway','Multi-engine malware scanning','Content disarm and reconstruction'] },
+    { cat:'Security', name:'InspectMode', id:'inspect', icon:'',
+      desc:'InspectMode is an agent-based, AI-augmented security assessment platform built for deployment across corporate and industrial networks. It delivers automated compromise assessment, forensic evidence collection, vulnerability scanning, compliance auditing, and threat detection through a single unified agent that operates on workstations, servers, and OT/ICS devices.',
+      bullets:['Agent-based assessments','Forensic evidence collection','Corporate and OT/ICS coverage'] },
+    { cat:'IT Service', name:'ITMode', id:'audit', icon:'assets/itmode.png',
+      desc:'ITMode is a next-generation IT Service Management platform that enables organizations to standardize, automate, and elevate IT service operations in alignment with ISO/IEC 20000 and ITIL v4. Built as a Saudi-developed platform aligned with international standards, ITMode provides a secure, scalable, and locally compliant foundation for enterprise service management.',
+      bullets:['ITIL v4 aligned workflows','ISO/IEC 20000 alignment','Locally compliant foundation'] },
+    { cat:'Transfer', name:'GateMode', id:'vendor', icon:'assets/gavermode.png',
+      desc:'GateMode is a hardware-enforced, bidirectional air-gapped transfer platform that ensures cryptographic proof of integrity and automated media sanitization. It bridges classified and unclassified domains through a dedicated security appliance, eliminating any direct TCP/IP path while preserving full auditability and compliance readiness.',
+      bullets:['Air-gapped transfer platform','Cryptographic proof of integrity','Automated media sanitization'] }
+  ];
+
+  var title = document.getElementById('prodsTitle');
+  var text = title.textContent;
+  title.textContent = '';
+  text.split('').forEach(function(ch, k){
+    var sp = document.createElement('span');
+    sp.textContent = ch === ' ' ? ' ' : ch;
+    sp.style.setProperty('--k', k);
+    sp.setAttribute('aria-hidden', 'true');
+    title.appendChild(sp);
+  });
+
+  var grid = document.getElementById('prodsGrid');
+  var ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  PRODUCTS.forEach(function(p, i){
+    var a = document.createElement('a');
+    a.className = 'prod-cell';
+    a.href = 'product.html?id=' + p.id;
+    a.style.setProperty('--r', i % 2);
+    a.innerHTML =
+      '<span class="prod-cat">' + p.cat + '</span>' +
+      '<span class="prod-icon">' + (p.icon ? '<img src="' + p.icon + '" alt="" />' : '<b>' + p.name.charAt(0) + '</b>') + '</span>' +
+      '<h3 class="prod-name">' + p.name + '</h3>' +
+      '<p class="prod-desc">' + p.desc + '</p>' +
+      '<ul class="prod-bullets">' + p.bullets.map(function(b, k){ return '<li style="--b:' + k + '">' + b + '</li>'; }).join('') + '</ul>' +
+      '<span class="prod-more">Learn more ' + ARROW + '</span>';
+    grid.appendChild(a);
+  });
+
+  var targets = [title].concat(Array.prototype.slice.call(grid.children));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+  } else {
+    targets.forEach(function(el){ el.classList.add('revealed'); });
+  }
+})();
+</script>
+
+</body>
+</html>
