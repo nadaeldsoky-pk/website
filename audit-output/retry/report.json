@@ -1,0 +1,45 @@
+[
+ {
+  "vw": 768,
+  "docScroll": 768,
+  "bodyScroll": 768,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a#footerPhone.text-sm.leading-4.25.text-surface 75x17",
+   "a#footerEmail.text-sm.leading-4.25.text-surface 176x17",
+   "a#footerWeb.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "article.challenge-card.revealed",
+   "article.challenge-card.revealed",
+   "article.challenge-card.revealed",
+   "article.challenge-card.revealed",
+   "article.challenge-card.revealed",
+   "article.challenge-card.revealed",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row",
+   "div.core-module-row"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "product.html?id=intel",
+  "width": 768,
+  "errors": [],
+  "overflow": false
+ }
+]

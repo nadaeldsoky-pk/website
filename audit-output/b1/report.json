@@ -1,0 +1,499 @@
+[
+ {
+  "vw": 320,
+  "docScroll": 320,
+  "bodyScroll": 320,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 320,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 360,
+  "docScroll": 360,
+  "bodyScroll": 360,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 360,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 390,
+  "docScroll": 390,
+  "bodyScroll": 390,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 390,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 414,
+  "docScroll": 414,
+  "bodyScroll": 414,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 93x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 414,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 600,
+  "docScroll": 600,
+  "bodyScroll": 600,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 93x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 600,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 768,
+  "docScroll": 768,
+  "bodyScroll": 768,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 768,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 820,
+  "docScroll": 820,
+  "bodyScroll": 820,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 820,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1024,
+  "docScroll": 1024,
+  "bodyScroll": 1024,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 1024,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1280,
+  "docScroll": 1280,
+  "bodyScroll": 1280,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 1280,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1440,
+  "docScroll": 1440,
+  "bodyScroll": 1440,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 1440,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1920,
+  "docScroll": 1920,
+  "bodyScroll": 1920,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "about.html",
+  "width": 1920,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "page": "index.html",
+  "width": 320,
+  "fatal": "timeout 120000ms"
+ },
+ {
+  "page": "index.html",
+  "width": 320,
+  "fatal": "Attempted to use detached Frame '98F6B18282A2A3DE4653F559E4485B21'."
+ },
+ {
+  "vw": 360,
+  "docScroll": 360,
+  "bodyScroll": 360,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 360,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 390,
+  "docScroll": 390,
+  "bodyScroll": 390,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 390,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 414,
+  "docScroll": 414,
+  "bodyScroll": 414,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 93x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "section#top.hero-bg.relative.min-h-[calc(100vh+7rem)]",
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 414,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 600,
+  "docScroll": 600,
+  "bodyScroll": 600,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 93x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 600,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 768,
+  "docScroll": 768,
+  "bodyScroll": 768,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 768,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 820,
+  "docScroll": 820,
+  "bodyScroll": 820,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [
+   "button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "button.rounded-full.transition-all.h-[10px] 36x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button.rounded-full.transition-all.h-[10px] 10x10",
+   "button#nextBtn.text-white/90.hover:text-white.transition-colors 24x24",
+   "a.text-sm.leading-4.25.text-surface 75x17",
+   "a.text-sm.leading-4.25.text-surface 176x17",
+   "a.text-sm.leading-4.25.text-surface 84x17",
+   "a.hover:text-white.transition-colors 41x17"
+  ],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 820,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1024,
+  "docScroll": 1024,
+  "bodyScroll": 1024,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 1024,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1280,
+  "docScroll": 1280,
+  "bodyScroll": 1280,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 1280,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1440,
+  "docScroll": 1440,
+  "bodyScroll": 1440,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 1440,
+  "errors": [],
+  "overflow": false
+ },
+ {
+  "vw": 1920,
+  "docScroll": 1920,
+  "bodyScroll": 1920,
+  "offenders": [],
+  "smallText": 0,
+  "smallTargets": [],
+  "truncated": [
+   "div.overflow-hidden"
+  ],
+  "brokenImgs": [],
+  "navMode": "ok",
+  "page": "index.html",
+  "width": 1920,
+  "errors": [],
+  "overflow": false
+ }
+]

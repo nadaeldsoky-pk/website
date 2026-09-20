@@ -89,7 +89,7 @@ const pageCheck = () => {
 };
 
 /* ---------- run ---------- */
-const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox', '--disable-gpu', '--hide-scrollbars'] });
+const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', protocolTimeout: 180000, args: ['--no-sandbox', '--hide-scrollbars'] });
 const results = [];
 const jobs = [];
 for (const pg of pages) for (const w of widths) jobs.push({ pg, w });
@@ -113,7 +113,7 @@ const run = async ({ pg, w }) => {
       await page.evaluate((yy) => window.scrollTo(0, yy), y);
       await new Promise((r) => setTimeout(r, 90));
     }
-    await new Promise((r) => setTimeout(r, 2200));
+    await new Promise((r) => setTimeout(r, 1500));
     const res = await page.evaluate(pageCheck);
     res.page = pg; res.width = w; res.errors = [...new Set(errors)];
     res.overflow = res.docScroll > res.vw + 1 || res.bodyScroll > res.vw + 1;
@@ -130,9 +130,18 @@ const run = async ({ pg, w }) => {
   await page.close();
 };
 
-const CONC = 4;
-let idx = 0;
-await Promise.all(Array.from({ length: CONC }, async () => { while (idx < jobs.length) await run(jobs[idx++]); }));
+const CONC = Number(opt('--conc') || 2);
+const JOB_TIMEOUT = 120000;
+let idx = 0, done = 0;
+const guarded = async (job) => {
+  let to;
+  const timeout = new Promise((res) => { to = setTimeout(() => { results.push({ page: job.pg, width: job.w, fatal: 'timeout ' + JOB_TIMEOUT + 'ms' }); res(); }, JOB_TIMEOUT); });
+  await Promise.race([run(job), timeout]);
+  clearTimeout(to);
+  done++;
+  if (done % 10 === 0) console.error(`progress ${done}/${jobs.length}`);
+};
+await Promise.all(Array.from({ length: CONC }, async () => { while (idx < jobs.length) await guarded(jobs[idx++]); }));
 await browser.close();
 server.close();
 
