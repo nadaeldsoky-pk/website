@@ -15,6 +15,7 @@ const opt = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : nu
 
 const PAGES = [
   'index.html', 'about.html', 'contact.html', 'products.html',
+  'services.html', 'consultation.html', 'security-services.html', 'solutions.html',
   ...['cyber', 'governance', 'intel', 'inspect', 'risk', 'audit', 'incident', 'vendor'].map((id) => `product.html?id=${id}`),
 ];
 const WIDTHS = [320, 360, 390, 414, 600, 768, 820, 1024, 1280, 1440, 1920];

@@ -363,6 +363,8 @@
       var dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'h-[10px] rounded-full transition-all';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
       dot.setAttribute('aria-label', 'Go to ' + p.name);
       dot.addEventListener('click', function(){ goTo(i); });
       dots.appendChild(dot);
@@ -465,6 +467,7 @@
     Array.prototype.forEach.call(dots.children, function(dot, i){
       var active = i === current;
       dot.className = 'rounded-full transition-all h-[10px] ' + (active ? 'w-[36px] bg-white' : 'w-[10px] bg-white/40 hover:bg-white/70');
+      dot.setAttribute('aria-selected', active ? 'true' : 'false');
     });
 
     [panelIcon, panelTitle, panelDesc].forEach(function(el){

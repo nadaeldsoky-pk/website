@@ -4,10 +4,23 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Advanced Controls</title>
+<meta id="metaDesc" name="description" content="Explore Advanced Controls' Saudi-built cybersecurity and GRC platforms — CyberMode, GovernanceMode, IntelMode and more — each mapped to NCA, SAMA and PDPL requirements." />
+<meta name="author" content="Advanced Controls" />
 <meta name="robots" content="index, follow" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta name="theme-color" content="#44225A" />
+<link id="linkCanonical" rel="canonical" href="https://advancedcontrols.sa/product.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Advanced Controls IT Co." />
+<meta id="ogTitle" property="og:title" content="Advanced Controls Platforms" />
+<meta id="ogDesc" property="og:description" content="Explore Advanced Controls' Saudi-built cybersecurity and GRC platforms — CyberMode, GovernanceMode, IntelMode and more — each mapped to NCA, SAMA and PDPL requirements." />
+<meta id="ogUrl" property="og:url" content="https://advancedcontrols.sa/product.html" />
+<meta property="og:image" content="https://advancedcontrols.sa/assets/bg-services-web.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta id="twTitle" name="twitter:title" content="Advanced Controls Platforms" />
+<meta id="twDesc" name="twitter:description" content="Explore Advanced Controls' Saudi-built cybersecurity and GRC platforms — CyberMode, GovernanceMode, IntelMode and more — each mapped to NCA, SAMA and PDPL requirements." />
+<meta name="twitter:image" content="https://advancedcontrols.sa/assets/bg-services-web.jpg" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1168,7 +1181,7 @@
 
       <div id="frameworksStats" class="frameworks-stats" data-reveal="up" data-delay="100"></div>
       <div id="frameworksCap" class="frameworks-cap" data-reveal="up" data-delay="100" hidden>
-        <h4 id="frameworksCapTitle" class="frameworks-cap-title"></h4>
+        <h3 id="frameworksCapTitle" class="frameworks-cap-title"></h3>
         <ul id="frameworksCapList" class="frameworks-cap-list"></ul>
       </div>
 
@@ -1337,7 +1350,7 @@
         </div>
         <p id="footerTagline" class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
-          <h4 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
+          <h3 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h3>
           <div id="footerBadges" class="flex flex-wrap items-center gap-2">
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
@@ -1349,7 +1362,7 @@
 
       <!-- Column 2: Useful Links -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
-        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h4>
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
         <ul id="footerLinks" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="index.html"                    class="hover:text-white transition-colors">Home</a></li>
           <li><a href="index.html#products"           class="hover:text-white transition-colors">Product</a></li>
@@ -1361,7 +1374,7 @@
 
       <!-- Column 3: Products -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
-        <h4 id="footerProductsTitle" class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
+        <h3 id="footerProductsTitle" class="text-xl font-semibold leading-6 capitalize text-white">Products</h3>
         <ul id="footerProducts" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
           <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
@@ -1374,7 +1387,7 @@
 
       <!-- Column 4: Contact -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
-        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h4>
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h3>
         <ul class="flex w-full flex-col items-start gap-4">
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
@@ -2358,6 +2371,21 @@ capabilitiesTitle:'Built Into Every Module.',
   if (!p) { window.location.href = 'index.html'; return; }
 
   document.title = p.name + ' | Advanced Controls';
+  (function(){
+    var pageTitle = p.name + ' | Advanced Controls';
+    var defaultDesc = 'One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into posture, risk and compliance for leadership.';
+    var desc = (p.heroDesc || defaultDesc).replace(/&amp;/g, '&').replace(/<[^>]+>/g, '');
+    if (desc.length > 158) { desc = desc.slice(0, 158).replace(/\s+\S*$/, '') + '…'; }
+    var url = 'https://advancedcontrols.sa/product.html?id=' + encodeURIComponent(id);
+    var setAttr = function(elId, attr, val){ var el = document.getElementById(elId); if (el) el.setAttribute(attr, val); };
+    setAttr('metaDesc', 'content', desc);
+    setAttr('linkCanonical', 'href', url);
+    setAttr('ogTitle', 'content', pageTitle);
+    setAttr('ogDesc', 'content', desc);
+    setAttr('ogUrl', 'content', url);
+    setAttr('twTitle', 'content', pageTitle);
+    setAttr('twDesc', 'content', desc);
+  })();
   document.getElementById('productHeadline').textContent = p.heroHeadline || ('One Platform for ' + p.challengeCategory.replace(/&amp;/g, '&'));
   /* Hero subtitle — shared across every product by default; a product can override it */
   document.getElementById('productDesc').textContent = p.heroDesc ||
@@ -2801,7 +2829,7 @@ capabilitiesTitle:'Built Into Every Module.',
     (p.frameworksStats || FW_STATS).forEach(function(s){
       var card = document.createElement('div');
       card.className = 'frameworks-stat-card';
-      card.innerHTML = '<h4 class="frameworks-stat-title">' + s.title + '</h4><p class="frameworks-stat-desc">' + s.desc + '</p>';
+      card.innerHTML = '<h3 class="frameworks-stat-title">' + s.title + '</h3><p class="frameworks-stat-desc">' + s.desc + '</p>';
       fwStats.appendChild(card);
     });
   }
