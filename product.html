@@ -4,15 +4,28 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Advanced Controls</title>
+<meta id="metaDesc" name="description" content="Explore Advanced Controls' Saudi-built cybersecurity and GRC platforms — CyberMode, GovernanceMode, IntelMode and more — each mapped to NCA, SAMA and PDPL requirements." />
+<meta name="author" content="Advanced Controls" />
 <meta name="robots" content="index, follow" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta name="theme-color" content="#44225A" />
+<link id="linkCanonical" rel="canonical" href="https://advancedcontrols.sa/product.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Advanced Controls IT Co." />
+<meta id="ogTitle" property="og:title" content="Advanced Controls Platforms" />
+<meta id="ogDesc" property="og:description" content="Explore Advanced Controls' Saudi-built cybersecurity and GRC platforms — CyberMode, GovernanceMode, IntelMode and more — each mapped to NCA, SAMA and PDPL requirements." />
+<meta id="ogUrl" property="og:url" content="https://advancedcontrols.sa/product.html" />
+<meta property="og:image" content="https://advancedcontrols.sa/assets/bg-services-web.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta id="twTitle" name="twitter:title" content="Advanced Controls Platforms" />
+<meta id="twDesc" name="twitter:description" content="Explore Advanced Controls' Saudi-built cybersecurity and GRC platforms — CyberMode, GovernanceMode, IntelMode and more — each mapped to NCA, SAMA and PDPL requirements." />
+<meta name="twitter:image" content="https://advancedcontrols.sa/assets/bg-services-web.jpg" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22%2344225A%22 d=%22M12 2 3 6v6c0 5.25 3.75 9.75 9 10 5.25-.25 9-4.75 9-10V6l-9-4z%22/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=7" />
+<link rel="stylesheet" href="css/styles.css?v=13" />
 
 <style>
 /* ===== Product hero — dome as full background ===== */
@@ -455,6 +468,11 @@
 .capabilities-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.5vw,48px);line-height:1.05;color:#2E1B4E;margin:0}
 .capabilities-subtitle{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.4vw,20px);line-height:1.2;color:#6B5B7A;text-transform:capitalize;max-width:800px;margin:0}
 .capabilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px;width:100%}
+.capabilities-grid.has-wide{grid-template-columns:repeat(6,1fr)}
+.capabilities-grid.has-wide .capability-card{grid-column:span 2}
+.capabilities-grid.has-wide .capability-card.is-wide{grid-column:span 3}
+@media(max-width:900px){.capabilities-grid.has-wide{grid-template-columns:repeat(2,1fr)}.capabilities-grid.has-wide .capability-card,.capabilities-grid.has-wide .capability-card.is-wide{grid-column:auto}}
+@media(max-width:600px){.capabilities-grid.has-wide{grid-template-columns:1fr}}
 .capabilities-note{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .capabilities-note-label{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#6E3894;margin:0}
 .capabilities-note-value{font-family:'Inter',sans-serif;font-weight:500;font-size:clamp(1rem,1.2vw,18px);color:#6B5B7A;margin:0}
@@ -569,9 +587,16 @@
 .frameworks-cap-list{ column-count:2; column-gap:40px; width:100%; list-style:none; margin:0; padding:0; }
 .frameworks-cap-list li{ break-inside:avoid; margin-bottom:12px; }
 @media(max-width:760px){ .frameworks-cap-list{ column-count:1; } }
+.frameworks-cap.is-boxed{background:#FFFDFE;border:1px solid #E4DAEF;border-radius:24px;padding:clamp(18px,2vw,24px)}
+.frameworks-cap.is-boxed .frameworks-cap-title{font-size:18px;letter-spacing:0;text-transform:none;font-weight:600;color:#2E1B4E}
+.frameworks-cap.is-boxed .frameworks-cap-list{column-count:3}
+@media(max-width:1000px){.frameworks-cap.is-boxed .frameworks-cap-list{column-count:2}}
+@media(max-width:760px){.frameworks-cap.is-boxed .frameworks-cap-list{column-count:1}}
 .frameworks-cap-list li{ position:relative; padding-left:22px; font-family:'Inter',sans-serif; font-weight:500; font-size:16px; line-height:24px; color:#3D2B55; }
 .frameworks-cap-list li::before{ content:''; position:absolute; left:4px; top:9px; width:7px; height:7px; border-radius:50%; background:#6E3894; }
 
+.frameworks-note{ font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(.9rem,1.1vw,16px); line-height:1.6; color:#6B5B7A; text-align:center; margin:0; width:100%; }
+.frameworks-note[hidden]{ display:none }
 .frameworks-banners{ display:flex; flex-wrap:wrap; gap:20px; width:100%; }
 .frameworks-banner{ flex:1 1 280px; display:flex; flex-direction:column; gap:8px; padding:24px; background:#210D4A; border-radius:20px; }
 .frameworks-banners.is-caps .frameworks-banner-title{ text-transform:uppercase; letter-spacing:.16em; font-size:16px; }
@@ -593,6 +618,19 @@
 .bench-subtitle{ font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(.95rem,1.3vw,18px); line-height:1.65; color:#6B5B7A; margin:0; }
 
 /* Card shell */
+.bench-summary{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; width:100% }
+.bench-summary[hidden]{ display:none }
+.bench-summary-card{ background:#F1EAF7; border:1px solid #E4DAEF; border-radius:16px; padding:20px 24px; display:flex; flex-direction:column; gap:8px }
+.bench-summary-card b{ font-family:'Inter',sans-serif; font-weight:600; font-size:16px; color:#2E1B4E }
+.bench-summary-card span{ font-family:'Inter',sans-serif; font-weight:400; font-size:14px; color:#6B5B7A }
+@media(max-width:760px){ .bench-summary{ grid-template-columns:1fr } }
+.bench-pill{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto}
+.bench-pill[hidden]{display:none}
+.bench-pill-icon{width:60px;height:60px;border-radius:14px;background:#EFEAF5;display:flex;align-items:center;justify-content:center}
+.bench-pill.is-plain{justify-content:flex-start;margin:0;width:100%}
+.bench-pill.is-plain .bench-pill-icon{display:none}
+.bench-pill.is-plain .bench-pill-text{font-size:16px;font-weight:600}
+.bench-pill-text{font-family:'Inter',sans-serif;font-weight:600;font-size:clamp(1rem,1.2vw,18px);color:#2E1B4E}
 .bench-card{
   position:relative; width:100%; background:#fff;
   border:1px solid #EFEAF4; border-radius:18px;
@@ -863,6 +901,15 @@
   0%  { opacity:0; transform:translateY(30px) rotateX(35deg); }
   100%{ opacity:1; transform:translateY(0) rotateX(0deg); }
 }
+.why-industries{display:flex;flex-direction:column;gap:20px;width:100%}
+.why-industries[hidden]{display:none}
+.why-industries-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.05rem,1.4vw,20px);color:#3A1152;margin:0}
+.why-industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.why-industry{background:#FFFDFE;border:1px solid #E4DAEF;border-radius:16px;padding:20px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;line-height:1.3;color:#2E1B4E;display:flex;align-items:center;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;animation:whyIndIn .55s cubic-bezier(.22,.9,.3,1) both;animation-delay:calc(var(--i,0) * 70ms)}
+.why-industry:hover{transform:translateY(-3px);border-color:#C9B7D8;box-shadow:0 12px 26px rgba(68,34,90,.10)}
+@keyframes whyIndIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.why-industries-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.why-industries-grid{grid-template-columns:1fr}}
 #whyPillars.revealed .why-pillar{
   animation:whyPillarFlipIn .6s cubic-bezier(.22,.9,.3,1) both;
   animation-delay:calc(var(--i, 0) * 110ms);
@@ -890,6 +937,9 @@
   box-sizing:border-box; display:flex; flex-direction:column; align-items:flex-start; gap:8px; padding:28px;
   background:#210D4A; border:1px solid #2E1B4E; border-radius:20px;
 }
+.why-stats.is-light .why-stat-card{background:#FFFDFE;border:1px solid #D9C8E8;box-shadow:none}
+.why-stats.is-light .why-stat-number{color:#3A1152}
+.why-stats.is-light .why-stat-label{color:#6B5B7A;text-transform:none;letter-spacing:0;font-size:13px}
 .why-stat-number{ font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(1.75rem,3.4vw,44px); line-height:1.14; letter-spacing:-.02em; color:#fff; font-variant-numeric:tabular-nums; }
 .why-stat-label{ font-family:'Inter',sans-serif; font-weight:600; font-size:12px; line-height:15px; letter-spacing:.12em; text-transform:uppercase; color:#C9B7D8; }
 
@@ -964,6 +1014,8 @@
 
 .demo-divider{ width:100%; height:1px; background:#3D2B55; border:0; margin:0; }
 
+.demo-lead{ font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(.95rem,1.1vw,16px); line-height:1.5; color:#6B5B7A; margin:0; text-align:center; width:100% }
+.demo-lead[hidden]{ display:none }
 .demo-submit-row{ display:flex; flex-wrap:wrap; align-items:center; gap:24px; width:100%; }
 .demo-submit-btn{
   display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:16px 24px;
@@ -999,7 +1051,7 @@
           <ul id="navList" class="flex items-center gap-[25px] font-nav">
             <li><a data-nav="home" href="index.html" class="nav-link text-muted hover:text-primary transition-colors">Home</a></li>
             <li><a data-nav="products" href="products.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Products</a></li>
-            <li><a data-nav="services" href="index.html#strategic-services" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
+            <li><a data-nav="services" href="services.html" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
             <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
@@ -1027,7 +1079,7 @@
       <ul class="flex flex-col gap-1 px-5 py-4 font-nav text-base">
         <li><a data-nav-m="home" href="index.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Home</a></li>
         <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Products</a></li>
-        <li><a data-nav-m="services" href="index.html#strategic-services" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
+        <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
         <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
@@ -1130,7 +1182,7 @@
 
       <div id="frameworksStats" class="frameworks-stats" data-reveal="up" data-delay="100"></div>
       <div id="frameworksCap" class="frameworks-cap" data-reveal="up" data-delay="100" hidden>
-        <h4 id="frameworksCapTitle" class="frameworks-cap-title"></h4>
+        <h3 id="frameworksCapTitle" class="frameworks-cap-title"></h3>
         <ul id="frameworksCapList" class="frameworks-cap-list"></ul>
       </div>
 
@@ -1144,6 +1196,7 @@
           <p id="frameworksBannerValue2" class="frameworks-banner-value"></p>
         </div>
       </div>
+      <p id="frameworksNote" class="frameworks-note" data-reveal="up" hidden></p>
     </div>
   </section>
     <!-- ===================== A COMPREHENSIVE CAPABILITY BENCHMARK ===================== -->
@@ -1153,11 +1206,16 @@
         <h2 id="benchTitle" class="bench-title">A Comprehensive Capability Benchmark</h2>
         <p id="benchSubtitle" class="bench-subtitle"></p>
       </div>
+      <div id="benchSummary" class="bench-summary" data-reveal="up" hidden></div>
+      <div id="benchPill" class="bench-pill" data-reveal="up" hidden>
+        <span class="bench-pill-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6E3894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l8-3v18"/><path d="M12 8h8v13"/><path d="M8 9h1M8 13h1M8 17h1M16 12h1M16 16h1"/><path d="M3 21h18"/></svg></span>
+        <span id="benchPillText" class="bench-pill-text"></span>
+      </div>
 
       <div id="benchCard" class="bench-card">
         <div class="bench-table" role="table" aria-labelledby="benchTitle">
           <div class="bench-head" role="row">
-            <span role="columnheader" style="--c:0">Capability</span>
+            <span id="benchFeatureHead" role="columnheader" style="--c:0">Capability</span>
             <span id="benchOwnHead" class="bench-col-own" role="columnheader" style="--c:1"></span>
             <span id="benchOtherHead" role="columnheader" style="--c:2">Other Solutions</span>
           </div>
@@ -1186,6 +1244,10 @@
       <div id="whyPillars" class="why-pillars" data-reveal="up" data-delay="120"></div>
       <div id="whyBenefits" class="why-benefits" data-reveal="up" data-delay="160"></div>
       <div id="whyStats" class="why-stats" data-reveal="up" data-delay="200"></div>
+      <div id="whyIndustries" class="why-industries" data-reveal="up" data-delay="200" hidden>
+        <h3 id="whyIndustriesTitle" class="why-industries-title"></h3>
+        <div id="whyIndustriesGrid" class="why-industries-grid"></div>
+      </div>
     </div>
   </section>
 </main>
@@ -1213,12 +1275,12 @@
   <div class="demo-wrap">
     <div class="demo-header">
       <h2 id="demo-heading" class="demo-title">Request a demo</h2>
-      <p class="demo-subtitle">Choose the platform you would like to see and we will arrange it.</p>
+      <p id="demoSubtitle" class="demo-subtitle">Choose the platform you would like to see and we will arrange it.</p>
     </div>
 
     <form class="demo-form" action="#" method="post">
       <div class="demo-field">
-        <label for="demoPlatform" class="demo-label">Select Platform <span style="color:#DC2626">*</span></label>
+        <label for="demoPlatform" id="demoPlatformLabel" class="demo-label"><span id="demoPlatformLabelText">Select Platform</span> <span style="color:#DC2626">*</span></label>
         <div class="demo-select-wrap">
           <select id="demoPlatform" name="platform" class="demo-select" required>
             <option value="CyberMode">CyberMode</option>
@@ -1262,6 +1324,7 @@
       </div>
 
       <hr class="demo-divider" />
+      <p id="demoLead" class="demo-lead" hidden></p>
 
       <div class="demo-submit-row">
         <button type="submit" id="demoSubmitBtn" class="demo-submit-btn">Request a Demo</button>
@@ -1288,7 +1351,7 @@
         </div>
         <p id="footerTagline" class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
-          <h4 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h4>
+          <h3 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h3>
           <div id="footerBadges" class="flex flex-wrap items-center gap-2">
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
             <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
@@ -1300,11 +1363,11 @@
 
       <!-- Column 2: Useful Links -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
-        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h4>
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
         <ul id="footerLinks" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="index.html"                    class="hover:text-white transition-colors">Home</a></li>
           <li><a href="index.html#products"           class="hover:text-white transition-colors">Product</a></li>
-          <li><a href="index.html#strategic-services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="contact.html"                  class="hover:text-white transition-colors">Contact</a></li>
           <li><a href="about.html"                    class="hover:text-white transition-colors">About</a></li>
         </ul>
@@ -1312,7 +1375,7 @@
 
       <!-- Column 3: Products -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
-        <h4 id="footerProductsTitle" class="text-xl font-semibold leading-6 capitalize text-white">Products</h4>
+        <h3 id="footerProductsTitle" class="text-xl font-semibold leading-6 capitalize text-white">Products</h3>
         <ul id="footerProducts" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
           <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
@@ -1325,7 +1388,7 @@
 
       <!-- Column 4: Contact -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
-        <h4 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h4>
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h3>
         <ul class="flex w-full flex-col items-start gap-4">
           <li class="flex items-center gap-3">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
@@ -1519,15 +1582,162 @@
     },
     intel: {
       name:'IntelMode',
+      overview:{
+        subtitle:'Unified Threat Intelligence & Digital Risk Protection',
+        statsCaps:true,
+        cards:[
+          { kicker:'Saudi-Built · CTI · DRP', caps:true, heading:'See the Threat. Predict the Attack. Detect the Adversary.', text:'IntelMode is a Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform. It integrates automated threat intelligence collection, AI-powered analytics, IOC correlation, dark web monitoring, and deception-based detection to identify adversary behaviour, lateral movement, and digital exposure across the organization\'s attack surface.' },
+          { kicker:'Unified Enterprise Platform', caps:true, heading:'Real-time threat intelligence, threat management, digital risk monitoring, attack monitoring, attack surface monitoring, brand protection, dark web monitoring, and predictive analytics', text:'A unified enterprise platform delivering real-time threat intelligence, threat management, digital risk monitoring, attack monitoring, attack surface monitoring, brand protection, dark web monitoring, and predictive analytics - eliminating fragmented tools across the security stack, and enabling organizations to move from reactive security operations to proactive, intelligence-led cybersecurity.' },
+          { kicker:'Platform qualities', caps:true, heading:'Proactive Detection · Predictive Intelligence · Unified at Scale' },
+          { kicker:'Platform benefits', caps:true, heading:'Customizable · Cost-Effective · High Security · Ease of Use · Excellent Support' }
+        ],
+        stats:[['16','Core Modules'],['130+','IOC Extractors','Comprehensive coverage'],['100+','SIEM Integration','Flexible integration'],['24/7','Dark Web & Brand','Continuous intelligence'],['STIX 2.1','Full Compliance','Industry standard']]
+      },
+      heroHeadline:'Unified Threat Intelligence & Digital Risk Protection',
+      heroDesc:'A Saudi-built CTI and Digital Risk Protection platform that unifies threat intelligence, attack surface monitoring, brand protection and dark web visibility - replacing a fragmented security stack with one intelligence layer.',
       challengeCategory:'Threat Intelligence',
+      challengesTitle:'Five Challenges. One Intelligence Platform.',
+      challengesSubtitle:'Five Critical Challenges Organizations Face Without Unified Threat Intelligence - And How IntelMode Addresses Each One.',
       sixChallenges:[
-        { title:'Alert Fatigue', desc:'Thousands of daily alerts with no prioritization, forcing analysts to manually filter noise from real threats.', solvedTitle:'Indicator Management', solvedDesc:'Deduplicate and score threat indicators automatically so analysts focus only on what matters.' },
-        { title:'Threat Context Gap', desc:'Raw indicators with no context, attribution, or attack-chain analysis to guide meaningful response decisions.', solvedTitle:'Threat Actor Profiling', solvedDesc:'Enrich every indicator with TTPs, attribution, and targeting patterns mapped to MITRE ATT&amp;CK.' },
-        { title:'Slow Investigation Cycles', desc:'Hours or days spent correlating data across disconnected tools instead of responding to active threats.', solvedTitle:'Alert Correlation', solvedDesc:'Cross-correlate SIEM and endpoint alerts with intelligence context automatically, in real time.' },
-        { title:'No Proactive Hunting', desc:'Teams spending 100% of time reacting to alerts, leaving zero capacity for proactive threat hunting operations.', solvedTitle:'Threat Hunting Workflows', solvedDesc:'Structure and track proactive hunting campaigns with guided, repeatable playbooks.' },
-        { title:'Unprioritized Vulnerabilities', desc:'CVEs are triaged by severity alone, missing which ones are actively being exploited against your assets.', solvedTitle:'Vulnerability Intelligence', solvedDesc:'Prioritize CVEs based on active exploitation and real asset criticality, not generic severity scores.' },
-        { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
-      ]
+        { title:'Limited Visibility Beyond the Perimeter', desc:'Security tools monitor internal environments but cannot see threats forming externally across the internet, dark web, and attacker communities.', solvedTitle:'External Attack Surface Monitoring', solvedDesc:'Automated intelligence collection across unlimited sources, dark web intelligence from hidden networks including Tor, and continuous attack surface monitoring beyond the perimeter.' },
+        { title:'Reactive Security Operations', desc:'Most organizations detect attacks only after compromise indicators appear.', solvedTitle:'Proactive Threat Visibility', solvedDesc:'Early attacker detection with real-time processing, proactive defence that identifies threats before they impact the organization, and a reduced Mean Time to Detect.' },
+        { title:'Intelligence Overload', desc:'Security teams struggle to analyze massive volumes of threat data without actionable prioritization.', solvedTitle:'AI-Powered Analysis and Prioritization', solvedDesc:'AI models transform unstructured data into actionable intelligence, with smart vulnerability prioritization by CVSS, EPSS and KEV status, and AI-powered filtering that eliminates noise.' },
+        { title:'Undetected Lateral Movement', desc:'Attackers often move inside networks unnoticed after initial access.', solvedTitle:'Threat Deception Intelligence', solvedDesc:'A monitored deception layer of decoy servers, honeynet environments and planted credentials - any interaction is a high-confidence signal, because legitimate users have no reason to touch a decoy.' },
+        { title:'Brand, Identity, and Data Exposure', desc:'Leaked credentials, impersonation, and data exposure frequently occur outside organizational visibility.', solvedTitle:'Digital Risk Protection', solvedDesc:'Domain, DNS and brand protection against impersonation, plus data breach and leak detection that identifies exposed credentials and sensitive information.' },
+        { title:'Evidence Integrity', desc:'Artifacts without chain of custody are inadmissible, making audit preparation and investigation follow-up difficult.', solvedTitle:'Evidence-Grade Output', solvedDesc:'Every artifact is SHA-256 hashed, timestamped and packaged with chain-of-custody metadata for defensible reporting.' }
+      ],
+      coreModulesTitleLeft:'16 Core Modules', coreModulesTitleRight:'',
+      coreModulesSubtitle:'A complete intelligence ecosystem - from automated collection and AI analysis to deception-driven detection, integration and executive reporting. All 16 modules are delivered from one integrated platform with a single unified dashboard for intelligence, assets, alerts and reports.',
+      coreModulesTwoCol:true,
+      coreModulesFootnote:'All 16 modules are delivered from one integrated platform with a single unified dashboard for intelligence, assets, alerts and reports.',
+      coreModules:[
+        { name:'Automated Intelligence Collection', desc:'Systematically gathers critical threat data from unlimited sources for an up-to-date view of the threat landscape.' },
+        { name:'AI-Powered Intelligence Analysis', desc:'Advanced algorithms turn unstructured threat data into actionable intelligence and deeper insight.' },
+        { name:'Comprehensive IOC Extraction', desc:'130+ extractors identify digital forensic artifacts across network, file hash, financial and Windows indicators.' },
+        { name:'Dark Web Intelligence', desc:'Systematic collection and analysis from hidden networks such as Tor - discussions, data leaks and malicious activity.' },
+        { name:'Threat Intelligence Enrichment', desc:'Integrates raw threat data with external context, turning basic indicators into actionable intelligence.' },
+        { name:'Vulnerability Intelligence', desc:'Gathers and analyses known flaws with smart prioritization by CVSS, EPSS and KEV status.' },
+        { name:'Asset Protection &amp; Monitoring', desc:'Continuously oversees the security posture of digital assets to detect vulnerabilities and malicious activity in real time.' },
+        { name:'Domains, DNS &amp; Brand Protection', desc:'Secures domain names, monitors DNS configurations and protects brand identity across online platforms.' },
+        { name:'Data Breach &amp; Leak Detection', desc:'Actively searches for and identifies exposed or compromised sensitive information.' },
+        { name:'Threat Actor Intelligence', desc:'Collects and analyses adversary identities, methods and objectives to anticipate attacks.' },
+        { name:'MITRE ATT&amp;CK Integration', desc:'Maps observed behaviours to the ATT&amp;CK framework with automatic attack chain visualization.' },
+        { name:'Automated Response &amp; Integration', desc:'Connects with SIEM, EDR, firewalls, DNS security, SOAR and ticketing for immediate blocking and enrichment.' },
+        { name:'Reporting &amp; Visualization', desc:'Transforms raw intelligence into executive summaries and operational reports for every level of the organization.' },
+        { name:'Malware Monitoring', desc:'Continuous tracking and analysis of malicious software, including real-time detection of new samples.' },
+        { name:'Cybersecurity News', desc:'Essential updates on the evolving threat landscape - vulnerabilities, attacks and defensive strategies.' },
+        { name:'Threat Deception Intelligence', desc:'A monitored deception layer of decoy servers, honeynets and planted credentials that exposes adversary movement.' }
+      ],
+      capabilitiesTitle:'Built Into Every Module.',
+      capabilitiesSubtitle:'Platform Capabilities That Support Intelligence Operations Across The Whole System.',
+      capabilities:[
+        { title:'SIEM Integration', desc:'Splunk, IBM QRadar, ArcSight, Microsoft Sentinel, Elastic Security and LogRhythm - real-time feed ingestion, correlation rules, automated actions and case management.' },
+        { title:'Security Tool Integration', desc:'Firewalls, EDR platforms, DNS security, SOAR platforms, IDS/IPS, proxy servers, email gateways and ticketing systems.' },
+        { title:'Export Formats', desc:'STIX 2.1, MISP, OpenIOC, CSV, JSON, SIGMA and YARA.' },
+        { title:'Role-Based Access Control', desc:'Granular permissions for users and teams.' },
+        { title:'Team Workspaces', desc:'Dedicated spaces for different security teams.' },
+        { title:'Comments &amp; Annotations', desc:'Collaborative analysis of threats.' },
+        { title:'Intelligence Sharing', desc:'Secure sharing with partners and ISACs.' },
+        { title:'Case Management', desc:'Track investigations and incidents.' },
+        { title:'Watchlists', desc:'Monitor specific threats and actors.' },
+        { title:'Custom Tags', desc:'Organize intelligence by categories.' },
+        { title:'Activity Feeds', desc:'Real-time updates on threat activities.' },
+        { title:'Notification System', desc:'Alerts for critical threats and updates.' },
+        { title:'Audit Logs', desc:'Complete tracking of all user actions.' }
+      ],
+      capabilitiesNote:{ label:'Deployment Models', value:'On-Premise · Advanced Controls Cloud · Cloud Provider of Your Choice' },
+      frameworksTitle:'Mapped to Saudi and International Frameworks.',
+      frameworksDesc1:'IntelMode maps to 23 controls across six major regulatory frameworks - including all three NCA frameworks, the international ISO/IEC 27001:2022 standard, NIST CSF 2.0, and the CIS Critical Security Controls. Saudi national frameworks receive native alignment with no customization required.',
+      frameworks:['NCA ECC-2:2024','NCA CSCC-1','NCA OTCC-1:2022','ISO/IEC 27001:2022','NIST CSF 2.0','CIS Controls'],
+      frameworksStats:[
+        { title:'NCA ECC-2:2024', desc:'7 controls: asset management, email protection, network security, data protection, vulnerabilities, event logs and monitoring, incident and threat management.' },
+        { title:'NCA CSCC-1', desc:'2 controls: event logs and monitoring for critical systems, and penetration testing.' },
+        { title:'NCA OTCC-1:2022', desc:'3 controls: OT vulnerability management, cybersecurity monitoring, and incident and threat management.' },
+        { title:'ISO/IEC 27001:2022', desc:'6 controls: A.5.7 Threat Intelligence, A.8.7 Protection Against Malware, A.8.8 Technical Vulnerabilities, A.8.12 Data Leakage Prevention, A.8.15 Logging, A.8.16 Monitoring Activities.' }
+      ],
+      frameworksBanners:[
+        { title:'Framework Coverage', value:'NCA ECC-2:2024 · NCA CSCC-1 · NCA OTCC-1:2022 · ISO/IEC 27001:2022 · NIST CSF 2.0 · CIS Critical Security Controls' }
+      ],
+      frameworksNote:'Coverage is delivered directly by IntelMode modules, as supporting capability, or through integration with existing security tools - with audit evidence generated for the controls it fulfils.',
+      benchmarkTitle:'A 23-Point Capability Benchmark',
+      benchmarkSubtitle:'IntelMode benchmarked against other available platforms across 23 capability areas grouped into six functional categories. IntelMode achieves full support in 22 of 23 capabilities with zero gaps - compared with competitors who average 8 missing capabilities and 13 partial implementations.',
+      benchmarkSummary:[
+        { title:'Full support', text:'IntelMode 22 of 23, other platforms 2 of 23' },
+        { title:'Partial support', text:'IntelMode 1 of 23, other platforms 13 of 23' },
+        { title:'Not available', text:'IntelMode 0 of 23, other platforms 8 of 23' }
+      ],
+      benchmarkPill:'IntelMode vs. Other Platforms',
+      benchmarkPillPlain:true,
+      benchmarkOwnLabel:'IntelMode Platform',
+      benchmarkOtherLabel:'Other Platforms',
+      benchmark:[
+        ['Saudi-Built Platform', 'Yes', 'Limited / not localized'],
+        ['Alignment with National Regulations', 'Native alignment', 'Requires customization'],
+        ['Compliance &amp; Regulatory Support', 'Built-in alignment', 'Requires configuration'],
+        ['Deployment - Cloud', 'Supported', 'Supported'],
+        ['Deployment - On-Premises', 'Supported', 'Limited in some solutions'],
+        ['Hybrid Deployment', 'Fully supported', 'Partial support'],
+        ['Unified Intelligence Platform', 'Single integrated platform', 'Multiple tools required'],
+        ['Centralized Dashboard', 'Unified view', 'Fragmented interfaces'],
+        ['Automated Intelligence Collection', 'Included', 'Add-on module'],
+        ['Dark Web Intelligence', 'Included', 'Available'],
+        ['AI-Powered Intelligence Analysis', 'Built in', 'External integration needed'],
+        ['Threat Intelligence Enrichment', 'Native capability', 'Partial'],
+        ['Comprehensive IOC Extraction', 'Advanced', 'Basic support'],
+        ['Threat Actor Intelligence', 'Included', 'Available'],
+        ['Malware Monitoring', 'Included', 'Available'],
+        ['MITRE ATT&amp;CK Mapping', 'Native', 'Available'],
+        ['Data Breach &amp; Leak Detection', 'Included', 'Available'],
+        ['Threat Deception Capability', 'Built in', 'Rarely integrated'],
+        ['Asset Protection &amp; Monitoring', 'Included', 'Separate solution'],
+        ['Domains, DNS &amp; Brand Protection', 'Included', 'Separate solution'],
+        ['Vulnerability Intelligence', 'Integrated', 'Available'],
+        ['Automated Response &amp; Integration', 'Native APIs', 'Supported'],
+        ['Operational Visibility', 'End-to-end', 'Limited scope']
+      ],
+      screensSubtitle:'IntelMode platform interface across the core modules. Figures shown inside the interface are product demonstration data.',
+      whySubtitle:'A Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform that delivers all 23 benchmarked capabilities from one integrated system.',
+      whyPillars:[
+        { title:'Saudi-Built &amp; Localized', desc:'Developed in Saudi Arabia - Saudi national frameworks (NCA ECC, NCA CSCC and NCA OTCC) receive native alignment with no customization required.' },
+        { title:'Unified Single Platform', desc:'All 23 capabilities delivered from one integrated platform; competitors require three to five separate tools for comparable coverage.' },
+        { title:'Full Deployment Flexibility', desc:'Cloud, on-premises, hybrid and air-gapped deployment, all fully supported.' },
+        { title:'Built-in AI Processing', desc:'The AI pipeline is native - no external AI integration required.' }
+      ],
+      whyBenefits:[
+        { key:'Advanced IOC Extraction', value:'130+ specialized extractors with AI context validation, against basic regex-only extraction elsewhere.' },
+        { key:'Threat Deception Built In', value:'Deception capability is rarely integrated in competing platforms; IntelMode includes it as a native feature.' },
+        { key:'Centralized Dashboard', value:'One unified dashboard for all intelligence, assets, alerts and reports.' },
+        { key:'Zero Configuration Compliance', value:'Regulatory compliance support is built in, without custom configuration or professional services.' },
+        { key:'Reduction in manual work', value:'Analysts freed for high-value and strategic tasks.' },
+        { key:'24/7 continuous monitoring', value:'24/7 continuous monitoring with automated collection' },
+        { key:'Real-time threat detection', value:'Real-time threat detection with instant alerts for emerging threats' },
+        { key:'Comprehensive coverage', value:'All threat sources monitored from one platform.' },
+        { key:'Faster mean time to detect', value:'Reduced from days to minutes.' },
+        { key:'Proactive defence', value:'Threats identified and blocked before impact.' },
+        { key:'Reduced false positives', value:'Reduced false positives through AI-powered filtering' },
+        { key:'Better decision making', value:'Better decision making from actionable intelligence' },
+        { key:'Compliance support', value:'Compliance support for regulatory threat intelligence requirements' },
+        { key:'Scalable operations', value:'A growing threat landscape handled without adding staff.' }
+      ],
+      whyStats:[],
+      demoTitle:'See IntelMode in Action.',
+      demoSubtitle:'See the Threat. Predict the Attack. Detect the Adversary.',
+      demoLabel:'Select Deployment Mode',
+      demoLead:'Move from reactive security operations to proactive, intelligence-led cybersecurity on one unified platform.',
+      demoButton:'Request a Demo',
+      footer:{
+        brandSub:'Unified Threat Intelligence & Digital Risk Protection',
+        tagline:'IntelMode is a Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform.',
+        badges:['Proactive Detection','Predictive Intelligence','Unified At Scale','STIX 2.1'],
+        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
+        productsTitle:'Modules',
+        products:['Automated Intelligence Collection','AI-Powered Intelligence Analysis','Comprehensive IOC Extraction','Dark Web Intelligence','Threat Intelligence Enrichment','Vulnerability Intelligence'],
+        address:'Kingdom of Saudi Arabia - Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248',
+        phone:'+966 505 970 841',
+        email:'info@advancedcontrols.sa',
+        website:'www.advancedcontrols.sa',
+        slogan:'See the Threat. Predict the Attack. Detect the Adversary.'
+      }
     },
     inspect: {
       name:'InspectMode',
@@ -1772,14 +1982,129 @@
     },
     audit: {
       name:'ITMode',
+      heroHeadline:'Enterprise IT Service Management & Delivery',
+      heroDesc:'ITMode replaces fragmented tools with a single governed source of truth — Saudi-built and aligned to ITIL 4 and ISO/IEC 20000, from service design through continual improvement.',
       challengeCategory:'Audit Management',
+      overview:{
+        subtitle:'Enterprise IT Service Management & Delivery',
+        statsCaps:true,
+        cards:[
+          { kicker:'Unified · Governed · Scalable', caps:true, heading:'A next-generation ITSM platform for standardized, automated, and elevated service operations', text:'ITMode is a next-generation IT Service Management platform that enables organizations to standardize, automate, and elevate IT service operations in alignment with ISO/IEC 20000 and ITIL v4. Built as a Saudi-developed platform aligned with international standards, ITMode provides a secure, scalable, and locally compliant foundation for enterprise service management.' },
+          { kicker:'Governed Source of Truth', caps:true, heading:'One governed platform for the full IT service lifecycle', text:'A single platform unifies service design, transition, delivery, and operations - replacing fragmented tools with one governed source of truth for the entire IT service lifecycle. It empowers IT teams to deliver high-quality services, improve visibility, reduce risks, and drive organizational growth with confidence.' },
+          { kicker:'A unified platform for', caps:true, heading:'Service Design · Service Transition · Service Delivery · Continual Service Improvement' },
+          { kicker:'Platform qualities', caps:true, heading:'Centralized Workflows · Operational Efficiency · Automation & Intelligence · Regulatory Compliance · Scalable & Flexible' }
+        ],
+        stats:[['12','Core Modules'],['ITIL v4','Aligned'],['ISO/IEC 20000','Aligned'],['AR / EN','Bilingual'],['Saudi','Built Platform']]
+      },
+coreModulesTitleLeft:'12 Core Modules', coreModulesTitleRight:'',
+      coreModulesSubtitle:'A complete ITSM ecosystem - from service strategy and design, through transition and delivery, to continual improvement - orchestrated in one platform.',
+      coreModulesTwoCol:true,
+      coreModulesFootnote:'One platform for the full ITSM lifecycle, from service design and transition to delivery, incident resolution and performance management.',
+      coreModules:[
+        { name:'Service Catalog Management', desc:'Publish a catalog of IT services with descriptions, availability, cost and delivery timelines, and a self-service portal to browse and request.' },
+        { name:'Service Design', desc:'Design IT services that meet business requirements, ensure availability, and remain scalable and secure.' },
+        { name:'Service Transition', desc:'Ensure changes to services are planned, approved, tested and implemented without disrupting existing services.' },
+        { name:'Service Delivery', desc:'Deliver IT services consistently against agreed levels of quality, cost and availability.' },
+        { name:'Release &amp; Deployment Management', desc:'Control releases from initiation and risk analysis through build, test, deployment, validation and closure.' },
+        { name:'Incident Management', desc:'Log, categorize, route and escalate incidents to restore service as quickly as possible.' },
+        { name:'Problem Management', desc:'Identify and resolve the root causes of recurring incidents to prevent future service disruption.' },
+        { name:'Change Management', desc:'A structured, auditable change process with internal and CAB approval, testing, execution and closure evidence.' },
+        { name:'Request Fulfillment', desc:'Handle service requests from a self-service portal with approval workflows and real-time tracking to fulfilment.' },
+        { name:'Configuration &amp; Asset Management', desc:'Centralized asset visibility with SNMP discovery and manual registration, integrated with a CMDB-centred data model.' },
+        { name:'Knowledge Management', desc:'Create, approve, categorize and search knowledge articles, integrated with incident, problem and change processes.' },
+        { name:'SLA &amp; OLA Management', desc:'Define SLAs and OLAs, monitor compliance in real time, trigger escalation on breach, and report on trends.' }
+      ],
+capabilitiesTitle:'Built Into Every Module.',
+      capabilitiesSubtitle:'Platform Capabilities That Support Service Operations Across The Whole System.',
+      capabilities:[
+        { title:'User-Friendly Interface', desc:'Intuitive web-based design for all user roles.' },
+        { title:'Customizable Platform', desc:'Configurable workflows, forms and fields.' },
+        { title:'Bilingual Support', desc:'Arabic and English interface with full localization.' },
+        { title:'Secure Authentication', desc:'Active Directory integration for centralized user authentication.' },
+        { title:'Database Security', desc:'Encrypted data fields for confidentiality.' },
+        { title:'API Integration', desc:'RESTful APIs for third-party system connectivity.' },
+        { title:'Special Integrations', desc:'LDAP and Microsoft Graph.' },
+        { title:'Data Import / Export', desc:'CSV and Excel compatibility.' },
+        { title:'Notification System', desc:'Automated email and SMS notifications triggered by customizable actions or workflows.' },
+        { title:'Multi-Unit Management', desc:'Multiple business units with user assignments across teams, and access controls based on team, user or asset associations.' },
+        { title:'Reporting Engine', desc:'Detailed reports on service performance, team productivity and other key metrics.' },
+        { title:'Dashboards &amp; Reporting', desc:'Unlimited dashboards with a drag-and-drop designer, cross-module reporting, real-time data and role-based visibility, exportable to XLSX, CSV or PDF.' },
+        { title:'Workflow Module', desc:'A visual workflow builder with step-level configuration, transition rules, dynamic field visibility and conditional automation across linked modules.' },
+        { title:'Capacity Management', desc:'SNMP-based collection of CPU, memory, disk and network utilization with threshold alerts for preventive action.' },
+        { title:'Governance &amp; Documentation', desc:'Centralized policy repository with version control and automated approval workflows, role ownership, and audit logs for all service management activities.' },
+        { title:'Security Framework', desc:'Role-based access control, encrypted data storage, comprehensive audit logging, and integration with SSO and SAML.', wide:true },
+        { title:'Deployment Flexibility', desc:'Available as Cloud or On-Premise installation.', wide:true }
+      ],
+      capabilitiesNote:{ label:'Service & Support', value:'Premium Support · Health Check Twice per Year · Knowledge Transfer · Admin Training · User Training · Documentation' },
+      frameworksTitle:"Designed in Full Compliance with ISO/IEC 20000 and ITIL v4.",
+      frameworksDesc1:'ITMode is designed in full compliance with ISO/IEC 20000 - Service Management System requirements - and ITIL v4 - Service lifecycle best practices. ISO/IEC 20000 and ITIL standards are embedded into the platform workflows, so processes from Incident Management to Change Management follow industry-recognized best practices with built-in compliance checks.',
+      frameworksDesc2:"The platform's governance and audit modules ensure continuous compliance, traceability, and policy enforcement.",
+      frameworks:['ISO/IEC 20000','ITIL v4','ISO/IEC 20000','ITIL v4','ISO/IEC 20000'],
+      frameworksBanners:[],
+      frameworksStats:[
+        { title:'Policy Repository', desc:'Centralized repository for service management policies, with version control for procedures to ensure compliance and audits.' },
+        { title:'Automated Approvals', desc:'Automated policy approval workflows ensuring that all service management updates are reviewed and authorized.' },
+        { title:'Role-Based Access', desc:'Role-based access control with ownership assigned to specific ITSM processes and tasks for precise accountability.' },
+        { title:'Comprehensive Logs', desc:'Audit logs for all service management activities, including changes to policies and procedures for full traceability.' }
+      ],
+      benchmarkTitle:'A Capability-Based Comparison',
+      benchmarkSubtitle:'ITMode delivers IT service management and asset management from one Saudi-built platform. The comparison below is capability-based: the ITMode column is drawn from the product documentation, while the market column is kept deliberately neutral, as no competitor benchmark has been provided.',
+      benchmarkPill:'ITMode vs. Other Platforms',
+      benchmarkOwnLabel:'ITMode',
+      benchmarkOtherLabel:'Other Platforms',
+      benchmark:[
+        ['Saudi-Built Platform', '100% Saudi-built', 'Varies by solution'],
+        ['Bilingual Arabic / English Interface', 'Full localization', 'Varies by solution'],
+        ['ITSM + Asset Management', 'Both in one platform', 'May require separate tools'],
+        ['CMDB-Centred Data Model', 'Business-application CI model', 'Varies by solution'],
+        ['Customization', 'Configurable workflows, forms and fields', 'Varies by solution'],
+        ['Workflow Automation', 'Visual builder with step-level rules', 'Varies by solution'],
+        ['Unified Dashboards', 'Cross-module dashboards and reporting', 'Varies by solution'],
+        ['Standards Alignment', 'ISO/IEC 20000 and ITIL v4', 'Varies by solution'],
+        ['Local Support', 'Local support team', 'Varies by solution'],
+        ['Deployment', 'Cloud or On-Premise', 'Varies by solution'],
+        ['Total Cost of Ownership', 'Lower TCO than global vendors', 'Varies by solution']
+      ],
+      screensSubtitle:'ITMode platform interface. Figures shown inside the interface are demonstration data.',
+      whySubtitle:'A Saudi-developed IT Service Management platform aligned with international standards, providing a secure, scalable and locally compliant foundation for enterprise service management.',
+      whyPillars:[
+        { title:'100% Saudi-Built Platform', desc:'Developed by Advanced Controls for IT in Riyadh, Saudi Arabia.' },
+        { title:'Full NCA Alignment', desc:'ITMode is fully aligned with NCA.' },
+        { title:'Multi-Module - ITSM + Asset Management', desc:'Service management and asset management delivered from one platform.' },
+        { title:'High Customization', desc:'Configurable workflows, forms and fields, with a visual workflow builder for non-technical administrators.' }
+      ],
+      whyBenefits:[
+        { key:'100% Saudi-Built Platform', value:'Developed by Advanced Controls for IT in Riyadh, Saudi Arabia.' },
+        { key:'Full NCA Alignment', value:'ITMode is fully aligned with NCA.' },
+        { key:'Multi-Module - ITSM + Asset Management', value:'Service management and asset management delivered from one platform.' },
+        { key:'High Customization', value:'Configurable workflows, forms and fields, with a visual workflow builder for non-technical administrators.' },
+        { key:'Local Support Team', value:'Support delivered locally, with premium support, health checks twice per year, knowledge transfer and training.' },
+        { key:'Unified Dashboards', value:'Cross-module dashboards and reporting with real-time data and role-based visibility.' },
+        { key:'Lower TCO Than Global Vendors', value:'A lower total cost of ownership than global vendors.' }
+      ],
+      whyStats:[],
+      whyIndustries:{ title:'Key industries & sectors', items:['Banks & Financial Services','Government & Public Sector','Healthcare & Life Sciences','Telecommunications & IT Services','Energy & Utilities','Education & Research','Retail & Consumer Services','Manufacturing & Industrial'] },
+      footer:{
+        brandSub:'Enterprise IT Service Management & Delivery',
+        tagline:'Advanced Controls for IT - Innovating Digital Governance & IT Automation Solutions',
+        badges:['ISO/IEC 20000','ITIL v4','AR / EN','Saudi Built Platform'],
+        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
+        productsTitle:'Modules',
+        products:['Service Catalog Management','Service Design','Service Transition','Service Delivery','Release & Deployment Management','Incident Management'],
+        address:'Headquarters: Riyadh, Saudi Arabia',
+        phone:'+966 505 970 841',
+        email:'info@advancedcontrols.sa',
+        website:'advancedcontrols.sa',
+        slogan:'Innovating Digital Governance & IT Automation Solutions'
+      },
+      challengesTitle:'Five Challenges. One Service Platform.',
+      challengesSubtitle:'Five Challenges Organizations Face Without A Unified IT Service Management Platform - And How ITMode Addresses Each One.',
       sixChallenges:[
-        { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
-        { title:'Delayed Findings', desc:'Audit findings reported weeks after fieldwork ends, making timely remediation and management action impossible.', solvedTitle:'Findings Management', solvedDesc:'Track findings from identification through remediation to full closure, in real time.' },
-        { title:'No Audit Trail', desc:'Changes to workpapers and findings undocumented, creating risk of regulatory disputes and compliance failures.', solvedTitle:'Continuous Auditing', solvedDesc:'Automated data analytics and control testing deliver continuous, fully documented assurance.' },
-        { title:'Repeat Audit Findings', desc:'The same control weaknesses appearing cycle after cycle because remediation is never tracked to closure.', solvedTitle:'Remediation Tracking', solvedDesc:'Corrective action plans with owner assignment, due dates, and escalation rules prevent recurrence.' },
-        { title:'Unplanned Audit Coverage', desc:'Audit plans built from memory rather than a structured, risk-ranked view of the full audit universe.', solvedTitle:'Audit Planning', solvedDesc:'Risk-based prioritization, resource allocation, and calendar management across the audit universe.' },
-        { title:'Manual Report Drafting', desc:'Days spent formatting findings summaries and ratings into a presentable report for stakeholders.', solvedTitle:'Audit Reporting', solvedDesc:'Auto-populated findings summaries and ratings generate draft audit reports in minutes.' }
+        { title:'Fragmented Tools and Manual Processes', desc:'Service delivery is spread across disconnected tools and manual steps, so it is inconsistent from one request to the next.', solvedTitle:'Centralized Workflows', solvedDesc:'Replaces fragmented tools and manual processes with consistent service delivery governed by one workflow engine across every module.' },
+        { title:'Process Overhead and Slow Resolution', desc:'Overhead accumulates in day-to-day service operations and issues take longer to resolve than the business can accept.', solvedTitle:'Operational Efficiency', solvedDesc:'Streamlines processes, reduces overhead, and accelerates issue resolution across incident, request, problem and change workflows.' },
+        { title:'Routine Work Consuming Skilled Teams', desc:'Repetitive tasks occupy IT teams that should be focused on higher-value service improvement.', solvedTitle:'Automation &amp; Intelligence', solvedDesc:'Automates routine tasks and provides actionable insights through analytics, with automated routing, approvals, escalations and notifications.' },
+        { title:'Meeting International Service Standards', desc:'Service management must demonstrably follow recognized standards, with traceability and evidence for audit.', solvedTitle:'Regulatory Compliance by Design', solvedDesc:'Designed to meet international standards confidently, with ISO/IEC 20000 and ITIL best practice embedded into workflows and built-in compliance checks.' },
+        { title:'Evolving and Growing Service Demand', desc:'Service management needs change as the organization grows, and rigid tooling cannot follow.', solvedTitle:'Scalable &amp; Flexible Platform', solvedDesc:'Adapts to evolving business needs and supports digital transformation, scaling from small IT departments to enterprise-grade infrastructures.' }
       ]
     },
     vendor: {
@@ -1906,26 +2231,139 @@
     },
     incident: {
       name:'TransferMode',
+      overview:{
+        subtitle:'Secure Data Transfer, Inspection & Controlled Exchange',
+        statsCaps:true,
+        cards:[
+          { kicker:'Secure · Controlled · Compliant', caps:true, heading:'A zero-trust gateway that secures every file entering or leaving your organization - across USB, removable media, and cross-domain transfers - with multi-engine malware scanning, content disarm & reconstruction, and enforced approval workflows.' },
+          { kicker:'On-Premise · Centralized · Audited', caps:true, heading:'TransferMode is an on-premise secure file transfer platform designed to enforce controlled and audited movement of storage media across your organization. The solution consists of a centralized management server hosting the control portal, approval workflows, and audit engine - paired with hardware kiosk units deployed across floors, branches, or facilities based on operational needs.' },
+          { kicker:'Kiosk-Only Processing', caps:true, heading:'All inbound and outbound file transfers are exclusively processed through these kiosks, where every file undergoes multi-engine malware scanning, Content Disarm & Reconstruction (CDR), and DLP inspection — ensuring no file enters or leaves the network without being verified, approved, and fully logged with a complete chain of custody.' },
+          { kicker:'A unified platform for', caps:true, heading:'Secure Transfer · Multi-Engine Inspection · Malware Scanning · Approval Workflow · Regulatory Compliance · Controlled Exchange' },
+          { kicker:'Transfer lifecycle', caps:true, heading:'Zero-Trust · Inspect · Approve · Deliver' },
+          { kicker:'Supported media', caps:true, heading:'USB · CD / DVD · Floppy 3.5"' },
+          { kicker:'Platform qualities', caps:true, wide:true, heading:'Zero-Trust · On-Premise · Air-Gap Capable · Compliance-Ready' }
+        ],
+        stats:[['100%','Files Inspected','Inbound & outbound'],['0','Trust By Default','Every file verified'],['24/7','Audit Logging','Full chain of custody'],['12','Integrated Modules'],['3','Form Factors']]
+      },
+      heroHeadline:'Secure Data Transfer, Inspection & Controlled Exchange',
+      heroDesc:'A zero-trust gateway for every file entering or leaving your organization — across USB, removable media and cross-domain transfers — with multi-engine malware scanning, Content Disarm & Reconstruction, and enforced approval workflows.',
+      challengeCategory:'Secure Data Transfer',
+      challengesTitle:'Three Challenges. One Secure Gateway.',
+      challengesSubtitle:'USB Devices Remain The Number One Threat Vector For Malware Infiltration And Data Exfiltration. Three Critical Challenges - And How TransferMode Addresses Each One.',
+      sixChallenges:[
+        { title:'Malware Infiltration', desc:'USB drives from vendors, employees, or guests can introduce ransomware, trojans, and zero-day malware - bypassing perimeter defenses entirely.', solvedTitle:'Multi-Engine Scanning and CDR', solvedDesc:'Files are extracted to an isolated sandbox for multi-engine parallel AV scanning with heuristic analysis and behavioral sandboxing, followed by Content Disarm &amp; Reconstruction that strips macros, embedded scripts, metadata and hidden content.' },
+        { title:'BadUSB / HID Attacks', desc:'Firmware-level attacks like Rubber Ducky emulate keyboards to execute malicious commands. Traditional AV cannot detect them at all.', solvedTitle:'Hardware Security Layer', solvedDesc:'A hardware checkpoint enforces storage-class devices only, with BadUSB mitigation, HID blocking, read-only mounting so no code executes from the USB, and device fingerprinting and tracking.' },
+        { title:'Data Exfiltration', desc:'Insider threats can copy sensitive files to USB drives and walk out. Without DLP enforcement, organizations have zero visibility.', solvedTitle:'DLP-Protected Outbound Transfer', solvedDesc:'Outbound requests are reviewed by an admin with DLP policies automatically checked and enforced, files are scanned one final time at the kiosk, and only clean, policy-approved files are written to the USB - with a full audit log auto-generated.' }
+      ],
+      coreModulesTitleLeft:'12 Integrated Modules', coreModulesTitleRight:'',
+      coreModulesSubtitle:'A complete secure-transfer ecosystem - from authentication and multi-engine scanning to admin approval and audit-grade chain of custody.',
+      coreModulesTwoCol:true,
+      coreModulesFootnote:'Policy: "If any file in a transfer is infected, the entire transfer is rejected. No partial transfers are permitted."',
+      coreModules:[
+        { name:'Secure USB File Transfer', desc:'Tamper-resistant kiosk receives any USB, CD/DVD, floppy or storage media at a hardware checkpoint.' },
+        { name:'Inbound Transfer (External &rarr; Internal)', desc:'Safely import files from any external source into the corporate network with a zero-trust workflow.' },
+        { name:'Outbound Transfer (Internal &rarr; External)', desc:'DLP-enforced outbound exports with cybersecurity-team and multi-level approval before release.' },
+        { name:'Multi-Engine Malware Scanning', desc:'Parallel AV engines with SHA-256 file hashing and quarantine.' },
+        { name:'Content Disarm &amp; Reconstruction (CDR)', desc:'Disarms active content, rebuilds documents to safe formats - neutralises zero-day payloads.' },
+        { name:'Identity &amp; Access (AD / LDAP)', desc:'Employees authenticate via AD/LDAP; guests receive one-time tokens with expiry controls.' },
+        { name:'Admin Approval Workflow', desc:'Single or multi-level approvals via web portal - every transfer reviewed and audited.' },
+        { name:'Hardware Validation', desc:'Blocks BadUSB, Rubber Ducky and HID attacks at the hardware level - storage-class only.' },
+        { name:'Clean File Repository', desc:'Sanitised files delivered to an isolated, internal-only repository - no direct USB pass-through.' },
+        { name:'Admin Console &amp; Policy Engine', desc:'Centralised policies - block executables, force CDR, retention, air-gap simulation, read-only.' },
+        { name:'Audit &amp; Chain of Custody', desc:'100% audit logging - file name, hash, user, timestamp, approvers and decision per transfer.' },
+        { name:'Compliance Alignment', desc:'Aligned with NCA, SAMA, DGA, CST, ISO 27001 and ISO 22301 controls.' }
+      ],
+      capabilitiesTitle:'Built Into Every Transfer.',
+      capabilitiesSubtitle:'Platform Capabilities That Support Every Transfer Across The Kiosk Network.',
+      capabilities:[
+        { title:'Identity &amp; Access', desc:'AD/LDAP integration with JWT tokens for employees; guests receive a one-time token with expiry controls.' },
+        { title:'Responsive Web Portal', desc:'Vue.js / React responsive web UI for file upload, request submission and status tracking.' },
+        { title:'RESTful APIs', desc:'Laravel PHP / Python backend exposing RESTful APIs.' },
+        { title:'Encrypted Database', desc:'PostgreSQL / MongoDB, encrypted.' },
+        { title:'Encryption in Transit and at Rest', desc:'TLS 1.3 in transit, AES-256 at rest.' },
+        { title:'Integrity &amp; Crypto Module', desc:'SHA-256 file integrity, with a FIPS 140-2 crypto module.' },
+        { title:'Multi-Vendor AV Engines', desc:'Parallel multi-vendor scanning cluster with regular signature database updates.' },
+        { title:'Multi-Media Support', desc:'USB, CD/DVD and Floppy 3.5&quot; media handled through the same gateway.' },
+        { title:'Quarantine Management', desc:'Infected files isolated for 90 days, with admin-only access to the quarantine zone.' },
+        { title:'Real-Time Alerts', desc:'Alerts on policy violations and suspicious activity.' },
+        { title:'Audit Export', desc:'Export audit reports for compliance auditors, with forensic investigation support and log retention.' },
+        { title:'Hardened Touchscreen', desc:'Anti-glare, scratch and tamper resistant glass with a bilingual Arabic and English interface showing live status and verdicts.' },
+        { title:'Isolated USB Ports', desc:'USB-A and USB-C, power-limited, with a firmware-isolation chip rejecting BadUSB and HID attacks at the silicon.' },
+        { title:'CD / DVD Tray and SD Reader', desc:'Legacy and archival media intake, supporting OT and SCADA patch workflows for air-gapped sites.' },
+        { title:'Sanitized-Media Output Bay', desc:'CDR-rebuilt files written to verified clean media, with receipt printout and cryptographic chain of custody.' },
+        { title:'Tamper-Resistant Pedestal', desc:'Welded steel housing with intrusion-detect switches, floor anchor, and a centralized management connection over TLS 1.3 to the control plane.' },
+        { title:'Three Form Factors', desc:'TM-K1 Standard Pedestal for lobby and SOC entry, TM-K1 Mini for office desk and helpdesk use, and TM-K1 Field as an IP65 rugged mobile unit for field operations and remote sites - all running the same Zero-Trust pipeline.' },
+        { title:'Air-Gap Capable', desc:'Optional electrical isolation for highest-security networks.' }
+      ],
+      capabilitiesNote:{ label:'Deployment', value:'On-Premise · Central Management Server + Kiosk Units Across Floors, Branches and Facilities' },
+      frameworksTitle:'Built-In Compliance Support.',
+      frameworksDesc1:'TransferMode provides built-in compliance support, with complete audit trails covering who, what, when and where for every transfer, and 100% logging of all user and admin actions.',
+      frameworksDesc2:'Infected files are isolated in a quarantine zone for 90 days with admin-only access, real-time alerts flag policy violations and suspicious activity, and audit reports can be exported for compliance auditors.',
+      frameworks:['NCA ECC2','NCA CSCC','SAMA','ISO 27001','NIST CSF','GDPR','HIPAA','PCI DSS'],
+      complianceCapabilities:{ title:'Audit & Control', boxed:true, items:['Complete audit trails - who, what, when and where for every transfer','100% logging of all user and admin actions','Forensic investigation support with log retention','Quarantine management - infected files isolated for 90 days','Admin-only access to the quarantine zone','Real-time alerts on policy violations and suspicious activity','Export audit reports for compliance auditors'] },
+      frameworksBanners:[
+        { title:'Framework Alignment', value:'NCA ECC2 · NCA CSCC · SAMA · ISO 27001 · NIST CSF · GDPR · HIPAA · PCI DSS' }
+      ],
+      benchmarkSubtitle:'TransferMode benchmarked feature-by-feature against other secure physical media transfer kiosks.',
+      benchmarkPill:'TransferMode vs. Other Kiosk Solutions',
+      benchmarkPillPlain:true,
+      benchmarkFeatureLabel:'Feature',
+      benchmarkOwnLabel:'TransferMode',
+      benchmarkOtherLabel:'Other Kiosk Solutions',
+      benchmark:[
+        ['Physical Kiosk Hardware', 'Proprietary hardware unit', 'Kiosk hardware available'],
+        ['Multi-Engine AV Scanning', 'Simultaneous multiple AV engines', 'Multiple engine options available'],
+        ['CDR (Disarm &amp; Reconstruct)', 'Full CDR on all file types', 'CDR engine available'],
+        ['Data Loss Prevention', 'Policy-based DLP built in', 'Varies by solution'],
+        ['Outbound Approval Workflow', 'Manager to security team flow', 'Varies by solution'],
+        ['AD / LDAP Integration', 'Full AD/LDAP, no extra accounts', 'Active Directory supported'],
+        ['Fully On-Premise', '100% internal deployment', '100% on-premise available'],
+        ['Real-Time CISO Dashboard', 'Unified CISO operations view', 'Central console available'],
+        ['Chain of Custody Log', 'Full chain of custody with hash and user', 'Varies by solution'],
+        ['USB + CD/DVD + Floppy', 'All legacy media supported', 'Broad media type support'],
+        ['Outbound Transfer Control', 'Request to approve to transfer', 'Varies by solution'],
+        ['Arabic Interface &amp; Support', 'Full Arabic RTL UI', 'Varies by solution'],
+        ['Local Vendor &amp; SLA', 'Saudi-based team, local SLA', 'Varies by solution']
+      ],
+      screensSubtitle:'TransferMode platform interface, workflows and hardware visuals. Figures shown inside the interface are demonstration data.',
+      whySubtitle:'A platform that combines hardware security, multi-engine scanning, and complete governance in one on-premise secure gateway.',
+      whyPillars:[
+        { title:'Zero-Trust Security', desc:'Every device and file treated as untrusted until proven clean.' },
+        { title:'Operational Efficiency', desc:'Automated scanning reduces the security team workload.' },
+        { title:'User Simplicity', desc:'Touchscreen kiosk needs zero technical knowledge to operate.' },
+        { title:'Total Visibility', desc:'Centralized perimeter control with complete audit trails.' }
+      ],
+      whyBenefits:[
+        { key:'Compliance-Ready', value:'Maps to NCA, ISO 27001, NIST, GDPR, HIPAA and PCI DSS.' },
+        { key:'Air-Gap Capable', value:'Optional electrical isolation for highest-security networks.' },
+        { key:'Outbound Approval Workflow', value:'A full request, approve and transfer process for controlled data exit with justification.' },
+        { key:'Arabic Interface &amp; Local Support', value:'Full Arabic RTL interface with a Saudi-based team and local SLA.' }
+      ],
+      whyStatsLight:true,
+      whyStats:[
+        { target:3,   decimals:0, suffix:'',  label:'Security Layers' },
+        { target:100, decimals:0, suffix:'%', label:'Audit Logging' },
+        { target:100, decimals:0, suffix:'%', label:'On-Premise' },
+        { isText:true, text:'90 Day', label:'Quarantine' }
+      ],
+      demoTitle:'See TransferMode in Action.',
+      demoSubtitle:'Secure · Controlled · Compliant',
+      demoLabel:'Select Deployment Mode',
+      demoLead:'Bring every inbound and outbound file transfer under one verified, approved and fully logged gateway.',
+      demoButton:'Request a Demo',
       footer:{
-        brandSub:'Hardware-Enforced Air-Gapped Transfer',
-        tagline:'A hardware-enforced, bidirectional air-gapped transfer platform that ensures cryptographic proof of integrity and automated media sanitization across classified and unclassified domains.',
-        badges:['NCA ECC','SAMA CSF','ISO 27001','IEC 62443'],
-        products:['TransferMode','Secure Transfer','Integrity Pipeline','Audit Journal','Compliance','Deployment Models'],
-        address:'Riyadh, Kingdom of Saudi Arabia',
+        brandSub:'Secure Data Transfer, Inspection & Controlled Exchange',
+        tagline:'A zero-trust gateway that secures every file entering or leaving your organization - across USB, removable media, and cross-domain transfers - with multi-engine malware scanning, content disarm & reconstruction, and enforced approval workflows.',
+        badges:['Zero-Trust','On-Premise','Air-Gap Capable','Compliance-Ready'],
+        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
+        productsTitle:'Modules',
+        products:['Secure USB File Transfer','Inbound Transfer (External → Internal)','Outbound Transfer (Internal → External)','Multi-Engine Malware Scanning','Content Disarm & Reconstruction (CDR)','Identity & Access (AD / LDAP)'],
+        address:'Kingdom of Saudi Arabia - Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248',
         phone:'+966 505 970 841',
         email:'info@advancedcontrols.sa',
         website:'www.advancedcontrols.sa',
-        slogan:'ZERO TRUST · ZERO NETWORK · TOTAL CONTROL'
-      },
-      challengeCategory:'Incident Response',
-      sixChallenges:[
-        { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },
-        { title:'Communication Breakdown', desc:'Incident data scattered across Slack, email, and tickets with no single view for leadership or regulators.', solvedTitle:'Communication Management', solvedDesc:'Centralized stakeholder notifications and crisis communication templates with a full audit trail.' },
-        { title:'Incomplete Audit Trail', desc:'Response actions undocumented, making post-incident analysis, lessons learned, and regulatory reporting impossible.', solvedTitle:'Evidence Preservation', solvedDesc:'Chain-of-custody digital evidence collection secures data for legal and regulatory needs.' },
-        { title:'Missed Reporting Deadlines', desc:'NCA and SAMA regulatory notification windows missed due to manual tracking and unclear escalation ownership.', solvedTitle:'Regulatory Notification', solvedDesc:'Auto-generated NCA and SAMA breach notifications within mandated reporting deadlines.' },
-        { title:'Unclear Task Ownership', desc:'Response tasks assigned verbally or over chat, with no SLA tracking or automatic escalation when work stalls.', solvedTitle:'Task Assignment &amp; Escalation', solvedDesc:'SLA-bound task assignment with automated escalation rules and team notifications.' },
-        { title:'No Continuous Improvement', desc:'Incidents close without a structured review, so the same root causes resurface in future incidents.', solvedTitle:'Post-Incident Review', solvedDesc:'Structured lessons-learned and root-cause analysis workflows drive continuous improvement.' }
-      ]
+        slogan:'Secure · Controlled · Compliant'
+      }
     }
   };
 
@@ -1934,6 +2372,21 @@
   if (!p) { window.location.href = 'index.html'; return; }
 
   document.title = p.name + ' | Advanced Controls';
+  (function(){
+    var pageTitle = p.name + ' | Advanced Controls';
+    var defaultDesc = 'One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into posture, risk and compliance for leadership.';
+    var desc = (p.heroDesc || defaultDesc).replace(/&amp;/g, '&').replace(/<[^>]+>/g, '');
+    if (desc.length > 158) { desc = desc.slice(0, 158).replace(/\s+\S*$/, '') + '…'; }
+    var url = 'https://advancedcontrols.sa/product.html?id=' + encodeURIComponent(id);
+    var setAttr = function(elId, attr, val){ var el = document.getElementById(elId); if (el) el.setAttribute(attr, val); };
+    setAttr('metaDesc', 'content', desc);
+    setAttr('linkCanonical', 'href', url);
+    setAttr('ogTitle', 'content', pageTitle);
+    setAttr('ogDesc', 'content', desc);
+    setAttr('ogUrl', 'content', url);
+    setAttr('twTitle', 'content', pageTitle);
+    setAttr('twDesc', 'content', desc);
+  })();
   document.getElementById('productHeadline').textContent = p.heroHeadline || ('One Platform for ' + p.challengeCategory.replace(/&amp;/g, '&'));
   /* Hero subtitle — shared across every product by default; a product can override it */
   document.getElementById('productDesc').textContent = p.heroDesc ||
@@ -2029,9 +2482,11 @@
   var capGrid = document.getElementById('capabilitiesGrid');
   if (capGrid) {
     var CAP_COLS = 3;
-    (p.capabilities || CAPABILITIES).forEach(function(c, i){
+    var capList = p.capabilities || CAPABILITIES;
+    if (capList.some(function(c){ return c.wide; })) capGrid.classList.add('has-wide');
+    capList.forEach(function(c, i){
       var card = document.createElement('article');
-      card.className = 'capability-card';
+      card.className = 'capability-card' + (c.wide ? ' is-wide' : '');
       card.style.setProperty('--row', Math.floor(i / CAP_COLS));
       card.style.setProperty('--col', i % CAP_COLS);
       card.innerHTML =
@@ -2093,6 +2548,42 @@
       { img:null, w:461, h:322, title:'Executive Summaries',    desc:'Executive summaries with risk ratings and remediation priorities.' },
       { img:null, w:461, h:322, title:'Cross-Framework Matrix', desc:'Cross-framework matrix across NCA, ISO 27001, IEC 62443 and CIS.' },
       { img:null, w:461, h:322, title:'Field Deployments',      desc:'Bootable forensic OS, managed agent, passive sensor and offline collector deployments.' }
+    ],
+    audit: [
+      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
+      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
+      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
+      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
+      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
+      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' }
+    ],
+    incident: [
+      { img:null, w:461, h:322, title:'Live Dashboard', desc:'Platform interface - real-time visibility into threat detection, transfer volumes, and system health.' },
+      { img:null, w:461, h:322, title:'Transfer Management', desc:'Platform interface - centralized control for approving, monitoring, and auditing all file transfer requests.' },
+      { img:null, w:461, h:322, title:'Scan Results', desc:'Platform interface - detailed inspection report showing multi-AV detection and CDR sanitization actions.' },
+      { img:null, w:461, h:322, title:'Admin Console', desc:'Platform interface - centralized policy enforcement, user management, and approval workflows.' },
+      { img:null, w:461, h:322, title:'User Portal', desc:'Platform interface - self-service interface for secure file transfer requests and tracking.' },
+      { img:null, w:461, h:322, title:'Reports &amp; Analytics', desc:'Platform interface - insights into security posture, transfer trends, and compliance metrics.' },
+      { img:null, w:461, h:322, title:'Policy Management', desc:'Platform interface — define, enforce, and audit security configurations across all transfer points.' },
+      { img:null, w:461, h:322, title:'Inbound Transfer Workflow', desc:'Process diagram — authentication, device validation, extraction and scan, admin approval, secure delivery.' },
+      { img:null, w:461, h:322, title:'Outbound Transfer Workflow', desc:'Process diagram — file selection, admin review, kiosk action, final validation, audit complete' },
+      { img:null, w:1210, h:620, title:'The Kiosk Hardware', desc:'Hardware visual — purpose-built, tamper-resistant kiosk designed for enterprise security environments', full:true }
+    ],
+    intel: [
+      { img:null, w:461, h:322, title:'Automated Intelligence Collection', desc:'Platform interface - systematic gathering of threat data across connected intelligence sources.' },
+      { img:null, w:461, h:322, title:'IOC Extraction', desc:'Platform interface - supported indicator types across network, file hashes, financial and Windows artifacts.' },
+      { img:null, w:461, h:322, title:'Dark Web Intelligence', desc:'Platform interface - monitoring of hidden networks for discussions, data leaks and malicious activity.' },
+      { img:null, w:461, h:322, title:'Vulnerability Intelligence', desc:'Platform interface - known flaws analysed and prioritized for remediation.' },
+      { img:null, w:461, h:322, title:'Asset Protection &amp; Monitoring', desc:'Platform interface - continuous oversight of the security posture of digital assets.' },
+      { img:null, w:461, h:322, title:'Domains, DNS &amp; Brand Protection', desc:'Platform interface — domain, DNS and brand identity monitoring against impersonation and abuse' },
+      { img:null, w:461, h:322, title:'Data Breach &amp; Leak Detection', desc:'Platform interface — identification of exposed credentials and compromised sensitive information.' },
+      { img:null, w:461, h:322, title:'Threat Actor Intelligence', desc:'Platform interface — adversary identities, methods and objectives tracked in one place' },
+      { img:null, w:461, h:322, title:'MITRE ATT&amp;CK Integration', desc:'Platform interface — observed behaviours mapped to ATT&amp;CK tactics and techniques.' },
+      { img:null, w:461, h:322, title:'Automated Response &amp; Integration', desc:'Platform interface — connectivity with the existing security stack for automated response' },
+      { img:null, w:461, h:322, title:'Malware Monitoring', desc:'Platform interface — continuous tracking and analysis of malicious software samples' },
+      { img:null, w:461, h:322, title:'Cybersecurity News', desc:'Platform interface — updates on vulnerabilities, attacks and defensive strategies.' },
+      { img:null, w:461, h:322, title:'Reporting &amp; Visualization', desc:'Platform interface — executive and operational reporting built from live intelligence.', wide:true },
+      { img:null, w:461, h:322, title:'Dashboard', desc:'Platform interface - the unified view across intelligence, assets, alerts and reports.', wide:true }
     ],
     vendor: [
       { img:null, w:461, h:322, title:'Audit Trail Dashboard',        desc:'Transfer logs with time, user, direction, SHA-256 file hash and verification status, with CSV and PDF export.' },
@@ -2168,6 +2659,19 @@
   var benchRows = document.getElementById('benchRows');
   if (benchRows) {
     if (p.benchmarkTitle) document.getElementById('benchTitle').textContent = p.benchmarkTitle;
+    if (p.benchmarkSummary) {
+      var bsEl = document.getElementById('benchSummary');
+      bsEl.hidden = false;
+      p.benchmarkSummary.forEach(function(c){
+        var d = document.createElement('div'); d.className = 'bench-summary-card';
+        d.innerHTML = '<b></b><span></span>';
+        d.querySelector('b').textContent = c.title; d.querySelector('span').textContent = c.text;
+        bsEl.appendChild(d);
+      });
+    }
+    if (p.benchmarkFeatureLabel) document.getElementById('benchFeatureHead').textContent = p.benchmarkFeatureLabel;
+    if (p.benchmarkPillPlain) document.getElementById('benchPill').classList.add('is-plain');
+    if (p.benchmarkPill) { document.getElementById('benchPill').hidden = false; document.getElementById('benchPillText').textContent = p.benchmarkPill; }
     var benchSub   = document.getElementById('benchSubtitle');
     var benchHead  = document.getElementById('benchOwnHead');
     var benchOtherHead  = document.getElementById('benchOtherHead');
@@ -2244,8 +2748,8 @@
      block, and the banner(s) (e.g. GovernanceMode's own regulatory set). */
   var FRAMEWORKS = ['NCA ECC','Aramco TPCS','NCA CSCC','NDMO-PDPL','ISO 27001','NCA OTCC','DGA','ISO 31000','ISO 22301','NCA CCC','CMA','PCI DSS','NCA TCC','SAMA CSF','NCA OSMAC','NCA DCC'];
   var PRODUCT_ICONS = {
-    cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/intelmode.png', inspect:'assets/intelmode.png',
-    risk:'assets/datamode.png', audit:'assets/itmode.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
+    cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/itmode.png', inspect:'assets/intelmode.png',
+    risk:'assets/datamode.png', audit:'assets/intelmode.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
   };
   var fwList = p.frameworks || FRAMEWORKS;
 
@@ -2313,6 +2817,7 @@
     if (fwStats) fwStats.hidden = true;
     if (fwCap) {
       fwCap.hidden = false;
+      fwCap.classList.toggle('is-boxed', !!p.complianceCapabilities.boxed);
       document.getElementById('frameworksCapTitle').textContent = p.complianceCapabilities.title;
       var capList = document.getElementById('frameworksCapList');
       p.complianceCapabilities.items.forEach(function(item){
@@ -2325,7 +2830,7 @@
     (p.frameworksStats || FW_STATS).forEach(function(s){
       var card = document.createElement('div');
       card.className = 'frameworks-stat-card';
-      card.innerHTML = '<h4 class="frameworks-stat-title">' + s.title + '</h4><p class="frameworks-stat-desc">' + s.desc + '</p>';
+      card.innerHTML = '<h3 class="frameworks-stat-title">' + s.title + '</h3><p class="frameworks-stat-desc">' + s.desc + '</p>';
       fwStats.appendChild(card);
     });
   }
@@ -2333,6 +2838,10 @@
   var fwBanners = p.frameworksBanners || [
     { title:'Multi-framework compliance mapping', value:'NCA ECC · ISO 27001:2022 · SAMA CSF · PCI DSS v4.0 · PDPL' }
   ];
+  document.querySelector('.frameworks-banners').hidden = !fwBanners.length;
+  var fwNoteEl = document.getElementById('frameworksNote');
+  if (fwNoteEl && p.frameworksNote) { fwNoteEl.hidden = false; fwNoteEl.textContent = p.frameworksNote; }
+  if (fwBanners.length) {
   document.getElementById('frameworksBannerTitle1').textContent = fwBanners[0].title;
   document.getElementById('frameworksBannerValue1').textContent = fwBanners[0].value;
   var fwBanner2 = document.getElementById('frameworksBanner2');
@@ -2343,6 +2852,7 @@
     document.getElementById('frameworksBannerValue2').textContent = fwBanners[1].value;
   } else {
     fwBanner2.hidden = true;
+  }
   }
 
   /* Why {Product}? — platform-wide facts by default; a product can override
@@ -2410,8 +2920,11 @@
   }
   if (p.demoTitle) {
     document.getElementById('demo-heading').textContent = p.demoTitle;
-    document.getElementById('demoSubmitBtn').textContent = p.demoTitle;
+    document.getElementById('demoSubmitBtn').textContent = p.demoButton || p.demoTitle;
   }
+  if (p.demoSubtitle) document.getElementById('demoSubtitle').textContent = p.demoSubtitle;
+  if (p.demoLabel) document.getElementById('demoPlatformLabelText').textContent = p.demoLabel;
+  if (p.demoLead) { var dl = document.getElementById('demoLead'); dl.hidden = false; dl.textContent = p.demoLead; }
 
   var WHY_PILLARS = [
     { title:'Easy', desc:'Straightforward to adopt across the organization.' },
@@ -2456,6 +2969,20 @@
   ];
   var whyStatsList = p.whyStats || WHY_STATS;
   var whyStatsEl = document.getElementById('whyStats');
+  if (p.whyStats && !p.whyStats.length && whyStatsEl) whyStatsEl.hidden = true;
+  if (p.whyStatsLight && whyStatsEl) whyStatsEl.classList.add('is-light');
+  if (p.whyIndustries) {
+    document.getElementById('whyIndustries').hidden = false;
+    document.getElementById('whyIndustriesTitle').textContent = p.whyIndustries.title;
+    var wiGrid = document.getElementById('whyIndustriesGrid');
+    p.whyIndustries.items.forEach(function(t, i){
+      var d = document.createElement('div');
+      d.className = 'why-industry';
+      d.style.setProperty('--i', i);
+      d.textContent = t;
+      wiGrid.appendChild(d);
+    });
+  }
   if (whyStatsEl) {
     var whyReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var whyNumberEls = whyStatsList.map(function(s){

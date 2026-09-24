@@ -1,0 +1,191 @@
+warn   about.html @320: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, div.cert-marquee
+warn   about.html @360: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, div.cert-marquee
+warn   about.html @390: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, div.cert-marquee
+warn   about.html @414: small-targets:5 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, div.cert-marquee
+warn   about.html @600: small-targets:5 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @768: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @820: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @1024: truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @1280: truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @1440: truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @1920: truncated:div.overflow-hidden, div.cert-marquee
+warn   consultation.html @320: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+warn   consultation.html @360: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+warn   consultation.html @390: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+warn   consultation.html @414: small-targets:5 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+warn   consultation.html @600: small-targets:5 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+warn   consultation.html @768: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-s12-cell, div.svc-fw-cell
+warn   consultation.html @820: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-s12-cell, div.svc-fw-cell
+warn   consultation.html @1024: truncated:div.overflow-hidden, div.svc-s12-cell, div.svc-fw-cell
+warn   consultation.html @1280: truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+warn   consultation.html @1440: truncated:div.overflow-hidden, div.svc-s12-cell, div.svc-fw-cell
+warn   consultation.html @1920: truncated:div.overflow-hidden, div.svc-s12-cell, div.svc-fw-cell
+warn   contact.html @320: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+warn   contact.html @360: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+warn   contact.html @390: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+warn   contact.html @414: small-targets:5 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+warn   contact.html @600: small-targets:5 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+warn   contact.html @768: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+warn   contact.html @820: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+FATAL  index.html @320: timeout 120000ms
+FATAL  index.html @320: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   index.html @360: small-targets:13 (button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24, button.rounded-full.transition-all.h-[10px] 36x10, button.rounded-full.transition-all.h-[10px] 10x10)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden
+warn   index.html @390: small-targets:13 (button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24, button.rounded-full.transition-all.h-[10px] 36x10, button.rounded-full.transition-all.h-[10px] 10x10)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden
+warn   index.html @414: small-targets:14 (button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24, button.rounded-full.transition-all.h-[10px] 36x10, button.rounded-full.transition-all.h-[10px] 10x10)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden
+warn   index.html @600: small-targets:14 (button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24, button.rounded-full.transition-all.h-[10px] 36x10, button.rounded-full.transition-all.h-[10px] 10x10)  truncated:div.overflow-hidden
+warn   index.html @768: small-targets:13 (button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24, button.rounded-full.transition-all.h-[10px] 36x10, button.rounded-full.transition-all.h-[10px] 10x10)  truncated:div.overflow-hidden
+warn   index.html @820: small-targets:13 (button#prevBtn.text-white/90.hover:text-white.transition-colors 24x24, button.rounded-full.transition-all.h-[10px] 36x10, button.rounded-full.transition-all.h-[10px] 10x10)  truncated:div.overflow-hidden
+warn   index.html @1024: truncated:div.overflow-hidden
+warn   index.html @1280: truncated:div.overflow-hidden
+warn   index.html @1440: truncated:div.overflow-hidden
+warn   index.html @1920: truncated:div.overflow-hidden
+warn   product.html?id=audit @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 138x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 138x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=audit @390: timeout 120000ms
+FATAL  product.html?id=audit @390: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=audit @414: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 138x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @600: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 138x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 138x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 138x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @1280: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=audit @1440: timeout 120000ms
+FATAL  product.html?id=audit @1440: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=audit @1920: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=cyber @414: timeout 120000ms
+FATAL  product.html?id=cyber @414: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=cyber @600: small-targets:5 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @1280: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=cyber @1440: timeout 120000ms
+FATAL  product.html?id=cyber @1440: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=cyber @1920: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=governance @414: timeout 120000ms
+FATAL  product.html?id=governance @414: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=governance @600: small-targets:5 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @1280: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @1440: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=governance @1920: timeout 120000ms
+FATAL  product.html?id=governance @1920: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=incident @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @414: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=incident @600: timeout 120000ms
+FATAL  product.html?id=incident @600: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=incident @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @1280: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @1920: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @414: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=inspect @600: timeout 120000ms
+FATAL  product.html?id=inspect @600: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=inspect @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @1280: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @1920: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=intel @414: timeout 120000ms
+FATAL  product.html?id=intel @414: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=intel @600: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @1280: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=intel @1440: timeout 120000ms
+FATAL  product.html?id=intel @1440: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=intel @1920: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @320: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=risk @360: timeout 120000ms
+FATAL  product.html?id=risk @360: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=risk @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @414: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @600: small-targets:5 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=risk @1024: timeout 120000ms
+FATAL  product.html?id=risk @1024: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=risk @1280: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @1920: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=vendor @320: timeout 120000ms
+FATAL  product.html?id=vendor @320: Attempted to use detached Frame '636D651EDA2B2BE663B01D5E70737466'.
+warn   product.html?id=vendor @360: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @390: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @414: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @600: small-targets:5 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @768: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @820: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @1280: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @1920: truncated:article.challenge-card.revealed, div.core-module-row
+warn   products.html @320: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, section#products.prods-section
+warn   products.html @360: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, section#products.prods-section
+warn   products.html @390: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, section#products.prods-section
+warn   products.html @414: small-targets:5 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, section#products.prods-section
+warn   products.html @600: small-targets:5 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @768: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @820: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @1024: truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @1280: truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @1440: truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @1920: truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   security-services.html @320: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-pa-cell
+warn   security-services.html @360: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-pa-cell
+warn   security-services.html @390: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-pa-cell
+warn   security-services.html @414: small-targets:5 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-pa-cell
+warn   security-services.html @600: small-targets:5 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @768: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @820: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @1024: truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @1280: truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @1440: truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @1920: truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   services.html @320: small-targets:7 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @360: small-targets:7 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @390: small-targets:7 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @414: small-targets:8 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @600: small-targets:8 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @768: small-targets:7 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+FATAL  services.html @820: timeout 120000ms
+FATAL  services.html @820: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   services.html @1024: truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @1280: truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @1440: truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @1920: truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   solutions.html @320: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @360: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @390: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @414: small-targets:5 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @600: small-targets:5 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @768: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @820: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @1024: truncated:div.overflow-hidden, div.svc-area-cell
+FATAL  solutions.html @1280: timeout 120000ms
+FATAL  solutions.html @1280: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   solutions.html @1440: truncated:div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @1920: truncated:div.overflow-hidden, div.svc-area-cell
+
+192 runs — 32 failing, 156 with warnings
+EXIT:1

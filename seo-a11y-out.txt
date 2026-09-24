@@ -1,0 +1,80 @@
+
+========== index.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== about.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== contact.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== products.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== services.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== consultation.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== security-services.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== solutions.html ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=cyber ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=governance ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=intel ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=inspect ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=risk ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=audit ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=incident ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none
+
+========== product.html?id=vendor ==========
+SEO issues: none
+A11y critical/serious: none
+A11y moderate/minor: none

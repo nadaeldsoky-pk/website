@@ -252,9 +252,9 @@
   var icons = {
     cyber:      '<img src="assets/Container.png"        width="70" height="70" alt="CyberMode"      style="display:block;object-fit:contain;" />',
     governance: '<img src="assets/Vector.png"           width="70" height="70" alt="GovernanceMode" style="display:block;object-fit:contain;" />',
-    intel:      '<img src="assets/intelmode.png"      width="70" height="70" alt="IntelMode"      style="display:block" />',
+    intel:      '<img src="assets/itmode.png"      width="70" height="70" alt="IntelMode"      style="display:block" />',
     risk:       '<img src="assets/datamode.png"       width="70" height="70" alt="DataMode"       style="display:block" />',
-    audit:      '<img src="assets/itmode.png"      width="70" height="70" alt="ITMode"      style="display:block" />',
+    audit:      '<img src="assets/intelmode.png"      width="70" height="70" alt="ITMode"      style="display:block" />',
     vendor:     '<img src="assets/gavermode.png"     width="70" height="70" alt="GateMode"     style="display:block" />',
     incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="TransferMode"   style="display:block" />'
   };
@@ -302,7 +302,7 @@
         { title:'No Early Warning System', desc:'Emerging risk trends go unnoticed until they have already become active incidents.', solvedTitle:'KRI Monitoring', solvedDesc:'Threshold alerts and trend dashboards flag key risk indicators before they escalate.' },
         { title:'Unclear Risk Tolerance', desc:'Teams lack a documented reference for how much risk the organization is willing to accept in each domain.', solvedTitle:'Risk Appetite Framework', solvedDesc:'Define and monitor risk appetite statements and tolerance thresholds by domain.' }
       ] },
-    { key:'audit', name:'ITMode', desc:'Streamline internal and external audit cycles from planning to sign-off.',
+    { key:'audit', name:'ITMode', desc:'Enterprise IT Service Management & Delivery — one governed source of truth, aligned to ITIL 4 and ISO/IEC 20000.',
       challengeCategory:'Audit Management',
       sixChallenges:[
         { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
@@ -363,6 +363,8 @@
       var dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'h-[10px] rounded-full transition-all';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
       dot.setAttribute('aria-label', 'Go to ' + p.name);
       dot.addEventListener('click', function(){ goTo(i); });
       dots.appendChild(dot);
@@ -465,6 +467,7 @@
     Array.prototype.forEach.call(dots.children, function(dot, i){
       var active = i === current;
       dot.className = 'rounded-full transition-all h-[10px] ' + (active ? 'w-[36px] bg-white' : 'w-[10px] bg-white/40 hover:bg-white/70');
+      dot.setAttribute('aria-selected', active ? 'true' : 'false');
     });
 
     [panelIcon, panelTitle, panelDesc].forEach(function(el){
@@ -755,30 +758,31 @@
 
 /* ---------------- Logo marquee: endless, gap-free loop at any screen width ---------------- */
 (function(){
-  var track = document.querySelector('.logo-marquee');
-  if (!track) return;
-  var kids = Array.prototype.slice.call(track.children);
-  var unitCount = kids.length / 2;
-  if (!unitCount || unitCount % 1) return;
-  var unitItems = kids.slice(0, unitCount);
-  var timer;
+  Array.prototype.forEach.call(document.querySelectorAll('.logo-marquee'), function(track){
+    var kids = Array.prototype.slice.call(track.children);
+    var unitCount = kids.length / 2;
+    if (!unitCount || unitCount % 1) return;
+    var unitItems = kids.slice(0, unitCount);
+    var timer;
 
-  function build(){
-    while (track.children.length > unitCount) track.removeChild(track.lastChild);
-    var unit = 0;
-    unitItems.forEach(function(el){
-      var cs = getComputedStyle(el);
-      unit += el.getBoundingClientRect().width + parseFloat(cs.marginRight);
-    });
-    if (!unit) return;
-    var copies = Math.ceil(window.innerWidth / unit) + 1;
-    for (var c = 1; c < copies; c++) {
-      unitItems.forEach(function(el){ track.appendChild(el.cloneNode(true)); });
+    function build(){
+      while (track.children.length > unitCount) track.removeChild(track.lastChild);
+      var unit = 0;
+      unitItems.forEach(function(el){
+        var cs = getComputedStyle(el);
+        unit += el.getBoundingClientRect().width + parseFloat(cs.marginRight);
+      });
+      if (!unit) return;
+      var copies = Math.ceil(window.innerWidth / unit) + 1;
+      for (var c = 1; c < copies; c++) {
+        unitItems.forEach(function(el){ track.appendChild(el.cloneNode(true)); });
+      }
+      track.style.setProperty('--marquee-unit', unit + 'px');
+      track.style.setProperty('--marquee-dur', (unit / 60) + 's');
     }
-    track.style.setProperty('--marquee-unit', unit + 'px');
-    track.style.setProperty('--marquee-dur', (unit / 60) + 's');
-  }
 
-  build();
-  window.addEventListener('resize', function(){ clearTimeout(timer); timer = setTimeout(build, 200); });
+    build();
+    window.addEventListener('load', build);
+    window.addEventListener('resize', function(){ clearTimeout(timer); timer = setTimeout(build, 200); });
+  });
 })();

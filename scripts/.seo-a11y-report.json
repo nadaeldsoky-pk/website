@@ -1,0 +1,386 @@
+[
+ {
+  "page": "index.html",
+  "seo": {
+   "title": "Advanced Controls | Saudi GRC & Cybersecurity Platforms",
+   "titleLen": 55,
+   "descContent": "Advanced Controls delivers CyberMode, GovernanceMode and IntelMode — GRC and threat intelligence platforms built for NCA, CST, NDMO and NORA v2 compliance.",
+   "descLen": 155,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "We're leaders in cybersecurity"
+   ],
+   "htmlLang": "en",
+   "imgCount": 16,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "about.html",
+  "seo": {
+   "title": "About Us | Advanced Controls IT Co.",
+   "titleLen": 35,
+   "descContent": "Advanced Controls IT Co. is a Saudi-led cybersecurity and IT company delivering national-grade products, consulting, and compliance since 2022.",
+   "descLen": 143,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "We're leaders in cybersecurity"
+   ],
+   "htmlLang": "en",
+   "imgCount": 22,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "contact.html",
+  "seo": {
+   "title": "Contact Us | Advanced Controls IT Co.",
+   "titleLen": 37,
+   "descContent": "Get in touch with Advanced Controls IT Co. Tell us the type of request and a little about what you need — our team will get back to you.",
+   "descLen": 136,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "How can we help you?"
+   ],
+   "htmlLang": "en",
+   "imgCount": 2,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "products.html",
+  "seo": {
+   "title": "Products | Advanced Controls IT Co.",
+   "titleLen": 35,
+   "descContent": "Advanced Controls IT Co. develops national cybersecurity and technology products and solutions, with consulting, compliance and certification services.",
+   "descLen": 151,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "We're leaders in cybersecurity"
+   ],
+   "htmlLang": "en",
+   "imgCount": 9,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "services.html",
+  "seo": {
+   "title": "Services | Advanced Controls IT Co.",
+   "titleLen": 35,
+   "descContent": "Consulting, specialized security services and technology solutions from Advanced Controls IT Co. — delivered by one accountable partner.",
+   "descLen": 136,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "One Partner.Every Cybersecurity Need."
+   ],
+   "htmlLang": "en",
+   "imgCount": 2,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "consultation.html",
+  "seo": {
+   "title": "Consultation | Advanced Controls IT Co.",
+   "titleLen": 39,
+   "descContent": "Advisory across the full cybersecurity lifecycle, from strategic planning to incident response — twelve consulting services from Advanced Controls IT Co.",
+   "descLen": 153,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "CONSULTATION"
+   ],
+   "htmlLang": "en",
+   "imgCount": 2,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "security-services.html",
+  "seo": {
+   "title": "Security Services | Advanced Controls IT Co.",
+   "titleLen": 44,
+   "descContent": "Operational and offensive security across four specialist practice areas — testing defenses like an attacker, and building detection and response capability.",
+   "descLen": 157,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "SECURITY SERVICES"
+   ],
+   "htmlLang": "en",
+   "imgCount": 2,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "solutions.html",
+  "seo": {
+   "title": "Solutions | Advanced Controls IT Co.",
+   "titleLen": 36,
+   "descContent": "Supplying and integrating security technologies from leading global vendors, tailored to the specific needs and challenges of your organization.",
+   "descLen": 144,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "SOLUTIONS"
+   ],
+   "htmlLang": "en",
+   "imgCount": 2,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=cyber",
+  "seo": {
+   "title": "CyberMode | Advanced Controls",
+   "titleLen": 29,
+   "descContent": "One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into…",
+   "descLen": 156,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "One Platform for Cybersecurity Management"
+   ],
+   "htmlLang": "en",
+   "imgCount": 17,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=governance",
+  "seo": {
+   "title": "GovernanceMode | Advanced Controls",
+   "titleLen": 34,
+   "descContent": "Governance, risk, compliance, continuity and performance on one bilingual platform — instead of disconnected spreadsheets and point tools.",
+   "descLen": 138,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "One Platform for Enterprise Governance, Risk & Compliance"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=intel",
+  "seo": {
+   "title": "IntelMode | Advanced Controls",
+   "titleLen": 29,
+   "descContent": "A Saudi-built CTI and Digital Risk Protection platform that unifies threat intelligence, attack surface monitoring, brand protection and dark web visibility…",
+   "descLen": 157,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "Unified Threat Intelligence & Digital Risk Protection"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=inspect",
+  "seo": {
+   "title": "InspectMode | Advanced Controls",
+   "titleLen": 31,
+   "descContent": "One AI-augmented agent unifies IT and OT security assessment, forensics, vulnerability scanning, compliance, and threat detection. Built for Saudi NCA and…",
+   "descLen": 155,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "AI-Augmented Security Assessment Platform"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=risk",
+  "seo": {
+   "title": "DataMode | Advanced Controls",
+   "titleLen": 28,
+   "descContent": "Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.",
+   "descLen": 141,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "One Platform for the Data Management Office"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=audit",
+  "seo": {
+   "title": "ITMode | Advanced Controls",
+   "titleLen": 26,
+   "descContent": "ITMode replaces fragmented tools with a single governed source of truth — Saudi-built and aligned to ITIL 4 and ISO/IEC 20000, from service design through…",
+   "descLen": 155,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "Enterprise IT Service Management & Delivery"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=incident",
+  "seo": {
+   "title": "TransferMode | Advanced Controls",
+   "titleLen": 32,
+   "descContent": "A zero-trust gateway for every file entering or leaving your organization — across USB, removable media and cross-domain transfers — with multi-engine…",
+   "descLen": 151,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "Secure Data Transfer, Inspection & Controlled Exchange"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ },
+ {
+  "page": "product.html?id=vendor",
+  "seo": {
+   "title": "GateMode | Advanced Controls",
+   "titleLen": 28,
+   "descContent": "A zero-trust, on-premise gateway that inspects, disarms, and approves every file crossing USB, removable media, and cross-domain transfers — fully audited…",
+   "descLen": 155,
+   "hasCanonical": true,
+   "robotsContent": "index, follow",
+   "hasViewport": true,
+   "h1Count": 1,
+   "h1Text": [
+    "Secure Data Transfer, Inspection & Controlled Exchange"
+   ],
+   "htmlLang": "en",
+   "imgCount": 3,
+   "imgsMissingAlt": [],
+   "hasOg": true,
+   "headingJumps": [],
+   "linksNoAccessibleText": 0
+  },
+  "a11y": [],
+  "consoleErrors": []
+ }
+]

@@ -1,0 +1,53 @@
+warn   about.html @375: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, div.cert-marquee
+warn   about.html @1024: truncated:div.overflow-hidden, div.cert-marquee
+warn   about.html @1440: truncated:div.overflow-hidden, div.cert-marquee
+warn   consultation.html @375: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-s12-cell
+FATAL  consultation.html @1024: timeout 120000ms
+FATAL  consultation.html @1024: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   consultation.html @1440: truncated:div.overflow-hidden, div.svc-s12-cell, div.svc-fw-cell
+warn   contact.html @375: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)
+FATAL  index.html @375: timeout 120000ms
+FATAL  index.html @375: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   index.html @1024: truncated:div.overflow-hidden
+warn   index.html @1440: truncated:div.overflow-hidden
+FATAL  product.html?id=audit @375: timeout 120000ms
+FATAL  product.html?id=audit @375: Protocol error (Runtime.callFunctionOn): Target closed
+warn   product.html?id=audit @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=audit @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @375: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 75x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 84x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=cyber @1440: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=governance @375: timeout 120000ms
+FATAL  product.html?id=governance @375: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.
+warn   product.html?id=governance @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=governance @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @375: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=incident @1440: truncated:article.challenge-card.revealed, div.core-module-row
+FATAL  product.html?id=inspect @375: timeout 120000ms
+FATAL  product.html?id=inspect @375: Protocol error (Runtime.callFunctionOn): Target closed
+warn   product.html?id=inspect @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=inspect @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @375: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=intel @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @375: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=risk @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @375: small-targets:4 (a#footerPhone.text-sm.leading-4.25.text-surface 121x17, a#footerEmail.text-sm.leading-4.25.text-surface 176x17, a#footerWeb.text-sm.leading-4.25.text-surface 175x17)  truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @1024: truncated:article.challenge-card.revealed, div.core-module-row
+warn   product.html?id=vendor @1440: truncated:article.challenge-card.revealed, div.core-module-row
+warn   products.html @375: small-targets:4 (a.text-sm.leading-4.25.text-surface 75x17, a.text-sm.leading-4.25.text-surface 176x17, a.text-sm.leading-4.25.text-surface 84x17)  truncated:section#top.hero-bg.relative.min-h-[calc(100vh+7rem)], div.overflow-hidden, section#products.prods-section
+warn   products.html @1024: truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   products.html @1440: truncated:div.overflow-hidden, section#products.prods-section, a.prod-cell.revealed
+warn   security-services.html @375: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-pa-cell
+warn   security-services.html @1024: truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   security-services.html @1440: truncated:div.overflow-hidden, div.svc-pa-cell, div.svc-acc-cell
+warn   services.html @375: small-targets:7 (a.svc-track-more 110x18, a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17)  truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @1024: truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   services.html @1440: truncated:div.overflow-hidden, article#consultation.svc-track, article#security-services.svc-track
+warn   solutions.html @375: small-targets:4 (a.min-w-0.text-sm.leading-4.25 75x17, a.min-w-0.text-sm.leading-4.25 176x17, a.min-w-0.text-sm.leading-4.25 84x17)  truncated:section#top.svc-hero, div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @1024: truncated:div.overflow-hidden, div.svc-area-cell
+warn   solutions.html @1440: truncated:div.overflow-hidden, div.svc-area-cell
+
+53 runs — 10 failing, 41 with warnings
