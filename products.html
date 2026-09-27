@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="css/styles.css?v=13" />
 <style>
 /* ===== Our Products ===== */
-.prods-section{ position:relative; z-index:10; margin-top:-7rem; background:#F7F6FA; border-radius:48px 48px 0 0; padding:clamp(56px,7vw,110px) clamp(16px,6vw,110px) clamp(64px,8vw,120px); overflow:hidden; }
+.prods-section{ position:relative; z-index:10; margin-top:-7rem; background:#F7F6FA; border-radius:48px 48px 0 0; padding:4rem clamp(16px,6vw,110px) 4rem; overflow:hidden; }
 .prods-section::before, .prods-section::after{ content:''; position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; pointer-events:none; animation:prodsOrb 14s ease-in-out infinite; }
 .prods-section::before{ width:420px; height:420px; left:-140px; top:12%; background:radial-gradient(circle,#D9C3EE,transparent 70%); }
 .prods-section::after{ width:480px; height:480px; right:-160px; bottom:6%; background:radial-gradient(circle,#C9D5F5,transparent 70%); animation-delay:-7s; }
@@ -95,6 +95,10 @@
   .prod-cell:nth-child(n){ transform:translateY(50px) scale(.96); }
   .prods-section{ border-radius:32px 32px 0 0; }
 }
+
+/* Unified inter-section spacing (matches home page) */
+@media(min-width:640px){ .prods-section{ padding-top:5rem; padding-bottom:5rem; } }
+@media(min-width:1024px){ .prods-section{ padding-top:6.25rem; padding-bottom:6.25rem; } }
 </style>
 </head>
 <body class="bg-white text-primary">

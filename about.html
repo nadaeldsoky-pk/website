@@ -162,7 +162,7 @@
 
   <!-- ===================== CERTIFICATIONS & COMPLIANCE STANDARDS ===================== -->
 <style>
-.cert-section{background:#fff;padding:clamp(56px,6vw,100px) clamp(24px,8vw,150px) clamp(48px,5vw,80px)}
+.cert-section{background:#fff;padding:4rem clamp(24px,8vw,150px) 4rem}
 .cert-wrap{max-width:1430px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(28px,3.5vw,48px)}
 .cert-head{text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center}
 .cert-title{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.6rem,3.6vw,48px);line-height:1.15;color:#2E1B4E;margin:0}
@@ -182,6 +182,10 @@
 .cert-partner--ms{font-family:'Segoe UI','Inter',sans-serif;font-weight:500;font-size:20px;color:#5A4B6B}
 @media(max-width:1000px){.cert-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.cert-grid{grid-template-columns:repeat(2,1fr);gap:14px}.cert-tile:last-child{grid-column:1 / -1;max-width:50%;justify-self:center;width:100%}}
+
+/* Unified inter-section spacing (matches home page) */
+@media(min-width:640px){ .cert-section{ padding-top:5rem; padding-bottom:5rem; } }
+@media(min-width:1024px){ .cert-section{ padding-top:6.25rem; padding-bottom:6.25rem; } }
 </style>
   <section id="certifications" class="cert-section relative z-10 rounded-t-[3rem] sm:rounded-t-[5rem] -mt-28" aria-labelledby="cert-heading">
     <div class="cert-wrap">
