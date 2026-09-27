@@ -542,6 +542,10 @@
 .framework-badge-inner:hover{ border-color:#9B6FB8; box-shadow:0 8px 18px rgba(68,34,90,.2); }
 .framework-dot{ width:6px; height:6px; border-radius:50%; background:#2F4FA2; flex-shrink:0; }
 
+body[data-product="governance"] .framework-badge-inner,
+body[data-product="governance"] .framework-chip{ color:#173A6C; }
+body[data-product="governance"] .framework-dot{ background:#173A6C; }
+
 .frameworks-badges-mobile{ display:none; flex-wrap:wrap; gap:8px; width:100%; }
 .framework-chip{ display:inline-flex; align-items:center; gap:6px; padding:8px 12px; background:#FFFDFE; border:0.5px solid #C9B7D8; border-radius:8px; font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; color:#2F4FA2; }
 @media(max-width:1099px){
@@ -2370,6 +2374,7 @@ capabilitiesTitle:'Built Into Every Module.',
   var id = new URLSearchParams(window.location.search).get('id') || 'cyber';
   var p  = data[id];
   if (!p) { window.location.href = 'index.html'; return; }
+  document.body.setAttribute('data-product', id);
 
   document.title = p.name + ' | Advanced Controls';
   (function(){
@@ -2748,8 +2753,8 @@ capabilitiesTitle:'Built Into Every Module.',
      block, and the banner(s) (e.g. GovernanceMode's own regulatory set). */
   var FRAMEWORKS = ['NCA ECC','Aramco TPCS','NCA CSCC','NDMO-PDPL','ISO 27001','NCA OTCC','DGA','ISO 31000','ISO 22301','NCA CCC','CMA','PCI DSS','NCA TCC','SAMA CSF','NCA OSMAC','NCA DCC'];
   var PRODUCT_ICONS = {
-    cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/itmode.png', inspect:'assets/intelmode.png',
-    risk:'assets/datamode.png', audit:'assets/intelmode.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
+    cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/itmode.png', inspect:'assets/inspectmode.png',
+    risk:'assets/datamode.png', audit:'assets/itmode-icon.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
   };
   var fwList = p.frameworks || FRAMEWORKS;
 

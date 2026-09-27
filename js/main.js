@@ -254,9 +254,10 @@
     governance: '<img src="assets/Vector.png"           width="70" height="70" alt="GovernanceMode" style="display:block;object-fit:contain;" />',
     intel:      '<img src="assets/itmode.png"      width="70" height="70" alt="IntelMode"      style="display:block" />',
     risk:       '<img src="assets/datamode.png"       width="70" height="70" alt="DataMode"       style="display:block" />',
-    audit:      '<img src="assets/intelmode.png"      width="70" height="70" alt="ITMode"      style="display:block" />',
+    audit:      '<img src="assets/itmode-icon.png"    width="70" height="70" alt="ITMode"      style="display:block;object-fit:contain;" />',
     vendor:     '<img src="assets/gavermode.png"     width="70" height="70" alt="GateMode"     style="display:block" />',
-    incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="TransferMode"   style="display:block" />'
+    incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="TransferMode"   style="display:block" />',
+    inspect:    '<img src="assets/inspectmode.png"  width="70" height="70" alt="InspectMode"    style="display:block;object-fit:contain;" />'
   };
 
   var products = [
@@ -331,6 +332,16 @@
         { title:'Missed Reporting Deadlines', desc:'NCA and SAMA regulatory notification windows missed due to manual tracking and unclear escalation ownership.', solvedTitle:'Regulatory Notification', solvedDesc:'Auto-generated NCA and SAMA breach notifications within mandated reporting deadlines.' },
         { title:'Unclear Task Ownership', desc:'Response tasks assigned verbally or over chat, with no SLA tracking or automatic escalation when work stalls.', solvedTitle:'Task Assignment &amp; Escalation', solvedDesc:'SLA-bound task assignment with automated escalation rules and team notifications.' },
         { title:'No Continuous Improvement', desc:'Incidents close without a structured review, so the same root causes resurface in future incidents.', solvedTitle:'Post-Incident Review', solvedDesc:'Structured lessons-learned and root-cause analysis workflows drive continuous improvement.' }
+      ] },
+    { key:'inspect', name:'InspectMode', desc:'AI-augmented compromise assessment, forensics and vulnerability scanning for IT and OT networks.',
+      challengeCategory:'Security Assessment',
+      sixChallenges:[
+        { title:'Fragmented Tooling', desc:'Separate compromise assessment, vulnerability scanning, forensics and compliance tools create fragmented visibility and slow response.', solvedTitle:'A Single Unified Agent', solvedDesc:'One agent binary covers compromise assessment, forensics, vulnerability scanning, OT/ICS assessment and compliance auditing.' },
+        { title:'NCA Compliance Burden', desc:'ECC, OT-CC, CSCC, DCC and CCC evidence must be auditable, timestamped and integrity-verified for every assessment.', solvedTitle:'NCA-Native Compliance Engine', solvedDesc:'Automated NCA and ISO assessment with evidence collection, gap analysis and audit-ready PDF/HTML reports.' },
+        { title:'OT/ICS Blind Spots', desc:'IT-focused tools can disrupt PLCs, safety systems or production workflows when used in operational environments.', solvedTitle:'OT-Safe by Design', solvedDesc:'Passive and rate-limited analysis of Modbus, DNP3, S7comm, OPC-UA, BACnet and EtherNet/IP with zero disruption risk.' },
+        { title:'Analyst Shortage', desc:'Triage, correlation and reporting consume scarce analyst time across recurring assessments and investigations.', solvedTitle:'AI That Augments the Analyst', solvedDesc:'AI correlation, anomaly detection and automated reporting free analysts to focus on real findings.' },
+        { title:'Air-Gapped and Restricted Networks', desc:'Cloud-dependent tools are impractical in restricted environments, isolated facilities and networks with limited connectivity.', solvedTitle:'Offline-First Architecture', solvedDesc:'Bootable portable OS, offline collector and network sensor modes operate fully without cloud connectivity.' },
+        { title:'Evidence Integrity', desc:'Artifacts without chain of custody are inadmissible, making audit preparation and investigation follow-up difficult.', solvedTitle:'Evidence-Grade Output', solvedDesc:'Every artifact is SHA-256 hashed, timestamped and packaged with chain-of-custody metadata for defensible reporting.' }
       ] }
   ];
 
