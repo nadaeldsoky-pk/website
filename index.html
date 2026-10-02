@@ -51,7 +51,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/styles.css?v=41" />
+<link rel="stylesheet" href="css/styles.css?v=44" />
 </head>
 <body class="bg-white text-primary">
 
@@ -93,7 +93,7 @@
             <li><a data-nav="products" href="products.html" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
             <li><a data-nav="services" href="services.html" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
-            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
+            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
         </div>
@@ -122,7 +122,7 @@
         <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
-        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
+        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About</a></li>
         <li class="pt-2"><a href="#contact" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
       </ul>
     </nav>
@@ -528,15 +528,13 @@
 </main>
 
 <!-- ===================== FOOTER ===================== -->
-<footer id="about" class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
+<!-- FOOTER:START — generated from src/partials/footer.html by `npm run build:footer`. Edit the partial, not this. -->
+<footer class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
   <div class="mx-auto flex max-w-357.5 flex-col gap-16">
     <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.36fr_1fr_1fr_1fr_1.36fr] lg:gap-12">
-      <!-- Column 1: Brand -->
       <div class="flex flex-col items-start gap-6" data-reveal="up">
         <div class="flex items-center gap-3">
-          <a href="index.html" >
           <img src="assets/logofooter.png" alt="" width="137" height="55" class="w-40 h-auto" />
-</a>
         </div>
         <p class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
@@ -551,21 +549,19 @@
         </div>
       </div>
 
-      <!-- Column 2: Useful Links -->
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="80">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
-          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
-          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#top" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="#products" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Media</a></li>
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact us</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: Products -->
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="140">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Products</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
@@ -579,8 +575,7 @@
         </ul>
       </div>
 
-      <!-- Column 4: Services -->
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="260">
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Services</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="consultation.html" class="hover:text-white transition-colors">Consultation</a></li>
@@ -589,8 +584,7 @@
         </ul>
       </div>
 
-      <!-- Column 5: Contact -->
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="260">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h3>
         <ul class="flex w-full flex-col items-start gap-4">
           <li class="flex items-center gap-3 min-w-0 w-full">
@@ -628,11 +622,12 @@
       <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
         <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-white transition-colors">Terms</a>
-        <span class="uppercase">Consult · Secure · Succeed</span>
+        <span class="uppercase">Consult &middot; Secure &middot; Succeed</span>
       </div>
     </div>
   </div>
 </footer>
+<!-- FOOTER:END -->
 
 
 <button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">

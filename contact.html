@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
-<link rel="stylesheet" href="css/styles.css?v=41" />
+<link rel="stylesheet" href="css/styles.css?v=44" />
 </head>
 <body class="bg-white text-primary">
 
@@ -68,7 +68,7 @@
             <li><a data-nav="products" href="products.html" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
             <li><a data-nav="services" href="services.html" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
-            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About us</a></li>
+            <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Contact Us</a></li>
           </ul>
         </div>
@@ -97,7 +97,7 @@
         <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Contact Us</a></li>
-        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About us</a></li>
+        <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About</a></li>
         <li class="pt-2"><a href="#contact-heading" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
       </ul>
     </nav>
@@ -106,11 +106,61 @@
 <!-- NAV:END -->
 
 <main id="main">
+  <!-- ===================== GET IN TOUCH ===================== -->
+  <section class="flex flex-col items-center gap-12 px-6 sm:px-12 lg:px-[150px] py-16 sm:py-20 lg:py-25 bg-white" aria-labelledby="getintouch-heading">
+    <div class="flex flex-col items-center gap-4 max-w-[1430px] w-full text-center" data-reveal="up">
+      <h1 id="getintouch-heading" class="font-display font-bold text-[#1F1728] text-[clamp(1.75rem,4vw,48px)] leading-[1.17]">Get in Touch</h1>
+      <p class="font-body text-base text-[#9A94A6]">Our head office is in Riyadh. Drop in, call, or send us a note — whichever is easiest.</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row w-full max-w-[1430px] rounded-2xl border border-borderc2 overflow-hidden" data-reveal="up" data-delay="100">
+      <!-- Map -->
+      <div class="relative w-full lg:flex-1 min-h-[300px] lg:min-h-[438px] bg-[#EEEAF4]">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=46.727234%2C24.829863%2C46.751234%2C24.841863&amp;layer=mapnik&amp;marker=24.835863%2C46.739234"
+          class="absolute inset-0 h-full w-full border-0" loading="lazy" title="Advanced Controls IT Co. location map"></iframe>
+
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=RPPQ%2B8MX%2C%20Al%20Thumama%20Road%2C%20Qurtubah%2C%20Riyadh%2013248" target="_blank" rel="noopener"
+           class="absolute top-7 right-7 inline-flex items-center gap-2 rounded-full bg-primary px-5.5 py-3 font-body font-semibold text-sm text-white hover:bg-secondary transition-colors">
+          View on Map
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <div class="absolute bottom-7 left-7 flex flex-col gap-1 rounded-xl bg-white px-4.5 py-4 shadow-[0_8px_16px_rgba(0,0,0,.15)]">
+          <span class="font-body font-bold text-[15px] leading-[22px] text-[#2E1B4E]">Advanced Controls IT Co.</span>
+          <span class="font-body font-medium text-[13px] leading-[18px] text-muted">Al Thumama Road, Qurtubah</span>
+        </div>
+      </div>
+
+      <!-- Contact details -->
+      <div class="w-full lg:w-[560px] shrink-0 bg-[#FFFDFE] border-t lg:border-t-0 lg:border-l border-[#F3ECF8] p-10 flex flex-col">
+        <div class="flex flex-col gap-1.5 pb-5 border-b border-[#E9DFF0]">
+          <span class="font-body font-semibold text-xs leading-4 tracking-[1.4px] text-secondary uppercase">Head Office</span>
+          <span class="font-body font-bold text-lg leading-[26px] text-[#2E1B4E]">Riyadh, Kingdom of Saudi Arabia</span>
+          <span class="font-body font-medium text-sm leading-[22px] text-muted">Al Thumama Road, Qurtubah, Riyadh 13248</span>
+        </div>
+        <div class="flex flex-col gap-1.5 py-5 border-b border-[#E9DFF0]">
+          <span class="font-body font-semibold text-xs leading-4 tracking-[1.4px] text-secondary uppercase">Call Us</span>
+          <a href="tel:920066215" class="font-body font-bold text-lg leading-[26px] text-[#2E1B4E] hover:text-secondary transition-colors">920066215</a>
+        </div>
+        <div class="flex flex-col gap-1.5 py-5 border-b border-[#E9DFF0]">
+          <span class="font-body font-semibold text-xs leading-4 tracking-[1.4px] text-secondary uppercase">Email Us</span>
+          <a href="mailto:info@advancedcontrols.sa" class="font-body font-bold text-lg leading-[26px] text-[#2E1B4E] hover:text-secondary transition-colors break-all">info@advancedcontrols.sa</a>
+        </div>
+        <div class="flex flex-col gap-1.5 pt-5">
+          <span class="font-body font-semibold text-xs leading-4 tracking-[1.4px] text-secondary uppercase">Follow Us</span>
+          <a href="https://www.linkedin.com/company/advancedcontrols" target="_blank" rel="noopener" class="font-body font-bold text-lg leading-[26px] text-[#2E1B4E] hover:text-secondary transition-colors">LinkedIn</a>
+          <span class="font-body font-medium text-sm leading-[22px] text-muted">linkedin.com/company/advancedcontrols</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== CONTACT FORM ===================== -->
   <section class="flex flex-col items-center gap-10 sm:gap-12 lg:gap-16 bg-[#F7F6FA] px-6 sm:px-12 lg:px-[150px] py-16 sm:py-24 lg:py-[150px]" aria-labelledby="contact-heading">
 
     <div class="flex w-full max-w-[765px] flex-col items-center gap-4">
-      <h1 id="contact-heading" class="font-display font-bold text-[#2E1B4E] text-[clamp(1.75rem,5vw,48px)] leading-[1.05] lg:leading-[48px] text-center" data-reveal="up">How can we help you?</h1>
+      <h2 id="contact-heading" class="font-display font-bold text-[#2E1B4E] text-[clamp(1.75rem,5vw,48px)] leading-[1.05] lg:leading-[48px] text-center" data-reveal="up">How can we help you?</h2>
       <p class="font-body font-normal text-[#6B5B7A] text-base sm:text-lg lg:text-[18px] leading-[1.5] lg:leading-[28px] text-center" data-reveal="up" data-delay="110">Tell us the type of request and a little about what you need. Our team will get back to you.</p>
     </div>
 
@@ -197,6 +247,7 @@
 </main>
 
 <!-- ===================== FOOTER ===================== -->
+<!-- FOOTER:START — generated from src/partials/footer.html by `npm run build:footer`. Edit the partial, not this. -->
 <footer class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
   <div class="mx-auto flex max-w-357.5 flex-col gap-16">
     <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.36fr_1fr_1fr_1fr_1.36fr] lg:gap-12">
@@ -206,7 +257,7 @@
         </div>
         <p class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
-          <h2 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h2>
+          <h3 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h3>
           <div class="flex flex-wrap items-center gap-1">
             <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 9001</span>
             <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 27001</span>
@@ -217,8 +268,8 @@
         </div>
       </div>
 
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
-        <h2 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h2>
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="80">
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
           <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
@@ -229,8 +280,8 @@
         </ul>
       </div>
 
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
-        <h2 class="text-xl font-semibold leading-6 capitalize text-white">Products</h2>
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="140">
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Products</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
           <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
@@ -243,8 +294,8 @@
         </ul>
       </div>
 
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="260">
-        <h2 class="text-xl font-semibold leading-6 capitalize text-white">Services</h2>
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Services</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="consultation.html" class="hover:text-white transition-colors">Consultation</a></li>
           <li><a href="security-services.html" class="hover:text-white transition-colors">Security Services</a></li>
@@ -252,8 +303,8 @@
         </ul>
       </div>
 
-      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
-        <h2 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h2>
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="260">
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h3>
         <ul class="flex w-full flex-col items-start gap-4">
           <li class="flex items-center gap-3 min-w-0 w-full">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
@@ -290,11 +341,12 @@
       <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
         <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-white transition-colors">Terms</a>
-        <span class="uppercase">Consult · Secure · Succeed</span>
+        <span class="uppercase">Consult &middot; Secure &middot; Succeed</span>
       </div>
     </div>
   </div>
 </footer>
+<!-- FOOTER:END -->
 
 <button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
   <svg width="28" height="38" viewBox="0 0 33 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
