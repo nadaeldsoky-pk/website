@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=30" />
+<link rel="stylesheet" href="css/styles.css?v=41" />
 
 <style>
 /* ===== Product hero — dome as full background ===== */
@@ -558,21 +558,21 @@ body[data-product="governance"] .framework-badge-inner,
 body[data-product="governance"] .framework-chip{ color:#173A6C; }
 body[data-product="governance"] .framework-dot{ background:#173A6C; }
 
-body[data-product="risk"] .framework-badge-inner,
-body[data-product="risk"] .framework-chip{ color:#173A6C; }
-body[data-product="risk"] .framework-dot{ background:#173A6C; }
+body[data-product="datamode"] .framework-badge-inner,
+body[data-product="datamode"] .framework-chip{ color:#173A6C; }
+body[data-product="datamode"] .framework-dot{ background:#173A6C; }
 
-body[data-product="vendor"] .framework-badge-inner,
-body[data-product="vendor"] .framework-chip{ color:#1CA2A5; }
-body[data-product="vendor"] .framework-dot{ background:#1CA2A5; }
+body[data-product="gatemode"] .framework-badge-inner,
+body[data-product="gatemode"] .framework-chip{ color:#1CA2A5; }
+body[data-product="gatemode"] .framework-dot{ background:#1CA2A5; }
 
-body[data-product="incident"] .framework-badge-inner,
-body[data-product="incident"] .framework-chip{ color:#439EB8; }
-body[data-product="incident"] .framework-dot{ background:#439EB8; }
+body[data-product="transfer"] .framework-badge-inner,
+body[data-product="transfer"] .framework-chip{ color:#439EB8; }
+body[data-product="transfer"] .framework-dot{ background:#439EB8; }
 
-body[data-product="audit"] .framework-badge-inner,
-body[data-product="audit"] .framework-chip{ color:#234C6A; }
-body[data-product="audit"] .framework-dot{ background:#234C6A; }
+body[data-product="itmode"] .framework-badge-inner,
+body[data-product="itmode"] .framework-chip{ color:#234C6A; }
+body[data-product="itmode"] .framework-dot{ background:#234C6A; }
 
 body[data-product="intel"] .framework-badge-inner,
 body[data-product="intel"] .framework-chip{ color:#093BAA; }
@@ -1019,13 +1019,6 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
 .walkthrough-play { width:96px; height:96px; border-radius:50%; background:#6E3894; border:none; box-shadow:0 25px 50px -12px rgba(0,0,0,.25); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:transform .2s, background .2s; }
 .walkthrough-play:hover { background:#5c2e79; transform:scale(1.06); }
 
-/* Footer brand mark for products without the logo image (sizes from design spec) */
-.footer-brand-mark{ display:flex; flex-direction:row; align-items:center; gap:12px; height:55px; }
-.footer-brand-mark[hidden]{ display:none; }
-.footer-brand-letter{ display:flex; flex-direction:column; justify-content:center; align-items:center; flex:none; width:40px; height:40px; background:#F7F6FA; border-radius:12px; font-family:'Poppins',sans-serif; font-style:normal; font-weight:700; font-size:20px; line-height:30px; color:#44235C; }
-.footer-brand-text{ display:flex; flex-direction:column; align-items:flex-start; gap:2px; }
-.footer-brand-name{ font-family:'Poppins',sans-serif; font-weight:700; font-size:24px; line-height:36px; color:#FFFFFF; }
-.footer-brand-sub{ font-family:'Inter',sans-serif; font-weight:500; font-size:14px; line-height:17px; color:#F3ECF8; }
 /* ===== Request a Demo ===== */
 .demo-section{ background:#F7F6FA; padding:clamp(60px,6vw,150px) clamp(24px,8vw,150px); }
 .demo-wrap{ max-width:1430px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:clamp(40px,5vw,64px); }
@@ -1386,21 +1379,17 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       <!-- Column 1: Brand -->
       <div class="flex flex-col items-start gap-6" data-reveal="up">
         <div class="flex items-center gap-3">
-          <img id="footerLogo" src="assets/logofooter.png" alt="" width="137" height="55" class="h-9 w-auto" />
-          <div id="footerBrandMark" class="footer-brand-mark" hidden>
-            <span id="footerBrandLetter" class="footer-brand-letter" aria-hidden="true"></span>
-            <span class="footer-brand-text"><span id="footerBrandName" class="footer-brand-name"></span><span id="footerBrandSub" class="footer-brand-sub">Advanced Controls</span></span>
-          </div>
+          <img src="assets/logofooter.png" alt="" width="137" height="55" class="w-40 h-auto" />
         </div>
-        <p id="footerTagline" class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
+        <p class="text-sm leading-4.25 text-surface">Leading cybersecurity partner delivering enterprise-grade protection and compliance solutions aligned with Vision 2030.</p>
         <div class="flex flex-col items-start gap-3">
-          <h3 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h3>
-          <div id="footerBadges" class="flex flex-wrap items-center gap-2">
-            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 9001</span>
-            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 27001</span>
-            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 31000</span>
-            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 22301</span>
-            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CREST</span>
+          <h3 class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h3>
+          <div class="flex flex-wrap items-center gap-1">
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 9001</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 27001</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 31000</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 22301</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-3 text-xs leading-3.75 font-medium capitalize text-secondary">CREST</span>
           </div>
         </div>
       </div>
@@ -1408,7 +1397,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       <!-- Column 2: Useful Links -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
-        <ul id="footerLinks" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
           <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
           <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
@@ -1420,16 +1409,16 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
 
       <!-- Column 3: Products -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="200">
-        <h3 id="footerProductsTitle" class="text-xl font-semibold leading-6 capitalize text-white">Products</h3>
-        <ul id="footerProducts" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Products</h3>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="product.html?id=cyber" class="hover:text-white transition-colors">CyberMode</a></li>
           <li><a href="product.html?id=governance" class="hover:text-white transition-colors">GovernanceMode</a></li>
           <li><a href="product.html?id=intel" class="hover:text-white transition-colors">IntelMode</a></li>
-          <li><a href="product.html?id=risk" class="hover:text-white transition-colors">DataMode</a></li>
-          <li><a href="product.html?id=incident" class="hover:text-white transition-colors">TransferMode</a></li>
+          <li><a href="product.html?id=datamode" class="hover:text-white transition-colors">DataMode</a></li>
+          <li><a href="product.html?id=transfer" class="hover:text-white transition-colors">TransferMode</a></li>
           <li><a href="product.html?id=inspect" class="hover:text-white transition-colors">InspectMode</a></li>
-          <li><a href="product.html?id=vendor" class="hover:text-white transition-colors">GateMode</a></li>
-          <li><a href="product.html?id=audit" class="hover:text-white transition-colors">ITMode</a></li>
+          <li><a href="product.html?id=gatemode" class="hover:text-white transition-colors">GateMode</a></li>
+          <li><a href="product.html?id=itmode" class="hover:text-white transition-colors">ITMode</a></li>
         </ul>
       </div>
 
@@ -1451,25 +1440,27 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
             </span>
-            <a id="footerAddress" href="https://www.google.com/maps/search/?api=1&amp;query=RPPQ%2B8MX%2C%20Al%20Thumama%20Road%2C%20Qurtubah%2C%20Riyadh%2013248" target="_blank" rel="noopener" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors">Kingdom of Saudi Arabia — Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=RPPQ%2B8MX%2C%20Al%20Thumama%20Road%2C%20Qurtubah%2C%20Riyadh%2013248" target="_blank" rel="noopener" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors">Kingdom of Saudi Arabia — Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248</a>
           </li>
           <li class="flex items-center gap-3 min-w-0 w-full">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </span>
-            <a id="footerPhone" href="tel:920066215" class="min-w-0 text-sm leading-4.25 text-surface hover:text-white transition-colors">920066215</a>
+            <a href="tel:920066215" class="min-w-0 text-sm leading-4.25 text-surface hover:text-white transition-colors">920066215</a>
           </li>
           <li class="flex items-center gap-3 min-w-0 w-full">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <a id="footerEmail" href="mailto:info@advancedcontrols.sa" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors" style="overflow-wrap:anywhere">info@advancedcontrols.sa</a>
+            <a href="mailto:info@advancedcontrols.sa" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors" style="overflow-wrap:anywhere">info@advancedcontrols.sa</a>
           </li>
           <li class="flex items-center gap-3 min-w-0 w-full">
-            <span id="footerWebIcon" class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-            <a id="footerWeb" href="https://www.linkedin.com/company/advancedcontrols" target="_blank" rel="noopener" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors">linkedin.com/company/advancedcontrols</a>
+            <a href="https://www.linkedin.com/company/advancedcontrols" target="_blank" rel="noopener" class="flex items-center gap-3 min-w-0 w-full group">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2197_3466)"><path d="M10.6593 5.32956C11.7194 5.32956 12.7361 5.75069 13.4857 6.5003C14.2353 7.24992 14.6564 8.26661 14.6564 9.32672V13.9901H11.9917V9.32672C11.9917 8.97335 11.8513 8.63445 11.6014 8.38458C11.3515 8.13471 11.0126 7.99434 10.6593 7.99434C10.3059 7.99434 9.967 8.13471 9.71713 8.38458C9.46726 8.63445 9.32689 8.97335 9.32689 9.32672V13.9901H6.66211V9.32672C6.66211 8.26661 7.08324 7.24992 7.83285 6.5003C8.58247 5.75069 9.59916 5.32956 10.6593 5.32956Z" stroke="#44235C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.99681 5.99576H1.33203V13.9901H3.99681V5.99576Z" stroke="#44235C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.66442 3.99717C3.40028 3.99717 3.99681 3.40064 3.99681 2.66479C3.99681 1.92893 3.40028 1.3324 2.66442 1.3324C1.92856 1.3324 1.33203 1.92893 1.33203 2.66479C1.33203 3.40064 1.92856 3.99717 2.66442 3.99717Z" stroke="#44235C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_2197_3466"><rect width="15.9887" height="15.9887" fill="white"/></clipPath></defs></svg>
+              </span>
+              <span class="min-w-0 text-sm leading-4.25 text-surface underline group-hover:text-white transition-colors">linkedin.com/company/advancedcontrols</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -1480,7 +1471,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       <div class="flex items-center gap-6 text-sm leading-4.25 capitalize text-surface">
         <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="#" class="hover:text-white transition-colors">Terms</a>
-        <span id="footerSlogan">Consult · Secure · Succeed</span>
+        <span class="uppercase">Consult · Secure · Succeed</span>
       </div>
     </div>
   </div>
@@ -1782,20 +1773,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       demoSubtitle:'See the Threat. Predict the Attack. Detect the Adversary.',
       demoLabel:'Select Deployment Mode',
       demoLead:'Move from reactive security operations to proactive, intelligence-led cybersecurity on one unified platform.',
-      demoButton:'Request a Demo',
-      footer:{
-        brandSub:'Unified Threat Intelligence & Digital Risk Protection',
-        tagline:'IntelMode is a Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform.',
-        badges:['Proactive Detection','Predictive Intelligence','Unified At Scale','STIX 2.1'],
-        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
-        productsTitle:'Modules',
-        products:['Automated Intelligence Collection','AI-Powered Intelligence Analysis','Comprehensive IOC Extraction','Dark Web Intelligence','Threat Intelligence Enrichment','Vulnerability Intelligence'],
-        address:'Kingdom of Saudi Arabia - Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248',
-        phone:'+966 505 970 841',
-        email:'info@advancedcontrols.sa',
-        website:'www.advancedcontrols.sa',
-        slogan:'See the Threat. Predict the Attack. Detect the Adversary.'
-      }
+      demoButton:'Request a Demo'
     },
     inspect: {
       name:'InspectMode',
@@ -1811,19 +1789,6 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         stats:[['8','Core Modules'],['5-7','Tools Replaced','One unified platform'],['8,000+','Nuclei Templates','Community CVE coverage'],['114','NCA ECC Controls','5 domains'],['93','ISO 27001:2022','Annex A controls']]
       },
       heroHeadline:'AI-Augmented Security Assessment Platform',
-      footer:{
-        brandSub:'AI-Augmented Security Assessment Platform',
-        tagline:'An agent-based, AI-augmented security assessment platform built for deployment across corporate and industrial networks, delivering automated compromise assessment, forensics, vulnerability scanning, compliance auditing and threat detection from a single deployable tool.',
-        badges:['NCA ECC','NCA OT-CC','ISO 27001','IEC 62443'],
-        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
-        productsTitle:'Modules',
-        products:['Compromise Assessment','Forensics Collection','Vulnerability Assessment','Compliance Auditing','OT/ICS Assessment','AI Analysis Engine'],
-        address:'Riyadh, Kingdom of Saudi Arabia',
-        phone:'+966 505 970 841',
-        email:'info@advancedcontrols.sa',
-        website:'www.advancedcontrols.sa',
-        slogan:'ONE AGENT · EIGHT MISSIONS · ONE REPORT'
-      },
       heroDesc:'One AI-augmented agent unifies IT and OT security assessment, forensics, vulnerability scanning, compliance, and threat detection. Built for Saudi NCA and ISO 27001 needs, it works in portable, managed, and offline modes with evidence-grade output.',
       challengeCategory:'Threat Intelligence',
       challengesTitle:'Six Challenges. One Assessment Platform.',
@@ -1918,7 +1883,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       ],
       screensSubtitle:'InspectMode is operated from a central web dashboard backed by a REST API, with orchestration, task scheduling, evidence store and reporting in one console. Assessments run from a scan profile, results are aggregated centrally, and the reporting engine produces audit-ready PDF and HTML output mapped control by control to the selected framework. In the field, the same platform runs as a bootable forensic OS from USB, an always-on managed agent, and a passive network sensor or offline collector - each producing the same integrity-verified evidence package.'
     },
-    risk: {
+    datamode: {
       name:'DataMode',
       overview:{
         subtitle:'One Platform for the Data Management Office',
@@ -1933,16 +1898,6 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         stats:[['Saudi','Product'],['12','Integrated Modules'],['15','NDMO Data Domains'],['6','NDI Maturity Levels'],['AR / EN','Bilingual']]
       },
       heroHeadline:'One Platform for the Data Management Office',
-      footer:{
-        tagline:'A comprehensive Data Management Office platform for governance, catalog, metadata, quality, classification, privacy, and compliance - built in alignment with the Saudi NDMO framework, the National Data Index, and the PDPL.',
-        badges:['NDMO','NDI','PDPL','SDAIA'],
-        products:['DataMode','Governance','Catalog','Quality','Privacy','Compliance'],
-        address:'Riyadh, Kingdom of Saudi Arabia',
-        phone:'+966 505 970 841',
-        email:'info@advancedcontrols.sa',
-        website:'www.advancedcontrols.sa',
-        slogan:'GOVERN · MANAGE · PROTECT · COMPLY'
-      },
       heroDesc:'Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.',
       challengeCategory:'Enterprise Risk',
       challengesSubtitle:'Four Critical Challenges Organizations Face Without A Unified Data Management Platform - And How DataMode Addresses Each One.',
@@ -2038,7 +1993,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         { isText:true, text:'AR/EN', label:'Bilingual' }
       ]
     },
-    audit: {
+    itmode: {
       name:'ITMode',
       heroHeadline:'Enterprise IT Service Management & Delivery',
       heroDesc:'ITMode replaces fragmented tools with a single governed source of truth — Saudi-built and aligned to ITIL 4 and ISO/IEC 20000, from service design through continual improvement.',
@@ -2142,19 +2097,6 @@ capabilitiesTitle:'Built Into Every Module.',
       ],
       whyStats:[],
       whyIndustries:{ title:'Key industries & sectors', items:['Banks & Financial Services','Government & Public Sector','Healthcare & Life Sciences','Telecommunications & IT Services','Energy & Utilities','Education & Research','Retail & Consumer Services','Manufacturing & Industrial'] },
-      footer:{
-        brandSub:'Enterprise IT Service Management & Delivery',
-        tagline:'Advanced Controls for IT - Innovating Digital Governance & IT Automation Solutions',
-        badges:['ISO/IEC 20000','ITIL v4','AR / EN','Saudi Built Platform'],
-        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
-        productsTitle:'Modules',
-        products:['Service Catalog Management','Service Design','Service Transition','Service Delivery','Release & Deployment Management','Incident Management'],
-        address:'Headquarters: Riyadh, Saudi Arabia',
-        phone:'+966 505 970 841',
-        email:'info@advancedcontrols.sa',
-        website:'advancedcontrols.sa',
-        slogan:'Innovating Digital Governance & IT Automation Solutions'
-      },
       challengesTitle:'Five Challenges. One Service Platform.',
       challengesSubtitle:'Five Challenges Organizations Face Without A Unified IT Service Management Platform - And How ITMode Addresses Each One.',
       sixChallenges:[
@@ -2165,7 +2107,7 @@ capabilitiesTitle:'Built Into Every Module.',
         { title:'Evolving and Growing Service Demand', desc:'Service management needs change as the organization grows, and rigid tooling cannot follow.', solvedTitle:'Scalable &amp; Flexible Platform', solvedDesc:'Adapts to evolving business needs and supports digital transformation, scaling from small IT departments to enterprise-grade infrastructures.' }
       ]
     },
-    vendor: {
+    gatemode: {
       name:'GateMode',
       overview:{
         subtitle:'Secure Data Transfer, Inspection & Controlled Exchange',
@@ -2179,17 +2121,6 @@ capabilitiesTitle:'Built Into Every Module.',
         stats:[['12','Core Modules'],['6','Stage Security Pipeline'],['0','TCP/IP Packets Crossing'],['100%','Electrical Isolation'],['2','Deployment Form Factors']]
       },
       heroHeadline:'Secure Data Transfer, Inspection & Controlled Exchange',
-      footer:{
-        brandSub:'Hardware-Enforced Air-Gapped Transfer',
-        tagline:'A hardware-enforced, bidirectional air-gapped transfer platform that ensures cryptographic proof of integrity and automated media sanitization across classified and unclassified domains.',
-        badges:['NCA ECC','SAMA CSF','ISO 27001','IEC 62443'],
-        products:['GateMode','Secure Transfer','Integrity Pipeline','Audit Journal','Compliance','Deployment Models'],
-        address:'Riyadh, Kingdom of Saudi Arabia',
-        phone:'+966 505 970 841',
-        email:'info@advancedcontrols.sa',
-        website:'www.advancedcontrols.sa',
-        slogan:'ZERO TRUST · ZERO NETWORK · TOTAL CONTROL'
-      },
       heroDesc:'A zero-trust, on-premise gateway that inspects, disarms, and approves every file crossing USB, removable media, and cross-domain transfers — fully audited with a complete chain of custody.',
       challengeCategory:'Vendor Risk',
       challengesTitle:'Five Challenges. One Appliance.',
@@ -2287,7 +2218,7 @@ capabilitiesTitle:'Built Into Every Module.',
         ['Compliance (NCA / IEC 62443)', 'Yes', 'Partial', 'No', 'Partial']
       ]
     },
-    incident: {
+    transfer: {
       name:'TransferMode',
       overview:{
         subtitle:'Secure Data Transfer, Inspection & Controlled Exchange',
@@ -2408,20 +2339,7 @@ capabilitiesTitle:'Built Into Every Module.',
       demoSubtitle:'Secure · Controlled · Compliant',
       demoLabel:'Select Deployment Mode',
       demoLead:'Bring every inbound and outbound file transfer under one verified, approved and fully logged gateway.',
-      demoButton:'Request a Demo',
-      footer:{
-        brandSub:'Secure Data Transfer, Inspection & Controlled Exchange',
-        tagline:'A zero-trust gateway that secures every file entering or leaving your organization - across USB, removable media, and cross-domain transfers - with multi-engine malware scanning, content disarm & reconstruction, and enforced approval workflows.',
-        badges:['Zero-Trust','On-Premise','Air-Gap Capable','Compliance-Ready'],
-        usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
-        productsTitle:'Modules',
-        products:['Secure USB File Transfer','Inbound Transfer (External → Internal)','Outbound Transfer (Internal → External)','Multi-Engine Malware Scanning','Content Disarm & Reconstruction (CDR)','Identity & Access (AD / LDAP)'],
-        address:'Kingdom of Saudi Arabia - Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248',
-        phone:'+966 505 970 841',
-        email:'info@advancedcontrols.sa',
-        website:'www.advancedcontrols.sa',
-        slogan:'Secure · Controlled · Compliant'
-      }
+      demoButton:'Request a Demo'
     }
   };
 
@@ -2602,7 +2520,7 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:null, w:461, h:322, title:'Reports', desc:'Real-time analytics export-ready reporting.' },
       { img:null, w:461, h:322, title:'Dashboards', desc:'Real-time analytics and dynamic dashboards' }
     ],
-    risk: [
+    datamode: [
       { img:null, w:461, h:322, title:'Organization Hierarchy &amp; Department Mapping', desc:'Auto-generated corporate structure from defined departments - with employee counts, sub-departments, and ownership.' },
       { img:null, w:461, h:322, title:'Strategic Roadmap &amp; Initiative Matrix',       desc:'Dynamic quarterly roadmap auto-built from objectives, projects, and budgets - tracked from strategy to execution.' },
       { img:null, w:461, h:322, title:'Centralized Policy Management',               desc:'Workflow-driven document control from Draft to Review to Approval, aligned with NDMO documentation requirements.' },
@@ -2626,7 +2544,7 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:null, w:461, h:322, title:'Cross-Framework Matrix', desc:'Cross-framework matrix across NCA, ISO 27001, IEC 62443 and CIS.' },
       { img:null, w:461, h:322, title:'Field Deployments',      desc:'Bootable forensic OS, managed agent, passive sensor and offline collector deployments.' }
     ],
-    audit: [
+    itmode: [
       { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
       { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
       { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
@@ -2634,7 +2552,7 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
       { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' }
     ],
-    incident: [
+    transfer: [
       { img:null, w:461, h:322, title:'Live Dashboard', desc:'Platform interface - real-time visibility into threat detection, transfer volumes, and system health.' },
       { img:null, w:461, h:322, title:'Transfer Management', desc:'Platform interface - centralized control for approving, monitoring, and auditing all file transfer requests.' },
       { img:null, w:461, h:322, title:'Scan Results', desc:'Platform interface - detailed inspection report showing multi-AV detection and CDR sanitization actions.' },
@@ -2662,7 +2580,7 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:null, w:461, h:322, title:'Reporting &amp; Visualization', desc:'Platform interface — executive and operational reporting built from live intelligence.', wide:true },
       { img:null, w:461, h:322, title:'Dashboard', desc:'Platform interface - the unified view across intelligence, assets, alerts and reports.', wide:true }
     ],
-    vendor: [
+    gatemode: [
       { img:null, w:461, h:322, title:'Audit Trail Dashboard',        desc:'Transfer logs with time, user, direction, SHA-256 file hash and verification status, with CSV and PDF export.' },
       { img:null, w:461, h:322, title:'6-Step Secure Transfer',       desc:'Upload and manifest, approval gate, write and unmount, hardware switch, signature verification and secure wipe.' },
       { img:null, w:461, h:322, title:'Transfer Integrity Pipeline',  desc:'Approval gate, manifest signing, SSD write and unmount, switch coordination, signature verification and secure wipe.' },
@@ -2826,7 +2744,7 @@ capabilitiesTitle:'Built Into Every Module.',
   var FRAMEWORKS = ['NCA ECC','Aramco TPCS','NCA CSCC','NDMO-PDPL','ISO 27001','NCA OTCC','DGA','ISO 31000','ISO 22301','NCA CCC','CMA','PCI DSS','NCA TCC','SAMA CSF','NCA OSMAC','NCA DCC'];
   var PRODUCT_ICONS = {
     cyber:'assets/Container.png', governance:'assets/Vector.png', intel:'assets/itmode.png', inspect:'assets/inspectmode.png',
-    risk:'assets/datamode.png', audit:'assets/itmode-icon.png', vendor:'assets/gavermode.png', incident:'assets/transmode.png'
+    datamode:'assets/datamode.png', itmode:'assets/itmode-icon.png', gatemode:'assets/gavermode.png', transfer:'assets/transmode.png'
   };
   var fwList = p.frameworks || FRAMEWORKS;
 
@@ -2945,56 +2863,6 @@ capabilitiesTitle:'Built Into Every Module.',
 
   var demoPlatformEl = document.getElementById('demoPlatform');
   if (demoPlatformEl) demoPlatformEl.value = p.name;
-  if (p.footer) {
-    var ft = p.footer;
-    var setText = function(id, t){ var el = document.getElementById(id); if (el && t != null) el.textContent = t; };
-    document.getElementById('footerLogo').hidden = true;
-    document.getElementById('footerBrandMark').hidden = false;
-    setText('footerBrandLetter', p.name.charAt(0));
-    setText('footerBrandName', p.name);
-    if (ft.brandSub) setText('footerBrandSub', ft.brandSub);
-    setText('footerTagline', ft.tagline);
-    document.getElementById('footerCertTitle').hidden = true;
-    var fBadges = document.getElementById('footerBadges');
-    fBadges.innerHTML = '';
-    ft.badges.forEach(function(b){
-      var sp = document.createElement('span');
-      sp.className = 'flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium text-secondary';
-      sp.textContent = b;
-      fBadges.appendChild(sp);
-    });
-    if (ft.productsTitle) setText('footerProductsTitle', ft.productsTitle);
-    if (ft.usefulLinks) {
-      var fLinks = document.getElementById('footerLinks');
-      fLinks.innerHTML = '';
-      ft.usefulLinks.forEach(function(l){
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = l[1];
-        a.className = 'hover:text-white transition-colors';
-        a.textContent = l[0];
-        li.appendChild(a);
-        fLinks.appendChild(li);
-      });
-    }
-    var fProd = document.getElementById('footerProducts');
-    fProd.innerHTML = '';
-    ft.products.forEach(function(name){
-      var li = document.createElement('li');
-      var a = document.createElement('a');
-      a.href = 'product.html?id=' + id;
-      a.className = 'hover:text-white transition-colors';
-      a.textContent = name;
-      li.appendChild(a);
-      fProd.appendChild(li);
-    });
-    setText('footerAddress', ft.address);
-    var fPhone = document.getElementById('footerPhone'); fPhone.textContent = ft.phone; fPhone.href = 'tel:' + ft.phone.replace(/[^+\d]/g, '');
-    var fEmail = document.getElementById('footerEmail'); fEmail.textContent = ft.email; fEmail.href = 'mailto:' + ft.email;
-    var fWeb = document.getElementById('footerWeb'); fWeb.textContent = ft.website; fWeb.href = 'https://' + ft.website;
-    document.getElementById('footerWebIcon').innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6E3894" stroke-width="1.5"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z" stroke="#6E3894" stroke-width="1.5"/></svg>';
-    setText('footerSlogan', ft.slogan);
-  }
   if (p.demoTitle) {
     document.getElementById('demo-heading').textContent = p.demoTitle;
     document.getElementById('demoSubmitBtn').textContent = p.demoButton || p.demoTitle;

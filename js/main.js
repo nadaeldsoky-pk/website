@@ -174,7 +174,7 @@
       {icon:'risk',        name:'Incident Intelligence',       desc:'Enrich incident data with real-time threat context and attribution.',                       tags:['Attribution','Context']},
       {icon:'dashboard_m', name:'Intelligence Reporting',      desc:'Produce strategic, tactical, and operational threat reports for stakeholders.',             tags:['Strategic','Tactical']}
     ]},
-    risk: { title:'RiskMode Modules & Processes', subtitle:'A quantitative risk platform turning ambiguous exposure data into board-ready, data-driven risk intelligence.', modules:[
+    datamode: { title:'RiskMode Modules & Processes', subtitle:'A quantitative risk platform turning ambiguous exposure data into board-ready, data-driven risk intelligence.', modules:[
       {icon:'search',      name:'Risk Identification',    desc:'Systematically identify and categorize risks across all business units and domains.',            tags:['Discovery','Taxonomy']},
       {icon:'assessment',  name:'Risk Assessment',        desc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.',    tags:['Quantitative','Qualitative']},
       {icon:'playbook',    name:'Risk Treatment Plans',   desc:'Define, assign, and track remediation and mitigation plans with owners and due dates.',         tags:['Mitigation','Tracking']},
@@ -184,7 +184,7 @@
       {icon:'document',    name:'Risk Appetite Framework',desc:'Define and monitor risk appetite statements and tolerance thresholds by domain.',               tags:['Appetite','Tolerance']},
       {icon:'dashboard_m', name:'Executive Reporting',    desc:'Board-level risk dashboards with drill-down capability and automated distribution.',            tags:['Board','Drill-Down']}
     ]},
-    audit: { title:'AuditMode Modules & Processes', subtitle:'A complete audit lifecycle platform that eliminates manual effort and delivers continuous, evidence-backed assurance.', modules:[
+    itmode: { title:'AuditMode Modules & Processes', subtitle:'A complete audit lifecycle platform that eliminates manual effort and delivers continuous, evidence-backed assurance.', modules:[
       {icon:'framework',   name:'Audit Planning',          desc:'Annual planning with risk-based prioritization, resource allocation, and calendar management.', tags:['Risk-Based','Planning']},
       {icon:'playbook',    name:'Work Program Management', desc:'Build and assign audit work programs from pre-built and customizable templates.',               tags:['Templates','Assignment']},
       {icon:'document',    name:'Evidence Collection',     desc:'Request, upload, and automatically link evidence to audit findings and controls.',              tags:['Requests','Auto-Link']},
@@ -194,7 +194,7 @@
       {icon:'chart',       name:'Continuous Auditing',     desc:'Automate data analytics and control testing for continuous assurance and monitoring.',          tags:['Automated','Continuous']},
       {icon:'dashboard_m', name:'Audit Universe',          desc:'Maintain and update the complete audit universe registry with risk ratings.',                   tags:['Universe','Ratings']}
     ]},
-    vendor: { title:'VendorMode Modules & Processes', subtitle:'An end-to-end third-party risk platform giving you full visibility and control over your entire vendor ecosystem.', modules:[
+    gatemode: { title:'VendorMode Modules & Processes', subtitle:'An end-to-end third-party risk platform giving you full visibility and control over your entire vendor ecosystem.', modules:[
       {icon:'workflow_m',  name:'Vendor Onboarding',              desc:'Streamline vendor registration, due diligence, and contract intake workflows.',          tags:['Onboarding','Due Diligence']},
       {icon:'assessment',  name:'Risk Assessment Questionnaires', desc:'Send automated questionnaires with tiered scoring, weighting, and evidence requests.',  tags:['Automated','Scoring']},
       {icon:'risk',        name:'Vendor Risk Scoring',            desc:'Aggregate scores across security, financial, and operational risk dimensions.',          tags:['Aggregate','Multi-Dimension']},
@@ -204,7 +204,7 @@
       {icon:'compliance_m',name:'Remediation Workflow',           desc:'Assign and track vendor remediation tasks with escalation rules and SLAs.',              tags:['Remediation','SLAs']},
       {icon:'dashboard_m', name:'Vendor Reporting',               desc:'Generate vendor risk reports for board, regulators, and internal stakeholders.',         tags:['Board','Regulators']}
     ]},
-    incident: { title:'IncidentMode Modules & Processes', subtitle:'A structured incident response platform enabling faster containment, accurate reporting, and systematic improvement.', modules:[
+    transfer: { title:'IncidentMode Modules & Processes', subtitle:'A structured incident response platform enabling faster containment, accurate reporting, and systematic improvement.', modules:[
       {icon:'incident_m',  name:'Incident Detection & Intake', desc:'Structured intake forms with auto-classification, severity scoring, and assignment.',      tags:['Auto-Classification','Severity']},
       {icon:'playbook',    name:'Response Playbooks',          desc:'SANS-aligned playbooks with step-by-step response procedures for each incident type.',     tags:['SANS','Playbooks']},
       {icon:'workflow_m',  name:'Task Assignment & Escalation',desc:'Assign response tasks with SLAs, automated escalation rules, and team notifications.',    tags:['SLAs','Escalation']},
@@ -253,10 +253,10 @@
     cyber:      '<img src="assets/Container.png"        width="70" height="70" alt="CyberMode"      style="display:block;object-fit:contain;" />',
     governance: '<img src="assets/Vector.png"           width="70" height="70" alt="GovernanceMode" style="display:block;object-fit:contain;" />',
     intel:      '<img src="assets/itmode.png"      width="70" height="70" alt="IntelMode"      style="display:block" />',
-    risk:       '<img src="assets/datamode.png"       width="70" height="70" alt="DataMode"       style="display:block" />',
-    audit:      '<img src="assets/itmode-icon.png"    width="70" height="70" alt="ITMode"      style="display:block;object-fit:contain;" />',
-    vendor:     '<img src="assets/gavermode.png"     width="70" height="70" alt="GateMode"     style="display:block" />',
-    incident:   '<img src="assets/transmode.png"   width="70" height="70" alt="TransferMode"   style="display:block" />',
+    datamode:   '<img src="assets/datamode.png"       width="70" height="70" alt="DataMode"       style="display:block" />',
+    itmode:     '<img src="assets/itmode-icon.png"    width="70" height="70" alt="ITMode"      style="display:block;object-fit:contain;" />',
+    gatemode:   '<img src="assets/gavermode.png"     width="70" height="70" alt="GateMode"     style="display:block" />',
+    transfer:   '<img src="assets/transmode.png"   width="70" height="70" alt="TransferMode"   style="display:block" />',
     inspect:    '<img src="assets/inspectmode.png"  width="70" height="70" alt="InspectMode"    style="display:block;object-fit:contain;" />'
   };
 
@@ -293,7 +293,7 @@
         { title:'Unprioritized Vulnerabilities', desc:'CVEs are triaged by severity alone, missing which ones are actively being exploited against your assets.', solvedTitle:'Vulnerability Intelligence', solvedDesc:'Prioritize CVEs based on active exploitation and real asset criticality, not generic severity scores.' },
         { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
       ] },
-    { key:'risk', name:'DataMode', desc:'Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.',
+    { key:'datamode', name:'DataMode', desc:'Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.',
       challengeCategory:'Enterprise Risk',
       sixChallenges:[
         { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
@@ -303,7 +303,7 @@
         { title:'No Early Warning System', desc:'Emerging risk trends go unnoticed until they have already become active incidents.', solvedTitle:'KRI Monitoring', solvedDesc:'Threshold alerts and trend dashboards flag key risk indicators before they escalate.' },
         { title:'Unclear Risk Tolerance', desc:'Teams lack a documented reference for how much risk the organization is willing to accept in each domain.', solvedTitle:'Risk Appetite Framework', solvedDesc:'Define and monitor risk appetite statements and tolerance thresholds by domain.' }
       ] },
-    { key:'audit', name:'ITMode', desc:'Enterprise IT Service Management & Delivery — one governed source of truth, aligned to ITIL 4 and ISO/IEC 20000.',
+    { key:'itmode', name:'ITMode', desc:'ITMode replaces fragmented tools with a single governed source of truth — Saudi-built and aligned to ITIL 4 and ISO/IEC 20000, from service design through continual improvement.',
       challengeCategory:'Audit Management',
       sixChallenges:[
         { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
@@ -313,7 +313,7 @@
         { title:'Unplanned Audit Coverage', desc:'Audit plans built from memory rather than a structured, risk-ranked view of the full audit universe.', solvedTitle:'Audit Planning', solvedDesc:'Risk-based prioritization, resource allocation, and calendar management across the audit universe.' },
         { title:'Manual Report Drafting', desc:'Days spent formatting findings summaries and ratings into a presentable report for stakeholders.', solvedTitle:'Audit Reporting', solvedDesc:'Auto-populated findings summaries and ratings generate draft audit reports in minutes.' }
       ] },
-    { key:'vendor', name:'GateMode', desc:'Manage third-party and vendor risk assessments end to end.',
+    { key:'gatemode', name:'GateMode', desc:'A zero-trust, on-premise gateway that inspects, disarms, and approves every file crossing USB, removable media, and cross-domain transfers — fully audited with a complete chain of custody.',
       challengeCategory:'Vendor Risk',
       sixChallenges:[
         { title:'No Vendor Visibility', desc:'Critical suppliers with access to sensitive systems never formally assessed or continuously monitored for risk.', solvedTitle:'Vendor Onboarding', solvedDesc:'Streamlined registration and due diligence bring every vendor into full view from day one.' },
@@ -323,7 +323,7 @@
         { title:'Hidden Sub-Processor Risk', desc:'Vendors quietly rely on their own sub-processors, extending your exposure beyond direct contracts.', solvedTitle:'Fourth-Party Management', solvedDesc:'Map and assess sub-processors and sub-contractors for complete supply chain risk visibility.' },
         { title:'Untracked Contract Renewals', desc:'SLAs and renewal dates tracked in spreadsheets quietly lapse without anyone noticing in time.', solvedTitle:'Contract Management', solvedDesc:'Track vendor contracts, SLAs, and renewal dates with automated alerts before anything lapses.' }
       ] },
-    { key:'incident', name:'TransferMode', desc:'Coordinate incident response, escalation, and regulatory reporting.',
+    { key:'transfer', name:'TransferMode', desc:'A zero-trust gateway for every file entering or leaving your organization — across USB, removable media and cross-domain transfers — with multi-engine malware scanning, Content Disarm & Reconstruction, and enforced approval workflows.',
       challengeCategory:'Incident Response',
       sixChallenges:[
         { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },
@@ -333,7 +333,7 @@
         { title:'Unclear Task Ownership', desc:'Response tasks assigned verbally or over chat, with no SLA tracking or automatic escalation when work stalls.', solvedTitle:'Task Assignment &amp; Escalation', solvedDesc:'SLA-bound task assignment with automated escalation rules and team notifications.' },
         { title:'No Continuous Improvement', desc:'Incidents close without a structured review, so the same root causes resurface in future incidents.', solvedTitle:'Post-Incident Review', solvedDesc:'Structured lessons-learned and root-cause analysis workflows drive continuous improvement.' }
       ] },
-    { key:'inspect', name:'InspectMode', desc:'AI-augmented compromise assessment, forensics and vulnerability scanning for IT and OT networks.',
+    { key:'inspect', name:'InspectMode', desc:'One AI-augmented agent unifies IT and OT security assessment, forensics, vulnerability scanning, compliance, and threat detection. Built for Saudi NCA and ISO 27001 needs, it works in portable, managed, and offline modes with evidence-grade output.',
       challengeCategory:'Security Assessment',
       sixChallenges:[
         { title:'Fragmented Tooling', desc:'Separate compromise assessment, vulnerability scanning, forensics and compliance tools create fragmented visibility and slow response.', solvedTitle:'A Single Unified Agent', solvedDesc:'One agent binary covers compromise assessment, forensics, vulnerability scanning, OT/ICS assessment and compliance auditing.' },
