@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=13" />
+<link rel="stylesheet" href="css/styles.css?v=30" />
 
 <style>
 /* ===== Product hero — dome as full background ===== */
@@ -42,6 +42,7 @@
     linear-gradient(115deg, transparent 38%, rgba(214,180,255,.55) 48%, rgba(232,210,255,.85) 50%, rgba(214,180,255,.55) 52%, transparent 62%),
     radial-gradient(120% 90% at 50% 0%, #5b2f7a 0%, #3a1a52 38%, #1c0e2b 75%, #120918 100%);
 }
+.prod-hero-video{ position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; }
 
 .prod-hero-content {
   position: relative;
@@ -132,6 +133,7 @@
 .ov-wrap{ max-width:1430px; margin:0 auto; display:flex; flex-direction:column; gap:clamp(28px,4vw,52px); }
 .ov-head{ text-align:center; display:flex; flex-direction:column; gap:14px; align-items:center; }
 .ov-title{ font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(1.15rem,5.2vw,52px); letter-spacing:.32em; overflow-wrap:anywhere; text-transform:uppercase; color:#2E1B4E; margin:0; padding-left:.32em; }
+.ov-title-row .ov-title{ padding-left:0; }
 .ov-sub{ font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(.95rem,1.3vw,18px); color:#6B5B7A; margin:0; }
 .ov-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
 .ov-card{ background:#FFFDFE; border:1px solid #E9DDF3; border-radius:24px; padding:clamp(20px,2vw,24px); display:flex; flex-direction:column; gap:12px; box-shadow:0 1px 2px rgba(0,0,0,.03); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
@@ -140,6 +142,16 @@
 .ov-kicker--caps{ font-size:12px; letter-spacing:.24em; text-transform:uppercase; }
 .ov-stats--caps .ov-stat em{ font-style:normal; font-family:'Inter',sans-serif; font-size:clamp(.72rem,.85vw,13px); color:#D9C9E8; margin-top:-4px; }
 .ov-stat span{ text-transform:uppercase; letter-spacing:.2em; font-size:clamp(.66rem,.8vw,12px); }
+.ov-title-row{ display:flex; align-items:center; justify-content:center; gap:0; }
+.ov-title-icon{ flex:none; position:relative; z-index:0; display:inline-flex; align-items:center; justify-content:center; width:clamp(2.1rem,9vw,92px); height:clamp(2.1rem,9vw,92px); margin-right:clamp(-16px,-1.6vw,-8px); opacity:0; transform:scale(.3) rotate(-25deg); }
+.ov-title-icon img{ width:100%; height:100%; object-fit:contain; display:block; filter:drop-shadow(0 3px 8px rgba(110,56,148,.32)); }
+.ov-title-row .ov-title{ position:relative; z-index:1; }
+@keyframes ovTitleIconIn{
+  0%{ opacity:0; transform:scale(.3) rotate(-25deg); filter:blur(4px); }
+  55%{ opacity:1; transform:scale(1.2) rotate(6deg); filter:blur(0); }
+  100%{ opacity:1; transform:scale(1) rotate(0); filter:blur(0); }
+}
+.ov-head.revealed .ov-title-icon{ animation:ovTitleIconIn .85s cubic-bezier(.34,1.56,.64,1) .2s both; }
 .ov-card h3{ font-family:'Inter',sans-serif; font-weight:600; font-size:clamp(1.05rem,1.5vw,22px); line-height:1.3; color:#44235C; margin:0; }
 .ov-card p.ov-text{ font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(.9rem,1.1vw,16px); line-height:1.55; color:#6B5B7A; margin:0; }
 .ov-chips{ display:flex; flex-wrap:wrap; gap:12px; margin-top:6px; }
@@ -1142,7 +1154,10 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
   <section id="overviewSection" class="ov-section" aria-labelledby="ovTitle" hidden>
     <div class="ov-wrap">
       <div class="ov-head" data-reveal="up">
-        <h2 id="ovTitle" class="ov-title"></h2>
+        <div class="ov-title-row">
+          <span class="ov-title-icon" aria-hidden="true"><img id="ovTitleIcon" alt="" /></span>
+          <h2 id="ovTitle" class="ov-title"></h2>
+        </div>
         <p id="ovSub" class="ov-sub"></p>
       </div>
       <div id="ovGrid" class="ov-grid"></div>
@@ -1367,7 +1382,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
 <!-- ===================== FOOTER ===================== -->
 <footer id="about" class="footer-bg px-6 sm:px-16 py-16 sm:py-20 lg:py-25 text-surface">
   <div class="mx-auto flex max-w-357.5 flex-col gap-16">
-    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.36fr_1fr_1fr_1fr_1.36fr] lg:gap-12">
       <!-- Column 1: Brand -->
       <div class="flex flex-col items-start gap-6" data-reveal="up">
         <div class="flex items-center gap-3">
@@ -1381,10 +1396,11 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         <div class="flex flex-col items-start gap-3">
           <h3 id="footerCertTitle" class="text-xl font-semibold leading-6 capitalize text-white">Certifications</h3>
           <div id="footerBadges" class="flex flex-wrap items-center gap-2">
-            <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NCA</span>
-            <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CST</span>
-            <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NDMO</span>
-            <span class="flex  items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">NORA v2</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 9001</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 27001</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 31000</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">ISO 22301</span>
+            <span class="flex items-center justify-center rounded-lg border-[0.5px] border-borderc2 bg-surface py-1.5 px-2 text-xs leading-3.75 font-medium capitalize text-secondary">CREST</span>
           </div>
         </div>
       </div>
@@ -1393,11 +1409,12 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="100">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
         <ul id="footerLinks" class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
-          <li><a href="index.html"                    class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="index.html#products"           class="hover:text-white transition-colors">Product</a></li>
+          <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
           <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
-          <li><a href="contact.html"                  class="hover:text-white transition-colors">Contact</a></li>
-          <li><a href="about.html"                    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#"             class="hover:text-white transition-colors">Media</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About</a></li>
+          <li><a href="contact.html"  class="hover:text-white transition-colors">Contact us</a></li>
         </ul>
       </div>
 
@@ -1410,37 +1427,49 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
           <li><a href="product.html?id=intel" class="hover:text-white transition-colors">IntelMode</a></li>
           <li><a href="product.html?id=risk" class="hover:text-white transition-colors">DataMode</a></li>
           <li><a href="product.html?id=incident" class="hover:text-white transition-colors">TransferMode</a></li>
+          <li><a href="product.html?id=inspect" class="hover:text-white transition-colors">InspectMode</a></li>
           <li><a href="product.html?id=vendor" class="hover:text-white transition-colors">GateMode</a></li>
+          <li><a href="product.html?id=audit" class="hover:text-white transition-colors">ITMode</a></li>
         </ul>
       </div>
 
-      <!-- Column 4: Contact -->
+      <!-- Column 4: Services -->
+      <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="260">
+        <h3 class="text-xl font-semibold leading-6 capitalize text-white">Services</h3>
+        <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
+          <li><a href="consultation.html" class="hover:text-white transition-colors">Consultation</a></li>
+          <li><a href="security-services.html" class="hover:text-white transition-colors">Security Services</a></li>
+          <li><a href="solutions.html" class="hover:text-white transition-colors">Solutions</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Contact -->
       <div class="flex flex-col items-start gap-6" data-reveal="up" data-delay="300">
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Contact</h3>
         <ul class="flex w-full flex-col items-start gap-4">
-          <li class="flex items-center gap-3">
+          <li class="flex items-center gap-3 min-w-0 w-full">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z" stroke="#6E3894" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.2" stroke="#6E3894" stroke-width="1.5"/></svg>
             </span>
-            <span id="footerAddress" class="text-sm leading-4.25 text-surface">Kingdom of Saudi Arabia — Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248</span>
+            <a id="footerAddress" href="https://www.google.com/maps/search/?api=1&amp;query=RPPQ%2B8MX%2C%20Al%20Thumama%20Road%2C%20Qurtubah%2C%20Riyadh%2013248" target="_blank" rel="noopener" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors">Kingdom of Saudi Arabia — Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248</a>
           </li>
-          <li class="flex items-center gap-3">
+          <li class="flex items-center gap-3 min-w-0 w-full">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z" stroke="#6E3894" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </span>
-            <a id="footerPhone" href="tel:920066215" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">920066215</a>
+            <a id="footerPhone" href="tel:920066215" class="min-w-0 text-sm leading-4.25 text-surface hover:text-white transition-colors">920066215</a>
           </li>
-          <li class="flex items-center gap-3">
+          <li class="flex items-center gap-3 min-w-0 w-full">
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#6E3894" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <a id="footerEmail" href="mailto:info@advancedcontrols.sa" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">info@advancedcontrols.sa</a>
+            <a id="footerEmail" href="mailto:info@advancedcontrols.sa" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors" style="overflow-wrap:anywhere">info@advancedcontrols.sa</a>
           </li>
-          <li class="flex items-center gap-3">
+          <li class="flex items-center gap-3 min-w-0 w-full">
             <span id="footerWebIcon" class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-surface" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6E3894" stroke-width="1.5"/><path d="M7.5 10v6.5M7.5 7.2v.1M11 16.5V13c0-1.4 1-2.4 2.3-2.4S15.5 11.6 15.5 13v3.5" stroke="#6E3894" stroke-width="1.5" stroke-linecap="round"/></svg>
             </span>
-            <a id="footerWeb" href="https://linkedin.com" target="_blank" rel="noopener" class="text-sm leading-4.25 text-surface hover:text-white transition-colors">linkedin.com</a>
+            <a id="footerWeb" href="https://www.linkedin.com/company/advancedcontrols" target="_blank" rel="noopener" class="min-w-0 text-sm leading-4.25 text-surface underline hover:text-white transition-colors">linkedin.com/company/advancedcontrols</a>
           </li>
         </ul>
       </div>
@@ -1473,6 +1502,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
   var data = {
     cyber: {
       name:'CyberMode',
+      heroVideo:'assets/CybermoodHero.mp4',
       overview:{
         subtitle:'One Platform for Cybersecurity Management',
         cards:[
@@ -1760,7 +1790,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
         productsTitle:'Modules',
         products:['Automated Intelligence Collection','AI-Powered Intelligence Analysis','Comprehensive IOC Extraction','Dark Web Intelligence','Threat Intelligence Enrichment','Vulnerability Intelligence'],
-        address:'Kingdom of Saudi Arabia - Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248',
+        address:'Kingdom of Saudi Arabia - Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248',
         phone:'+966 505 970 841',
         email:'info@advancedcontrols.sa',
         website:'www.advancedcontrols.sa',
@@ -2386,7 +2416,7 @@ capabilitiesTitle:'Built Into Every Module.',
         usefulLinks:[['Home','index.html'],['Platform','#top'],['Modules','#coreModulesTitle'],['Compliance','#frameworksTitle'],['Contact','#request-demo']],
         productsTitle:'Modules',
         products:['Secure USB File Transfer','Inbound Transfer (External → Internal)','Outbound Transfer (Internal → External)','Multi-Engine Malware Scanning','Content Disarm & Reconstruction (CDR)','Identity & Access (AD / LDAP)'],
-        address:'Kingdom of Saudi Arabia - Riyadh. RPPQ+8MX, Al Thumama Road, Qurtubah, Riyadh 13248',
+        address:'Kingdom of Saudi Arabia - Riyadh. Al Thumama Road, Qurtubah, Riyadh 13248',
         phone:'+966 505 970 841',
         email:'info@advancedcontrols.sa',
         website:'www.advancedcontrols.sa',
@@ -2416,13 +2446,31 @@ capabilitiesTitle:'Built Into Every Module.',
     setAttr('twTitle', 'content', pageTitle);
     setAttr('twDesc', 'content', desc);
   })();
-  document.getElementById('productHeadline').textContent = p.heroHeadline || ('One Platform for ' + p.challengeCategory.replace(/&amp;/g, '&'));
   /* Hero subtitle — shared across every product by default; a product can override it */
-  document.getElementById('productDesc').textContent = p.heroDesc ||
+  var heroDescText = p.heroDesc ||
     'One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into posture, risk and compliance for leadership.';
+  /* Headline shows only the first line/sentence; the subtitle shows the remainder */
+  var heroFirstLineMatch = /^(.*?[.!?])(\s+|$)/.exec(heroDescText);
+  var heroFirstLine = heroFirstLineMatch ? heroFirstLineMatch[1] : heroDescText;
+  var heroRest = heroFirstLineMatch ? heroDescText.slice(heroFirstLineMatch[0].length) : '';
+  document.getElementById('productHeadline').textContent = heroFirstLine;
+  var productDescEl = document.getElementById('productDesc');
+  productDescEl.textContent = heroRest;
+  productDescEl.hidden = !heroRest;
 
   var heroOverviewLabel = document.getElementById('heroOverviewLabel');
   if (heroOverviewLabel) heroOverviewLabel.textContent = 'Platform Overview';
+
+  /* Optional per-product hero background video (replaces the gradient) */
+  if (p.heroVideo) {
+    var heroSection = document.querySelector('.prod-hero');
+    var heroVideo = document.createElement('video');
+    heroVideo.className = 'prod-hero-video';
+    heroVideo.autoplay = true; heroVideo.muted = true; heroVideo.loop = true;
+    heroVideo.playsInline = true; heroVideo.preload = 'auto'; heroVideo.setAttribute('aria-hidden', 'true');
+    heroVideo.innerHTML = '<source src="' + p.heroVideo + '" type="video/mp4" />';
+    heroSection.prepend(heroVideo);
+  }
 
   /* 16 Core Modules — shared across every product by default; a product can
      override both the title and the list (e.g. GovernanceMode's own EGRC set) */
@@ -3061,8 +3109,13 @@ capabilitiesTitle:'Built Into Every Module.',
   if (p.overview) {
     var ov = p.overview;
     document.getElementById('overviewSection').hidden = false;
-    document.getElementById('ovTitle').textContent = p.name;
+    var ovTitleEl = document.getElementById('ovTitle');
+    ovTitleEl.textContent = p.name.slice(1);
+    ovTitleEl.setAttribute('aria-label', p.name);
     document.getElementById('ovSub').textContent = ov.subtitle;
+    var ovTitleIcon = document.getElementById('ovTitleIcon');
+    ovTitleIcon.src = PRODUCT_ICONS[id] || PRODUCT_ICONS.cyber;
+    ovTitleIcon.alt = '';
     var ovGrid = document.getElementById('ovGrid');
     ov.cards.forEach(function(c, i){
       var card = document.createElement('article');

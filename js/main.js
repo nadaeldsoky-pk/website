@@ -261,7 +261,7 @@
   };
 
   var products = [
-    { key:'cyber', name:'CyberMode', desc:'Automate compliance, strategy, and committee management.',
+    { key:'cyber', name:'CyberMode', desc:'A unified GRC and cybersecurity platform for managing governance, risk, compliance, awareness, assessments, and related activities in one system.',
       challengeCategory:'Cybersecurity Management',
       sixChallenges:[
         { title:'Fragmented Cybersecurity Management', desc:'Disparate tools and disconnected processes create inefficiency, inconsistency, and lack of unified control.', solvedTitle:'Unified Cybersecurity Platform', solvedDesc:'A single integrated system that centralizes governance, risk, compliance, and operations into one unified environment.' },
@@ -283,7 +283,7 @@
         { title:'Manual Approvals', desc:'Approvals depend on email chains and chase-up calls, stretching cycle times and blurring accountability.', solvedTitle:'Workflow Automation Engine', solvedDesc:'A drag-and-drop visual builder for multi-step approvals with conditional logic, SLAs and module integration.' },
         { title:'Limited Executive Reporting', desc:'Executive reporting capability is limited, so leadership questions take weeks rather than minutes.', solvedTitle:'Executive Dashboards &amp; Analytics', solvedDesc:'Real-time, customisable cross-module dashboards and reports with role-based visibility and export to XLSX, CSV and PDF.' }
       ] },
-    { key:'intel', name:'IntelMode', desc:'Real-time threat intelligence and risk scoring for your organization.',
+    { key:'intel', name:'IntelMode', desc:'A Saudi-built CTI and Digital Risk Protection platform that unifies threat intelligence, attack surface monitoring, brand protection and dark web visibility - replacing a fragmented security stack with one intelligence layer.',
       challengeCategory:'Threat Intelligence',
       sixChallenges:[
         { title:'Alert Fatigue', desc:'Thousands of daily alerts with no prioritization, forcing analysts to manually filter noise from real threats.', solvedTitle:'Indicator Management', solvedDesc:'Deduplicate and score threat indicators automatically so analysts focus only on what matters.' },
@@ -293,7 +293,7 @@
         { title:'Unprioritized Vulnerabilities', desc:'CVEs are triaged by severity alone, missing which ones are actively being exploited against your assets.', solvedTitle:'Vulnerability Intelligence', solvedDesc:'Prioritize CVEs based on active exploitation and real asset criticality, not generic severity scores.' },
         { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
       ] },
-    { key:'risk', name:'DataMode', desc:'Quantify, prioritize, and track enterprise risk exposure over time.',
+    { key:'risk', name:'DataMode', desc:'Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.',
       challengeCategory:'Enterprise Risk',
       sixChallenges:[
         { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
@@ -509,24 +509,28 @@
   var serviceStack = document.getElementById('serviceStack');
   if (serviceStack) {
     var stackCards = serviceStack.querySelectorAll('.stack-card');
-    if (stackCards.length === 2 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var frontCard = stackCards[0];
-      var coverCard = stackCards[1];
-      /* gap between the two cards' sticky top offsets (top-63 - top-28 = 252px - 112px) — keep in sync with index.html */
+    if (stackCards.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      /* gap between consecutive cards' sticky top offsets (e.g. top-63 - top-28 = 252px - 112px) — keep in sync with index.html */
       var PEEK_PX = 140;
       var stackTicking = false;
 
-      frontCard.style.transformOrigin = 'center top';
+      for (var stackI = 0; stackI < stackCards.length - 1; stackI++) {
+        stackCards[stackI].style.transformOrigin = 'center top';
+      }
 
       var updateStack = function(){
-        var frontRect = frontCard.getBoundingClientRect();
-        var coverRect = coverCard.getBoundingClientRect();
-        var travel = frontRect.height - PEEK_PX;
-        var progress = travel > 0 ? (frontRect.bottom - coverRect.top) / travel : 0;
-        progress = Math.max(0, Math.min(1, progress));
+        for (var i = 0; i < stackCards.length - 1; i++) {
+          var frontCard = stackCards[i];
+          var coverCard = stackCards[i + 1];
+          var frontRect = frontCard.getBoundingClientRect();
+          var coverRect = coverCard.getBoundingClientRect();
+          var travel = frontRect.height - PEEK_PX;
+          var progress = travel > 0 ? (frontRect.bottom - coverRect.top) / travel : 0;
+          progress = Math.max(0, Math.min(1, progress));
 
-        frontCard.style.transform = 'scale(' + (1 - progress * 0.14) + ')';
-        frontCard.style.opacity = String(1 - progress * 0.25);
+          frontCard.style.transform = 'scale(' + (1 - progress * 0.14) + ')';
+          frontCard.style.opacity = String(1 - progress * 0.25);
+        }
         stackTicking = false;
       };
 
@@ -593,6 +597,30 @@
         headerTicking = true;
       }
     }, { passive: true });
+  }
+
+  /* ---------------- Hero video sound toggle (home page only) ---------------- */
+  var heroVideoEl = document.getElementById('heroVideo');
+  var heroSoundBtn = document.getElementById('heroSoundBtn');
+  if (heroVideoEl && heroSoundBtn) {
+    var heroSoundOnIcon  = document.getElementById('heroSoundOnIcon');
+    var heroSoundOffIcon = document.getElementById('heroSoundOffIcon');
+    var updateHeroSoundIcon = function(){
+      var muted = heroVideoEl.muted;
+      heroSoundOnIcon.classList.toggle('hidden', muted);
+      heroSoundOffIcon.classList.toggle('hidden', !muted);
+      heroSoundBtn.setAttribute('aria-pressed', String(muted));
+      heroSoundBtn.setAttribute('aria-label', muted ? 'Unmute video sound' : 'Mute video sound');
+    };
+    heroVideoEl.muted = true;
+    heroVideoEl.play().catch(function(){});
+    updateHeroSoundIcon();
+
+    heroSoundBtn.addEventListener('click', function(){
+      heroVideoEl.muted = !heroVideoEl.muted;
+      if (!heroVideoEl.muted) { heroVideoEl.play().catch(function(){}); }
+      updateHeroSoundIcon();
+    });
   }
 
   /* ---------------- Scroll reveal ---------------- */
@@ -726,8 +754,8 @@
     e.preventDefault();
     var email = emailField && emailField.value ? emailField.value.trim() : '';
     successMsg.textContent = email
-      ? 'We have your enquiry and will reply to ' + email + '.'
-      : 'We have your enquiry and will reply to you.';
+      ? 'We have your enquiry and will reply to ' + email + '. Our team usually responds within one business day.'
+      : 'We have your enquiry and will reply to the email address you provided. Our team usually responds within one business day.';
 
     form.style.display = 'none';
     success.style.display = 'flex';

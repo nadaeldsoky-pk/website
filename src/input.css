@@ -123,14 +123,28 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 
 .impact-bg{
-  background: linear-gradient(90deg, #210D4A 0%, #3C236E 50%, #210D4A 100%);
+  background: linear-gradient(90deg, #320D4E 0%, #53306C 50%, #320D4E 100%);
+}
+
+/* Stat dividers sit exactly centered in the gap between blocks (half of gap-x-10) */
+@media (min-width:1024px){
+  .stats-row .stat-block{ position:relative; }
+  .stats-row .stat-block:not(:first-child)::before{
+    content:'';
+    position:absolute;
+    left:-24px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:rgba(169,111,204,.3);
+  }
 }
 
 /* Footer — meant to sit over a night-sky photo, stands in as a dark brand
    gradient until a real photo is dropped in. The flat #00000033 layer is the
    spec's own overlay tint, kept so it's already correct once the photo lands */
 .footer-bg{
-  background:#210D4A
+  background:#351151
 }
 
 .product-watermark{
@@ -138,7 +152,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   left:50%;
   top:-12%;
   transform:translateX(-50%);
-  z-index:-20;
+  z-index:0;
   width:100%;
   text-align:center;
   overflow:hidden;
@@ -154,7 +168,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   text-transform:uppercase;
   letter-spacing:.01em;
   line-height:1;
-  font-size:clamp(2.5rem, 11vw, 9.625rem);
+  font-size:clamp(3rem, 12.5vw, 13.571rem);
   background-image:linear-gradient(110deg,
     rgba(255,255,255,.7) 0%, rgba(255,255,255,.7) 40%,
     #fff 50%,
