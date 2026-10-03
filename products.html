@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
 
-<link rel="stylesheet" href="css/styles.css?v=44" />
+<link rel="stylesheet" href="css/styles.css?v=45" />
 <style>
 /* ===== Our Products ===== */
 .prods-section{ position:relative; z-index:10; margin-top:-7rem; background:#F7F6FA; border-radius:48px 48px 0 0; padding:4rem clamp(16px,6vw,110px) 4rem; overflow:hidden; }
@@ -187,10 +187,12 @@
 
     <div class="relative z-10 mx-auto flex h-screen w-full flex-col justify-center max-w-302.75 px-5 sm:px-8 py-20 sm:py-28 text-center">
       <h1 id="hero-heading" class="font-display font-bold uppercase text-white leading-[1.03] text-[clamp(1.75rem,5vw,3.75rem)]">
-        We're leaders in<br class="hidden sm:block" /> cybersecurity
+        Eight Saudi-Built Platforms.<br class="hidden sm:block" /> One National Mission.
       </h1>
-      <p class="mx-auto mt-8 max-w-4xl text-[clamp(1rem,2vw,1.5rem)] font-medium leading-8 text-surface">
-        Advanced Controls IT Co., established in 2022, is a Saudi Cybersecurity and IT company distinguished by its innovative vision and national expertise. We specialize in developing advanced national cybersecurity and technology products and solutions, delivering high-level consulting services in cybersecurity and IT, and providing compliance and certification services.
+      <p class="mx-auto mt-8 max-w-5xl text-[clamp(1rem,2vw,1.5rem)] font-medium leading-8 text-surface">
+        We are building more than software we are creating scalable Saudi technology 
+assets designed to empower organizations, advance digital transformation, 
+strengthen cybersecurity, and generate sustainable long-term value
       </p>
 
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -239,6 +241,95 @@
       <span class="prods-bar" aria-hidden="true"></span>
     </div>
     <div id="prodsGrid" class="prods-grid"></div>
+  </section>
+
+  <!-- ===================== REQUEST FORM ===================== -->
+  <section class="flex flex-col items-center gap-10 sm:gap-12 lg:gap-12 bg-white px-6 sm:px-12 lg:px-[150px] py-16 sm:py-24 lg:py-25" aria-labelledby="contact-heading">
+
+    <div class="flex w-full max-w-[765px] flex-col items-center gap-4">
+      <h2 id="contact-heading" class="font-display font-bold text-[#2E1B4E] text-[clamp(1.75rem,5vw,48px)] leading-[1.05] lg:leading-[48px] text-center" data-reveal="up">How can we help you?</h2>
+      <p class="font-body font-normal text-[#6B5B7A] text-base sm:text-lg lg:text-[18px] leading-[1.5] lg:leading-[28px] text-center" data-reveal="up" data-delay="110">Tell us the type of request and a little about what you need. Our team will get back to you.</p>
+    </div>
+
+    <form class="flex w-full max-w-[1430px] flex-col gap-6" action="#" method="post" data-reveal="up" data-delay="180">
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="fullName" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Full Name <span class="text-red-600">*</span></label>
+          <input id="fullName" name="fullName" type="text" required placeholder="Sara Al-Otaibi"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="companyName" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Company / Organization<span class="text-red-600">*</span></label>
+          <input id="companyName" name="companyName" type="text" required placeholder="Company or entity name"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="businessEmail" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Business Email <span class="text-red-600">*</span></label>
+          <input id="businessEmail" name="businessEmail" type="email" required placeholder="user@company.com"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="phoneNumber" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Phone Number (Optional)</label>
+          <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="+966 5X XXX XXXX"
+            class="h-12 w-full rounded-lg border border-[#D1D5DB] bg-white px-4 py-3 font-body text-base leading-6 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15" />
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch gap-6">
+        <div class="flex flex-1 flex-col items-start gap-2">
+          <label for="requestType" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] capitalize text-[#111827]">Request Type <span class="text-red-600">*</span></label>
+          <div class="relative w-full">
+            <select id="requestType" name="requestType" required
+              class="h-12 w-full appearance-none rounded-lg border-[0.5px] border-[#D1D5DB] bg-white pl-4 pr-11 font-body text-base leading-6 text-[#2E1B4E] focus:outline-none focus:ring-4 focus:ring-primary/15">
+              <option value="Platform Demo">Platform Demo</option>
+              <option value="Sales Inquiry">Sales Inquiry</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Media Inquiry">Media Inquiry</option>
+              <option value="Careers">Careers</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div id="platformField" class="flex flex-1 flex-col items-start gap-2">
+          <label for="platform" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Select Platform <span class="text-red-600">*</span></label>
+          <div class="relative w-full">
+            <select id="platform" name="platform" required
+              class="h-12 w-full appearance-none rounded-lg border-[0.5px] border-[#D1D5DB] bg-white pl-4 pr-11 font-body text-base leading-6 text-[#2E1B4E] focus:outline-none focus:ring-4 focus:ring-primary/15">
+              <option value="CyberMode">CyberMode</option>
+              <option value="GovernanceMode">GovernanceMode</option>
+              <option value="IntelMode">IntelMode</option>
+              <option value="InspectMode">InspectMode</option>
+              <option value="DataMode">DataMode</option>
+              <option value="ITMode">ITMode</option>
+              <option value="GateMode">GateMode</option>
+              <option value="TransferMode">TransferMode</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col items-start gap-2">
+        <label for="requirement" class="font-['Instrument_Sans'] font-semibold text-sm leading-[17px] uppercase tracking-wide text-[#111827]">Message / Brief Requirement<span class="text-red-600">*</span></label>
+        <textarea id="requirement" name="requirement" required rows="5" placeholder="Tell us briefly what you need."
+          class="h-[150px] w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-3 font-body text-[13px] leading-4 text-[#111827] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-4 focus:ring-primary/15"></textarea>
+      </div>
+
+      <hr class="h-px w-full border-0 bg-[#3D2B55]" />
+
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <button type="submit" class="inline-flex items-center justify-center gap-[7px] rounded-2xl bg-[#44235C] px-6 py-4 font-body font-semibold text-sm leading-[17px] text-[#FFFDFE] hover:bg-secondary transition-colors">
+          Send Request
+        </button>
+        <p class="font-body font-normal text-sm leading-5 text-[#6B5B7A]">We reply to the email address you provide.</p>
+      </div>
+    </form>
   </section>
 
 </main>
