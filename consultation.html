@@ -27,11 +27,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
 
-<link rel="stylesheet" href="css/styles.css?v=45" />
+<link rel="stylesheet" href="css/styles.css?v=51" />
 <style>
 /* ===== Consultation page ===== */
 .svc-hero{
-  position:relative; min-height:calc(100vh + 7rem); display:flex; flex-direction:column; overflow:hidden;
+  position:relative; min-height:calc(100svh + 7rem - 61px); display:flex; flex-direction:column; overflow:hidden;
   background:
     radial-gradient(60% 55% at 50% 32%, rgba(255,255,255,0.16) 0%, transparent 60%),
     linear-gradient(115deg, transparent 38%, rgba(214,180,255,.55) 48%, rgba(232,210,255,.85) 50%, rgba(214,180,255,.55) 52%, transparent 62%),
@@ -162,6 +162,7 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
   .svc-s12-section, .svc-banner, .svc-fw-section, .svc-phase-section{ padding-top:6.25rem; padding-bottom:6.25rem; }
 }
 </style>
+<script src="js/video-sound.js?v=1"></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -202,6 +203,7 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
             <li><a data-nav="products" href="products.html" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
             <li><a data-nav="services" href="services.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
+            <li><a data-nav="team" href="our-team.html" class="nav-link text-muted hover:text-primary transition-colors">Our Team</a></li>
             <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
@@ -230,6 +232,7 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
         <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
         <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
+        <li><a data-nav-m="team" href="our-team.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Our Team</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
         <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About</a></li>
         <li class="pt-2"><a href="contact.html" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
@@ -546,6 +549,7 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
           <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
           <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Media</a></li>
+          <li><a href="our-team.html" class="hover:text-white transition-colors">Our Team</a></li>
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact us</a></li>
         </ul>

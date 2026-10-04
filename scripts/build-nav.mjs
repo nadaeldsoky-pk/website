@@ -34,6 +34,20 @@ const PAGES = {
     HREF_PRODUCTS: 'products.html',
     HREF_CTA: '#contact',
   },
+  'our-team.html': {
+    active: 'team',
+    HREF_HOME: 'index.html',
+    HREF_SERVICES: 'services.html',
+    HREF_PRODUCTS: 'products.html',
+    HREF_CTA: 'contact.html',
+  },
+  '404.html': {
+    active: '',
+    HREF_HOME: 'index.html',
+    HREF_SERVICES: 'services.html',
+    HREF_PRODUCTS: 'products.html',
+    HREF_CTA: 'contact.html',
+  },
   'about.html': {
     active: 'about',
     HREF_HOME: 'index.html',
@@ -105,6 +119,7 @@ function loadPartial() {
 
 /** Mark the active item: swap its classes and add aria-current. */
 function markActive(html, key) {
+  if (!key) return html; // pages such as 404 have no active nav item
   const swap = (attr, inactive, active) =>
     new RegExp(`(<a\\s+${attr}="${key}"[^>]*?)class="${inactive.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`);
 

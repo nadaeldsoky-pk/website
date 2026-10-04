@@ -27,11 +27,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
 
-<link rel="stylesheet" href="css/styles.css?v=45" />
+<link rel="stylesheet" href="css/styles.css?v=51" />
 <style>
 /* ===== Services page ===== */
 .svc-hero{
-  position:relative; min-height:calc(100vh + 7rem); display:flex; flex-direction:column;
+  position:relative; min-height:calc(100svh + 7rem - 61px); display:flex; flex-direction:column;
   background:
     radial-gradient(60% 55% at 50% 32%, rgba(255,255,255,0.16) 0%, transparent 60%),
     linear-gradient(115deg, transparent 38%, rgba(214,180,255,.55) 48%, rgba(232,210,255,.85) 50%, rgba(214,180,255,.55) 52%, transparent 62%),
@@ -245,6 +245,7 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
   .svc-tracks-section, .svc-work-section, .svc-banner, .svc-phase-section{ padding-top:6.25rem; padding-bottom:6.25rem; }
 }
 </style>
+<script src="js/video-sound.js?v=1"></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -285,6 +286,7 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
             <li><a data-nav="products" href="products.html" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
             <li><a data-nav="services" href="services.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
+            <li><a data-nav="team" href="our-team.html" class="nav-link text-muted hover:text-primary transition-colors">Our Team</a></li>
             <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
@@ -313,6 +315,7 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
         <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
         <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
+        <li><a data-nav-m="team" href="our-team.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Our Team</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
         <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About</a></li>
         <li class="pt-2"><a href="contact.html" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
@@ -349,17 +352,6 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
           </svg>
           Watch Video
         </a>
-        <button id="heroSoundBtn" type="button" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white bg-white/20 text-white hover:bg-white/30 transition-colors" aria-pressed="false" aria-label="Mute video sound">
-          <svg id="heroSoundOnIcon" width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 10v4h4l5 5V5L8 10H4z" fill="white"/>
-            <path d="M16.3 8.8a5 5 0 0 1 0 6.4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M18.8 6.3a9 9 0 0 1 0 11.4" stroke="white" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
-          </svg>
-          <svg id="heroSoundOffIcon" width="19" height="19" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true">
-            <path d="M4 10v4h4l5 5V5L8 10H4z" fill="white"/>
-            <path d="M16 9l5 6M21 9l-5 6" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </button>
       </div>
 
       <!-- Client logo marquee -->
@@ -655,6 +647,7 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
           <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
           <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Media</a></li>
+          <li><a href="our-team.html" class="hover:text-white transition-colors">Our Team</a></li>
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact us</a></li>
         </ul>

@@ -51,7 +51,8 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/styles.css?v=45" />
+<link rel="stylesheet" href="css/styles.css?v=51" />
+<script src="js/video-sound.js?v=1"></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -93,6 +94,7 @@
             <li><a data-nav="products" href="products.html" class="nav-link text-muted hover:text-primary transition-colors">Products</a></li>
             <li><a data-nav="services" href="services.html" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
+            <li><a data-nav="team" href="our-team.html" class="nav-link text-muted hover:text-primary transition-colors">Our Team</a></li>
             <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
@@ -121,6 +123,7 @@
         <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Products</a></li>
         <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
+        <li><a data-nav-m="team" href="our-team.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Our Team</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
         <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About</a></li>
         <li class="pt-2"><a href="#contact" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
@@ -157,17 +160,6 @@
           </svg>
           Watch Video
         </a>
-        <button id="heroSoundBtn" type="button" class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white bg-white/20 text-white hover:bg-white/30 transition-colors" aria-pressed="false" aria-label="Mute video sound">
-          <svg id="heroSoundOnIcon" width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 10v4h4l5 5V5L8 10H4z" fill="white"/>
-            <path d="M16.3 8.8a5 5 0 0 1 0 6.4" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M18.8 6.3a9 9 0 0 1 0 11.4" stroke="white" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
-          </svg>
-          <svg id="heroSoundOffIcon" width="19" height="19" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true">
-            <path d="M4 10v4h4l5 5V5L8 10H4z" fill="white"/>
-            <path d="M16 9l5 6M21 9l-5 6" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </button>
       </div>
 
       <!-- Client logo marquee -->
@@ -553,9 +545,10 @@
         <h3 class="text-xl font-semibold leading-6 capitalize text-white">Useful Links</h3>
         <ul class="flex flex-col items-start gap-3 text-sm leading-4.25 capitalize text-surface">
           <li><a href="#top" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="#products" class="hover:text-white transition-colors">Products</a></li>
-          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Media</a></li>
+          <li><a href="our-team.html" class="hover:text-white transition-colors">Our Team</a></li>
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact us</a></li>
         </ul>

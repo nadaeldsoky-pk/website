@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=45" />
+<link rel="stylesheet" href="css/styles.css?v=51" />
 
 <style>
 /* ===== Product hero — dome as full background ===== */
@@ -188,9 +188,17 @@
 .ov-section.ov-v2{ position:relative; z-index:2; margin-top:-48px; border-radius:48px 48px 0 0; padding:100px clamp(16px,8.7vw,150px); }
 .ov-v2 .ov-wrap{ gap:48px; }
 .ov-v2 .ov-head{ gap:0; }
-.ov-v2 .ov-logo{ display:block; width:var(--ov-logo-w,298px); max-width:70%; height:auto; opacity:0; transform:scale(.7); }
-.ov-v2 .ov-head.revealed .ov-logo{ animation:ovLogoIn .9s cubic-bezier(.34,1.56,.64,1) .1s both; }
-@keyframes ovLogoIn{ to{ opacity:1; transform:none; } }
+.ov-v2 .ov-brand{ display:flex; align-items:center; justify-content:center; gap:clamp(10px,1.4vw,22px); }
+.ov-v2 .ov-brand .ov-ch{ display:inline-block; opacity:0; transform:translateY(34px) rotate(8deg); filter:blur(6px); }
+.ov-v2 .ov-brand img{ opacity:0; transform:translateX(50px) rotate(-180deg) scale(.3); }
+.ov-v2 .ov-brand.is-built img{ animation:ovBrandIcon .7s cubic-bezier(.34,1.4,.64,1) both; }
+.ov-v2 .ov-brand.is-built .ov-ch{ animation:ovBrandCh .38s cubic-bezier(.22,1,.3,1) both; animation-delay:calc(.28s + var(--i) * 45ms); }
+@keyframes ovBrandIcon{ to{ opacity:1; transform:none; } }
+@keyframes ovBrandCh{ to{ opacity:1; transform:none; filter:blur(0); } }
+@media(prefers-reduced-motion:reduce){ .ov-v2 .ov-brand img, .ov-v2 .ov-brand .ov-ch{ opacity:1; transform:none; filter:none; } }
+.ov-v2 .ov-brand img{ height:clamp(44px,4.6vw,72px); width:auto; display:block; image-rendering:auto; }
+.ov-v2 .ov-brand-name{ font-family:'Poppins',sans-serif; font-weight:600; font-size:clamp(2rem,4.2vw,68px); line-height:1; letter-spacing:-.02em; color:#606060; white-space:nowrap; }
+.ov-v2 .ov-brand-name b{ font-weight:600; color:var(--brand,#44235C); }
 .ov-v2.ov-has-logo .ov-title-row{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 .ov-v2.ov-has-logo .ov-sub{ display:none; }
 .ov-v2 .ov-grid{ gap:24px; }
@@ -205,7 +213,9 @@
 .ov-v2 .ov-qual span{ font-size:14px; line-height:20px; }
 .ov-v2 .ov-stats{ background:#351151; border-radius:24px; padding:48px; gap:24px; }
 .ov-v2 .ov-stat{ position:relative; gap:16px; padding:0; border-left:0; }
-.ov-v2 .ov-stat:not(:first-child)::before{ content:''; position:absolute; left:-12px; top:-2px; width:1px; height:80px; background:#A96FCC; }
+.ov-v2 .ov-stat:not(:first-child)::before{ content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%); width:1px; height:112px; background:rgba(169,111,204,.3); }
+.ov-v2 .ov-stats{ align-items:center; }
+.ov-v2 .ov-stat em{ font-style:normal; font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:20px; color:#E6E6E6; margin-top:0; }
 .ov-v2 .ov-stat b{ font-family:'Inter',sans-serif; font-weight:700; font-size:32px; line-height:40px; color:#FFFDFE; }
 .ov-v2 .ov-stat span{ font-size:14px; line-height:20px; letter-spacing:0; text-transform:none; color:#E6E6E6; }
 .ov-v2 .ov-stats--caps .ov-stat span{ letter-spacing:.2em; text-transform:uppercase; }
@@ -268,8 +278,8 @@
 @keyframes apUp{ to{ opacity:1; transform:none; } }
 @keyframes apWord{ to{ opacity:1; transform:none; } }
 @keyframes apChip{ to{ opacity:1; transform:none; } }
-.ap-media{ flex:1.45 1 0; min-width:0; position:relative; display:flex; align-items:center; justify-content:flex-end; background:radial-gradient(ellipse at 70% 60%,#fff 0%,#F7F6FA 70%); overflow:hidden; }
-.ap-media img{ display:block; width:100%; height:100%; max-height:548px; object-fit:cover; object-position:left center; opacity:0; transform:translateX(90px) scale(1.08); }
+.ap-media{ flex:var(--ap-media-flex,1.45 1 0); min-width:0; position:relative; display:flex; align-items:center; justify-content:flex-end; background:radial-gradient(ellipse at 70% 60%,#fff 0%,#F7F6FA 70%); overflow:hidden; }
+.ap-media img{ position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:var(--ap-img-pos,left center); opacity:0; transform:translateX(90px) scale(1.08); }
 .ap-card.revealed .ap-media img{ animation:apImg 1.3s cubic-bezier(.22,1,.3,1) .3s both, apFloat 7s ease-in-out 1.8s infinite; }
 @keyframes apImg{ to{ opacity:1; transform:none; } }
 @keyframes apFloat{ 0%,100%{ transform:translateY(0) scale(1); } 50%{ transform:translateY(-8px) scale(1.015); } }
@@ -277,9 +287,10 @@
 .ap-card.revealed .ap-glow{ animation:apGlow 2.2s ease .5s both; }
 @keyframes apGlow{ to{ opacity:1; } }
 @media(max-width:900px){
+  .ap-media{ flex:none !important; }
   .ap-card{ flex-direction:column; }
   .ap-copy{ padding:32px 24px; }
-  .ap-media img{ max-height:none; height:auto; }
+  .ap-media{ min-height:min(120vw,520px); }
 }
 @media(prefers-reduced-motion:reduce){ .ap-card,.ap-kicker,.ap-text,.ap-chips li,.ap-media img,.ap-title .ap-w{ opacity:1 !important; transform:none !important; filter:none !important; animation:none !important; } }
 
@@ -1127,7 +1138,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
 /* ===== Request a Demo ===== */
 .demo-section{ background:#F7F6FA; padding:clamp(60px,6vw,150px) clamp(24px,8vw,150px); }
 .demo-wrap{ max-width:1430px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:clamp(40px,5vw,64px); }
-.demo-header{ display:flex; flex-direction:column; align-items:center; gap:16px; max-width:600px; text-align:center; }
+.demo-header{ display:flex; flex-direction:column; align-items:center; gap:16px; max-width:1100px; text-align:center; }
 .demo-title{ font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(1.75rem,4.5vw,48px); line-height:1.05; color:#2E1B4E; margin:0; }
 .demo-subtitle{ font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(1rem,1.2vw,18px); line-height:1.56; color:#6B5B7A; margin:0; }
 
@@ -1169,6 +1180,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
   .demo-row .demo-field{ flex:none; width:100%; }
 }
 </style>
+<script src="js/video-sound.js?v=1"></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -1191,6 +1203,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
             <li><a data-nav="products" href="products.html" class="nav-link font-semibold text-primary transition-colors" aria-current="page">Products</a></li>
             <li><a data-nav="services" href="services.html" class="nav-link text-muted hover:text-primary transition-colors">Services</a></li>
             <li><a data-nav="media" href="#" class="nav-link text-muted hover:text-primary transition-colors">Media</a></li>
+            <li><a data-nav="team" href="our-team.html" class="nav-link text-muted hover:text-primary transition-colors">Our Team</a></li>
             <li><a data-nav="about" href="about.html" class="nav-link text-muted hover:text-primary transition-colors">About</a></li>
             <li><a data-nav="contact" href="contact.html" class="nav-link text-muted hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
@@ -1219,6 +1232,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         <li><a data-nav-m="products" href="products.html" class="block rounded-lg px-3 py-2 font-semibold text-primary bg-surface" aria-current="page">Products</a></li>
         <li><a data-nav-m="services" href="services.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Services</a></li>
         <li><a data-nav-m="media" href="#" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Media</a></li>
+        <li><a data-nav-m="team" href="our-team.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Our Team</a></li>
         <li><a data-nav-m="contact" href="contact.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">Contact Us</a></li>
         <li><a data-nav-m="about" href="about.html" class="block rounded-lg px-3 py-2 text-muted hover:bg-surface">About</a></li>
         <li class="pt-2"><a href="index.html#contact" class="block text-center rounded-[10px] bg-secondary px-6 py-3 font-semibold text-white">Get Started</a></li>
@@ -1252,7 +1266,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
   <section id="overviewSection" class="ov-section" aria-labelledby="ovTitle" hidden>
     <div class="ov-wrap">
       <div class="ov-head" data-reveal="up">
-        <img id="ovLogo" class="ov-logo" alt="" width="298" height="120" hidden />
+        <div id="ovBrand" class="ov-brand" hidden><img id="ovBrandIcon" alt="" /><span id="ovBrandName" class="ov-brand-name"></span></div>
         <div class="ov-title-row">
           <span class="ov-title-icon" aria-hidden="true"><img id="ovTitleIcon" alt="" /></span>
           <h2 id="ovTitle" class="ov-title"></h2>
@@ -1532,6 +1546,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
           <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
           <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Media</a></li>
+          <li><a href="our-team.html" class="hover:text-white transition-colors">Our Team</a></li>
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact us</a></li>
         </ul>
@@ -1623,9 +1638,9 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       name:'CyberMode',
       heroTitle:'One Platform\nfor Cybersecurity\nManagement',
       heroDesc:'One unified platform for governance, risk, compliance and awareness — instead of fragmented tools. Centralized control for teams, real-time visibility into posture, risk and compliance for leadership.',
-      heroVideo:'assets/CybermoodHero.mp4',
+      heroVideo:'assets/CybermoodHero.mp4', noSoundToggle:true,
       overview:{
-        logo:'assets/cybermode-logo.png',
+        brand:'#2848A0',
         subtitle:'One Platform for Cybersecurity Management',
         cards:[
           { kicker:'01 / Platform overview', heading:'Unified control for the cybersecurity program', text:'CyberMode is a comprehensive enterprise GRC and cybersecurity management platform that enables organizations to centrally manage governance, risk, compliance, awareness, assessments, exceptions, committees, initiatives, and projects through a single unified system - eliminating the need for multiple fragmented tools.' },
@@ -1650,7 +1665,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
     governance: {
       name:'GovernanceMode',
       overview:{
-        logo:'assets/governancemode-logo.png', logoW:387,
+        brand:'#103868',
         subtitle:'One Platform for Enterprise Governance, Risk & Compliance',
         statsCaps:true,
         cards:[
@@ -1765,6 +1780,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
     intel: {
       name:'IntelMode',
       overview:{
+        brand:'#0838A8',
         subtitle:'Unified Threat Intelligence & Digital Risk Protection',
         statsCaps:true,
         cards:[
@@ -1775,6 +1791,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         ],
         stats:[['16','Core Modules'],['130+','IOC Extractors','Comprehensive coverage'],['100+','SIEM Integration','Flexible integration'],['24/7','Dark Web & Brand','Continuous intelligence'],['STIX 2.1','Full Compliance','Industry standard']]
       },
+      heroTitle:'Unified Threat Intelligence &\nDigital Risk Protection',
       heroHeadline:'Unified Threat Intelligence & Digital Risk Protection',
       heroDesc:'A Saudi-built CTI and Digital Risk Protection platform that unifies threat intelligence, attack surface monitoring, brand protection and dark web visibility - replacing a fragmented security stack with one intelligence layer.',
       challengeCategory:'Threat Intelligence',
@@ -1911,6 +1928,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
     inspect: {
       name:'InspectMode',
       overview:{
+        brand:'#7868E8',
         subtitle:'AI-Augmented Security Assessment Platform',
         statsCaps:true,
         cards:[
@@ -1921,6 +1939,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         ],
         stats:[['8','Core Modules'],['5-7','Tools Replaced','One unified platform'],['8,000+','Nuclei Templates','Community CVE coverage'],['114','NCA ECC Controls','5 domains'],['93','ISO 27001:2022','Annex A controls']]
       },
+      heroTitle:'AI-Augmented Security\nAssessment Platform',
       heroHeadline:'AI-Augmented Security Assessment Platform',
       heroDesc:'One AI-augmented agent unifies IT and OT security assessment, forensics, vulnerability scanning, compliance, and threat detection. Built for Saudi NCA and ISO 27001 needs, it works in portable, managed, and offline modes with evidence-grade output.',
       challengeCategory:'Threat Intelligence',
@@ -2019,7 +2038,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
     datamode: {
       name:'DataMode',
       overview:{
-        logo:'assets/datamode-logo.png', logoW:349,
+        brand:'#206870',
         subtitle:'One Platform for the Data Management Office',
         statsCaps:true,
         cards:[
@@ -2130,10 +2149,12 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
     },
     itmode: {
       name:'ITMode',
+      heroTitle:'Enterprise IT Service\nManagement & Delivery',
       heroHeadline:'Enterprise IT Service Management & Delivery',
       heroDesc:'ITMode replaces fragmented tools with a single governed source of truth — Saudi-built and aligned to ITIL 4 and ISO/IEC 20000, from service design through continual improvement.',
       challengeCategory:'Audit Management',
       overview:{
+        brand:'#204868',
         subtitle:'Enterprise IT Service Management & Delivery',
         statsCaps:true,
         cards:[
@@ -2253,7 +2274,7 @@ capabilitiesTitle:'Built Into Every Module.',
         imageAlt:'GateMode air-gap security appliance in wall-mounted cabinet and rack-unit form factors'
       },
       overview:{
-        logo:'assets/gatemode-logo.png', logoW:493,
+        brand:'#18A0A0',
         subtitle:'Secure Data Transfer, Inspection & Controlled Exchange',
         statsCaps:true,
         cards:[
@@ -2264,7 +2285,7 @@ capabilitiesTitle:'Built Into Every Module.',
         ],
         stats:[['12','Core Modules'],['6','Stage Security Pipeline'],['0','TCP/IP Packets Crossing'],['100%','Electrical Isolation'],['2','Deployment Form Factors']]
       },
-      heroTitle:'Secure Data Transfer, Inspection\n& Controlled Exchange', heroTitleSize:72,
+      heroTitle:'Secure Data Transfer, Inspection\n& Controlled Exchange',
       heroHeadline:'Secure Data Transfer, Inspection & Controlled Exchange',
       heroDesc:'A zero-trust, on-premise gateway that inspects, disarms, and approves every file crossing USB, removable media, and cross-domain transfers — fully audited with a complete chain of custody.',
       challengeCategory:'Vendor Risk',
@@ -2365,7 +2386,17 @@ capabilitiesTitle:'Built Into Every Module.',
     },
     transfer: {
       name:'TransferMode',
+      appliance:{
+        kicker:'The Appliance',
+        title:'A dedicated scanning station at the edge of your network.',
+        text:'Every USB and removable device is handed to the TransferMode kiosk before it ever touches a workstation — scanned by multiple engines, disarmed and reconstructed, then released only through an approved workflow.',
+        chips:['Multi-engine malware scanning','Content disarm and reconstruction','Enforced approval workflow','Full audit trail'],
+        image:'assets/transfermode-device.png',
+        imageAlt:'TransferMode kiosk scanning station with a Ready to Scan screen and USB ports',
+        mediaW:540, minH:745
+      },
       overview:{
+        brand:'#4098B8',
         subtitle:'Secure Data Transfer, Inspection & Controlled Exchange',
         statsCaps:true,
         cards:[
@@ -2379,6 +2410,7 @@ capabilitiesTitle:'Built Into Every Module.',
         ],
         stats:[['100%','Files Inspected','Inbound & outbound'],['0','Trust By Default','Every file verified'],['24/7','Audit Logging','Full chain of custody'],['12','Integrated Modules'],['3','Form Factors']]
       },
+      heroTitle:'Secure Data Transfer, Inspection\n& Controlled Exchange',
       heroHeadline:'Secure Data Transfer, Inspection & Controlled Exchange',
       heroDesc:'A zero-trust gateway for every file entering or leaving your organization — across USB, removable media and cross-domain transfers — with multi-engine malware scanning, Content Disarm & Reconstruction, and enforced approval workflows.',
       challengeCategory:'Secure Data Transfer',
@@ -2537,6 +2569,8 @@ capabilitiesTitle:'Built Into Every Module.',
     heroVideo.playsInline = true; heroVideo.preload = 'auto'; heroVideo.setAttribute('aria-hidden', 'true');
     heroVideo.innerHTML = '<source src="' + p.heroVideo + '" type="video/mp4" />';
     heroSection.prepend(heroVideo);
+    if (p.noSoundToggle) heroVideo.dataset.soundToggle = 'off'; /* marked as handled so no sound button is added */
+    else if (window.acAddSoundToggle) window.acAddSoundToggle(heroVideo);
   }
 
   /* 16 Core Modules — shared across every product by default; a product can
@@ -3164,9 +3198,37 @@ capabilitiesTitle:'Built Into Every Module.',
     ovTitleEl.textContent = p.name.slice(1);
     ovTitleEl.setAttribute('aria-label', p.name);
     document.getElementById('ovSub').textContent = ov.subtitle;
-    if (ov.logo) {
-      var ovLogo = document.getElementById('ovLogo');
-      ovLogo.src = ov.logo; ovLogo.alt = p.name; ovLogo.hidden = false; ovLogo.style.setProperty('--ov-logo-w', (ov.logoW || 298) + 'px'); ovLogo.width = ov.logoW || 298;
+    if (ov.brand) {
+      var ovBrand = document.getElementById('ovBrand');
+      var ovBrandIcon = document.getElementById('ovBrandIcon');
+      ovBrandIcon.src = PRODUCT_ICONS[id] || PRODUCT_ICONS.cyber;
+      var ovBrandName = document.getElementById('ovBrandName');
+      ovBrandName.setAttribute('aria-label', p.name);
+      ovBrandName.innerHTML = '<b aria-hidden="true"></b><span aria-hidden="true"></span>';
+      var ovFirst = p.name.replace(/Mode$/, '');
+      var ovChars = [];
+      function ovSplit(host, text){
+        text.split('').forEach(function(ch){
+          var sp = document.createElement('span');
+          sp.className = 'ov-ch'; sp.textContent = ch;
+          host.appendChild(sp); ovChars.push(sp);
+        });
+      }
+      ovSplit(ovFirst ? ovBrandName.firstChild : null, ovFirst);
+      ovSplit(ovBrandName.lastChild, 'Mode');
+      ovBrand.style.setProperty('--brand', ov.brand);
+      ovBrand.hidden = false;
+      /* One-shot build: the icon spins/zooms in, then the name types itself in letter by letter — played once,
+         the first time the logo scrolls into view, then it stays. */
+      ovChars.forEach(function(el, i){ el.style.setProperty('--i', i); });
+      if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        var ovBrandIo = new IntersectionObserver(function(es){
+          if (es.some(function(e){ return e.isIntersecting; })) { ovBrand.classList.add('is-built'); ovBrandIo.disconnect(); }
+        }, { threshold: 0.4 });
+        ovBrandIo.observe(ovBrand);
+      } else {
+        ovBrand.classList.add('is-built');
+      }
       document.getElementById('overviewSection').classList.add('ov-has-logo');
     }
     document.getElementById('overviewSection').classList.add('ov-v2');
@@ -3259,6 +3321,12 @@ capabilitiesTitle:'Built Into Every Module.',
     document.getElementById('apText').textContent = ap.text;
     var apChipsEl = document.getElementById('apChips');
     ap.chips.forEach(function(t, i){ var li = document.createElement('li'); li.textContent = t; li.style.setProperty('--i', i); apChipsEl.appendChild(li); });
+    if (ap.mediaW) {
+      var apMedia = document.querySelector('.ap-media');
+      apMedia.style.setProperty('--ap-media-flex', '0 0 ' + ap.mediaW + 'px');
+      apMedia.style.setProperty('--ap-img-pos', 'center');
+    }
+    if (ap.minH) document.getElementById('apCard').style.minHeight = ap.minH + 'px';
     var apImgEl = document.getElementById('apImg');
     apImgEl.src = ap.image; apImgEl.alt = ap.imageAlt || '';
   }

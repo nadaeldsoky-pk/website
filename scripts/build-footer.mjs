@@ -27,7 +27,9 @@ const END = '<!-- FOOTER:END -->';
 
 /** Per-page link targets — same values as HREF_HOME/HREF_PRODUCTS/HREF_SERVICES in build-nav.mjs. */
 const PAGES = {
-  'index.html':              { HREF_HOME: '#top', HREF_PRODUCTS: '#products', HREF_SERVICES: '#services' },
+  'index.html':              { HREF_HOME: '#top', HREF_PRODUCTS: 'products.html', HREF_SERVICES: 'services.html' },
+  'our-team.html':            { HREF_HOME: 'index.html', HREF_PRODUCTS: 'products.html', HREF_SERVICES: 'services.html' },
+  '404.html':                 { HREF_HOME: 'index.html', HREF_PRODUCTS: 'products.html', HREF_SERVICES: 'services.html' },
   'about.html':               { HREF_HOME: 'index.html', HREF_PRODUCTS: 'products.html', HREF_SERVICES: 'services.html' },
   'contact.html':              { HREF_HOME: 'index.html', HREF_PRODUCTS: 'products.html', HREF_SERVICES: 'services.html' },
   'products.html':            { HREF_HOME: 'index.html', HREF_PRODUCTS: 'products.html', HREF_SERVICES: 'services.html' },

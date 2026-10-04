@@ -599,30 +599,6 @@
     }, { passive: true });
   }
 
-  /* ---------------- Hero video sound toggle (home page only) ---------------- */
-  var heroVideoEl = document.getElementById('heroVideo');
-  var heroSoundBtn = document.getElementById('heroSoundBtn');
-  if (heroVideoEl && heroSoundBtn) {
-    var heroSoundOnIcon  = document.getElementById('heroSoundOnIcon');
-    var heroSoundOffIcon = document.getElementById('heroSoundOffIcon');
-    var updateHeroSoundIcon = function(){
-      var muted = heroVideoEl.muted;
-      heroSoundOnIcon.classList.toggle('hidden', muted);
-      heroSoundOffIcon.classList.toggle('hidden', !muted);
-      heroSoundBtn.setAttribute('aria-pressed', String(muted));
-      heroSoundBtn.setAttribute('aria-label', muted ? 'Unmute video sound' : 'Mute video sound');
-    };
-    heroVideoEl.muted = true;
-    heroVideoEl.play().catch(function(){});
-    updateHeroSoundIcon();
-
-    heroSoundBtn.addEventListener('click', function(){
-      heroVideoEl.muted = !heroVideoEl.muted;
-      if (!heroVideoEl.muted) { heroVideoEl.play().catch(function(){}); }
-      updateHeroSoundIcon();
-    });
-  }
-
   /* ---------------- Scroll reveal ---------------- */
   if ('IntersectionObserver' in window) {
     var revealEls = document.querySelectorAll('[data-reveal]');
