@@ -271,7 +271,7 @@
         { title:'Execution and Accountability Gaps', desc:'Security policies and initiatives lack proper tracking, ownership, and enforcement across the organization.', solvedTitle:'Automated Execution and Workflow Management', solvedDesc:'Structured task management and workflow automation ensure accountability, tracking, and effective implementation.' },
         { title:'Human Factor Vulnerabilities', desc:'Low cybersecurity awareness and lack of structured training increase exposure to phishing and social engineering attacks.', solvedTitle:'Security Awareness and Training Platform', solvedDesc:'Integrated LMS with phishing simulation and assessments to enhance employee awareness and reduce human risk.' }
       ] },
-    { key:'governance', name:'GovernanceMode', desc:'Governance, risk, compliance, continuity and performance on one bilingual platform — instead of disconnected spreadsheets and point tools.',
+    { key:'governance', name:'GovernanceMode', desc:'An enterprise EGRC platform that integrates governance, risk, compliance, business continuity, strategic performance, committees, and internal audit in one system.',
       challengeCategory:'Governance, Risk &amp; Compliance',
       sixChallenges:[
         { title:'Fragmented Governance Information', desc:'Governance information is scattered across multiple systems, with no shared taxonomy, identity, or source of truth.', solvedTitle:'Centralized Governance Repository', solvedDesc:'Hierarchy, strategic objectives, document center, regulators, frameworks and exception management in one structural model that every other module references.' },
@@ -283,7 +283,7 @@
         { title:'Manual Approvals', desc:'Approvals depend on email chains and chase-up calls, stretching cycle times and blurring accountability.', solvedTitle:'Workflow Automation Engine', solvedDesc:'A drag-and-drop visual builder for multi-step approvals with conditional logic, SLAs and module integration.' },
         { title:'Limited Executive Reporting', desc:'Executive reporting capability is limited, so leadership questions take weeks rather than minutes.', solvedTitle:'Executive Dashboards &amp; Analytics', solvedDesc:'Real-time, customisable cross-module dashboards and reports with role-based visibility and export to XLSX, CSV and PDF.' }
       ] },
-    { key:'intel', name:'IntelMode', desc:'A Saudi-built CTI and Digital Risk Protection platform that unifies threat intelligence, attack surface monitoring, brand protection and dark web visibility - replacing a fragmented security stack with one intelligence layer.',
+    { key:'intel', name:'IntelMode', desc:'A Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform for threat intelligence, dark web monitoring, IOC correlation, and digital exposure detection.',
       challengeCategory:'Threat Intelligence',
       sixChallenges:[
         { title:'Alert Fatigue', desc:'Thousands of daily alerts with no prioritization, forcing analysts to manually filter noise from real threats.', solvedTitle:'Indicator Management', solvedDesc:'Deduplicate and score threat indicators automatically so analysts focus only on what matters.' },
@@ -293,7 +293,7 @@
         { title:'Unprioritized Vulnerabilities', desc:'CVEs are triaged by severity alone, missing which ones are actively being exploited against your assets.', solvedTitle:'Vulnerability Intelligence', solvedDesc:'Prioritize CVEs based on active exploitation and real asset criticality, not generic severity scores.' },
         { title:'Fragmented Intelligence Reporting', desc:'Analysts, executives, and regulators each need different reporting formats built manually from scratch.', solvedTitle:'Intelligence Reporting', solvedDesc:'Produce strategic, tactical, and operational threat reports for every stakeholder automatically.' }
       ] },
-    { key:'datamode', name:'DataMode', desc:'Govern, protect and improve every data asset on one NDMO- and PDPL-aligned platform — instead of scattered tools and spreadsheet assessments.',
+    { key:'datamode', name:'DataMode', desc:'A unified Data Management Office platform for data governance, quality, classification, privacy, compliance, and audit-ready reporting.',
       challengeCategory:'Enterprise Risk',
       sixChallenges:[
         { title:'Subjective Risk Scoring', desc:'Risk ratings based on gut feel rather than data-driven quantification, making board reporting unreliable.', solvedTitle:'Quantitative Risk Assessment', solvedDesc:'Score risks using quantitative and qualitative methodologies aligned to industry standards.' },
@@ -303,7 +303,7 @@
         { title:'No Early Warning System', desc:'Emerging risk trends go unnoticed until they have already become active incidents.', solvedTitle:'KRI Monitoring', solvedDesc:'Threshold alerts and trend dashboards flag key risk indicators before they escalate.' },
         { title:'Unclear Risk Tolerance', desc:'Teams lack a documented reference for how much risk the organization is willing to accept in each domain.', solvedTitle:'Risk Appetite Framework', solvedDesc:'Define and monitor risk appetite statements and tolerance thresholds by domain.' }
       ] },
-    { key:'itmode', name:'ITMode', desc:'ITMode replaces fragmented tools with a single governed source of truth — Saudi-built and aligned to ITIL 4 and ISO/IEC 20000, from service design through continual improvement.',
+    { key:'itmode', name:'ITMode', desc:'A Saudi-developed IT Service Management platform for standardizing and automating IT service operations in alignment with ITIL v4 and ISO/IEC 20000.',
       challengeCategory:'Audit Management',
       sixChallenges:[
         { title:'Evidence Collection Hell', desc:'Auditors spending weeks chasing evidence from different departments via email threads and spreadsheet trackers.', solvedTitle:'Evidence Collection', solvedDesc:'Request, upload, and automatically link evidence to audit findings and controls.' },
@@ -313,7 +313,7 @@
         { title:'Unplanned Audit Coverage', desc:'Audit plans built from memory rather than a structured, risk-ranked view of the full audit universe.', solvedTitle:'Audit Planning', solvedDesc:'Risk-based prioritization, resource allocation, and calendar management across the audit universe.' },
         { title:'Manual Report Drafting', desc:'Days spent formatting findings summaries and ratings into a presentable report for stakeholders.', solvedTitle:'Audit Reporting', solvedDesc:'Auto-populated findings summaries and ratings generate draft audit reports in minutes.' }
       ] },
-    { key:'gatemode', name:'GateMode', desc:'A zero-trust, on-premise gateway that inspects, disarms, and approves every file crossing USB, removable media, and cross-domain transfers — fully audited with a complete chain of custody.',
+    { key:'gatemode', name:'GateMode', desc:'A secure air-gapped transfer platform for controlled data exchange between classified and unclassified environments with integrity verification, media sanitization, and full auditability.',
       challengeCategory:'Vendor Risk',
       sixChallenges:[
         { title:'No Vendor Visibility', desc:'Critical suppliers with access to sensitive systems never formally assessed or continuously monitored for risk.', solvedTitle:'Vendor Onboarding', solvedDesc:'Streamlined registration and due diligence bring every vendor into full view from day one.' },
@@ -323,7 +323,7 @@
         { title:'Hidden Sub-Processor Risk', desc:'Vendors quietly rely on their own sub-processors, extending your exposure beyond direct contracts.', solvedTitle:'Fourth-Party Management', solvedDesc:'Map and assess sub-processors and sub-contractors for complete supply chain risk visibility.' },
         { title:'Untracked Contract Renewals', desc:'SLAs and renewal dates tracked in spreadsheets quietly lapse without anyone noticing in time.', solvedTitle:'Contract Management', solvedDesc:'Track vendor contracts, SLAs, and renewal dates with automated alerts before anything lapses.' }
       ] },
-    { key:'transfer', name:'TransferMode', desc:'A zero-trust gateway for every file entering or leaving your organization — across USB, removable media and cross-domain transfers — with multi-engine malware scanning, Content Disarm & Reconstruction, and enforced approval workflows.',
+    { key:'transfer', name:'TransferMode', desc:'A zero-trust file transfer gateway that secures USB, removable media, and cross-domain transfers with malware scanning, content disarm, and approval workflows.',
       challengeCategory:'Incident Response',
       sixChallenges:[
         { title:'Slow Containment', desc:'No predefined playbooks mean analysts improvising responses, extending dwell time and increasing damage scope.', solvedTitle:'Response Playbooks', solvedDesc:'SANS-aligned, step-by-step response procedures replace improvisation for every incident type.' },
@@ -333,7 +333,7 @@
         { title:'Unclear Task Ownership', desc:'Response tasks assigned verbally or over chat, with no SLA tracking or automatic escalation when work stalls.', solvedTitle:'Task Assignment &amp; Escalation', solvedDesc:'SLA-bound task assignment with automated escalation rules and team notifications.' },
         { title:'No Continuous Improvement', desc:'Incidents close without a structured review, so the same root causes resurface in future incidents.', solvedTitle:'Post-Incident Review', solvedDesc:'Structured lessons-learned and root-cause analysis workflows drive continuous improvement.' }
       ] },
-    { key:'inspect', name:'InspectMode', desc:'One AI-augmented agent unifies IT and OT security assessment, forensics, vulnerability scanning, compliance, and threat detection. Built for Saudi NCA and ISO 27001 needs, it works in portable, managed, and offline modes with evidence-grade output.',
+    { key:'inspect', name:'InspectMode', desc:'An AI-augmented security assessment platform for vulnerability scanning, compromise assessment, forensic evidence collection, compliance auditing, and threat detection across IT and OT environments.',
       challengeCategory:'Security Assessment',
       sixChallenges:[
         { title:'Fragmented Tooling', desc:'Separate compromise assessment, vulnerability scanning, forensics and compliance tools create fragmented visibility and slow response.', solvedTitle:'A Single Unified Agent', solvedDesc:'One agent binary covers compromise assessment, forensics, vulnerability scanning, OT/ICS assessment and compliance auditing.' },

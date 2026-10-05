@@ -62,7 +62,7 @@
 .prod-cell:hover{ background:#FFFFFF; box-shadow:inset 0 0 0 1px #C9B7D8, 0 20px 44px rgba(68,34,90,.14); z-index:3; }
 .prod-cell > *{ position:relative; z-index:1; }
 
-.prod-cat{ font-family:'Inter',sans-serif; font-weight:500; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8A7C99; opacity:0; transform:translateY(10px); }
+.prod-cat{ font-family:'Inter',sans-serif; font-weight:500; font-size:12px; letter-spacing:.04em; text-transform:none; color:#9A94A6; opacity:0; transform:translateY(10px); }
 .prod-icon{ width:60px; height:60px; border-radius:14px; background:#F3F0F8; border:1px solid #E4DAEF; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(46,27,78,.06); transform:scale(0) rotate(-200deg); }
 .prod-icon img{ width:34px; height:34px; object-fit:contain; display:block; }
 .prod-icon b{ font-family:'Poppins',sans-serif; font-size:24px; color:#6E3894; }
@@ -450,32 +450,32 @@ strengthen cybersecurity, and generate sustainable long-term value
   </svg>
 </button>
 
-<script src="js/main.js?v=33"></script>
+<script src="js/main.js?v=34"></script>
 <script>
 (function(){
   var PRODUCTS = [
-    { cat:'Security', name:'CyberMode', id:'cyber', icon:'assets/Container.png',
+    { cat:'Cybersecurity GRC Platform', name:'CyberMode', id:'cyber', icon:'assets/Container.png',
       desc:'CyberMode is a comprehensive GRC and cybersecurity management platform that enables organizations to centrally manage governance, risk, compliance, awareness, assessments, exceptions, committees, initiatives, and projects through a single unified system, eliminating the need for multiple fragmented tools.',
       bullets:['Governance and compliance','Risk and assessments','Awareness and initiatives'] },
-    { cat:'Governance', name:'GovernanceMode', id:'governance', icon:'assets/Vector.png',
+    { cat:'Enterprise Governance & GRC', name:'GovernanceMode', id:'governance', icon:'assets/Vector.png',
       desc:'GovernanceMode is an enterprise-grade EGRC platform that consolidates governance, risk, compliance, business continuity, strategic performance, committees and internal audit into a single, service-oriented operating system, engineered for the scale, regulatory pace and bilingual reality of modern Saudi and regional enterprises.',
       bullets:['Enterprise EGRC platform','Bilingual enterprise support','Committees and internal audit'] },
-    { cat:'Intelligence', name:'IntelMode', id:'intel', icon:'assets/itmode.png',
+    { cat:'Threat Intelligence & Brand Protection', name:'IntelMode', id:'intel', icon:'assets/itmode.png',
       desc:"IntelMode is a Saudi-built Cyber Threat Intelligence and Digital Risk Protection platform. It integrates automated threat intelligence collection, AI-powered analytics, IOC correlation, dark web monitoring, and deception-based detection to identify adversary behaviour, lateral movement, and digital exposure across the organization's attack surface.",
       bullets:['Threat intelligence collection','AI-powered analytics','Dark web and IOC correlation'] },
-    { cat:'Data', name:'DataMode', id:'datamode', icon:'assets/datamode.png',
+    { cat:'Data Governance & Privacy', name:'DataMode', id:'datamode', icon:'assets/datamode.png',
       desc:'DataMode is a comprehensive Data Management Office platform that enables organizations to govern, manage, protect, and continuously improve the quality of their data assets through a single unified system, covering governance and strategic oversight, metadata management and data catalog, data quality profiling and remediation, classification and privacy protection, regulatory compliance, and audit-ready reporting.',
       bullets:['Data catalog and metadata','Quality profiling and remediation','Privacy protection and reporting'] },
-    { cat:'Transfer', name:'TransferMode', id:'transfer', icon:'assets/transmode.png',
+    { cat:'Secure File Transfer & Inspection', name:'TransferMode', id:'transfer', icon:'assets/transmode.png',
       desc:'A zero-trust gateway that secures every file entering or leaving your organization across USB, removable media, and cross-domain transfers, with multi-engine malware scanning, content disarm and reconstruction, and enforced approval workflows.',
       bullets:['Zero-trust file gateway','Multi-engine malware scanning','Content disarm and reconstruction'] },
-    { cat:'Security', name:'InspectMode', id:'inspect', icon:'assets/inspectmode.png',
+    { cat:'Security Assessment & Compliance', name:'InspectMode', id:'inspect', icon:'assets/inspectmode.png',
       desc:'InspectMode is an agent-based, AI-augmented security assessment platform built for deployment across corporate and industrial networks. It delivers automated compromise assessment, forensic evidence collection, vulnerability scanning, compliance auditing, and threat detection through a single unified agent that operates on workstations, servers, and OT/ICS devices.',
       bullets:['Agent-based assessments','Forensic evidence collection','Corporate and OT/ICS coverage'] },
-    { cat:'IT Service', name:'ITMode', id:'itmode', icon:'assets/itmode-icon.png',
+    { cat:'IT Service Management', name:'ITMode', id:'itmode', icon:'assets/itmode-icon.png',
       desc:'ITMode is a next-generation IT Service Management platform that enables organizations to standardize, automate, and elevate IT service operations in alignment with ISO/IEC 20000 and ITIL v4. Built as a Saudi-developed platform aligned with international standards, ITMode provides a secure, scalable, and locally compliant foundation for enterprise service management.',
       bullets:['ITIL v4 aligned workflows','ISO/IEC 20000 alignment','Locally compliant foundation'] },
-    { cat:'Transfer', name:'GateMode', id:'gatemode', icon:'assets/gavermode.png',
+    { cat:'Secure Air-Gapped Data Transfer', name:'GateMode', id:'gatemode', icon:'assets/gavermode.png',
       desc:'GateMode is a hardware-enforced, bidirectional air-gapped transfer platform that ensures cryptographic proof of integrity and automated media sanitization. It bridges classified and unclassified domains through a dedicated security appliance, eliminating any direct TCP/IP path while preserving full auditability and compliance readiness.',
       bullets:['Air-gapped transfer platform','Cryptographic proof of integrity','Automated media sanitization'] }
   ];
