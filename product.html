@@ -2036,7 +2036,8 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
         { isText:true, text:'8,000+', label:'Nuclei Templates' },
         { target:114, decimals:0, suffix:'', label:'NCA ECC Controls' }
       ],
-      screensSubtitle:'InspectMode is operated from a central web dashboard backed by a REST API, with orchestration, task scheduling, evidence store and reporting in one console. Assessments run from a scan profile, results are aggregated centrally, and the reporting engine produces audit-ready PDF and HTML output mapped control by control to the selected framework. In the field, the same platform runs as a bootable forensic OS from USB, an always-on managed agent, and a passive network sensor or offline collector - each producing the same integrity-verified evidence package.'
+      screensTitle:'Inside the InspectMode Console.',
+      screensSubtitle:'Four views of the platform at work — fleet security overview, YARA rule management, a finding opened to its verified evidence, and the enrolled device inventory.',
     },
     datamode: {
       name:'DataMode',
@@ -2267,7 +2268,7 @@ capabilitiesTitle:'Built Into Every Module.',
       ]
     },
     gatemode: {
-      name:'GateMode',
+      name:'GateMode', hideScreens:true,
       appliance:{
         kicker:'The Appliance',
         title:'Hardware-enforced separation between classified and unclassified domains.',
@@ -2388,7 +2389,7 @@ capabilitiesTitle:'Built Into Every Module.',
       ]
     },
     transfer: {
-      name:'TransferMode',
+      name:'TransferMode', hideScreens:true,
       appliance:{
         kicker:'The Appliance',
         title:'A dedicated scanning station at the edge of your network.',
@@ -2716,12 +2717,10 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:'data-dashboard',          w:695, h:486, title:'Dynamic Dashboards &amp; Reporting', desc:'Unlimited customizable dashboards built with a drag-and-drop designer for real-time, cross-module reporting.', wide:true }
     ],
     inspect: [
-      { img:null, w:461, h:322, title:'Web Dashboard',          desc:'Web dashboard with orchestration, task queue and scheduler.' },
-      { img:null, w:461, h:322, title:'Evidence Store',         desc:'Evidence store with SHA-256-hashed timestamped packages.' },
-      { img:null, w:461, h:322, title:'Compliance Reports',     desc:'Audit-ready PDF and HTML compliance reports.' },
-      { img:null, w:461, h:322, title:'Executive Summaries',    desc:'Executive summaries with risk ratings and remediation priorities.' },
-      { img:null, w:461, h:322, title:'Cross-Framework Matrix', desc:'Cross-framework matrix across NCA, ISO 27001, IEC 62443 and CIS.' },
-      { img:null, w:461, h:322, title:'Field Deployments',      desc:'Bootable forensic OS, managed agent, passive sensor and offline collector deployments.' }
+      { img:'inspect-security-overview', w:695, h:443, title:'Security Overview',                    desc:'Fleet-wide posture at a glance — open risks, critical alerts, average risk score, findings trend by severity and detection activity across every managed device.', wide:true },
+      { img:'inspect-yara-rules',        w:695, h:443, title:'YARA Rule Management',                 desc:'Rulesets versioned in the backend and served to agents per operating system, assigned by profile and tracked as active, unassigned or retired.', wide:true },
+      { img:'inspect-finding-detail',    w:695, h:443, title:'Finding Detail &amp; Evidence Integrity', desc:'Each detection opens to its rule, matched strings and source host, with a SHA-256 hash re-verified against the bundle manifest on upload.', wide:true },
+      { img:'inspect-devices',           w:695, h:443, title:'Device Inventory',                     desc:'Enrolled endpoints across Windows, Linux and legacy OT systems — OS version, addressing, assigned profile and live agent status.', wide:true }
     ],
     itmode: [
       { img:'it-dashboard',            w:461, h:322, title:'Dashboard',                    desc:'' },
@@ -2771,10 +2770,10 @@ capabilitiesTitle:'Built Into Every Module.',
   };
   var screensGrid = document.getElementById('screensGrid');
   var screensSection = document.getElementById('screensSection');
-  var screenList = SCREENS[id];
+  var screenList = p.hideScreens ? null : SCREENS[id]; /* hideScreens hides the whole "in Use" section for a product */
   if (screensGrid && screenList && screenList.length) {
     screensSection.hidden = false;
-    document.getElementById('screensTitle').textContent = p.name + ' in Use.';
+    document.getElementById('screensTitle').textContent = p.screensTitle || (p.name + ' in Use.');
     document.getElementById('screensSubtitle').textContent = p.screensSubtitle ||
       ('Actual ' + p.name + ' product screens across the platform. Figures shown inside the interface are demonstration data.');
 
