@@ -2696,31 +2696,24 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:'dashboards',               w:695, h:485, title:'Dashboards',                                   desc:'Real-time analytics and dynamic dashboards',   wide:true }
     ],
     governance: [
-      { img:null, w:461, h:322, title:'Governance &amp; Organizational Management', desc:'Organization hierarchy, strategic objectives, document center, regulators, frameworks and exception management — the structural model every other module references.' },
-      { img:null, w:461, h:322, title:'Risk Management', desc:'Taxonomy-driven enterprise, national and third-party risk with configurable matrices, KRIs and inherent, residual and target scoring.' },
-      { img:null, w:461, h:322, title:'Strategic Planning, KPI &amp; Initiative Management', desc:'Objectives aligned to measurable initiatives and projects, with a dynamic roadmap matrix tracking programmes across quarterly periods.' },
-      { img:null, w:461, h:322, title:'Committee Lifecycle Management', desc:'Member selection, structured agendas, recorded minutes, voting and actionable post-meeting recommendations.' },
-      { img:null, w:461, h:322, title:'Business Continuity Management', desc:'BIA, BCP, DRP, ERP and crisis management — from impact analysis to live crisis response and plan testing.' },
-      { img:null, w:461, h:322, title:'Audit &amp; Compliance Management', desc:'Scheduled audit plans, active and past audits, gap identification and structured remediation across regulatory frameworks.' },
-      { img:null, w:461, h:322, title:'Automation &amp; Workflow Engine', desc:'A drag-and-drop visual workflow builder for complex multi-step approvals with full conditional logic and module integration.' },
-      { img:null, w:461, h:322, title:'Reports', desc:'Real-time analytics export-ready reporting.' },
-      { img:null, w:461, h:322, title:'Dashboards', desc:'Real-time analytics and dynamic dashboards' }
+      { img:'gov-governance-organization', w:461, h:322, title:'Governance &amp; Organizational Management', desc:'Organization hierarchy, strategic objectives, document center, regulators, frameworks and exception management — the structural model every other module references.' },
+      { img:'gov-risk-taxonomy', w:461, h:322, title:'Risk Management', desc:'Taxonomy-driven enterprise, national and third-party risk with configurable matrices, KRIs and inherent, residual and target scoring.' },
+      { img:'gov-strategic-kpis', w:461, h:322, title:'Strategic Planning, KPI &amp; Initiative Management', desc:'Objectives aligned to measurable initiatives and projects, with a dynamic roadmap matrix tracking programmes across quarterly periods.' },
+      { img:'gov-committee-lifecycle', w:461, h:322, title:'Committee Lifecycle Management', desc:'Member selection, structured agendas, recorded minutes, voting and actionable post-meeting recommendations.' },
+      { img:'gov-business-continuity', w:461, h:322, title:'Business Continuity Management', desc:'BIA, BCP, DRP, ERP and crisis management — from impact analysis to live crisis response and plan testing.' },
+      { img:'gov-audit-compliance', w:461, h:322, title:'Audit &amp; Compliance Management', desc:'Scheduled audit plans, active and past audits, gap identification and structured remediation across regulatory frameworks.' },
+      { img:'gov-workflow-engine', w:461, h:322, title:'Automation &amp; Workflow Engine', desc:'A drag-and-drop visual workflow builder for complex multi-step approvals with full conditional logic and module integration.' },
+      { img:'gov-phishing-report', w:461, h:322, title:'Reports', desc:'Real-time analytics export-ready reporting.' },
+      { img:'gov-dashboard', w:461, h:322, title:'Dashboards', desc:'Real-time analytics and dynamic dashboards' }
     ],
     datamode: [
-      { img:null, w:461, h:322, title:'Organization Hierarchy &amp; Department Mapping', desc:'Auto-generated corporate structure from defined departments - with employee counts, sub-departments, and ownership.' },
-      { img:null, w:461, h:322, title:'Strategic Roadmap &amp; Initiative Matrix',       desc:'Dynamic quarterly roadmap auto-built from objectives, projects, and budgets - tracked from strategy to execution.' },
-      { img:null, w:461, h:322, title:'Centralized Policy Management',               desc:'Workflow-driven document control from Draft to Review to Approval, aligned with NDMO documentation requirements.' },
-      { img:null, w:461, h:322, title:'Governance Committees',                       desc:'Create committees, define members and discussion topics, capture minutes, and track decisions - fully auditable.' },
-      { img:null, w:461, h:322, title:'NDI Active Audit Plans',                      desc:'Scheduled and custom audits for NDMO and SDAIA frameworks - assigned, owned, and tracked across all 15 domains.' },
-      { img:null, w:461, h:322, title:'Live Data Catalog',                          desc:'Every database, table, and asset auto-mapped to its owner, domain, and classification - always live.' },
-      { img:null, w:461, h:322, title:'Quality Rules &amp; Test Cases',                 desc:'Custom validation rules at table and column level - every failure becomes a tracked Data Issue.' },
-      { img:null, w:461, h:322, title:'Classification Management',                  desc:'A complete classification framework with bulk tagging across databases and documents in a single operation.' },
-      { img:null, w:461, h:322, title:'Automated Classification',                   desc:'Auto-Scan - pattern rules drive column-level auto-classification across every connected source.' },
-      { img:null, w:461, h:322, title:'DIA &amp; PIA - Risk to Remediation',            desc:'A high DIA risk score opens the PIA deep form and generates a step-by-step, PDPL-aligned remediation plan.' },
-      { img:null, w:461, h:322, title:'Classified Content in Microsoft 365',        desc:'The DataMode AI Agent requires documents to be classified before saving, then syncs the result back to the platform.' },
-      { img:null, w:461, h:322, title:'Tasks Management',                           desc:'Create, assign, and track data-related tasks with categories, priorities, due dates, and status.' },
-      { img:null, w:695, h:486, title:'Reports',                                    desc:'Real-time analytics and export-ready reporting.', wide:true },
-      { img:null, w:695, h:486, title:'Dynamic Dashboards &amp; Reporting',             desc:'Unlimited customizable dashboards built with a drag-and-drop designer for real-time, cross-module reporting.', wide:true }
+      { img:'data-metadata-mapping',   w:461, h:322, title:'Metadata Relationship &amp; Mapping', desc:'Platform interface - Metadata Association Graph: an interactive view of how business terms, logical entities and physical assets connect, with filters by association type and details for the selected node.' },
+      { img:'data-tasks-management',   w:461, h:322, title:'Tasks Management',                    desc:'Create, assign, and track data-related tasks with categories, priorities, due dates, and status.' },
+      { img:'data-data-catalog',       w:461, h:322, title:'Live Data Catalog',                   desc:'Every database, table, and asset auto-mapped to its owner, domain, and classification - always live.' },
+      { img:'data-quality-insights',   w:703, h:486, title:'Quality Rules &amp; Test Cases',      desc:'Custom validation rules at table and column level - every failure becomes a tracked Data Issue.', wide:true },
+      { img:'data-committee-details',  w:703, h:486, title:'Classification Management',          desc:'A complete classification framework with bulk tagging across databases and documents in a single operation.', wide:true },
+      { img:'data-quality-report',     w:695, h:486, title:'Reports',                             desc:'Real-time analytics and export-ready reporting.', wide:true },
+      { img:'data-dashboard',          w:695, h:486, title:'Dynamic Dashboards &amp; Reporting', desc:'Unlimited customizable dashboards built with a drag-and-drop designer for real-time, cross-module reporting.', wide:true }
     ],
     inspect: [
       { img:null, w:461, h:322, title:'Web Dashboard',          desc:'Web dashboard with orchestration, task queue and scheduler.' },
@@ -2731,12 +2724,12 @@ capabilitiesTitle:'Built Into Every Module.',
       { img:null, w:461, h:322, title:'Field Deployments',      desc:'Bootable forensic OS, managed agent, passive sensor and offline collector deployments.' }
     ],
     itmode: [
-      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
-      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
-      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
-      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
-      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' },
-      { img:null, w:461, h:322, title:'Service Operations Dashboard', desc:'Platform interface - Service Operations Dashboard: live service operations view across tickets, incidents, change advisory board, service desk queue and CMDB assets.' }
+      { img:'it-dashboard',            w:461, h:322, title:'Dashboard',                    desc:'' },
+      { img:'it-team-acknowledgments', w:461, h:322, title:'My Team Acknowledgments',      desc:'' },
+      { img:'it-incident-department',  w:461, h:322, title:'Incident Department Management', desc:'' },
+      { img:'it-service-categories',   w:461, h:322, title:'Service Categories',           desc:'' },
+      { img:'it-business-application', w:461, h:322, title:'Business Application',         desc:'' },
+      { img:'it-workflow-builder',     w:461, h:322, title:'Workflow Builder',             desc:'' }
     ],
     transfer: [
       { img:null, w:461, h:322, title:'Live Dashboard', desc:'Platform interface - real-time visibility into threat detection, transfer volumes, and system health.' },
@@ -2797,7 +2790,7 @@ capabilitiesTitle:'Built Into Every Module.',
         '<div class="screen-shot">' + shotHtml + '</div>' +
         '<figcaption class="screen-body">' +
           '<h3 class="screen-title">' + s.title + '</h3>' +
-          '<p class="screen-desc">' + s.desc + '</p>' +
+          (s.desc ? '<p class="screen-desc">' + s.desc + '</p>' : '') +
         '</figcaption>';
       screensGrid.appendChild(fig);
     });
