@@ -511,7 +511,7 @@
     var stackCards = serviceStack.querySelectorAll('.stack-card');
     if (stackCards.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       /* gap between consecutive cards' sticky top offsets (e.g. top-63 - top-28 = 252px - 112px) — keep in sync with index.html */
-      var PEEK_PX = 140;
+      var PEEK_PX = window.matchMedia('(min-width: 1024px) and (min-height: 901px)').matches ? 140 : 32;
       var stackTicking = false;
 
       for (var stackI = 0; stackI < stackCards.length - 1; stackI++) {
