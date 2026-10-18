@@ -28,7 +28,8 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Lora:wght@700&display=swap" rel="stylesheet" /></noscript>
 
 <link rel="stylesheet" href="css/styles.css?v=51" />
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -110,7 +111,8 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+  <section id="top" class="hero-curtain hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
     <video id="heroVideo" class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
@@ -232,6 +234,7 @@
       </div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
 
   <!-- ===================== VISION & MISSION ===================== -->
   <section class="bg-white px-6 sm:px-10 lg:px-37.5 py-16 sm:py-20 lg:py-25" aria-labelledby="vision-heading">

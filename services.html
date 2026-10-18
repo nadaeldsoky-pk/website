@@ -245,7 +245,8 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
   .svc-tracks-section, .svc-work-section, .svc-banner, .svc-phase-section{ padding-top:6.25rem; padding-bottom:6.25rem; }
 }
 </style>
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -327,7 +328,8 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
- <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+ <section id="top" class="hero-curtain hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
     <video id="heroVideo" class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
@@ -459,6 +461,7 @@ section.svc-banner{ padding:100px clamp(16px,11.6vw,200px); min-height:392px; di
       </div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
 
   <!-- ===================== STATS ===================== -->
   <section class="svc-stats-section" aria-label="Services at a glance">

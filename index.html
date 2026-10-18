@@ -52,7 +52,8 @@
 </script>
 
 <link rel="stylesheet" href="css/styles.css?v=51" />
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -135,7 +136,8 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+  <section id="top" class="hero-bg hero-curtain relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
     <video id="heroVideo" class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
@@ -240,6 +242,7 @@
       </div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
 
   <!-- ===================== STRATEGIC SERVICES ===================== -->
   <section id="strategic-services" class="bg-surface2 px-5 sm:px-10 py-16 sm:py-24 lg:py-37.5" aria-labelledby="strategic-services-heading">

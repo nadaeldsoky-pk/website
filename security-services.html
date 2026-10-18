@@ -173,7 +173,8 @@ section.svc-acc-section{ padding:100px clamp(16px,8.7vw,150px); }
   .svc-pa-section, .svc-banner, .svc-acc-section{ padding-top:6.25rem; padding-bottom:6.25rem; }
 }
 </style>
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -255,7 +256,8 @@ section.svc-acc-section{ padding:100px clamp(16px,8.7vw,150px); }
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="svc-hero" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+  <section id="top" class="hero-curtain svc-hero" aria-labelledby="hero-heading">
     <div class="svc-hero-inner">
       <h1 id="hero-heading" class="svc-hero-title"><span class="lt" style="--k:0">S</span><span class="lt" style="--k:1">E</span><span class="lt" style="--k:2">C</span><span class="lt" style="--k:3">U</span><span class="lt" style="--k:4">R</span><span class="lt" style="--k:5">I</span><span class="lt" style="--k:6">T</span><span class="lt" style="--k:7">Y</span><span class="lt" style="--k:8">&nbsp;</span><span class="lt" style="--k:9">S</span><span class="lt" style="--k:10">E</span><span class="lt" style="--k:11">R</span><span class="lt" style="--k:12">V</span><span class="lt" style="--k:13">I</span><span class="lt" style="--k:14">C</span><span class="lt" style="--k:15">E</span><span class="lt" style="--k:16">S</span></h1>
       <p class="svc-hero-desc">Operational and offensive security delivered by four specialist practice areas. Testing your defenses the way an attacker would, and building the capability to detect and respond.</p>
@@ -361,6 +363,7 @@ section.svc-acc-section{ padding:100px clamp(16px,8.7vw,150px); }
       </div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
 
   <!-- ===================== BANNER ===================== -->
   <section class="svc-banner" aria-labelledby="bannerTitle">

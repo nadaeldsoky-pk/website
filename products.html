@@ -100,7 +100,8 @@
 @media(min-width:640px){ .prods-section{ padding-top:5rem; padding-bottom:5rem; } }
 @media(min-width:1024px){ .prods-section{ padding-top:6.25rem; padding-bottom:6.25rem; } }
 </style>
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -182,7 +183,8 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+  <section id="top" class="hero-curtain hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
     <video class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
@@ -245,6 +247,7 @@ strengthen cybersecurity, and generate sustainable long-term value
     </div>
     <div id="prodsGrid" class="prods-grid"></div>
   </section>
+  </div><!-- /.hero-stage -->
 
   <!-- ===================== REQUEST FORM ===================== -->
   <section class="flex flex-col items-center gap-10 sm:gap-12 lg:gap-12 bg-white px-6 sm:px-12 lg:px-[150px] py-16 sm:py-24 lg:py-25" aria-labelledby="contact-heading">

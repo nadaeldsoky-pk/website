@@ -1180,7 +1180,8 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
   .demo-row .demo-field{ flex:none; width:100%; }
 }
 </style>
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -1244,7 +1245,8 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
 
 <!-- ===================== HERO ===================== -->
 <main id="main">
-  <section class="prod-hero" aria-labelledby="productHeadline">
+  <div class="hero-stage">
+  <section class="hero-curtain prod-hero" aria-labelledby="productHeadline">
     <div class="prod-hero-content" data-reveal="up">
       <div class="prod-hero-text">
         <h1 id="productHeadline" class="prod-hero-headline">Loading…</h1>
@@ -1277,6 +1279,7 @@ body[data-product="inspect"] .framework-dot{ background:#7B68EE; }
       <div id="ovStats" class="ov-stats" data-reveal="up" data-delay="120"></div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
   <!-- ===================== APPLIANCE (optional) ===================== -->
   <section id="applianceSection" class="ap-section" aria-labelledby="apTitle" hidden>
     <article id="apCard" class="ap-card" data-reveal="up">

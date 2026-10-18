@@ -162,7 +162,8 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
   .svc-s12-section, .svc-banner, .svc-fw-section, .svc-phase-section{ padding-top:6.25rem; padding-bottom:6.25rem; }
 }
 </style>
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -244,7 +245,8 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="svc-hero" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+  <section id="top" class="hero-curtain svc-hero" aria-labelledby="hero-heading">
     <div class="svc-hero-inner">
       <h1 id="hero-heading" class="svc-hero-title"><span class="lt" style="--k:0">C</span><span class="lt" style="--k:1">O</span><span class="lt" style="--k:2">N</span><span class="lt" style="--k:3">S</span><span class="lt" style="--k:4">U</span><span class="lt" style="--k:5">L</span><span class="lt" style="--k:6">T</span><span class="lt" style="--k:7">A</span><span class="lt" style="--k:8">T</span><span class="lt" style="--k:9">I</span><span class="lt" style="--k:10">O</span><span class="lt" style="--k:11">N</span></h1>
       <p class="svc-hero-desc">Advisory and delivery across the full cybersecurity lifecycle, from strategic planning to incident response. Twelve services, delivered standalone or as part of a wider programme.</p>
@@ -382,6 +384,7 @@ section.svc-fw-section{ padding:100px clamp(16px,8.7vw,150px); }
       </div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
 
   <!-- ===================== BANNER ===================== -->
   <section class="svc-banner" aria-labelledby="bannerTitle">

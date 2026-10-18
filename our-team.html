@@ -192,7 +192,8 @@
 }
 @media(prefers-reduced-motion:reduce){ .tm-w,.tm-sub,.tm-disc,.tm-chips li,.tm-block,.tm-proc li,.tm-cell,.tm-block .tm-foot,.tm-role-pills li,.tm-life li,.tm-ocert,.tm-cg,.tm-pills li,.tm-reg,.tm-phases li,.tm-closing{ opacity:1 !important; transform:none !important; filter:none !important; animation:none !important; } .tm-block hr{ transform:none !important; animation:none !important; } .tm-sec--purple::before{ animation:none; } }
 </style>
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 </head>
 <body class="bg-white text-primary">
 
@@ -275,7 +276,8 @@
 
 <main id="main">
   <!-- ===================== HERO ===================== -->
-  <section id="top" class="hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
+  <div class="hero-stage">
+  <section id="top" class="hero-curtain hero-bg relative min-h-[calc(100vh+7rem)] flex flex-col" aria-labelledby="hero-heading">
     <video id="heroVideo" class="absolute inset-0 -z-20 h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
@@ -445,6 +447,7 @@
       <p class="tm-closing" data-tm>This gives Advanced Controls genuine in-house product development, engineering, innovation and intellectual property capability — and lets us address complex cybersecurity challenges from both a strategic and a deeply technical perspective.</p>
     </section>
   </div>
+  </div><!-- /.hero-stage -->
 </main>
 
 <!-- ===================== FOOTER ===================== -->

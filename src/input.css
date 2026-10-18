@@ -345,3 +345,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
    focusing a sibling field). Isolating the select onto its own layer up
    front avoids relying on that ancestor repaint. */
 select{ transform:translateZ(0); backface-visibility:hidden; }
+
+/* ===== Hero "curtain": the Products section slides up as a second layer over a pinned hero ===== */
+.hero-stage{ position:relative; }
+.hero-curtain{ position:sticky !important; top:var(--hero-top,0px); z-index:0; }
+.hero-curtain .hero-dim{ position:absolute; inset:0; z-index:5; pointer-events:none; background:#120918; opacity:0; }
+.hero-stage > .hero-curtain + *{ position:relative; z-index:10; box-shadow:0 -28px 60px -12px rgba(18,9,24,.45); }
+@media (prefers-reduced-motion: reduce){ .hero-curtain .hero-dim{ display:none; } }

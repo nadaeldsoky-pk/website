@@ -53,7 +53,8 @@
 </script>
 
 <link rel="stylesheet" href="css/styles.css?v=51" />
-<script src="js/video-sound.js?v=1"></script>
+<script src="js/video-sound.js?v=3"></script>
+<script src="js/hero-curtain.js?v=1" defer></script>
 <style>
 /* ===== 404 page ===== */
 .nf-hero{ position:relative; min-height:calc(100svh - 61px + 48px); display:flex; align-items:center; justify-content:center; padding:clamp(60px,8vw,120px) 24px calc(clamp(60px,8vw,120px) + 48px); overflow:hidden; text-align:center;
@@ -187,7 +188,8 @@
 <!-- NAV:END -->
 
 <main id="main">
-  <section class="nf-hero" aria-labelledby="nf-title">
+  <div class="hero-stage">
+  <section class="hero-curtain nf-hero" aria-labelledby="nf-title">
     <div class="nf-inner">
       <h1 id="nf-title" class="nf-code" aria-label="404 — page not found"><span class="nf-d" style="--d:0" aria-hidden="true">4</span><span class="nf-d" style="--d:1" aria-hidden="true">0</span><span class="nf-d" style="--d:2" aria-hidden="true">4</span></h1>
       <p class="nf-text">The page you are looking for has moved, been renamed, or never existed. Nothing is wrong with your connection &mdash; this address just does not lead anywhere.</p>
@@ -212,6 +214,7 @@
       <div><a href="mailto:info@advancedcontrols.sa">info@advancedcontrols.sa</a> &nbsp;&middot;&nbsp; <a href="tel:920066215">920066215</a></div>
     </div>
   </section>
+  </div><!-- /.hero-stage -->
 </main>
 
 <!-- ===================== FOOTER ===================== -->
